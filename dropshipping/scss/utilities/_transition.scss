@@ -1,0 +1,37 @@
+@use 'types' as *;
+@use 'sass:map';
+@use 'sass:list' as lst;
+
+$default-transition: (delay: null, duration: 250ms, property: all, timing-function: ease) !default;
+
+@function set-transition($return, $lst, $value) {
+    @each $key in $lst {
+        @if map.get($return, $key) == null {
+            @return map.merge($return, (#{$key}: lst.join((), $value, comma)));
+        }
+    }
+
+    @return $return;
+}
+
+@function map-transition($args) {
+    $result: ();
+
+    @each $arg in $args {
+        @if every($arg, is-time) {
+            $result: set-transition($result, (duration, delay), $arg);
+        }
+        @else if every($arg, is-string) {
+            $result: set-transition($result, (property, timing-function), $arg);
+        }
+        @else {
+            @error "Invalid operation: map-transition(#{inspect($args)}).";
+        }
+    }
+
+    @return map.merge($default-transition, $result);
+}
+
+@mixin transition($args...) {
+    @each $key, $value in  map-transition($args) { transition-#{$key}: $value; }
+}

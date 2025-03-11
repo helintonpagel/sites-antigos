@@ -1,0 +1,103 @@
+@use '../abstracts/all' as *;
+
+.select {
+    @include font(sans-serif, 500);
+    @include font-rhythm(1, rhythm(1.5));
+    
+    border: {
+        left: solid rem(1px) color(mine-shaft);
+        right: solid rem(1px) color(mine-shaft);
+    }
+    color: black;
+    background: color(vista-white);
+    position: relative;
+    letter-spacing: rem(1px);
+    margin: {
+        bottom: rhythm(2);
+        top: rhythm(1);
+        left: auto;
+        right: auto;
+    }
+    max-width: rhythm(22);
+    text-transform: uppercase;
+    transition-duration: 0.25s;
+    
+    
+    @at-root &__field {
+        @include font(sans-serif, 500);
+        @include font-rhythm(1, rhythm(2, 2px));
+        @include icon(chevron-down);
+        
+        letter-spacing: rem(1px);
+        
+        display: block;
+        box-sizing: border-box;
+        padding: {
+            left: rhythm(0.5);
+            right: rhythm(0.5);
+        };
+        width: 100%;
+        position: relative;
+        text-align: left;
+        border: {
+            top: solid rem(1px) color(mine-shaft);
+            bottom: solid rem(1px) color(mine-shaft);
+        }
+        text-transform: uppercase;
+
+        &:before {
+            font-size: rhythm(1);
+            line-height: rhythm(2);
+            height: rhythm(2);
+            position: absolute;
+            right: rhythm(0.5);
+            transition-duration: 0.25s;
+            
+            @at-root .is-active & {
+                transform: rotateZ(180deg);
+            }
+        }
+    }
+    
+    @at-root &__option-list {
+        background: color(vista-white);
+        padding: {
+            top: 0;
+            bottom: 0;
+        };
+        position: absolute;
+        transition-duration: 0.25s;
+        width: 100%;
+        
+        @at-root .is-active & {
+            padding: {
+                top: rhythm(0.5);
+                bottom: rhythm(0.5);
+            }
+        }
+    }
+    
+    @at-root &__option {
+        @include font-rhythm(1, rhythm(2));
+        
+        cursor: pointer;
+        height: 0;
+        opacity: 0;
+        padding: {
+            left: rhythm(0.5);
+            right: rhythm(0.5);
+        };
+        transform: scaleY(0);
+        transition-duration: 0.25s;
+        
+        &:hover {
+            background-color: color(copper);
+        }
+        
+        @at-root .is-active & {
+            height: rhythm(2);
+            transform: scaleY(1);
+            opacity: 1;
+        }
+    }
+}

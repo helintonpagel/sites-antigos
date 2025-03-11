@@ -1,0 +1,39 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.bottom {
+    background-color: $theme-color-1;
+    color: $body-back;
+    font-weight: 400;
+    margin-top: rhythm(2);
+    text-align: center;
+    
+    ::selection {
+        color: $theme-color-1;
+        background-color: $body-text;
+    }
+    
+    &__wrapper {
+        @include wrapper;
+        @include padding(rhythm(0.5) null);
+        
+        position: relative;
+    }
+    
+    &__tooltip {
+        margin-right: 0.25em;
+        vertical-align: -0.125em;
+    }
+    
+    &__paragraph {
+        display: inline-block;
+    }
+    
+    &__icon {
+        @include margin(-0.5em null);
+        
+        height: 1em;
+        margin-right: -0.5em;
+        vertical-align: 0.375em;
+    }
+}

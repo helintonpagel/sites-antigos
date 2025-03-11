@@ -1,0 +1,39 @@
+@use 'sass:map';
+
+@mixin font-path($config) {
+    $path: map.get($config, "font-face", "path");
+
+    @if $path != null {
+        src: url("#{$path}.eot");
+        src: (
+            url("#{$path}.eot?#iefix") format("embedded-opentype"),
+            url("#{$path}.ttf") format("truetype"),
+            url("#{$path}.woff") format("woff"),
+            url("#{$path}.svg") format("svg")
+        );
+    }
+    @else {
+        @error "@font-face path was not found";
+    }
+}
+
+@mixin font-face($family) {
+    @each $config in map.values($family) {
+        $name: map.get($config, "font-face", "name");
+
+        @if $name != null {
+            @font-face {
+                font: {
+                    family: $name;
+                    style: map.get($config, "style");
+                    weight: map.get($config, "weight");
+                }
+        
+                @include font-path($config);
+            }
+        }
+        @else {
+            @error "@font-face name was not found";
+        }
+    }
+}

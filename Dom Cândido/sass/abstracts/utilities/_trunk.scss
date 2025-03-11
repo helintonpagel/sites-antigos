@@ -1,0 +1,13 @@
+@use '../config' as *;
+@use 'rhythm' as *;
+@use 'directional' as *;
+
+@mixin trunk($width: $trunk-width, $space: 1) {
+    @include margin(null auto);
+    @include padding(null $space);
+
+    box-sizing: border-box;
+    height: 100%;
+    max-width: rhythm($width);
+    width: 100%;
+}

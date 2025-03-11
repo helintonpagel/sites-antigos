@@ -1,0 +1,25 @@
+@use 'sass:math' as *;
+
+@function em($pixels, $parent: 16px)
+{
+    @if unit($pixels) != 'px' {
+        @error 'Invalid argument for pixels parameter.';
+    }
+    
+    @return $pixels / $parent * 1em;
+}
+
+@function rem($pixels, $parent: 16px)
+{
+    @return em($pixels, $parent) / 1em * 1rem;
+}
+
+@function ratio($power, $ratio: 1.27201965)
+{
+    @return rem(round(pow($ratio, $power) * 16px));
+}
+
+@function lines($n, $base: 24px)
+{
+    @return rem($n * $base);
+}

@@ -1,0 +1,45 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.header-button {
+    @include transition(color, 500ms);
+    
+    color: $theme-color-1;
+    position: absolute;
+    right: rhythm(1);
+    top: rhythm(2.5);
+    transform: translateY(-50%);
+    z-index: 1;
+    
+    &--active {
+        color: white;
+    }
+    
+    @include media(min-width 900) {
+        display: none;
+    }
+    
+    &__icon {
+        height: 2.75em;
+        width: 2.75em;
+        
+        path {
+            @include transition(transform, 500ms);
+            transform-origin: center;
+        }
+    }
+    
+    &--active path {
+        &:nth-of-type(1) {
+            transform: rotateZ(45deg) translate(0%, 20%);
+        }
+
+        &:nth-of-type(2) {
+            transform: rotateZ(45deg) translate(0%, -20%);
+        }
+
+        &:nth-of-type(3) {
+            transform: rotateZ(-45deg);
+        }
+    }
+}

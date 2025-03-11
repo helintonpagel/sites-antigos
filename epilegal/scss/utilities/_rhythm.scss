@@ -1,0 +1,46 @@
+@use 'math' as *;
+
+$rhythm: 24px !default;
+
+@function rhythm($number, $offset: 0) {
+    @return rem($number * $rhythm - $offset);
+}
+
+@function scale-by($number) {
+    @return $base-font-size * pow(sqrt($phi), $number);
+}
+
+@function lines-to($length) {
+    $result: div(ceil(2 * div($length, $rhythm)), 2);
+
+    @if unitless($result) == false {
+        @error "Unsupported operation: lines-to(#{inspect($length)})";
+    }
+
+    @return $result;
+}
+
+@function leading($length) {
+    @return div($rhythm * lines-to($length), $length);
+}
+
+@mixin debug-lines($alpha: 1) {
+    background: {
+        image: linear-gradient(to top, fuchsia 5%, transparent 5%);
+        position: left top;
+        size: auto rhythm(1);
+    }
+
+    @if $alpha != 1 {
+        > * {
+            opacity: $alpha;
+        }
+    }
+}
+
+@mixin font-rhythm($number, $height: auto) {
+    $font-size: scale-by($number);
+
+    font-size: rem($font-size);
+    line-height: if($height == auto, leading($font-size), div($height, rem($font-size)));
+}

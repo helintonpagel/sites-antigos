@@ -1,0 +1,66 @@
+@use '../abstracts/all' as *;
+
+.modal {
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: rhythm(1);
+    position: fixed;
+    height: 100vh;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+    transition-duration: 0.25s;
+    display: none;
+    
+    &.is-active {
+        display: table;
+    }
+    
+    &__brand {
+        height: rhythm($brand-height);
+    }
+    
+    &__label {
+        @include font(Bell);
+        @include font-rhythm(1);
+        @include margin(2, top);
+        
+        text-transform: uppercase;
+    }
+    
+    &__paragraph {
+        @include margin(0.5, top);
+    }
+    
+    &__inline {
+        display: inline-block;
+    }
+    
+    &__button {
+        @include margin(2, top);
+        @include padding(null 0.75);
+        
+        border: solid white rem(1px);
+        line-height: rhythm(1, 2);
+    }
+    
+    @at-root &__cell {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    
+    @at-root &__card {
+        background: $brand-color;
+        border-radius: rem(20px);
+        box-sizing: border-box;
+        max-width: rem(720px);
+        margin: {
+            left: auto;
+            right: auto;
+        }
+        padding: rhythm(1.5);
+        
+    }
+}

@@ -1,0 +1,39 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.form-response {
+    display: block;
+    font-weight: inherit;
+    margin-top: rhythm(1);
+    
+    &__icon {
+        height: 1.5em;
+        vertical-align: -0.25em;
+        margin-right: 0.125em;
+        width: auto;
+    }
+    
+    &--loading &__icon {
+        animation-name: spinner-icon;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        fill: $theme-color-1;
+        
+        @keyframes spinner-icon {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(180deg);
+            }
+        }
+    }
+    
+    &--failure {
+        color: red;
+    }
+    
+    &--success {
+        color: green;
+    }
+}

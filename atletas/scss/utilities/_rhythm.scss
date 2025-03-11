@@ -1,0 +1,37 @@
+@use 'math' as *;
+
+$rhythm: 24px !default;
+
+@function rhythm($number: 1, $offset: 0) {
+    @return rem($number * $rhythm) - rem($offset);
+}
+
+@function lines-for($length) {
+    $return: div(ceil(2 * div($length, $rhythm)), 2);
+
+    @if unit($return) != '' {
+        @error "Unsupported operation: lines-for(#{inspect($length)}) and $rhythm: #{inspect($rhythm)}";
+    }
+
+    @return if($return * $rhythm - $length < 2px, $return + 0.5, $return);
+}
+
+@function leading($length, $addend: 0) {
+    @return div($rhythm * (lines-for($length) + $addend), $length);
+}
+
+@mixin font-rhythm($length, $addend: 0, $parent: $base-font-size) {
+    $length: if(unit($length) == px, rem($length, $parent), $length);
+
+    font-size: $length;
+    line-height: leading(px($length, $parent), $addend);
+}
+
+@mixin debug-lines($alpha: 1) {
+    background-image: linear-gradient(to top, fuchsia 5%, transparent 5%);
+    background-position: left rhythm(0.025);
+    background-repeat: repeat-y;
+    background-size: auto rhythm(1);
+
+    > * { opacity: $alpha; }
+}

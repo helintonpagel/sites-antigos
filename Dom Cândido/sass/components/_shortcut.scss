@@ -1,0 +1,38 @@
+@use '../abstracts/all' as *;
+
+.shortcut {
+    @include transition(0.5s);
+    
+    background: white;
+    max-height: 0;
+    overflow: hidden;
+    text-align: center;
+    
+    &:focus-within {
+        max-height: rhythm(1);
+    }
+    
+    &__item {
+        @include margin(null 0.5);
+        display: inline-block;
+    }
+    
+    &__link {
+        @include transition(0.25s);
+        @include font-rhythm(-1);
+        
+        display: inline-block;
+        outline-style: dashed;
+        outline-width: rem(2px);
+        outline-color: transparent;
+        text-decoration: none;
+        
+        &:hover, &:focus {
+            color: $brand-color;
+        }
+        
+        &:focus {
+            outline-color: $brand-color;
+        }
+    }
+}

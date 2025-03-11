@@ -1,0 +1,55 @@
+@use 'types' as *;
+@use 'sass:map';
+@use 'sass:list' as lst;
+
+$fonts: () !default;
+
+@function use-font($map) {
+    $index: 1;
+
+    @each $font in $fonts {
+        $equal: true;
+
+        @each $key, $value in $map {
+            $equal: $equal and map.get($font, $key) == $value;
+        }
+
+        @if $equal {
+            $fonts: lst.set-nth($fonts, $index, map.merge($font, (used: true))) !global;
+            @return lst.nth($fonts, $index);
+        }
+        @else {
+            $index: $index + 1;
+        }
+    }
+
+    @return null;
+}
+
+@function map-font($args) {
+    $return: ();
+
+    @each $arg in $args {
+        @if is-number($arg) {
+            $return: map-value($return, ("weight"), $arg);
+        }
+        @else if is-string($arg) {
+            $return: map-value($return, ("family", "style"), $arg);
+        }
+    }
+
+    @return map.merge((family: null, weight: 400, style: normal), $return);
+}
+
+@mixin font($args...) {
+    $font: use-font(map-font($args));
+
+    @if $font != null {
+        font-family: map.get($font, family), map.get($font, generic);
+        font-style: map.get($font, style);
+        font-weight: map.get($font, weight);
+    }
+    @else {
+        @error 'Font was not found in $fonts !global: @include font(#{inspect($args)})';
+    }
+}

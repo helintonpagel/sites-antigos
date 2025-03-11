@@ -1,0 +1,62 @@
+@use 'sass:list' as lst;
+@use 'sass:math' as *;
+
+@function factorial($value) {
+    @if $value >= 0 {
+        $result: 1;
+
+        @if $value == 0 { @return $result; }
+
+        @for $index from 1 through $value {
+            $result: $result * $index;
+        }
+
+        @return $result;
+    }
+
+    @error '$value should be a positive integer: Given #{$value}';
+}
+
+@function combine($n, $itens) {
+    @return factorial($n) / (factorial($itens) * factorial($n - $itens));
+}
+
+@function add-points($point1, $point2) {
+    $result: ();
+
+    @for $i from 1 through 2 {
+        $result: lst.join($result, lst.nth($point1, $i) + lst.nth($point2, $i));
+    }
+
+    @return $result;
+}
+
+@function multiply-point($point, $factor) {
+    $result: ();
+
+    @for $i from 1 through 2 {
+        $result: lst.join($result, lst.nth($point, $i) * $factor);
+    }
+
+    @return $result;
+}
+
+@function bezier($t, $degree, $points) {
+    @if lst.length($points) > $degree {
+        $result: (0 0);
+
+        @for $i from 0 through $degree {
+            $result: add-points(
+                $result,
+                multiply-point(
+                    lst.nth($points, $i + 1),
+                    combine($degree, $i) * pow(1 - $t, $degree - $i) * pow($t, $i)
+                )
+            )
+        }
+
+        @return $result;
+    }
+
+    @error "Not enough points were given a curve of degree #{$degree}";
+}

@@ -1,0 +1,67 @@
+@use '../abstracts/all' as *;
+
+.menu {
+    @include breakpoint(900) {
+        @include margin(null 0 - $menu-gutter / 2);
+    }
+    
+    &__item {
+        @include breakpoint(900) {
+            @include padding(null $menu-gutter / 2);
+        
+            display: inline-block;
+            letter-spacing: rem(1px);
+
+            &:after {
+                @include margin(rem($dash-margin) null (0 - rem($dash-height + $dash-margin)));
+                @include transition(0.25s);
+
+                border-radius: rem($dash-height / 2);
+                content: '';
+                display: block;
+                height: rem($dash-height);
+                width: 0;
+            }
+
+            &:hover:after {
+                background: $alpha-color;
+                width: 100%;
+            }
+        }
+        
+        @include breakpoint(null 900) {
+            &:first-child {
+                @include padding(1, top);
+            }
+            
+            &:last-child {
+                @include padding(1, bottom);
+            }
+        }
+    }
+    
+    &__anchor {
+        @include font(Raleway, Medium);
+        @include font-rhythm(-0.5);
+        
+        color: $brand-color;
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        
+        @include breakpoint(null 900) {
+            @include font-rhythm(0.5);
+            @include padding(0.25 $trunk-space);
+            @include transition(0.25s);
+            
+            color: white;
+            display: block;
+            transform-origin: left center;
+            
+            &:hover {
+                background: white;
+                color: $brand-color;
+            }
+        }
+    }
+}

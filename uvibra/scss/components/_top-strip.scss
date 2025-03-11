@@ -1,0 +1,47 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.top-strip { 
+    @include font-rhythm(-1.5);
+
+    background-color: $light-color;
+    position: fixed;
+    text-align: right;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    
+    @media screen and (max-width: 899px) {
+        display: none;
+    }
+
+    &__column {
+        @include margin(($top-strip-height - 1) / 2 null);
+        height: rhythm(1);
+    }
+
+    &__icon-bar {
+        @include font-rhythm(-0.5);
+
+        display: inline-block;
+        vertical-align: -13%;
+    }
+
+    &__list {
+        display: inline-block;
+        margin-left: rhythm(0.25);
+    }
+
+    &__item {
+        display: inline-block;
+
+        &::after {
+            @include margin(null 0.25);
+            content: '|';
+        }
+    }
+
+    &__lang-bar {
+        display: inline-block;
+    }
+}

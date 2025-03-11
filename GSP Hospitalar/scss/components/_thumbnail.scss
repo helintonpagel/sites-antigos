@@ -1,0 +1,46 @@
+@use '../abstracts/all' as *;
+
+.thumbnail {
+    @include icon(zoom);
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    
+    @include breakpoint(null 900) {
+/*         height: rhythm($smaller-thumbnail-height);
+        width: rhythm($smaller-thumbnail-width); */
+    }
+    
+    &:before {
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        display: block;
+        font-size: scale-by(2);
+        height: 100%;
+        line-height: inherit;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transform: translateY(100%);
+        @include transition(0.25s);
+        z-index: 1;
+        width: 100%;
+        
+        @include breakpoint(null 900) {
+/*             line-height: rhythm($smaller-thumbnail-height); */
+        }
+    }
+    
+    &:hover:before {
+        transform: translateY(0%);
+    }
+    
+    &__image {
+        height: 100%;
+        @include margin(50%, left);
+        transform: translateX(-50%);
+        @include transition(0.5s);
+        width: auto;
+    }
+}

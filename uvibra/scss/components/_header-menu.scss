@@ -1,0 +1,21 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.header-menu {
+    &__item {
+        display: inline-block;
+        
+        &:last-of-type::after {
+            content: normal;
+        }
+        
+        &::after {
+            @include margin(null 1);
+            content: '|';
+            
+            @media screen and (max-width: 1199px) {
+                @include margin(null 0.5);
+            }
+        }
+    }
+}

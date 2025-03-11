@@ -1,0 +1,37 @@
+@use 'font' as *;
+@use 'list' as lst;
+@use 'config' as *;
+@use 'sass:string' as str;
+
+@mixin font-face($name, $variant: normal, $file) {
+    @font-face {
+        font-family: '#{$name}';
+        font-style: style-for($variant);
+        font-weight: weight-for($variant);
+
+        src: url('../fonts/#{$file}.eot');
+        src: (
+            url('../fonts/#{$file}.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/#{$file}.ttf') format('truetype'),
+            url('../fonts/#{$file}.woff') format('woff'),
+            url('../fonts/#{$file}.svg') format('svg')
+        );
+    }
+}
+
+@mixin regular-font-face($name, $weights-map: ()) {
+    $file: str.to-lower-case(
+        lst.concat($name, '')
+    );
+
+    @each $weight in $weights-map {
+        $weight: str.to-lower-case($weight);
+
+        @include font-face(
+            $name, $weight Normal, $file + -#{$weight}
+        );
+        @include font-face(
+            $name, $weight Italic, $file + -#{$weight}italic
+        );
+    }
+}

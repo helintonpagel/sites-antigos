@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>
+            GSP Hospitalar
+        </title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="theme-color" content="#009dd6"/>
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <script src="http://localhost/gsphospitalar/modelo/js/script.php"></script>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script> 
+    </head>
+    <body>
+        <header class="top-bar" id="top">
+            <div class="top-bar__trunk">
+                <h1 class="top-bar__logo">
+                    <a class="logo" href="home.php">
+                        <img class="logo__image" width="205" height="96" src="img/gsp-hospitalar-logo.svg" alt="GSP Hospitalar" />
+                    </a>
+                </h1>
+                <button class="top-bar__menu-button menu-button js-dropdown">
+                    Ver Menu
+                </button>
+                <div class="top-bar__content">
+                    <nav class="top-bar__menu">
+                        <ul class="menu">
+                            <li class="menu__item">
+                                <a class="menu__anchor" href="home.php">
+                                    Home
+                                </a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__anchor" href="empresa.php">
+                                    Empresa
+                                </a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__anchor" href="produtos.php">
+                                    Produtos
+                                </a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__anchor" href="informativos.php">
+                                    Informativos
+                                </a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__anchor" href="contatos.php">
+                                    Contato
+                                </a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__anchor" href="placeholder.php" target="_blank">
+                                    Cotação
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <ul class="top-bar__icon-bar icon-bar">
+                        <li class="icon-bar__item">
+                            <a class="icon-bar__icon whatsapp-icon" href="https://web.whatsapp.com/" target="_blank">
+                                Whatsapp
+                            </a>
+                        </li>
+                        <li class="icon-bar__item">
+                            <a class="icon-bar__icon facebook-icon" href="https://www.facebook.com/" target="_blank">
+                                Facebook
+                            </a>
+                        </li>
+                        <li class="icon-bar__item">
+                            <a class="icon-bar__icon instagram-icon" href="https://www.instagram.com/" target="_blank">
+                                Instagram
+                            </a>
+                        </li>
+                    </ul>
+                    <section class="top-bar__service service">
+                        <h2 class="service__heading">
+                            Atendimento
+                        </h2>
+                        <p class="service__paragraph">
+                            Segunda à sexta, das 8:00 às 17:00
+                        </p>
+                        <address>
+                            <ul>
+                                <li>
+                                    <a class="service__link" href="tel:05434343535">
+                                        (54) 3434-3535
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="service__link" href="mailto:contato@gsphospitalar.com">
+                                        contato@gsphospitalar.com
+                                    </a>
+                                </li>
+                            </ul>
+                        </address>
+                    </section>
+                </div>
+            </div>
+        </header>   
+        <article class="slideshow js-slideshow">
+            <ul>
+                <li class="slideshow__slide">
+                    <img class="slideshow__image" data-src="img/banner-1.png" width="958" height="456" role="presentation"/>
+                </li>
+                <li class="slideshow__slide">
+                    <img class="slideshow__image" data-src="img/banner-2.png" width="958" height="456" role="presentation"/>
+                </li>
+                <li class="slideshow__slide">
+                    <img class="slideshow__image" data-src="img/banner-3.png" width="958" height="456" role="presentation"/>
+                </li>
+                <li class="slideshow__slide">
+                    <img class="slideshow__image" data-src="img/banner-4.png" width="958" height="456" role="presentation"/>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <button class="slideshow__button slideshow-button--back" alt="Voltar Imagem"></button>
+                </li>
+                <li>
+                    <button class="slideshow__button slideshow-button--next" alt="Próxima Imagem"></button>
+                </li>
+            </ul>
+            <ul class="slideshow__breadcrumb breadcrumb">
+                <li class="breadcrumb__item">
+                    <button class="breadcrumb__button"></button>
+                </li>
+            </ul>
+        </article>
+        <article class="shelf">
+            <header class="shelf__stamp">
+                <h2 class="stamp">
+                    Qualidade dos Equipamentos
+                    <img class="stamp__image" src="img/stamp.svg" width="168" height="168" role="presentation"/>
+                </h2>
+                <a class="hanging-whatsapp" href="https://web.whatsapp.com/" target="_blank">
+                    <img class="hanging-whatsapp__image" src="img/whatsapp-brand.svg" alt="Whatsapp" width="72" height="72"/>
+                </a>
+            </header>
+            <div class="media">
+                <div class="media__left">
+                    <img class="shelf__image" width="684" height="456" src="img/farmaceutica-sorrindo.jpg" role="presentation"/>
+                </div>
+                <div class="shelf__content media__right">
+                    <p>
+                        Somos especialistas em tecnologia hospitalar, através de soluções inovadores capazes de humanizar a relação entre pacientes e profissionais da área da saúde. E isso é possível através da parceria com marcas reconhecidas mundialmente como referência no fornecimento de equipamentos, mobiliário e insumos para todos os departamentos hospitalares.
+                    </p>
+                    <a class="shelf__button button--dusky" href="produtos.php">
+                        Conheça nossos produtos
+                    </a>
+                </div>
+            </div>
+        </article>
+        <article class="pattern">
+            <div class="pattern__trunk">
+                <h2 class="pattern__logo logo">
+                    <img class="logo__image" width="205" height="96" src="img/gsp-hospitalar-logo.svg" alt="GSP Hospitalar"/>
+                </h2>
+                <p class="pattern__paragraph">
+                    Oferecemos soluções completas em equipamentos, consumíveis e mobiliário para a área médica e hospitalar, através de parcerias com as mais renomadas marcas do mercado, para sermos referência no cenário nacional, no fornecimento de produtos com alta qualidade técnica.
+                </p>
+                <a class="pattern__button button--light" href="empresa.php">
+                    Saiba mais
+                </a>
+            </div>
+        </article>
+        <article class="carousel">
+            <header class="carousel__trunk">
+                <h2 class="carousel__heading">
+                    Equipamentos, Mobiliário e Consumíveis
+                </h2>
+                <p class="carousel__paragraph">
+                    Conheça toda nossa linha de produtos hospitalares
+                </p>
+            </header>
+            <div class="carousel__trunk">
+                <div class="carousel__view js-carousel">
+                    <ul class="carousel__list">
+                        <li class="carousel__item">
+                            <a class="product" href="placeholder.php">
+                                <div class="product__curtain">
+                                    <h3 class="product__heading">
+                                        Maecenas eleifend
+                                    </h3>
+                                </div>
+                                <img class="product__image" width="240" height="240" src="img/produto-10.jpg" role="presentation"/>
+                            </a>
+                        </li>
+                        <li class="carousel__item">
+                            <a class="product" href="placeholder.php">
+                                <div class="product__curtain">
+                                    <h3 class="product__heading">
+                                        Donec non blandit
+                                    </h3>
+                                </div>
+                                <img class="product__image" width="240" height="240" src="img/produto-12.jpg" role="presentation"/>
+                            </a>
+                        </li>
+                        <li class="carousel__item">
+                            <a class="product" href="placeholder.php">
+                                <div class="product__curtain">
+                                    <h3 class="product__heading">
+                                        Facilisis tortor
+                                    </h3>
+                                </div>
+                                <img class="product__image" width="240" height="240" src="img/produto-11.jpg" role="presentation"/>
+                            </a>
+                        </li>
+                        <li class="carousel__item">
+                            <a class="product" href="placeholder.php">
+                                <div class="product__curtain">
+                                    <h3 class="product__heading">
+                                        Proin luctus
+                                    </h3>
+                                </div>
+                                <img class="product__image" width="240" height="240" src="img/produto-13.jpg" role="presentation"/>
+                            </a>
+                        </li>
+                        <li class="carousel__item">
+                            <a class="product" href="placeholder.php">
+                                <div class="product__curtain">
+                                    <h3 class="product__heading">
+                                        Donec egestas
+                                    </h3>
+                                </div>
+                                <img class="product__image" width="240" height="240" src="img/produto-15.jpg" role="presentation"/>
+                            </a>
+                        </li>
+                        <li class="carousel__item">
+                            <a class="product" href="placeholder.php">
+                                <div class="product__curtain">
+                                    <h3 class="product__heading">
+                                        Vestibulum dapibus
+                                    </h3>
+                                </div>
+                                <img class="product__image" width="240" height="240" src="img/produto-14.jpg" role="presentation"/>
+                            </a>
+                        </li>
+                        <li class="carousel__item">
+                            <a class="product" href="placeholder.php">
+                                <div class="product__curtain">
+                                    <h3 class="product__heading">
+                                        Phasellus volutpat
+                                    </h3>
+                                </div>
+                                <img class="product__image" width="240" height="240" src="img/produto-16.jpg" role="presentation"/>
+                            </a>
+                        </li>
+                        <li class="carousel__item">
+                            <a class="product" href="placeholder.php">
+                                <div class="product__curtain">
+                                    <h3 class="product__heading">
+                                        Pellentesque
+                                    </h3>
+                                </div>
+                                <img class="product__image" width="240" height="240" src="img/produto-17.jpg" role="presentation"/>
+                            </a>
+                        </li>
+                        <li class="carousel__item">
+                            <a class="product" href="placeholder.php">
+                                <div class="product__curtain">
+                                    <h3 class="product__heading">
+                                        Phasellus
+                                    </h3>
+                                </div>
+                                <img class="product__image" width="240" height="240" src="img/produto-19.jpg" role="presentation"/>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <ul>
+                    <li>
+                        <button class="carousel__chevron--back slideshow-button--back" title="Voltar produto"></button>
+                    </li>
+                    <li>
+                        <button class="carousel__chevron--next slideshow-button--next" title="Próximo produto"></button>
+                    </li>
+                </ul>
+            </div>
+            <a class="carousel__button button--alpha" href="#">
+                Faça sua cotação
+            </a>
+        </article>
+        <article class="agents">
+            <div class="agents__content">
+                <h2>
+                    Somos Representantes
+                </h2>
+                <ul class="agents__list">
+                    <li class="agents__logo">
+                        <a class="logo" href="https://www.umanomedical.com" target="_blank">
+                            <img class="logo__image" src="img/umano-medical-logo.png" width="82" height="96" alt="Umano Medical"/>
+                        </a>
+                    </li>
+                    <li class="agents__logo">
+                        <a class="logo" href="https://www.bmb-medical.com" target="_blank">
+                            <img class="logo__image" src="img/bmb-medical-logo.svg" width="391" height="96" alt="BMB Medical"/>
+                        </a>
+                    </li>
+                </ul>
+                <p class="agents__leader">
+                    A GSP Hospitalar, como representante de grandes marcas com UMANO MEDICAL e BMB Medical, traz para o mercado brasileiro, o que há de mais avançado em termos de tecnologia, design e inovação em equipamentos e mobiliário hospitalar.
+                </p>
+                <p>
+                    Acreditamos que a tecnologia e designs dos equipamentos médicos podem mudar a experiência de atendimento em saúde para os pacientes e cuidadores.
+                </p>
+            </div>
+        </article> 
+        <article class="newsletter">
+            <h2 class="newsletter__heading">
+                Newsletter
+            </h2>
+            <p class="newsletter__paragraph">
+                Cadastre seu e-mail e acompanhe nossas novidades.
+            </p>
+            <form class="newsletter__form form">
+                <label class="form__field js-field">
+                    <span class="form__label">
+                        Nome completo
+                    </span>
+                    <input class="form__input--light js-input" type="text" name="name"/>
+                </label>
+                <label class="form__field js-field">
+                    <span class="form__label">
+                        E-mail
+                    </span>
+                    <input class="form__input--light js-input" type="text" name="e-mail"/>
+                </label>
+                <aside class="newsletter__text form__text">
+                    <!-- <p class="alert--failure">
+                        Essa é uma mensagem de exemplo.
+                    </p> -->
+                    <p class="alert--loading">
+                        Essa é uma mensagem de exemplo...
+                    </p>
+                    <!-- <p class="alert--success">
+                        Essa é uma mensagem de exemplo!
+                    </p> -->
+                </aside>
+                <button class="newsletter__button button" type="submit">
+                    Enviar
+                </button>
+            </form>
+        </article>  
+        <footer class="footer">
+            <a class="hanging-chevron" href="#top" title="Ir para o topo"></a>
+            <div class="footer__row">
+                <div class="footer__column">
+                    <section class="footer__icon marker-icon">
+                        <div class="footer__context">
+                            <h2 class="footer__heading">
+                                Onde estamos
+                            </h2>
+                            <p class="footer__paragraph footer__leader">
+                                Rua Júlio de Castilhos, 01
+                                <br/>
+                                Bento Gonçalves - RS
+                                <br/>
+                                (CEP 95700-00)
+                            </p>
+                        </div>
+                    </section>
+                    <section class="footer__context footer__leader">
+                        <h2 class="footer__heading footer__icon clock-icon">
+                            Atendimento
+                        </h2>
+                        <p class="footer__indented-paragraph">
+                            Segunda à sexta, das 8:00 às 17:00
+                        </p>
+                    </section>
+                    <address>
+                        <ul class="footer__leader">
+                            <li class="footer__icon phone-icon">
+                                <a class="footer__link" href="tel:05434343535">
+                                    (54) 3434-3535
+                                </a>
+                            </li>
+                            <li class="footer__icon envelope-icon">
+                                <a class="footer__link" href="mailto:contato@gsphospitalar.com">
+                                    contato@gsphospitalar.com
+                                </a>
+                            </li>
+                        </ul>
+                    </address>
+                </div>
+                <section class="footer__column">
+                    <h2 class="footer__heading">
+                        Menu
+                    </h2>
+                    <ul class="footer__leader">
+                        <li>
+                            <a class="footer__link" href="home.php">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a class="footer__link" href="empresa.php">
+                                Empresa
+                            </a>
+                        </li>
+                        <li>
+                            <a class="footer__link" href="produtos.php">
+                                Produtos
+                            </a>
+                        </li>
+                        <li>
+                            <a class="footer__link" href="informativos.php">
+                                Informativos
+                            </a>
+                        </li>
+                        <li>
+                            <a class="footer__link" href="contatos.php">
+                                Contatos
+                            </a>
+                        </li>
+                        <li>
+                            <a class="footer__link" href="placeholder.php" target="_blank">
+                                Cotação
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+                <section class="footer__column">
+                    <h2 class="footer__heading">
+                        Categorias
+                    </h2>
+                    <ul class="footer__leader">
+                        <li>
+                            <a class="footer__link" href="produtos.php">
+                                Equipamentos
+                            </a>
+                        </li>
+                        <li>
+                            <a class="footer__link" href="produtos.php">
+                                Mobiliário
+                            </a>
+                        </li>
+                        <li>
+                            <a class="footer__link" href="produtos.php">
+                                Consumíveis
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+                <section class="footer__column">
+                    <h2 class="footer__heading">
+                        Siga a GSP
+                    </h2>
+                    <ul class="footer__leader icon-bar">
+                        <li class="footer__link icon-bar__item">
+                            <a class="icon-bar__icon whatsapp-icon" href="https://web.whatsapp.com/" target="_blank">
+                                Whatsapp
+                            </a>
+                        </li>
+                        <li class="footer__link icon-bar__item">
+                            <a class="icon-bar__icon facebook-icon" href="https://www.facebook.com/" target="_blank">
+                                Facebook
+                            </a>
+                        </li>
+                        <li class="footer__link icon-bar__item">
+                            <a class="icon-bar__icon instagram-icon" href="https://www.instagram.com/" target="_blank">
+                                Instagram
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            <aside class="footer__aside">
+                <h2 class="footer__logo logo">
+                    <img class="logo__image" width="205" height="96" src="img/gsp-hospitalar-light-logo.svg" alt="GSP Hospitalar" />
+                </h2>
+                <p class="footer__aside-paragraph">
+                    2021 - Todos os direitos reservados. Todas as imagens são meramente ilustrativas
+                </p>
+                <em class="footer__lock">
+                    Site Seguro
+                </em>
+                <section class="tooltip">
+                    <h3 class="tooltip__trigger logo">
+                        <img class="logo__image" width="193" height="24" src="img/goon-light-logo.svg" alt="Goon Design e Tecnologia" />
+                    </h3>
+                    <p class="tooltip__content">
+                        Goon Desing e Tecnologia, parceiro da sua empresa na web. Acesse e confira nossos projetos!
+                    </p>
+                </section>
+            </aside>
+        </footer> 
+    </body>
+</html>

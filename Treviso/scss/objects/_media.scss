@@ -1,0 +1,11 @@
+.media, %media {
+    overflow: hidden;
+
+    @at-root &__left {
+        float: left;
+    }
+
+    @at-root &__right {
+        float: right;
+    }
+}

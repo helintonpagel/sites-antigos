@@ -1,0 +1,17 @@
+@use 'sass:map';
+@use '../faces' as *;
+
+@mixin font($family, $member: regular) {
+    $config: map.get($faces, $family, $member);
+
+    @if ($config != null) {
+        font: {
+            family: map.get($config, "family");
+            style: map.get($config, "style");
+            weight: map.get($config, "weight");
+        }
+    }
+    @else {
+        @error "Family or member was not found: #{$family} #{$member}";
+    }
+}

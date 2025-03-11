@@ -1,0 +1,48 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.about {
+    background: {
+        image: radial-gradient(closest-side, hsl(0, 0%, 88%) 0% 40%, transparent 40%);
+        position: center;
+        size: rem(8px) rem(8px);
+    }
+   
+     
+    &__pillar {
+        @include padding(2 2 * $gutter);
+        
+        
+        @media (min-width: 900px) {
+            @include padding(3 $gutter);
+            
+            display: table;
+            table-layout: fixed;
+        }
+    }
+    
+    &__header {
+        @media (min-width: 900px) {
+            box-sizing: border-box;
+            display: table-cell;
+            padding-right: rhythm(3 * $gutter);
+            width: 50%;
+        }
+    }
+    
+    &__paragraph {
+        @include margin(1.5 null);
+        
+        @media (min-width: 600px) {
+            @include font-rhythm(1.5, rhythm(1.5));
+            margin-bottom: 0;
+        }
+    }
+    
+    &__button {
+        display: table-cell;
+        width: 50%;
+        text-align: center;
+        vertical-align: middle;
+    }
+}

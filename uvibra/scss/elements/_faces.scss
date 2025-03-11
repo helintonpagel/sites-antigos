@@ -1,0 +1,79 @@
+@use 'sass:map';
+
+$list: (
+    (
+        name: "Neutra Text",
+        path: "../fonts/neutratextbook",
+        style: normal,
+        weight: 400
+    )
+    (
+        name: "Neutra Text",
+        path: "../fonts/neutratextbookitalic",
+        style: italic,
+        weight: 400
+    )
+    (
+        name: "Neutra Text",
+        path: "../fonts/neutratextbold",
+        style: normal,
+        weight: 700
+    )
+    (
+        name: "Neutra Text",
+        path: "../fonts/neutratextbolditalic",
+        style: italic,
+        weight: 700
+    )
+    (
+        name: "Chalet Book",
+        path: "../fonts/chaletbookregular",
+        style: normal,
+        weight: 400
+    )
+    (
+        name: "Chalet Book",
+        path: "../fonts/chaletbookitalic",
+        style: italic,
+        weight: 400
+    )
+    (
+        name: "Chalet Book",
+        path: "../fonts/chaletbookbold",
+        style: normal,
+        weight: 700
+    )
+    (
+        name: "Chalet Book",
+        path: "../fonts/chaletbookbolditalic",
+        style: italic,
+        weight: 700
+    )
+    (
+        name: "Icomoon",
+        path: "../fonts/icomoon",
+        style: normal,
+        weight: 400
+    )
+);
+
+@each $face in $list {
+    $name: map.get($face, "name");
+    $path: map.get($face, "path");
+
+    @if ($path != null and $name != null) {
+        @font-face {
+            font-family: $name;
+            font-style: map.get($face, "style");
+            font-weight: map.get($face, "weight");
+            
+            src: url("#{$path}.eot");
+            src: (
+                url("#{$path}.eot?#iefix") format("embedded-opentype"),
+                url("#{$path}.ttf") format("truetype"),
+                url("#{$path}.woff") format("woff"),
+                url("#{$path}.svg") format("svg")
+            );
+        }
+    }
+}

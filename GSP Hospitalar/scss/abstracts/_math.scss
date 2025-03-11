@@ -1,0 +1,18 @@
+@forward 'sass:math';
+
+@use 'config' as *;
+@use 'sass:math' as *;
+
+@function is-absolute($value) {
+    @return (
+        $value != null and unitless($value) == false and compatible($value, 1px)
+    );
+}
+
+@function rem($value) {
+    @if is-absolute($value) == false {
+        @error 'Argument does not have an absolute unit';
+    }
+    
+    @return $value / $font-size * 1rem;
+}

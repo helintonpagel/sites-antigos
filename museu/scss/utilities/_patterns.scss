@@ -1,0 +1,14 @@
+@use 'all' as *;
+@use '../config' as *;
+
+/*
+* patterns
+*/
+
+@mixin heading-rect {
+    @include margin(null -0.1875em);
+    @include padding(null 0.1875em);
+
+    background-color: $theme-color-1;
+    color: white;
+}

@@ -1,0 +1,61 @@
+@use 'sass:math' as *;
+@use 'sass:list' as lst;
+@use '../abstracts/all' as *;
+
+.product {
+    display: inline-block;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    
+    &__curtain {
+        background: rgba(0, 0, 0, 0.5);
+        box-sizing: border-box;
+        color: white;
+        height: 100%;
+        @include padding(null $trunk-space);
+        position: absolute;
+        text-align: center;
+        transform: translateY(100%);
+        @include transition(0.5s);
+        vertical-align: middle;
+        width: 100%;
+        z-index: 1;
+        
+        &:before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            margin-left: rem(-5px);
+            vertical-align: middle;
+        }
+    }
+    
+    &:hover &__curtain {
+        transform: translateY(0);
+    }
+    
+    &__heading {
+        color: inherit;
+        display: inline-block;
+        @include font(Poppins, Medium);
+        vertical-align: middle;
+        
+        @include breakpoint(null 1200) {
+            @include font-rhythm(1);
+        }
+    }
+    
+    &__image {
+        height: auto;
+        @include margin(50%, top);
+        transform: translateY(-50%);
+        @include transition(0.5s);
+        width: 100%;
+    }
+    
+    &:hover &__image {
+        transform: translateY(-50%) scale(1.2);
+    }
+}

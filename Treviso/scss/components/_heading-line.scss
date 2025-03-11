@@ -1,0 +1,18 @@
+@use '../abstracts/all' as *;
+
+.heading-line:before, .heading-line:after {
+  background: $copper;
+  content: ' ';
+  display: inline-block;
+  height: rem(1px);
+  vertical-align: middle;
+  width: 26%;
+  
+  @media (max-width: rem(900px)) {
+    width: 14.7%;
+  }
+  
+  @media (max-width: rem(600px)) {
+    display: none;
+  }
+}

@@ -1,0 +1,127 @@
+@use 'sass:color';
+@use '../abstracts/all' as *;
+
+// it could be an object instead
+
+.form {
+    margin: {
+        left: auto;
+        right: auto;
+        top: rhythm(2);
+    }
+    max-width: rem(890px);
+    text-align: center;
+    
+    
+    @at-root &__field, &__field--textarea {
+        @include font-rhythm(1);
+        
+        border: solid color(copper) 1px;
+        display: block;
+        font: 0;
+        height: rhythm(2, 2px);
+        letter-spacing: rem(1px);
+        line-height: rhythm(2, 2px);
+        margin-top: rhythm(1, 1px);
+        padding-left: rhythm(0.5);
+        padding-right: rhythm(0.5);
+        position: relative;
+        text-align: left;
+    }
+    
+    @at-root &__field--textarea {
+        display: block;
+        height: rhythm(8);
+        min-height: rhythm(2);
+        resize: vertical;
+        overflow: auto;
+    }
+    
+    @at-root &__placeholder {
+        display: block;
+        
+        @at-root .is-active & {
+            display: none;
+        }
+    }
+    
+    @at-root &__input, &__input--textarea {
+        box-sizing: border-box;
+        height: rhythm(2);
+        left: 0;
+        letter-spacing: rem(1px);
+        line-height: rhythm(2, 2px);
+        height: rhythm(2, 2px);
+        padding-left: rhythm(0.5);
+        padding-right: rhythm(0.5);
+        position: absolute;
+        top: 0;
+    }
+    
+    @at-root &__input--textarea {
+        @include font-rhythm(1);
+        
+        height: calc(100% - #{rhythm(0.5, 1px)});
+        resize: none;
+        top: rhythm(0.5, 1px);
+    }
+    
+    @at-root &__inline {
+        @include font(sans-serif, 500);
+        
+        cursor: pointer;
+        letter-spacing: rem(1px);
+        display: inline-block;
+        margin: {
+            top: rhythm(2);
+        }
+    }
+    
+    @at-root &__checkbox {
+        @include icon(check);
+        
+        display: inline-block;
+        font-size: rhythm(0.5);
+        line-height: rhythm(0.6);
+        height: rhythm(0.6);
+        width: rhythm(0.6);
+        border: solid color(copper) rem(1px);
+        vertical-align: baseline;
+        margin-right: rhythm(0.125);
+        color: transparent;
+        background: transparent;
+        transition-duration: 0.25s;
+        
+        @at-root input:checked ~ & {
+            color: color(vista-white);
+            background: color(copper);
+        }
+        
+        &:before {
+            display: block;
+            text-align: right;
+        }
+    }
+    
+    @at-root &__error, &__success {
+        margin-top: rhythm(1);
+        
+        &:before {
+            vertical-align: bottom;
+        }
+    }
+    
+    @at-root &__error {
+        @include icon(cancel);
+        
+        font-weight: 700;
+        color: hsl(0, 90%, 60%);
+    }
+    
+    @at-root &__success {
+        @include icon(check);
+        
+        color: hsl(120, 90%, 70%);
+        font-weight: 700;
+    }
+}

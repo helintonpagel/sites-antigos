@@ -1,0 +1,160 @@
+$faces: (
+    Aguafina: (
+        regular: (
+            family: ("Aguafina Script", cursive),
+            style: normal,
+            weight: 400,
+            font-face: (
+                name: "Aguafina Script",
+                path: "../fonts/aguafina",
+                formats: (eot, ttf, woff, svg),
+            ),
+        ),
+    ),
+    Bell: (
+        regular: (
+            family: ("Bell MT", fantasy),
+            style: normal,
+            weight: 400,
+            font-face: (
+                name: "Bell MT",
+                path: "../fonts/bell",
+                formats: (eot, ttf, woff, svg),
+            ),
+        ),
+    ),
+    Icomoon: (
+        regular: (
+            family: Icomoon,
+            style: normal,
+            weight: 400,
+            font-face: (
+                name: Icomoon,
+                path: "../fonts/icomoon",
+                formats: (eot, ttf, woff, svg),
+            ),
+        ),
+    ),
+    Montserrat: (
+        bold: (
+            family: (Montserrat, sans-serif),
+            style: normal,
+            weight: 700,
+            font-face: (
+                name: Montserrat,
+                path: "../fonts/montserrat-bold",
+                formats: (eot, ttf, woff, svg),
+            ),
+        ),
+        bold-italic: (
+            family: (Montserrat, sans-serif),
+            style: italic,
+            weight: 700,
+            font-face: (
+                name: Montserrat,
+                path: "../fonts/montserrat-bolditalic",
+                formats: (eot, ttf, woff, svg),
+            ),
+        ),
+        extra-light: (
+            family: (Montserrat, sans-serif),
+            style: normal,
+            weight: 200,
+            font-face: (
+                name: Montserrat,
+                path: "../fonts/montserrat-extralight",
+                formats: (eot, ttf, woff, svg),
+            ),
+        ),
+        extra-light-italic: (
+            family: (Montserrat, sans-serif),
+            style: italic,
+            weight: 200,
+            font-face: (
+                name: Montserrat,
+                path: "../fonts/montserrat-extralightitalic",
+                formats: (eot, ttf, woff, svg),
+            ),
+        ),
+        italic: (
+            family: (Montserrat, sans-serif),
+            style: italic,
+            weight: 400,
+            font-face: (
+                name: Montserrat,
+                path: "../fonts/montserrat-italic",
+                formats: (eot, ttf, woff, svg),
+            ),
+        ),
+        light: (
+            family: (Montserrat, sans-serif),
+            style: normal,
+            weight: 300,
+            font-face: (
+                name: Montserrat,
+                path: "../fonts/montserrat-light",
+                formats: (eot, ttf, woff, svg),
+            ),
+        ),
+        light-italic: (
+            family: (Montserrat, sans-serif),
+            style: italic,
+            weight: 300,
+            font-face: (
+                name: Montserrat,
+                path: "../fonts/montserrat-lightitalic",
+                formats: (eot, ttf, woff, svg),
+            ),
+        ),
+        medium: (
+            family: (Montserrat, sans-serif),
+            style: normal,
+            weight: 500,
+            font-face: (
+                name: Montserrat,
+                path: "../fonts/montserrat-medium",
+                formats: (eot, ttf, woff, svg),
+            ),
+        ),
+        medium-italic: (
+            family: (Montserrat, sans-serif),
+            style: italic,
+            weight: 500,
+            font-face: (
+                name: Montserrat,
+                path: "../fonts/montserrat-mediumitalic",
+                formats: (eot, ttf, woff, svg),
+            ),
+        ),
+        regular: (
+            family: (Montserrat, sans-serif),
+            style: normal,
+            weight: 400,
+            font-face: (
+                name: Montserrat,
+                path: "../fonts/montserrat-regular",
+                formats: (eot, ttf, woff, svg),
+            ),
+        ),
+        semi-bold: (
+            family: (Montserrat, sans-serif),
+            style: normal,
+            weight: 600,
+            font-face: (
+                name: Montserrat,
+                path: "../fonts/montserrat-semibold",
+                formats: (eot, ttf, woff, svg),
+            ),
+        ),
+        semi-bold-italic: (
+            family: (Montserrat, sans-serif),
+            style: italic,
+            weight: 600,
+            font-face: (
+                name: Montserrat,
+                path: "../fonts/montserrat-semibolditalic",
+                formats: (eot, ttf, woff, svg),
+            ),
+        ),
+    ),
+);

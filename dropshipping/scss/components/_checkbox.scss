@@ -1,0 +1,41 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.checkbox {
+    @include font-rhythm(ratio(-1));
+    
+    cursor: pointer;
+    font-weight: 500;
+    
+    &:focus-within {
+        outline-color: currentColor;
+        outline-offset: rem(2px);
+        outline-style: dashed;
+        outline-width: rem(2px);
+    }
+    
+    &__input {
+        @include hide-visually;
+    }
+    
+    &__icon {
+        @include transition(fill);
+        
+        background-color: transparent;
+        border-color: $theme-color-1;
+        border-radius: 0.25em;
+        border-style: solid;
+        border-width: rem(1px);
+        box-sizing: border-box;
+        fill: transparent;
+        font-size: 1.375em;
+        height: 1em;
+        margin-right: 0.25em;
+        vertical-align: -0.1875em;
+        width: 1em;
+    }
+    
+    &__input:checked + &__icon {
+        fill: $theme-color-1;
+    }
+}

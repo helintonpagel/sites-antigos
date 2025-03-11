@@ -1,0 +1,145 @@
+@use 'sass:color';
+@use '../abstracts/all' as *;
+
+.contact {
+    @include padding(3 null);
+    
+    background: {
+        image: url(../img/waves.jpg);
+        position: center -60%;
+        repeat: no-repeat;
+        size: cover;
+    }
+    
+    @include breakpoint(1500) {
+        background: {
+            position: center -20%;
+        }
+    }
+    
+    @include breakpoint(null 1200) {
+        background: {
+            size: auto rem(1200px);
+        }
+    }
+    
+    @include breakpoint(null 900) {
+        background: {
+            position: center -1000%;
+        }
+    }
+    
+    @include breakpoint(null 600) {
+        background: transparent;
+    }
+    
+    &__heading {
+        text-align: center;
+        
+        @include breakpoint(null 600) {
+            @include font-rhythm(2.5);
+        }
+    }
+    
+    &__context {
+        overflow: hidden;
+        @include padding(1, bottom);
+        @include trunk;
+    }
+    
+    &__column {
+        box-sizing: border-box;
+        float: left;
+        @include margin(2, top);
+        @include padding($trunk-space, right);
+        width: 100% - $contact-form-width;
+        
+        @include breakpoint(null 900) {
+            text-align: center;
+            width: 100%;
+        }
+    }
+    
+    &__icon {
+        color: $jacarta;
+        display: block;
+        position: relative;
+        
+        &:before {
+            @include font-rhythm(0);
+            @include margin(0.5, right);
+            text-align: center;
+            width: rem(21px);
+        }
+        
+        @each $icon-name in (marker, phone, envelope) {
+            &.#{$icon-name}-icon {
+                @include icon($icon-name)
+            }
+        }
+    
+        &.marker-icon:before {
+            @include breakpoint(900) {
+                @include font-rhythm(1.5);
+                position: absolute;
+                left: rem(-34px);
+            }
+            
+            @include breakpoint(null 900) {
+                @include font-rhythm(1, rhythm(0.5));
+            }
+        }
+    
+        &.envelope-icon:before {
+            @include font-rhythm(-1);
+        }
+    }
+
+    &__locale, &__link {
+        color: $jacarta;
+        @include font-rhythm(1);
+    }
+
+    &__locale {
+        @include margin(3, top);
+        
+        @include breakpoint(null 900) {
+            @include margin(2, top);
+        }
+        
+        @include breakpoint(900) {
+            margin-left: rem(32px);;
+        }
+    }
+
+    &__context {
+        overflow: hidden;
+    }
+
+    &__leading {
+        @include margin(1, top)
+    }
+    
+    &__link {
+        display: inline-block;
+        text-decoration: none;
+        @include transition(0.25s);
+        
+        &:hover {
+            color: color.change($jacarta, $lightness: 75%);
+            // transform: scale(1.05);
+            // transform-origin: left top;
+        }
+    }
+    
+    &__form {
+        float: right;
+        @include margin(2, top);
+        width: $contact-form-width;
+        
+        @include breakpoint(null 900) {
+            text-align: center;
+            width: 100%;
+        }
+    }
+}

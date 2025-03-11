@@ -1,0 +1,62 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.short {
+    @include wrapper;
+    
+    padding-bottom: rhythm(1);
+    text-align: center;
+    
+    &__wrapper {
+        @media screen and (min-width: 900px) {
+            position: relative;
+            width: 50%;
+        }
+    }
+    
+    &__heading {
+        @include hide-visually;
+    }
+    
+    &__paragraph {
+        text-align: left;
+        
+        @media screen and (max-width: 899px) {
+            margin-top: rhythm(1);
+        }
+    }
+    
+    &__image {
+        @media screen and (min-width: 900px) {
+            height: auto;
+            position: absolute;
+            right: -100%;
+            top: rhythm(-10.5);
+            width: 87.5%;
+        }
+        
+        @media screen and (max-width: 1199px) {
+            top: rhythm(-6.5);
+        }
+        
+        @media screen and (max-width: 899px) {
+            @include margin(rhythm(1) auto null);
+            
+            display: block;
+            height: rhythm(10);
+            width: auto;
+        }
+        
+        @media screen and (max-width: 599px) {
+            @include margin(rhythm(1) auto null);
+            
+            display: block;
+            height: rhythm(8);
+            width: auto;
+        }
+    }
+    
+    &__button {
+        margin-top: rhythm(1.5);
+    }
+}

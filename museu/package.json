@@ -1,0 +1,23 @@
+{
+  "name": "museu",
+  "version": "1.0.0",
+  "description": "Mudeu do Imigrante",
+  "main": "index.js",
+  "watch": {
+    "build-js": {
+      "quiet": false,
+      "patterns": [
+        "js/src"
+      ],
+      "extensions": "js"
+    }
+  },
+  "scripts": {
+    "build-js": "browserify -t [ /usr/lib/node_modules/babelify/index.js --presets [ /usr/lib/node_modules/@babel/preset-env ] ] ./js/src/index.js -o ./js/index.js",
+      "build-js:watch": "npm-watch build-js",
+      "build-css": "sass ./scss/style.scss ./css/style.css",
+      "build-css:watch": "sass ./scss/style.scss ./css/style.css --watch"
+  },
+  "author": "Hélinton Mello",
+  "license": "ISC"
+}

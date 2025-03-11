@@ -1,0 +1,20 @@
+@use '../abstracts/all' as *;
+
+.heading {
+    @include font(Raleway, Medium);
+    @include font-rhythm(2);
+
+    color: $gamma-color;
+    letter-spacing: rem(1px);
+
+    &:before  {
+        @include margin(null 12px null -25px);
+
+        background-color: $gamma-color;
+        content: '';
+        display: inline-block;
+        height: rhythm(3);
+        vertical-align: -50%;
+        width: rem(5px);
+    }
+}

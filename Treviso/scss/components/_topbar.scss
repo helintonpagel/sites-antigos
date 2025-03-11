@@ -1,0 +1,96 @@
+@use '../abstracts/functions' as *;
+
+.topbar {
+    box-sizing: border-box;
+    padding: {
+        top: 0.75rem;
+    }
+    height: lines(3);
+    position: relative;
+
+    @at-root &__left {
+        float: left;
+    }
+
+    @at-root &__right {
+        float: right;
+        padding: {
+            top: 0.75rem;
+        }
+    }
+    
+    @at-root &__button {
+        background: {
+            image: url(../img/svg/bars.svg);
+            position: center;
+            size: 100% auto;
+        };
+        display: block;
+        height: lines(1.25);
+        margin-top: lines(-0.125);
+        width: lines(1.25);
+        text-indent: -99999px;
+        
+        &.show {
+            background: {
+                image: url(../img/svg/close.png);
+            };
+        }
+
+        @media screen and (min-width: 900px) {
+            display: none;
+        }
+    }
+    
+    @media (min-width: 900px) {
+        &__menu, &__social {
+            display: inline-block;
+        }
+    }
+    
+    
+    @media (max-width: 899px) {
+        @at-root &__dropdown {
+            background: #424242;
+            display: none;
+            position: absolute;
+            top: lines(3);
+            right: 0px;
+            height: calc(100vh - 72px);
+            width: 100%;
+            z-index: 15;
+            overflow: scroll;
+
+            @at-root .show ~ & {
+                display: block;
+            }
+        }
+    }
+    
+    
+}
+
+.header__address {
+    padding: 1.5rem 0 3rem 1.5rem;
+    h2 {
+        text-transform: uppercase;
+        margin-bottom: 0.75rem;
+    }
+    
+    * {
+        color: #bebebe;
+        text-decoration: none;
+    }
+    
+    aside svg {
+        float: left;
+    }
+    
+    aside p {
+        overflow: hidden;
+    }
+    
+    @media (min-width: 900px) {
+        display: none;
+    }
+}

@@ -1,0 +1,31 @@
+@use 'sass:color';
+@use '../abstracts/all' as *;
+
+.tab-menu {
+    overflow: hidden;
+    
+    @at-root &__tab {
+        box-sizing: border-box;
+        float: left;
+        width: 50%;
+    }
+    
+    @at-root &__button {
+        @include font-rhythm(1);
+        
+        background-color: $outer-space;
+        font-weight: 300;
+        letter-spacing: rem(2px);
+        padding: {
+            bottom: rhythm(0.5);
+            top: rhythm(1);
+        }
+        width: 100%;
+        text-transform: uppercase;
+        transition-duration: 0.25s;
+        
+        &.is-active {
+            background-color: $side-bar-background;
+        }
+    }
+}

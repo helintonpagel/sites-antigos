@@ -1,0 +1,130 @@
+@use '../maximo-abstracts/all' as *;
+
+.slideshow {
+    position: relative;
+    height: rhythm(26);
+    
+    @include breakpoint(900px) {
+        height: rhythm(15);
+    }
+    
+    @include breakpoint(600px) {
+        background: {
+            image: url('../img/wine-shelf.jpg');
+            size: cover;
+            position: center;
+        }
+    }
+    
+    @at-root &__slide {
+        height: rhythm(21);
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+        transition-duration: 0.5s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        
+        &.show {
+            opacity: 1;
+        }
+        
+        @include breakpoint(900px) {
+            margin-top: rhythm(15 / 2);
+        }
+        
+        @include breakpoint(600px) {
+            display: none;
+        }
+    }
+
+    @at-root &__image {
+        height: 100%;
+        width: auto;
+    }
+    
+    @at-root &__back, &__next {
+        background: {
+            image: url(../img/svg/arrow-left.svg);
+            repeat: no-repeat;
+            position: center;
+            size: 50% 50%;
+        };
+        font-size: 0;
+        opacity: 0.1;
+        position: absolute;
+        top: rhythm(9);
+        height: rhythm(3);
+        width: rhythm(3);
+        transition-duration: 0.25s;
+        
+        &:hover {
+            opacity: 0.5;
+        }
+        
+        @include breakpoint(900px) {
+            top: rhythm(6);
+        }
+        
+        @include breakpoint(600px) {
+            display: none;
+        }
+    }
+    
+    @at-root &__back {
+        background: {
+            image: url(../img/svg/arrow-left.svg);
+        };
+        left: rhythm(5);
+        
+        @include breakpoint(1300px) {
+            left: rhythm(1.5);
+        }
+    }
+    
+    @at-root &__next {
+        background: {
+            image: url(../img/svg/arrow-right.svg);
+        };
+        right: rhythm(5);
+        
+        @include breakpoint(1300px) {
+            right: rhythm(1.5);
+        }
+    }
+    
+    @at-root &__thumbnail-bar {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: left;
+        transform: translateX(50%);
+/*         width: 100vw; */
+    }
+
+    @at-root &__thumbnail {
+        display: inline-block;
+        height: rhythm(4);
+        margin: 0 4.5px;
+        cursor: pointer;
+        
+        &:first-child {
+            margin-left: rhythm(-21 * 0.75);
+        }
+        
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    
+    & .ss {
+/*         position: absolute;
+        bottom: 0;
+        background: red;
+        height: rhythm(4);
+        width: calc(100% - 756px); */
+    }
+}

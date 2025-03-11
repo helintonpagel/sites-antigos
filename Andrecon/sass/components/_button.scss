@@ -1,0 +1,26 @@
+@use 'sass:color';
+@use '../abstracts/all' as *;
+
+.button {
+    @include padding(null 1.5);
+    @include transition(0.25s);
+    
+    background-color: $brand-color;
+    border: {
+        color: $brand-color;
+        radius: rem(3px);
+        style: solid;
+        width: rem(1px);
+    }
+    box-sizing: border-box;
+    color: white;
+    display: inline-block;
+    height: rhythm($button-height);
+    line-height: rhythm($button-height);
+    text-decoration: none;
+    
+    &:hover {
+        background-color: white;
+        color: $brand-color;
+    }
+}

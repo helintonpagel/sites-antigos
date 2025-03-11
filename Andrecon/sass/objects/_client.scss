@@ -1,0 +1,48 @@
+@use '../abstracts/all' as *;
+
+.client {
+    @include padding(3 null);
+    
+    background-color: $alpha-color;
+    color: white;
+    
+    &__content {
+        @include trunk;
+    }
+    
+    &__heading {
+        @include font(Raleway, Medium);
+        text-align: center;
+    }
+    
+    &__list {
+        @include margin(null (0 - $trunk-space / 2));
+        font-size: 0;
+    }
+    
+    &__item {
+        @include margin(1, top);
+        @include padding(null $trunk-space / 2);
+        
+        box-sizing: border-box;
+        display: inline-block;
+        text-align: center;
+        width: (100% / 7);
+        
+        @include breakpoint(null 800) {
+            width: (100% / 6);
+        }
+        
+        @include breakpoint(null 700) {
+            width: (100% / 5);
+        }
+        
+        @include breakpoint(null 600) {
+            width: (100% / 4);
+        }
+        
+        @include breakpoint(null 500) {
+            width: (100% / 3);
+        }
+    }
+}

@@ -1,0 +1,45 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.message {
+    @include font-rhythm(ratio(-1));
+    
+    color: $body-back;
+    display: inline-block;
+    font-weight: 500;
+    position: relative;
+    vertical-align: middle;
+    width: 100%;
+    
+    &__input {
+        @include padding(rhythm(0.5) 1em);
+        
+        background-color: white;
+        box-sizing: border-box;
+        height: rhythm(6);
+        max-height: rhythm(12);
+        min-height: rhythm(1.5);
+        resize: vertical;
+        width: 100%;
+    
+        &:focus {
+            outline-color: $theme-color-1;
+            outline-style: dashed;
+            outline-offset: rem(5px);
+            outline-width: rem(2px);
+        }
+    }
+    
+    &__label {
+        cursor: text;
+        left: 1em;
+        line-height: leading(ratio(-1, $base-font-size), $addend: 1);
+        padding-left: inherit;
+        position: absolute;
+        top: 0;
+    }
+    
+    &__input--active + &__label {
+        opacity: 0;
+    }
+}

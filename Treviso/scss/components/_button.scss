@@ -1,0 +1,28 @@
+@use '../abstracts/mixins' as *;
+
+.button {
+    box-sizing: border-box;
+    outline: {
+        color: white;
+        style: solid;
+        width: 0.0625rem;
+    }
+    color: white;
+    display: inline-block;
+    @include font((size: 0.8125rem));
+    padding: {
+        bottom: 0.375rem;
+        left: 1.5rem;
+        right: 1.5rem;
+        top: 0.375rem;
+    }
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.25s ease-in;
+
+    &:hover {
+        background: white;
+        color: #424242;
+    }
+}

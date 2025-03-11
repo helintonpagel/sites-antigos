@@ -1,0 +1,69 @@
+@use '../abstracts/all' as *;
+
+.select {
+    height: rhythm(1);
+    position: relative;
+    
+    &__button {
+        @include icon(chevron-down, after);
+        @include transition(0.25s);
+        
+        vertical-align: middle;
+        
+        &:hover {
+            color: $gamma-color;
+        }
+        
+        &:after {
+            @include margin(0.125, left);
+            @include transition(0.25s);
+            
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        &.show:after {
+            transform: rotateZ(180deg);
+        }
+    }
+    
+    &__list {
+        @include transition(0.25s);
+        
+        background: white;
+        box-shadow: (
+            0 0 rem(6px) 0 rgba(0, 0, 0, 0.2), 0 0 rem(3px) 0 rgba(0, 0, 0, 0.3)
+        );
+        display: inline-block;
+        left: 0;
+        max-height: 0px;
+        overflow: hidden;
+        position: absolute;
+        top: rhythm(1.5);
+        z-index: 1;
+        
+        @at-root .show ~ & {
+            max-height: rhythm(8);
+        }
+    }
+    
+    &__item {
+        @include padding(null 0.5);
+        @include transition(0.25s);
+        
+        cursor: pointer;
+        
+        &:first-child {
+            @include margin(0.5, top);
+        }
+        
+        &:last-child {
+            @include margin(0.5, bottom);
+        }
+        
+        &:hover {
+            background: $brand-color;
+            color: white;
+        }
+    }
+}

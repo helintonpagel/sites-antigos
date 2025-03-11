@@ -1,0 +1,14 @@
+@use '../abstracts/all' as *;
+
+@include regular-font-face(
+    Poppins,
+    Bold Light Medium Regular Semibold
+);
+
+@include font-face(
+    Icomoon, Heavy Normal, "icons/Icomoon"
+);
+
+@include font-face(
+    Roboto, Light Italic, "roboto-lightitalic"
+);

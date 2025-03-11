@@ -1,0 +1,121 @@
+@use '../abstracts/all' as *;
+
+.top-bar {
+    box-shadow: rem(1px) rem(0px) rem(7px) rem(3px) rgba(0, 0, 0, 0.5);
+    color: $jacarta;
+    height: rhythm($header-height);
+    position: relative;
+    z-index: 2;
+    
+    @include breakpoint(null 1200) {
+        height: rhythm($minimum-header-height);
+    }
+    
+    &__trunk {
+        @include trunk;
+        &:before {
+            content: '';
+            display: inline-block;
+            height: rhythm($header-height);
+            vertical-align: middle;
+
+            @include breakpoint(null 1200) {
+                height: rhythm($minimum-header-height);
+            }
+        }
+    }
+    
+    &__logo {
+        display: inline-block;
+        height: rhythm($logo-height);
+        @include transition(0.25s);
+        vertical-align: middle;
+        
+        &:hover {
+            transform: scale(1.05);
+        }
+        
+        @include breakpoint(null 1200) {
+            height: rhythm($minimum-logo-height);
+        }
+    }
+    
+    &__menu-button {
+        display: none;
+    
+        @include breakpoint(null 1200) {
+            display: block;
+            float: right;
+            @include margin(
+                rhythm($minimum-header-height - $header-button-size) / 2, top
+            );
+        }
+    }
+    
+    &__content {
+        float: right;
+        @include margin(
+            ($header-height - 1) / 2, top
+        );
+        
+        @include breakpoint(null 1200) {
+            background-color: $jacarta;
+            box-sizing: border-box;
+            color: white;
+            display: block;
+            min-height: 100vh;
+            min-height: calc(100vh - #{rhythm($header-height)});
+            right: 0;
+            margin: 0;
+            max-width: rem(450px);
+            @include padding(rhythm(2) $trunk-space);
+            position: absolute;
+            top: $minimum-header-height;
+            transform: perspective(1000px) rotateY(-90deg);
+            transform-origin: right top;
+            z-index: 3;
+            width: 100%;
+            @include transition(0.5s);
+            
+            @at-root .is-active ~ & {
+                display: block;
+                opacity: 1;
+                transform: perspective(1000px) rotateY(0deg);
+            }
+        }
+        
+        @include breakpoint(600 900) {
+            width: 50%;
+        }
+        
+        @include breakpoint(null 600) {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+    
+    &__menu {
+        @include breakpoint(1200) {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+    
+    &__icon-bar {
+        @include breakpoint(1200) {
+            display: inline-block;
+            @include margin($header-gutter / 2, left);
+            vertical-align: middle;
+        }
+        
+        @include breakpoint(null 1200) {
+            @include margin(2, top);
+        }
+    }
+    
+    &__service {
+        @include breakpoint(1200) {
+            display: none;
+        }
+    }
+}

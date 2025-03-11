@@ -1,0 +1,52 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.footer {
+    &__wrapper {
+        @include wrapper;
+    }
+    
+    &__column {
+        display: inline-block;
+        margin-right: -0.298333em;
+        width: 50%;
+        
+        &:nth-child(2) {
+            padding-top: $footer-logo;
+        }
+        
+        @media screen and (max-width: 899px) {
+            width: 100%;
+            
+            &:nth-child(2) {
+                padding-top: 0;
+            }
+        }
+    }
+
+    &__logo {
+        height: $footer-logo;
+    }
+
+    &__logo-image {
+        height: 100%;
+        width: auto;
+    }
+    
+    &__heading {
+        @include hide-visually;
+    }
+    
+    &__list {
+        margin-top: rhythm(0.5);
+    }
+    
+    &__link {
+        transition-duration: 250ms;
+        transition-property: color;
+        
+        &:hover, &:focus {
+            color: $theme-color-1;
+        }
+    }
+}

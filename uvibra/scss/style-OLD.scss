@@ -1,0 +1,49 @@
+/*
+cd C:\wamp64\www\uvibraconsevitis\modelo\scss\
+sass style.scss ../css/style.css --watch
+
+*/
+
+@forward 'elements/faces';
+@forward 'elements/reset';
+@forward 'elements/texts';
+
+@forward 'components-OLD/icon-bar';
+@forward 'components-OLD/lang-bar';
+@forward 'components-OLD/column';
+@forward 'components-OLD/top-strip';
+
+@forward 'components-OLD/logo';
+@forward 'components-OLD/header-menu';
+@forward 'components-OLD/search';
+@forward 'components-OLD/header-button';
+@forward 'components-OLD/header';
+
+@forward 'components-OLD/glyph';
+@forward 'components-OLD/header-card';
+
+@forward 'components-OLD/button';
+@forward 'components-OLD/slide';
+@forward 'components-OLD/slideshow';
+
+@forward 'components-OLD/heading';
+@forward 'components-OLD/intro';
+@forward 'components-OLD/fresh-posts';
+
+@forward 'components-OLD/post-card';
+@forward 'components-OLD/chevron';
+@forward 'components-OLD/story-posts';
+
+@forward 'components-OLD/about';
+
+@forward 'components-OLD/field';
+@forward 'components-OLD/newsletter';
+
+@forward 'components-OLD/footer';
+@forward 'components-OLD/padlock';
+
+@forward 'components-OLD/tooltip';
+@forward 'components-OLD/closure';
+
+
+@forward 'EDIT';

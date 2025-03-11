@@ -1,0 +1,33 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.checkbox {
+    @include font-rhythm(-1);
+    
+    &__input {
+        display: none;
+    }
+    
+    &__label {
+        @include glyph(check);
+        
+        cursor: pointer;
+        text-align: center;
+        
+        &::before {
+            border: solid $brand-color-2 rem(1px);
+            color: transparent;
+            height: rhythm(0.675);
+            line-height: rhythm(0.675);
+            margin-right: rhythm(0.125);
+            vertical-align: -5%;
+            transition-duration: 250ms;
+            transition-property: color;
+            width: rhythm(0.675);
+        }
+    }
+
+    &__input:checked + &__label::before {
+        color: $brand-color-2;
+    }
+}

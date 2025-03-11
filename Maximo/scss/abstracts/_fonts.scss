@@ -1,0 +1,51 @@
+@use 'sass:map';
+@use 'sass:string' as str;
+
+$sans-serif: Sukhumvit-Set, sans-serif;
+$serif: Yeseva-One, serif;
+
+@function weight($weight) {
+    $weight-map: (
+        "Thin": 100,
+        "Extra-light": 200,
+        "Light": 300,
+        "Regular": 400,
+        "Medium": 500,
+        "Semi-bold": 600,
+        "Bold": 700,
+        "Extra-bold": 800,
+        "Black": 900
+    );
+
+    $weight: map.get($weight-map, $weight);
+
+    @if $weight == null {
+        @error 'Invalid argument for $weight';
+    }
+    @else {
+        @return $weight;
+    }
+}
+
+// this guy could include stuff into a map
+@mixin font-face($name, $weight: Regular, $style: normal, $file) {
+    @if type-of($name) != string or type-of($file) != string {
+        @error 'Invalid argument was given';
+    }
+    @else {
+        @font-face {
+            font-family: str.quote($name);
+            font-style: $style;
+            font-weight: weight($weight);
+            src: url('../fonts/#{$file}.ttf') format('truetype');
+        }
+    }
+}
+
+// this guy could get stuff from a map
+@mixin font($family, $weight: Regular, $style: normal) {
+    font-family: $family;
+    font-style: $style;
+    font-weight: weight($weight);
+}
+

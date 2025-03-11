@@ -1,0 +1,67 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.header-menu {
+    @include font-rhythm(ratio(1));
+    
+    @include media(min-width 900) {
+        @include margin(null -1.25em);
+        color: $theme-color-1;
+    }
+    
+    @include media(max-width 900) {
+        @include font-rhythm(ratio(2));
+        @include padding(rhythm(4) rhythm(1) null);
+        @include transition(transform, 500ms);
+        
+        background-color: $theme-color-1;
+        color: white;
+        height: 100vh;
+        transform: translateX(100%);
+        width: 100%;
+    }
+    
+    @include media(min-width 900, max-width 1200) {
+        @include font-rhythm(ratio(0.5));
+        @include margin(null -0.75em);
+    }
+    
+    &--active {
+        transform: translateX(0%);
+    }
+    
+    &__item {
+        @include media(min-width 900) {
+            @include margin(null 1.25em);
+            display: inline-block;
+        }
+        
+        @include media(min-width 900, max-width 1200) {
+            @include margin(null 0.75em);
+        }
+        
+        @include media(max-width 900) {
+            margin-top: rhythm(1);
+        }
+    }
+    
+    &__link {
+        display: inline-block;
+        position: relative;
+        
+        &::after {
+            @include transition(width);
+            
+            background-color: currentColor;
+            content: '';
+            display: block;
+            height: rem(2px);
+            position: absolute;
+            width: 0;
+        }
+        
+        &:hover::after, &:focus::after {
+            width: 100%;
+        }
+    }
+}

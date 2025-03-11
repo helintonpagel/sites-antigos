@@ -1,0 +1,35 @@
+@use 'fonts' as *;
+@use 'sass:map';
+@use 'sass:list' as lst;
+
+@mixin font-face($font) {
+    @font-face {
+        font-family: map.get($font, "family");
+        font-style: map.get($font, "style");
+        font-weight: map.get($font, "weight");
+
+        @include font-source(map.get($font, "source"), map.get($font, "formats"));
+    }
+}
+
+@mixin font-source($source, $format) {
+    @if lst.index($format, "eot") != null {
+        src: url("#{$source}.eot");
+    }
+
+    $result: ();
+
+    @each $key, $value in (woff2: 'url("#{$source}.woff2") format("woff2")', woff: 'url("#{$source}.woff") format("woff")', eot: 'url("#{$source}.eot?#iefix") format("embedded-opentype")', ttf: 'url("#{$source}.ttf") format("truetype")', svg: 'url("#{$source}.svg") format("svg")') {
+        @if lst.index($format, $key) {
+            $result: lst.join($result, unquote($value), comma);
+        }
+    }
+
+    src: $result;
+}
+
+@mixin font-rules {
+    @each $font in $fonts {
+        @if map.get($font, used) == true { @include font-face($font); }
+    }
+}

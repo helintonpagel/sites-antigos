@@ -1,0 +1,68 @@
+@use '../abstracts/all' as *;
+
+.paper {
+    $offset: 100% * (2 - $phi);
+    @include margin(2 (0 - $offset) 0 $offset);
+    
+    background: white;
+    
+    @include breakpoint(null 1100) {
+        @include margin(null 0 null 0);
+    }
+    
+    @include breakpoint(null 600) {
+        @include margin(0, top);
+    }
+    
+    &:first-child {
+        @include margin(0, top);
+    }
+    
+    &__content {
+        @include padding(2 0 4 5);
+        
+        box-sizing: border-box;
+        position: relative;
+        width: 100% / $phi;
+        
+        @include breakpoint(null 1100) {
+            @include padding(null 2);
+            width: 100%;
+        }
+        
+        @include breakpoint(null 600) {
+            @include padding(1 0 2);
+        }
+    }
+    
+    &__photo {
+        @include margin(1 -1, top right);
+        
+        position: absolute;
+        right: 100%;
+        width: 100% / $phi;
+        
+        @include breakpoint(null 1100) {
+            @include margin(null auto);
+            
+            box-sizing: border-box;
+            max-width: rhythm(22);
+            position: static;
+            text-align: center;
+            width: 100%;
+        }
+    }
+    
+    &__button {
+        @include margin(1, top);
+        
+        @include breakpoint(null 1100) {
+            text-align: center;
+        }
+    }
+}
+
+.paper--transparent {
+    @extend .paper;
+    background: transparent;
+}

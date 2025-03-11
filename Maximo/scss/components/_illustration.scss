@@ -1,0 +1,79 @@
+@use '../abstracts/all' as *;
+
+.illustration {
+    background: color(shark);
+    color: color(vista-white);
+    letter-spacing: rem(1px);
+    margin-top: rhythm(9);
+    padding: {
+        left: rhythm(0);
+    }
+    text-align: justify;
+    
+    @include breakpoint(900px) {
+        margin-bottom: rhythm(5);
+    }
+    
+    &:after {
+        display: inline-block;
+        content: ' ';
+        width: 100%;
+    }
+    
+    @at-root &__legend {
+        @include font-rhythm(1.125);
+        
+        box-sizing: border-box;
+        display: inline-block;
+        padding: {
+            left: rhythm(3);
+            right: rhythm(1.5);
+            top: rhythm(2.5);
+            bottom: rhythm(1.5);
+        }
+        text-align: left;
+        vertical-align: middle;
+        width: 50%;
+        
+        @include breakpoint(900px) {
+            text-align: center;
+            width: 100%;
+        }
+        
+        @include breakpoint(1300px) {
+            padding-left: rhythm(1.5);
+        }
+    }
+    
+    @at-root &__figure {
+        display: inline-block;
+        background: {
+            image: url('../img/two-bottles.png');
+            size: cover;
+            position: center;
+        }
+        width: 50%;
+        height: 45vw;
+        margin: {
+            top: rhythm(-3);
+            bottom: rhythm(-4);
+        }
+        min-width: rem(400px);
+        vertical-align: middle;
+        
+        @include breakpoint(1200px) {
+            height: 60vw;
+        }
+        
+        @include breakpoint(900px) {
+            display: block;
+            margin: {
+                top: 0;
+                left: auto;
+                right: auto;
+                bottom: rhythm(-4);
+            }
+            height: rem(300px);
+        }
+    }
+}

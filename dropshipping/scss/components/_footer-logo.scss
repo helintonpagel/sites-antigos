@@ -1,0 +1,11 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.footer-logo {
+    height: $footer-logo;
+    
+    &__image {
+        height: 100%;
+        width: auto;
+    }
+}

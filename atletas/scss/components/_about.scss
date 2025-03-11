@@ -1,0 +1,32 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.about {
+    @include padding(rhythm(1) null);
+    
+    &__wrapper {
+        @include wrapper;
+    }
+    
+    &__heading {
+        color: $theme-color-1;
+    }
+    
+    &__paragraph {
+        margin-top: rhythm(1);
+    }
+    
+    &__aside {
+        @include padding(rhythm(3) null rhythm(4));
+        
+        background-color: $theme-color-1;
+        color: $body-back;
+        font-weight: 400;
+        margin-top: rhythm(9);
+    
+        ::selection {
+            color: $theme-color-1;
+            background-color: $body-text;
+        }
+    }
+}

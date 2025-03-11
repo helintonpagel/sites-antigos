@@ -1,0 +1,11 @@
+@use 'rhythm' as *;
+@use 'transition' as *;
+
+@mixin fly-effect {
+    @include transition(1s);
+    transform: translateY(rhythm(3));
+
+    &--show {
+        transform: translateY(0);
+    }
+}

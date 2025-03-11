@@ -1,0 +1,29 @@
+@use '../abstracts/all' as *;
+
+.media {
+    @include trunk;
+
+    &:after {
+        clear: both;
+        content: '';
+        display: table;
+    }
+    
+    &__left {
+        float: left;
+    }
+    
+    &__right {
+        float: right;
+    }
+    
+    &__left, &__right {
+        box-sizing: border-box;
+        width: 50%;
+
+        @include breakpoint(null 1000) {
+            float: none;
+            width: 100%;
+        }
+    }
+}

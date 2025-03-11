@@ -1,0 +1,18 @@
+04-02 Principais Terefas
+    ->  Análise do projeto no Marvel
+        ->  Verificação de alinhamentos, dimensões, espaçamentos, rítmo e
+            qualquer padrão visual que se repete.
+        ->  Tentativa de nomear sessões e padrões visuais. Útil para evitar
+            repetição de código.
+        ->  Checagem de ícones e fontes, demanda de gráficos com o Jeferson
+    ->  Desenvolvimento de toda a marcação de texto, já com links.
+        ->  Pesquisa por marcação semântica no site da MDN
+        ->  Definição das alturas e larguras de imagens, para
+            evitar que o layout quebre quando a imagem está sendo carregada ou
+            não está disponível.
+        ->  Inclusão de APIs do Google
+    ->  Edição de imagens no GIMP, para que imagens pertencentes a mesma
+        categoria tenham as mesmas proporções (banners, produtos e notícias).
+    ->  Revisão e reedição de algumas partes da marcação de texto.
+04-02 Principais Terefas
+    ->  Fim da edição de imagens

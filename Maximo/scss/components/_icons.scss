@@ -1,0 +1,29 @@
+@use '../abstracts/all' as *;
+
+$icon-map: (
+    bars,
+    cancel,
+    chevron-down,
+    chevron-left,
+    chevron-right,
+    chevron-up,
+    compass,
+    download,
+    envelope,
+    facebook,
+    instagram,
+    lock,
+    marker,
+    medal,
+    play,
+    shopping,
+    spyglass,
+    tripadvisor,
+    whatsapp,
+);
+
+@each $name in $icon-map {
+    .#{$name}-icon {
+        @include icon($name);
+    }
+}

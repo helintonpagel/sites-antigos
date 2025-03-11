@@ -1,0 +1,52 @@
+@use '../abstracts/all' as *;
+
+.agents {
+    background: {
+        image: url(../img/waves.jpg);
+        position: center 10%;
+        repeat: no-repeat;
+        size: cover;
+    }
+    @include padding(3 null 4);
+    
+    @include breakpoint(null 1200) {
+        background-position: center 0%;
+        background-size: auto 1200px;
+    }
+    
+    @include breakpoint(null 600) {
+        background-position: center 10%;
+    }
+    
+    text-align: center;
+    
+    &__content {
+        @include margin(null auto);
+        @include trunk($inner-width);
+    }
+    
+    &__logo {
+        display: inline-block;
+        height: rhythm(8);
+        @include margin(1 2.5 null);
+        @include transition(0.25s);
+        
+        @include breakpoint(null 900) {
+            @include margin(null 1.5);
+            height: rhythm(6);
+        }
+        
+        @include breakpoint(null 600) {
+            @include margin(null 1);
+            height: rhythm(4);
+        }
+        
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+    
+    &__leader {
+        @include margin(2, top);
+    }
+}

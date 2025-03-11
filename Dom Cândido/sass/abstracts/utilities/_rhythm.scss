@@ -1,0 +1,47 @@
+@use 'math' as *;
+@use '../config' as *;
+
+// Calculate rhythm units
+@function rhythm($number, $offset: 0) { @return rem($rhythm * $number - $offset); }
+
+// Increments up or down the squared golden ratio and returns adjusted $base-font-size
+@function scale-by($power) {
+    @if unitless($power) {
+        @return $base-font-size * pow(sqrt($phi), $power);
+    }
+    
+    @error 'Argument $power must have no units';
+}
+
+// Calculate the minimum multiple of rhythm units needed to contain the font-size.
+@function lines-to($number) {
+    @if unit($number) == px {
+        $result: ceil(2 * $number / $rhythm) / 2;
+
+        @return if($result * $rhythm - $number < 1px, $result + 0.5, $result);
+    }
+
+    @error 'Argument $number must px unit';
+}
+
+@mixin debug-lines($alpha: 1) {
+    background: {
+        image: linear-gradient(to top, hsla(0, 0%, 0%, 0.85) 5%, transparent 5%);
+        position: left top;
+        size: auto rhythm(1);
+    }
+
+    @if $alpha != 1 {
+        > * {
+            opacity: $alpha;
+        }
+    }
+}
+
+// Set font size and line height while maintaining vertical rhythm
+@mixin font-rhythm($power, $lines: auto) {
+    $font-size: scale-by($power);
+
+    font-size: rem($font-size);
+    line-height: if($lines == auto, $rhythm * lines-to($font-size) / $font-size, $lines);
+}

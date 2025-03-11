@@ -1,0 +1,88 @@
+@use 'all' as *;
+@use '../config' as *;
+
+@mixin wrapper {
+    @include margin(null auto);
+    @include padding(null 1);
+
+    max-width: rem($wrapper);
+}
+
+@mixin hide-visually {
+    clip-path: inset(50%);
+    height: rem(1px);
+    overflow: hidden;
+    position: absolute;
+    width: rem(1px);
+    white-space: nowrap;
+}
+
+@mixin menu-link {
+    position: relative;
+        
+    &::after {
+        background-color: currentColor;
+        bottom: rem(-5px);
+        content: '';
+        left: 0;
+        height: rem(2px);
+        max-width: 0;
+        position: absolute;
+        transition-duration: 250ms;
+        transition-property: max-width;
+        width: 100%;
+    }
+    
+    &:hover::after, &:focus::after {
+        max-width: 100%;
+    }
+}
+
+@mixin default-focus {
+    &:focus {
+        outline-color: currentColor;
+        outline-offset: rem(2px);   
+        outline-style: dashed;
+        outline-width: rem(1px);
+    }
+}
+
+@mixin clearfix {
+    &::after {
+        clear: both;
+        content: '';
+        display: table;
+    }
+}
+
+@mixin heading-card($color: white, $background-color: $brand-color-1, $padding: 2.5) {
+    @include padding($padding 1);
+    @include font-rhythm(1, rhythm(1.5));
+    
+    background-color: $background-color;
+    box-shadow: (0 0 rem(10px) 0 rgba(0, 0, 0, 0.25), 0 0 rem(5px) 0 rgba(0, 0, 0, 0.375));
+    box-sizing: border-box;
+    border-bottom-right-radius: rem(40px);
+    color: $color;
+    font-weight: 200;
+    left: 0;
+    position: absolute;
+    text-transform: uppercase;
+    top: rhythm(-3);
+    transform: translateX(-50%);
+    width: rem(160px);
+
+    @media (max-width: 900px) {
+        @include padding($padding 0.5);
+        @include font-rhythm(0, rhythm(1));
+
+        width: rem(110px);
+    }
+
+    @media (max-width: 600px) {
+        margin-right: rhythm(0.5);
+        position: static;
+        float: left;
+        transform: translateX(0);
+    }
+}

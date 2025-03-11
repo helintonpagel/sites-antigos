@@ -1,0 +1,73 @@
+/*
+ * ATENÇÃO
+ * 
+ * Essa folha de estilos foi compilada por um pré-processador de CSS
+ *
+ * Se você pretende editar esse arquivo, considere criar um arquivo CSS extra, ou comentar as
+ * regiões que você alterar.
+ */
+
+@use '../abstracts/all' as *;
+
+* {
+    border: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: top;
+}
+
+@each $selector in ('::selection', '::-moz-selection', '::-webkit-selection') {
+    #{$selector} {
+        color: color(vista-white);
+        background: color(copper);
+    }
+}
+
+html {
+    // @include debug-lines;
+    @include font(sans-serif, 400);
+
+    color: hsla(0, 0%, 0%, 0.85);
+    font-size: $font-size;
+    line-height: $line-height;
+    overflow-x: hidden;
+    -webkit-text-align-adjust: 100%;
+    
+    @include breakpoint($min: 1500px) {
+        font-size: $font-size * 1.125;
+    }
+
+    @include breakpoint($min: 1800px) {
+        font-size: $font-size * 1.25;
+    }
+}
+
+ol, ul {
+    list-style-type: none;
+}
+
+@for $i from 1 to 5 {
+    h#{$i} {
+        @include font(serif, 400);
+        @include font-rhythm(5 - $i);
+    }
+}
+
+button {
+    background: transparent;
+    cursor: pointer;
+    -webkit-appearance: button;
+}
+
+input[type="text"], textarea {
+    background: transparent;
+    height: calculate-rem($font-size * $line-height);
+    width: 100%;
+}

@@ -1,0 +1,31 @@
+@use '../abstracts/all' as *;
+
+.bars-button {
+    @include icon(bars);
+    font-size: 0;
+    @include margin(
+        rhythm($header-height, $header-button-height) / 2, top
+    );
+    transition-duration: 0.25s;
+        
+    &:before {
+        font-size: rem($header-button-height);
+        line-height: rem($header-button-height);
+    }
+
+    &.is-active {
+        @include icon(cancel);
+        
+        &:before {
+            font-size: rem($header-button-height * 0.8);
+        }
+    }
+
+    &:hover {
+        transform: scale(1.2);
+    }
+
+    &:active {
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,14 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.toggle {
+    @include glyph(bars);
+    
+    &--active {
+        @include glyph(cancel);
+    }
+    
+    &::before {
+        font-size: rhythm($toggle-height);
+    }
+}

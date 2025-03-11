@@ -1,0 +1,47 @@
+@use 'sass:color';
+@use '../abstracts/all' as *;
+
+.inline {
+    font-size: 0;
+    margin-top: rhythm(0.5);
+    text-align: center;
+
+    @at-root &__item {
+        display: inline-block;
+        font-size: 1rem;
+    }
+}
+
+.inline--justified {
+    @extend .inline;
+
+    text-align: justify;
+
+    &:after {
+        content: '';
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+.button {
+    font-weight: 300;
+    letter-spacing: rem(2px);
+    padding: {
+        left: rhythm(0.5);
+        right: rhythm(0.5);
+    }
+    text-transform: uppercase;
+    transition-duration: 0.25s;
+    border: solid white 1px;
+    padding: rhythm(0.25);
+    width: rem(100px);
+    
+    
+    &.is-active {
+        background: color.adjust(
+            $outer-space, $lightness: 75%
+        );
+        color: black;
+    }
+}

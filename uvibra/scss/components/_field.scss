@@ -1,0 +1,42 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.field {
+    display: block;
+    font-size: scale-by(-2);
+    line-height: rhythm($field-height);
+    position: relative;
+    
+    &__input {
+        @include padding(null 0.25);
+        
+        background-color: #e2e2e2;
+        box-sizing: border-box;
+        height: rhythm($field-height);
+        text-transform: uppercase;
+        
+        &--multiline {
+            height: rhythm($field-height * 4);
+            max-height: rhythm($field-height * 8);
+            min-height: rhythm($field-height);
+            resize: vertical;
+        }
+    }
+    
+    &__label {
+        @include padding(null 0.25);
+        
+        cursor: text;
+        display: block;
+        height: 100%;
+        position: absolute;
+        text-transform: uppercase;
+        top: 0;
+        transition-duration: 250ms;
+        transition-property: opacity;
+    }
+    
+    &__input--active + &__label {
+        opacity: 0;
+    }
+}

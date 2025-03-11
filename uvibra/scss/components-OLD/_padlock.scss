@@ -1,0 +1,17 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.padlock {
+    @include glyph(padlock);
+    @include font-rhythm(-1);
+    
+    display: block;
+    height: 24px;
+    text-transform: uppercase;
+    
+    &::before {
+        font-size: rhythm(0.875);
+        margin-right: rhythm(0.25);
+        vertical-align: -15%;
+    }
+}

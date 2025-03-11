@@ -1,0 +1,24 @@
+@use '../abstracts/all' as *;
+
+.heading {
+    @include font-rhythm(2.5);
+    
+    @include break(null 600) {
+        @include font-rhythm(1);
+    }
+    
+    text-transform: uppercase;
+    
+    &__handwritten {
+        @include font(Aguafina);
+        @include font-rhythm(5.5);
+        
+        @include break(null 600) {
+            @include font-rhythm(4);
+        }
+        
+        color: $brand-color;
+        display: block;
+        text-transform: none;
+    }
+}

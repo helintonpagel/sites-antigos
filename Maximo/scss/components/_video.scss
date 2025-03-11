@@ -1,0 +1,110 @@
+@use '../abstracts/all' as *;
+
+.video {
+    margin: {
+        top: rhythm(3);
+        bottom: rhythm(4);
+    }
+    @at-root &__title {
+        @include font(sans-serif, 500);
+        @include font-rhythm(2);
+
+        color: color(vista-white);
+        display: block;
+        letter-spacing: rem(2px);
+        text-align: center;
+        text-transform: uppercase;
+        position: absolute;
+        top: rhythm(1);
+        width: 100%;
+        z-index: 1;
+    }
+
+    @at-root &__play-button {
+        @include icon(play);
+        
+        color: color(vista-white);
+        display: block;
+        font-size: 0;
+        height: rhythm(5);
+        line-height: rhythm(5);
+        top: rhythm(21 / 2 - 2.5);
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        opacity: 0.9;
+        transition-duration: 0.25s;
+        z-index: 1;
+        width: rhythm(5);
+        transform-origin: left center;
+       
+        &:hover {
+            transform: scale(1.2) translateX(-50%);
+        }
+
+        &:before{
+            @include font-rhythm(7);
+            
+            
+        }
+    }
+    
+    @at-root &__modal {
+        display: table;
+        background: rgba(0, 0, 0, 0.85);
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        vertical-align: middle;
+        display: none;
+        
+        @at-root .is-active & {
+            display: table;
+        }
+    }
+    
+    @at-root &__embed {
+        display: table-cell;
+        height: 100%;
+        padding: rhythm(1.5);
+        vertical-align: middle;
+        text-align: center;
+    }
+    
+    @at-root &__iframe {
+        height: 100%;
+        width: 100%;
+        max-width: rem(900px);
+        max-height: rem(600px);
+    }
+    
+/*     @at-root &__close-button {
+        @include icon(cancel);
+        
+        color: color(vista-white);
+        display: block;
+        font-size: 0;
+        height: rhythm(5);
+        line-height: rhythm(5);
+        top: rhythm(0);
+        right: 0;
+        transform: translateX(-50%);
+        position: absolute;
+        opacity: 0.9;
+        transition-duration: 0.25s;
+        z-index: 1;
+        width: rhythm(5);
+        transform-origin: left center;
+       
+        &:hover {
+            transform: scale(1.2) translateX(-50%);
+        }
+
+        &:before{
+            @include font-rhythm(7);
+        }
+    } */
+}

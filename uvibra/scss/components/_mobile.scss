@@ -1,0 +1,50 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.mobile {
+    @include font-rhythm(0, rhythm(1.25));
+    @include padding(null 2 * $gutter 1);
+    
+    background-color: $brand-color-1;
+    box-sizing: border-box;
+    color: white;
+    font-family: $heading-family;
+    overflow: auto;
+    position: absolute;
+    right: 0;
+    text-align: left;
+    transform: translateX(100%);
+    transition-duration: 500ms;
+    transition-property: transform;
+    width: 100%;
+    
+    @at-root .toggle--active + & {
+        transform: translateX(0);
+    }
+    
+    @media (min-width: 600px) {
+        max-width: rem(400px);
+    }
+    
+    &__heading {
+        font-size: inherit;
+        line-height: inherit;
+        margin-top: rhythm(1);
+        text-transform: uppercase;
+    }
+    
+    &__search {
+        margin-top: (rhythm(1.25) - rem(23px)) / 2;
+    }
+    
+    &__icons {
+        font-size: rhythm(0.75);
+        height: rhythm(1.25);
+    }
+    
+    &__links {
+        font-weight: 700;
+        margin-top: rhythm(1);
+        text-transform: uppercase;
+    }
+}

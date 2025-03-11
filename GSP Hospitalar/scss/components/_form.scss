@@ -1,0 +1,79 @@
+@use '../abstracts/all' as *;
+
+.form {
+    box-sizing: border-box;
+    max-width: rhythm($inner-width);
+    
+    &__field {
+        display: block;
+        @include margin(1, top);
+        position: relative;
+        
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+
+    &__label, &__input, &__input--light, &__text-area {
+        display: block;
+        @include font(Poppins, Book);
+        font-size: scale-by(1);
+    }
+    
+    &__label {
+        cursor: text;
+        height: rhythm($form-field-height);
+        left: rhythm(1);
+        line-height: rhythm($form-field-height);
+        position: absolute;
+        opacity: 0.75;
+        @include transition(0.25s);
+        
+        .is-active & {
+            opacity: 0;
+        }
+    }
+    
+    &__input, &__input--light, &__text-area {
+        background: rgba(255, 255, 255, 0.25);
+        border: solid $boulder rem(1px);
+        height: rhythm($form-field-height, 2px);
+        line-height: rhythm($form-field-height, 2px);
+        text-indent: rhythm(1, 1px);
+    }
+    
+    &__input, &__text-area {
+        background: white;
+    }
+    
+    &__input--light {
+        border-color: white;
+    }
+    
+    &__text {
+        @include font-rhythm(0);
+        @include margin(1, top);
+        max-width: rhythm(26);
+        min-height: rhythm(1);
+        
+        @include breakpoint(null 900) {
+            @include margin(null auto);
+        }
+    }
+    
+    &__text-area {
+        min-height: rhythm(8, 2px);
+        resize: vertical;
+    }
+    
+    &__checkbox, &__button, &__captcha {
+        @include margin(1, top);
+    }
+    
+    &__captcha .g-recaptcha {
+        display: inline-block;
+    }
+}
+
+
+

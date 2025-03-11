@@ -1,0 +1,20 @@
+@forward 'sass:math';
+
+@use '../config' as *;
+@use 'sass:math' as *;
+
+$PHI: 1.61803398875;
+
+@function rem($number) {
+    @if type-of($number) == number and unitless($number) == false {
+        @if unit($number) == rem {
+            @return $number;
+        }
+
+        @if compatible($number, 0px) {
+            @return div($number, $base-font-size) * 1rem;
+        }
+    }
+
+    @error 'Argument $number is not an absolute value';
+}

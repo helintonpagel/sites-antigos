@@ -1,0 +1,33 @@
+@use 'sass:color';
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.chevron {
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: (
+        0 0 rem(10px) 0 rgba(0, 0, 0, 0.375),
+        0 0 rem(5px) 0 rgba(0, 0, 0, 0.125)
+    );
+    color: $brand-color-2;
+    line-height: 1;
+    transition-duration: 250ms;
+    transition-property: opacity, visibility;
+    
+    &--prev {
+        @include glyph(chevron-left);
+    }
+    
+    &--next {
+        @include glyph(chevron-right);
+    }
+    
+    &--hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+    &::before {
+        font-size: rhythm($chevron-size);
+    }
+}

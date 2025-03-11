@@ -1,0 +1,10 @@
+@use '../config' as *;
+@use 'rhythm' as *;
+@use 'directional-property' as *;
+
+@mixin wrapper($width: $wrapper-width) {
+    @include margin(null auto);
+    @include padding(null 1);
+
+    max-width: $width;
+}

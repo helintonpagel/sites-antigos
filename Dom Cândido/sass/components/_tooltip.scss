@@ -1,0 +1,49 @@
+@use '../abstracts/all' as *;
+
+.tooltip {
+    display: inline-block;
+    margin-top: rhythm(1);
+    position: relative;
+    text-align: center;
+
+    &__trigger {
+        display: inline-block;
+        line-height: rhythm(0.375);
+        height: rhythm(0.375);
+    }
+    
+    
+    &__content {
+        @include font(Montserrat, light-italic);
+        @include font-rhythm(-1.25, 1.5);
+        
+        box-sizing: border-box;
+        background: {
+            image: url(../img/baloon.svg);
+            size: 100% 100%;
+        }
+        color: black;
+        display: inline-block;
+        display: block;
+        height: rem(200px);
+        margin: {
+            top: rem(-216px);
+            left: auto;
+            right: auto;
+            bottom: rem(12px);
+        }
+        padding: {
+            top: rem(55px);
+            left: rem(35px);
+            right: rem(35px);
+        }
+        transform-origin: bottom center;
+        transition-duration: 0.25s;
+        transform: scale(0) rotateZ(-75deg);
+        width: rem(260px);
+    }
+    
+    &:hover &__content, &__trigger:focus ~ &__content {
+        transform: scale(1) rotateZ(0deg);
+    }
+}

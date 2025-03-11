@@ -1,0 +1,59 @@
+@use 'types' as *;
+@use 'sass:map';
+@use 'sass:list' as lst;
+@use 'sass:string' as str;
+
+$default-animation: (delay: null, direction: null, duration: null, fill-mode: null, iteration-count: null, play-state: null, timing-function: null) !default;
+
+@function is-play-state($value) {
+    @return $value == "paused" or $value == "running";
+}
+
+@function is-iteration-count($value) {
+    @return is-number($value) or $value == "infinite";
+}
+
+@function is-fill-mode($value) {
+    @return lst.index(("none" "forwards" "backwards" "both"), $value) != null;
+}
+
+@function is-direction($value) {
+    @return lst.index(("normal" "reverse" "alternate" "alternate-reverse"), $value) != null;
+}
+
+@function is-timing-function($value) {
+    $return: false;
+
+    @each $ident in ("steps" "cubic-bezier") {
+        $return: $return or (str.index($value, "#{$ident}(") != null and str.index($value, ")") != null);
+    }
+
+    @return $return or lst.index(("ease" "ease-in" "ease-out" "ease-in-out" "linear" "step-start" "step-end"), $value) != null;
+}
+
+@function map-animation($args) {
+    $return: ();
+
+    @each $arg in $args {
+        @if each($arg, has-time-unit) {
+            $return: map-value($return, ("duration", "delay"), $arg);
+        }
+        @else {
+            $found: false;
+
+            @each $type in ("fill-mode" "direction" "play-state" "iteration-count" "timing-function") {
+                @if $found == false and each($arg, get-function(is-#{$type})) {
+                    $return: map-value($return, ($type), $arg); $found: true;
+                }
+            }
+
+            @if $found == false and each($arg, is-string) { $return: map-value($return, ("name"), $arg); }
+        }
+    }
+
+    @return map.merge($default-animation, $return);
+}
+
+@mixin animation($args...) {
+    @each $key, $value in map-animation($args) { animation-#{$key}: $value; }
+}

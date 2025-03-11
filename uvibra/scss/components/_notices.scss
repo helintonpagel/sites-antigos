@@ -1,0 +1,37 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.notices {
+    @include padding(2 null);
+    
+    &__list {
+        @include margin(null 0 - $gutter);
+        font-size: 0;
+    }
+    
+    &__item {
+        @include padding(null $gutter);
+        
+        box-sizing: border-box;
+        display: inline-block;
+        margin-top: rhythm(2);
+        text-align: left;
+        width: 100%;
+        
+        @media (min-width: 450px) {
+            width: 50%;
+        }
+        
+        @media (min-width: 700px) {
+            width: (100% / 3);
+        }
+        
+        @media (min-width: 900px) {
+            width: 25%;
+        }
+    }
+    
+    &__breadcrumb {
+        margin-top: rhythm(2);
+    }
+}

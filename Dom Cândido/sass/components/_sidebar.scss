@@ -1,0 +1,47 @@
+@use '../abstracts/all' as *;
+
+.sidebar {
+    &__button {
+        @include margin(1, top);
+    }
+    
+    &__icon-bar {
+        @include margin(1, top);
+    }
+    
+    &__menu {
+        text-align: center;
+    }
+    
+    &__link, &__back {
+        @include font(Bell);
+        @include font-rhythm(-2, rhythm(1.25));
+        @include margin(0.25 null);
+        @include transition(0.25s);
+        
+        outline: {
+            color: $leave-color;
+            style: solid;
+            width: rem(1px);
+        }
+        display: block;
+        width: rhythm(7);
+        text-transform: uppercase;
+        text-decoration: none;
+        
+        &:hover, &:focus {
+            background-color: $brand-color;
+            color: white;
+            outline-color: $brand-color;
+        }
+    }
+    
+    &__back {
+        @include icon(chevron-left);
+        
+        &:before {
+            font-size: rhythm(0.675);
+            vertical-align: -21%;
+        }
+    }
+}

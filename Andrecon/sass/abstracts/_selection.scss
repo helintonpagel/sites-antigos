@@ -1,0 +1,9 @@
+@mixin selection() {
+    $selectors: ('::selection', '::-moz-selection', '::-webkit-selection');
+
+    @each $selector in $selectors {
+        #{$selector} {
+            @content;
+        }
+    }
+}

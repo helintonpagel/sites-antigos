@@ -1,0 +1,67 @@
+@use 'sass:color';
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.topic-posts {
+    @include padding(3 null);
+    
+    &__pillar {
+        @include padding(null 5);
+        
+        @media (max-width: 900px) {
+            @include padding(1 $gutter * 2);
+        }
+    }
+    
+    &__list {
+        margin-top: rhythm(1);
+    }
+    
+    &__item {
+        @include margin(0.5 -0.25 null);
+    }
+    
+    &__link {
+        @include padding(0.25);
+        
+        border-radius: rem(3px);
+        display: block;
+        font-family: $heading-family;
+        transition-duration: 250ms;
+        transition-property: background-color, color;
+        
+        &:hover, &:focus {
+            background-color: $brand-color-2;
+            color: white;
+        }
+    }
+    
+    &__heading {
+        @include font-rhythm(0);
+        
+        color: $brand-color-2;
+        font-weight: 700;
+    }
+    
+    &__link:hover &__heading, &__link:focus &__heading {
+        color: inherit;
+    }
+    
+    &__time {
+        @include font-rhythm(-1);
+    }
+    
+    &__breadcrumb {
+        margin-top: rhythm(2);
+    }
+    
+    @media (min-width: 900px) {
+        &__heading {
+            @include font-rhythm(1);
+        }
+
+        &__time {
+            @include font-rhythm(0);
+        }
+    }
+}

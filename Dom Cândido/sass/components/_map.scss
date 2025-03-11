@@ -1,0 +1,10 @@
+@use '../abstracts/all' as *;
+
+.map {
+    @include margin(5, top);
+    
+    &__frame {
+        height: rhythm(22);
+        width: 100%;
+    }
+}

@@ -1,0 +1,17 @@
+.logo {
+    $height: 1.875rem;
+    $padding: (1.5rem - $height / 2);
+    
+    display: block;
+    height: $height;
+    line-height: $height;
+    padding: {
+        bottom: $padding;
+        top: $padding
+    }
+    
+    @at-root &__image {
+        height: 100%;
+        width: auto;
+    }
+}

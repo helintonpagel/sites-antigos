@@ -1,0 +1,30 @@
+@use 'types';
+@use 'sass:map';
+@use 'sass:math' as *;
+@use 'sass:list' as lst;
+
+@mixin font-face($font) {
+    @font-face {
+        font-family: map.get($font, "family");
+        font-style: map.get($font, "style");
+        font-weight: map.get($font, "weight");
+
+        @include font-sources(map.get($font, "path"), map.get($font, "formats"));
+    }
+}
+
+@mixin font-sources($path, $formats) {
+    $resources: ();
+
+    @if lst.index($formats, "eot") {
+        src: url("#{$path}.eot");
+    }
+
+    @each $key, $value in (woff2: 'url("#{$path}.woff2") format("woff2")', woff: 'url("#{$path}.woff") format("woff")', eot: 'url("#{$path}.eot?#iefix") format("embedded-opentype")', ttf: 'url("#{$path}.ttf") format("truetype")', svg: 'url("#{$path}.svg") format("svg")') {
+        @if lst.index($formats, $key) {
+            $resources: lst.join($resources, unquote($value), comma);
+        }
+    }
+
+    src: $resources;
+}

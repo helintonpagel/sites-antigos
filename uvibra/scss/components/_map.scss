@@ -1,0 +1,11 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.map {
+    @include padding(2 null 1);
+    
+    &__frame {
+        height: rhythm(20);
+        width: 100%;
+    }
+}

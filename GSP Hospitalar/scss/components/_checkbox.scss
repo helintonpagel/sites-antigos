@@ -1,0 +1,38 @@
+@use '../abstracts/all' as *;
+
+.checkbox {
+    display: block;
+    
+    &__input {
+        display: none;
+    }
+    
+    &__label {
+        @include icon(check);
+        cursor: pointer;
+        line-height: rhythm(1);
+        height: rhythm(1);
+        
+        &:before {
+            background: white;
+            border-width: rem(1px);
+            border-style: solid;
+            border-color: $boulder;
+            color: transparent;
+            display: inline-block;
+            height: rhythm($checkbox-size);
+            line-height: rhythm($checkbox-size);
+            @include margin(0.25, right);
+            vertical-align: -5%;
+            text-align: center;
+            @include transition(0.25s);
+            width: rhythm($checkbox-size);
+        }
+    }
+    
+    &__input:checked ~ &__label:before {
+        background: $cerulean;
+        border-color: $cerulean;
+        color: white;
+    }
+}

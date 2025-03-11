@@ -1,0 +1,42 @@
+@use 'sass:math' as *;
+@forward 'sass:math';
+
+$phi: 1.61803398875;
+
+$base-font-size: 16px !default;
+$scale-ratio: sqrt($phi) !default;
+
+@function px($length, $parent: $base-font-size) {
+    $unit: unit($length);
+
+    @if $unit == "" {
+        $length: 1px * $length;
+    }
+    @else if $unit == em {
+        $length: $parent * div($length, 1em);
+    }
+    @else if $unit == rem {
+        $length: $base-font-size * div($length, 1rem);
+    }
+    @else if $unit == "%" {
+        $length: 16px * div($length, 100%);
+    }
+    
+    @if unit($length) != px {
+        @error "Unsupported operation: px(#{inspect($length)}, #{inspect($parent)}).";
+    }
+
+    @return $length;
+}
+
+@function em($length, $parent: $base-font-size) {
+    @return if(unit($length) != em, 1em * div(px($length, $parent), $parent), $length);
+}
+
+@function rem($length, $parent: $base-font-size) {
+    @return if(unit($length) != rem, 1rem * div(px($length, $parent), $base-font-size), $length);
+}
+
+@function ratio($number, $length: 1rem) {
+    @return $length * pow($scale-ratio, $number);
+}

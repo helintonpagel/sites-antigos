@@ -1,0 +1,40 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+@use 'sass:color';
+
+/*
+* Editing
+*/
+
+body.debug {
+    @include debug-lines(0.5);
+}
+
+.consent {
+    background-color: $body-text;
+    bottom: 0;
+    color: $body-back;
+    position: fixed;
+    transform: translateY(100%);
+    transition-property: transform;
+    transition-duration: 500ms;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+    
+    &--show {
+        transform: translateY(0);
+    }
+    
+    &__wrapper {
+        @include wrapper;
+        @include padding(rhythm(0.5) null);
+    }
+    
+    &__button {
+        @include font-rhythm(ratio(-1));
+        
+        margin-top: rhythm(0.5);
+        text-transform: uppercase;
+    }
+}

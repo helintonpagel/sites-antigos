@@ -1,0 +1,10 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.intro {
+    @include padding(1 2 * $gutter 2);
+    
+    &__paragraph {
+        @include margin(1.5 null);
+    }
+}

@@ -1,0 +1,22 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+@for $i from 1 through 6 {
+    $limit: 4;
+
+    h#{$i} {
+        @if $i < $limit { @include font-rhythm($limit - $i); }
+    }
+}
+
+a, abbr {
+    text-decoration: none;
+}
+
+b, strong {
+    font-weight: 600;
+}
+
+i, em {
+    font-style: italic;
+}

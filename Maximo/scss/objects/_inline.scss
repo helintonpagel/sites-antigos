@@ -1,0 +1,14 @@
+@use '../abstracts/all' as *;
+
+.inline {
+    text-align: center;
+
+    @at-root &__column {
+        display: inline-block;
+    }
+}
+
+.inline--leading {
+    margin-top: rhythm(5);
+    text-align: center;
+}

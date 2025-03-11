@@ -1,0 +1,60 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.footer {
+    @include padding(2 2 * $gutter);
+    @include font-rhythm(-1, rhythm(1.25));
+    
+    background-color: $brand-color-1;
+    color: white;
+    font-family: $heading-family;
+    text-align: center;
+    
+    @media (min-width: 900px) {
+        @include padding(2 0 * $gutter 0);
+        text-align: justify;
+        
+        &__pillar {
+            &::after {
+                display: inline-block;
+            }
+        }
+    }
+    
+    &__logo {
+        @include padding(null 1 * $gutter);
+        
+        height: rhythm($logo-height);
+        display: block;
+        
+        @media (min-width: 900px) {
+            text-aligN: center;
+        }
+    }
+    
+    &__column {
+        @media (min-width: 900px) {
+            @include margin(1 $gutter null);
+            
+            display: inline-block;
+
+            &:first-of-type {
+                margin-left: 0;
+            }
+
+            &:first-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+    
+    &__heading {
+        margin-top: rhythm(1);
+        text-transform: uppercase;
+    }
+    
+    &__icon-bar {
+        font-size: rhythm(0.75);
+        line-height: rhythm(1);
+    }
+}

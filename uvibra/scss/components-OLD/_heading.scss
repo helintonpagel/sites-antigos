@@ -1,0 +1,22 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.heading {
+    font-size: 0;
+    
+    &__text {
+        @include font-rhythm(1.5);
+        display: block;
+    }
+    
+    &::after {
+        border-top: solid currentColor rem(1px);
+        box-sizing: border-box;
+        content: '';
+        display: inline-block;
+        height: rem(1px);
+        margin-bottom: rem(-1px);
+        max-width: rem(200px);
+        width: 100%;
+    }
+}

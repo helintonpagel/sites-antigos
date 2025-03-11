@@ -1,0 +1,49 @@
+@use '../abstracts/all' as *;
+
+.newsletter {
+    background: {
+        image: url(../img/blue-background-phone.jpg);
+        position: center center;
+        repeat: no-repeat;
+        size: cover;
+    }
+    color: white;
+    @include padding(2 null);
+    text-align: center;
+    
+    @include breakpoint(null 900) {
+        @include padding(3, bottom);
+    }
+    
+    &__heading, &__paragraph {
+        @include trunk;
+    }
+    
+    &__heading {
+        color: white;
+    }
+    
+    &__paragraph {
+        @include font(Poppins, Medium);
+        @include font-rhythm(2);
+        @include margin(1, top);
+        
+        @include breakpoint(null 900) {
+            @include font-rhythm(0);
+        }
+    }
+    
+    &__form {
+        @include margin(1 auto null);
+        @include trunk($inner-width);
+    }
+    
+    &__text {
+        @include margin(null auto);
+    }
+    
+    &__button {
+        @include margin(1, top);
+        @include padding(null 1.5);
+    }
+}

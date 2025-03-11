@@ -1,0 +1,20 @@
+@use 'sass:color';
+
+$font-size: 16px;
+$line-height: 1.5;
+
+$golden-square: 1.27201965;
+
+// colors
+
+$outer-space: hsl(200, 8%, 21%);
+$toast: hsl(19, 26%, 51%);
+$westar: hsl(28, 19%, 85%);
+
+$side-bar-background: color.adjust(
+    $outer-space, $lightness: 10%
+);
+
+$environment-background: color.adjust(
+    $outer-space, $lightness: 25%
+);

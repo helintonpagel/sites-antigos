@@ -1,0 +1,16 @@
+@use '../abstracts/all' as *;
+
+.footer-tooltip {
+    margin-top: rhythm(1);
+
+    @at-root &__title {
+        line-height: rhythm(1);
+        height: rhythm(1);
+    }
+    
+    @at-root &__image {
+        height: rhythm(0.5);
+        vertical-align: middle;
+        width: auto;
+    }
+}

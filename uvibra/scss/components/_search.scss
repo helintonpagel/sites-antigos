@@ -1,0 +1,85 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.search {
+    box-sizing: border-box;
+    overflow: hidden;
+    padding-right: rem(18px);
+    position: relative;
+    transition-duration: 500ms;
+    transition-property: width;
+    width: rem(19px);
+    z-index: 0;
+    
+    &:focus-within {
+        width: rem(220px);
+    }
+    
+    &__field {
+        @include glyph(magnifier);
+        
+        transition-duration: 250ms;
+        transition-property: color;
+        
+        &::before {
+            cursor: pointer;
+            font-size: rem(18px);
+            line-height: rhythm(1);
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    }
+    
+    &__input {
+        box-sizing: border-box;
+        border-bottom: solid transparent rem(1px);
+        height: rhythm(1);
+        opacity: 0;
+        transition-duration: 500ms;
+        transition-property: border-color, opacity;
+        
+        &:focus {
+            border-color: currentColor;
+            opacity: 1;
+        }
+    }
+    
+    &__label {
+        cursor: text;
+        line-height: rhythm(1, 1px);
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition-duration: 500ms;
+        transition-property: opacity;
+        white-space: nowrap;
+        z-index: -1;
+    }
+    
+    :focus + &__label {
+        opacity: 1;
+    }
+    
+    &__input--active + &__label {
+        opacity: 0;
+    }
+    
+    &__button {
+        @include glyph(magnifier);
+        
+        display: none;
+        font-size: rem(18px);
+        line-height: rhythm(1);
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition-duration: 250ms;
+        transition-property: color;
+    }
+    
+    &:focus-within &__button {
+        display: block;
+    }
+}

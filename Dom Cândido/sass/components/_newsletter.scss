@@ -1,0 +1,112 @@
+@use '../abstracts/all' as *;
+
+.newsletter {
+    @include transition(0.5s);
+    
+    background-color: $brand-color;
+    border-radius: rem(10px) 0 0 rem(10px);
+    bottom: rhythm(2.5);
+    color: white;
+    position: fixed;
+    right: 0;
+    transform: translateX(rhythm(11.5));
+    z-index: 1;
+    
+    @include break(null 900) {
+        display: none;
+    }
+    
+    &--show {
+        transform: translateX(rhythm(10));
+    }
+    
+    &--active, &:focus-within {
+        transform: translateX(0);
+    }
+    
+    &__toggle {
+        @include icon(outline-down, after);
+        @include transition(0.25s);
+        
+        display: inline-block;
+        position: absolute;
+        text-transform: uppercase;
+        transform: translateY(-65%) translateX(rhythm(-2.5)) rotateZ(-90deg);
+        transform-origin: center center;
+        left: 0;
+        top: 50%;
+        width: rem(200px);
+        
+        &:hover {
+            transform: translateY(-65%) translateX(rhythm(-2.5)) rotateZ(-90deg) scale(1.1);
+        }
+        
+        &:focus {
+            outline-color: white;
+        }
+        
+        &:after {
+            @include transition(0.25s);
+            
+            display: inline-block;
+            font-size: rhythm(0.5);
+            transform: rotateZ(180deg);
+        }
+        
+        &--active:after {
+            transform: rotateZ(0deg);
+        }
+    }
+    
+    &__content {
+        @include padding(1 1 1 1.5);
+        
+        width: rhythm(9);
+    }
+    
+    &__heading {
+        @include font-rhythm(-2);
+        @include font(Montserrat, light);
+        
+        text-transform: none;
+    }
+    
+    &__field {
+        @include font-rhythm(-2);
+        @include margin(0.5, top);
+        
+        display: block;
+    }
+    
+    &__label {
+        @include font-rhythm(-2, rhythm(1, 1));
+        display: inline-block;
+    }
+    
+    &__input {
+        @include padding(0.25, left);
+        
+        border-bottom: solid rem(1px) white;
+        display: inline-block;
+        height: rhythm(1, 1);
+        width: rhythm(7);
+    }
+    
+    &__button {
+        @include font(Bell);
+        @include font-rhythm(-2, rhythm(1, 1));
+        @include margin(0.5, top);
+        @include padding(null 0.5);
+        @include transition(0.25s);
+        
+        border: solid rem(1px) white;
+        display: inline-block;
+        height: rhythm(1, 2);
+        text-transform: uppercase;
+        
+        &:hover {
+            background: white;
+            color: $brand-color;
+        }
+    }
+}

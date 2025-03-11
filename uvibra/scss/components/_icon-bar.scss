@@ -1,0 +1,29 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.icon-bar {
+    @include margin(null -0.25);
+    
+    &__item {
+        @include margin(null 0.25);
+        display: inline-block;
+    }
+    
+    &__link {
+        &--whatsapp {
+            @include glyph(whatsapp);
+        }
+        
+        &--instagram {
+            @include glyph(instagram);
+        }
+        
+        &--facebook {
+            @include glyph(facebook);
+        }
+        
+        &--facebook-solid {
+            @include glyph(facebook-solid);
+        }
+    }
+}

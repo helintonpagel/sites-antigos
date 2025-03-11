@@ -1,0 +1,28 @@
+@use '../abstracts/all' as *;
+
+.social {
+    @at-root &__item {
+        margin-left: rhythm(0.25);
+        display: inline-block;
+        letter-spacing: 0;
+        transition-duration: 0.25s;
+        
+        &:hover {
+            transform: scale(1.2);
+        }
+        
+        &:first-child {
+            margin-left: rhythm(0);
+        }
+    }
+    
+    @at-root &__icon {
+        font-size: 0;
+        text-decoration: none;
+        
+        &:before {
+            font-size: rem(20px);
+            line-height: rhythm(1);
+        }
+    }
+}

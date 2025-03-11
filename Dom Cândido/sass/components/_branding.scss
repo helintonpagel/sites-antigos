@@ -1,0 +1,52 @@
+@use '../abstracts/all' as *;
+@use 'sass:color';
+
+.branding {
+    background: {
+        image: url(../img/lines.png);
+        repeat:no-repeat;
+        position: center 80%;
+        size: 120%;
+    }
+    
+    &__content {
+        @include trunk;
+        
+        text-align: center;
+    }
+    
+    &__bottle {
+        @include margin(2 1.5 null);
+        
+        @include break(900) {
+            display: inline-block;
+        }
+        
+        @include break(null 900) {
+            @include margin(null 0.25);
+        }
+    }
+    
+    &__inline {
+        display: inline-block;
+        
+        @include break(null 600) {
+            display: block;
+        }
+    }
+    
+    &__button {
+        @include margin(3, top);
+        width: rhythm(8);
+        
+        @include break(null 600) {
+            @include margin(1, top);
+        }
+    }
+    
+    @include break(null 600) {
+        ul:last-of-type {
+            @include margin(1, top);
+        }
+    }
+}

@@ -1,0 +1,31 @@
+@use '../abstracts/all' as *;
+
+.hanging-chevron {
+    @include icon(chevron-up);
+    display: block;
+    background: white;
+    border-radius: 50%;
+    right: rhythm($trunk-space);
+    position: absolute;
+    top: 0;
+    margin-top: rhythm(0 - $hanging-chevron-size / 2);
+    text-align: center;
+    text-decoration: none;
+    @include transition(0.25s);
+    
+    @include breakpoint(null 900) {
+        margin-right: rhythm(0 - $hanging-chevron-size / 2);
+        right: 50%;
+    }
+    
+    &:hover {
+        transform: scale(1.1);
+    }
+    
+    &:before {
+        display:block;
+        font-size: scale-by(2);
+        line-height: rhythm($hanging-chevron-size);
+        width: rhythm($hanging-chevron-size);
+    }
+}

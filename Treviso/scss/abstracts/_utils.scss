@@ -1,0 +1,51 @@
+@use 'sass:map';
+
+@use 'rhythm' as *;
+@use 'settings' as *;
+
+@function color($name) {
+    $color: map.get($colors, $name);
+
+    @if $color == null {
+        @error 'Invalid operation: color was not found';
+    }
+
+    @return $color;
+}
+
+@mixin breakpoint($max: null, $min: null) {
+    $media: 'screen';
+
+    @if is-absolute($max) { $media: $media + ' and (max-width: #{rem($max)})'; }
+    @if is-absolute($min) { $media: $media + ' and (min-width: #{rem($min)})'; }
+
+    @media #{$media} {
+        @content;
+    }
+}
+
+@mixin trunk($max-width: rhythm(58)) {
+    margin: {
+        left: auto;
+        right: auto;
+    }
+    max-width: $max-width;
+    padding: {
+        left: rhythm(3);
+        right: rhythm(3);
+    }
+
+    @include breakpoint($max: 1300px) {
+        padding: {
+            left: rhythm(1.5);
+            right: rhythm(1.5);
+        }
+    }
+}
+
+@mixin rectangle($height, $width-ratio: 1) {
+    $width: $height * $width-ratio;
+
+    height: $height;
+    width: $width;
+}

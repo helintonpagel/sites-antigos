@@ -1,0 +1,35 @@
+@use '../abstracts/all' as *;
+
+.stamp {
+    position: relative;
+    text-align: center;
+    line-height: inherit;
+    
+    @include breakpoint(null 900) {
+        @include font-rhythm(3);
+        @include padding(6, top);
+    }
+    
+    @include breakpoint(null 600) {
+        @include font-rhythm(2);
+    }
+    
+    &__image {
+        height: 80%;
+        position: absolute;
+        right: 5%;
+        top: 10%;
+        width: auto;
+        
+        @include breakpoint(null 1000) {
+            right: 0%;
+        }
+        
+        @include breakpoint(null 900) {
+            height: rhythm(5);
+            right: 50%;
+            top: 0;
+            transform: translateX(50%);
+        }
+    }
+}

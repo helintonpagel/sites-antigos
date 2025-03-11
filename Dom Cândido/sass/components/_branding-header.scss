@@ -1,0 +1,36 @@
+@use '../abstracts/all' as *;
+@use 'sass:color';
+
+.branding-header {
+    @include break(600) {
+        @include padding(1, top);
+    }
+    
+    background: {
+        image: linear-gradient(to bottom,
+            $light-color 0% (200% / 9),
+            color.scale($light-color, $lightness: 20%) (200% / 9) (400% / 9),
+            color.scale($light-color, $lightness: 40%) (400% / 9) (600% / 9),
+            color.scale($light-color, $lightness: 60%) (600% / 9) (800% / 9),
+            color.scale($light-color, $lightness: 80%) (800% / 9) 100%
+        );
+    }
+    
+    &__content {
+        @include trunk;
+    }
+    
+    &__paragraph {
+        width: 50%;
+        min-width: rem(525px);
+        
+        @include break(null 900) {
+            @include margin(null auto);
+        }
+        
+        @include break(null 600) {
+            width: 100%;
+            min-width: 0;
+        }
+    }
+}

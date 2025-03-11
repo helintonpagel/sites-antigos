@@ -1,0 +1,32 @@
+@use 'rhythm' as *;
+
+/*
+* Library
+*/
+
+$wrapper: 1500px !default;
+
+@mixin wrapper($width: $wrapper) {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $width;
+    padding-left: rhythm(1);
+    padding-right: rhythm(1);
+}
+
+@mixin clearfix {
+    &::after {
+        clear: both;
+        content: '';
+        display: table;
+    }
+}
+
+@mixin hide-visually {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}

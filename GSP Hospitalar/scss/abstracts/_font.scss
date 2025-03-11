@@ -1,0 +1,63 @@
+@use 'config' as *;
+
+@use 'sass:map';
+@use 'sass:list' as lst;
+@use 'sass:string' as str;
+
+@function weight-for($lst) {
+    $weights: (
+        "thin": 100,
+        "extra-light": 200,
+        "extralight": 200,
+        "light": 300,
+        "book": 400,
+        "normal": 400,
+        "regular": 400,
+        "medium": 500,
+        "semi-bold": 600,
+        "semibold": 600,
+        "bold": 700,
+        "extra-bold": 800,
+        "extrabold": 800,
+        "black": 900,
+        "heavy": 900
+    );
+
+    $weight: str.to-lower-case(
+        lst.nth($lst, 1)
+    );
+
+    @if map.has-key($weights, $weight) == false {
+        @return $weight;
+    }
+    @else {
+        @return map.get($weights, $weight);
+    }
+}
+
+@function style-for($lst) {
+    $style: normal;
+
+    @if lst.length($lst) != 2 {
+        @return normal;
+    }
+    @else {
+        @return str.to-lower-case(
+            lst.nth($lst, 2)
+        );
+    }
+}
+
+@mixin font($family, $variant) {
+    $family: map.get(
+        $families, $family
+    );
+
+    @if $family == null {
+        @error "The families map does not have this key";
+    }
+
+    font-family: $family;
+    font-style: style-for($variant);
+    font-weight: weight-for($variant);
+}

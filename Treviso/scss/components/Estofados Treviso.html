@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Estofados Treviso</title>
+        <meta charset="utf-8"/>
+        <meta http-equiv="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com"/>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="container">
+                <h1 class="topbar__left">
+                    <a class="logo" href="preview.html">
+                        <img class="logo__image" src="img/logo.png" height="48" width="297" alt="Estofados Treviso"/>
+                    </a>
+                </h1>
+                <div class="topbar__right">
+                    <button class="topbar__button">Menu</button>
+                    <div class="topbar__dropdown">
+                        <nav class="topbar__menu">
+                            <ul class="menu">
+                                <li class="menu__item">
+                                    <a class="menu__link" href="empresa-preview.html">Empresa</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a class="menu__link" href="produtos-preview.html">Produtos</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a class="menu__link" href="representantes-preview.html">Representantes</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a class="menu__link" href="contato-preview.html">Contato</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <ul class="social-media topbar__social">
+                            <li class="social-media__item">
+                                <a class="social-media__link" href="#">
+                                    <svg class="social-media__icon" xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512"><path fill="currentColor" d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z"></path></svg>
+                                    <!-- <svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512"><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg> -->
+                                </a>
+                            </li>
+                            <li class="social-media__item">
+                                <a class="social-media__link" href="#">
+                                    <svg class="social-media__icon" xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
+                                </a>
+                            </li>
+                            <li class="social-media__item">
+                                <a class="social-media__link" href="#">
+                                    <svg class="social-media__icon" xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512"><path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <article>
+            <header class="slider">
+                <section class="banner banner--sofa-1">
+                    <div class="container">
+                        <h2 class="banner__title">
+                            Design
+                            <span class="banner__small-title">Traduzido em Linhas e Formas</span>
+                        </h2>
+                    </div>
+                </section>
+                <section class="banner banner--sofa-2">
+                    <div class="container">
+                        <h2 class="banner__title">
+                            Design
+                            <span class="banner__small-title">Traduzido em Linhas e Formas</span>
+                        </h2>
+                    </div>
+                </section>
+                <section class="banner banner--sofa-3">
+                    <div class="container">
+                        <h2 class="banner__title">
+                            Design
+                            <span class="banner__small-title">Traduzido em Linhas e Formas</span>
+                        </h2>
+                    </div>
+                </section>
+                <section class="banner banner--sofa-4">
+                    <div class="container">
+                        <h2 class="banner__title">
+                            Design
+                            <span class="banner__small-title">Traduzido em Linhas e Formas</span>
+                        </h2>
+                    </div>
+                </section>
+                <button class="slider__left-button">
+                    <svg class="slider__arrow" xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512"><path fill="currentColor" d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path></svg>
+                </button>
+                <button class="slider__right-button">
+                    <svg class="slider__arrow" xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512"><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>
+                </button>
+                <span class="slider__scroll-down">
+                    Role para baixo
+                    <svg class="slider__chevron" xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg>
+                </span>
+            </header>
+            <section class="window">
+                <div class="window__rag">
+                    <div class="window__inner-rag">
+                        <div class="moon">
+                            <h2 class="moon__text">Nossas<br/>Coleções</h2>
+                        </div>
+                        <p class="window__text">Coleções versáteis, desenvolvidas para favorecer o conforto e a funcionalidade dos espaços.</p>
+                        <a class="window__button button" href="#">Conheça</a>
+                    </div>
+                </div>
+            </section>
+            <section class="banner--centralized banner--sofa-2">
+                <!-- banner-'bottom' -->
+                <div class="container">
+                    <h2 class="banner__title">A Treviso</h2>
+                    <p class="banner__text">Mais do que estofados, oferecemos soluções inteligentes, duráveis e confortáveis para ambientes de bem viver.</p>
+                    <a class="banner__button button"href="#">Saiba mais</a>
+                </div>
+            </section>
+            <section class="window window--left">
+                <div class="window__rag">
+                    <div class="window__inner-rag">
+                        <div class="moon--left">
+                            <h2 class="moon__text">Nossos<br/>Representantes</h2>
+                        </div>
+                        <p class="window__text">Nossos parceiros comerciais estão presentes por todo o país. Seja para comprar ou revender nossos productos, com certeza há um representante próximo de você.</p>
+                        <a class="window__button button" href="#">Encontre</a>
+                    </div>
+                </div>
+            </section>
+            <article class="newsletter container">
+                <h2 class="newsletter__title">Cadastre-se e receba nossas novidades</h2>
+                <form id="newsletter">
+                    <label>
+                        <!-- <span>Nome completo</span> -->
+                        <input class="newsletter__field" placeholder="Nome completo" type="text" />
+                    </label>
+                    <label>
+                        <!-- <span>E-mail</span> -->
+                        <input class="newsletter__field" placeholder="E-mail" type="text"/>
+                    </label>
+                </form>
+                <aside class="newsletter__text">
+                    <p>De acordo com a <abbr title="Lei Geral de Proteção de Dados Pessoais">LGPD</abbr> os dados fornecidos serão unicamente utilizados por nossa empresa como canal de cantato.</p>
+                </aside>
+                <button class="newsletter__button button" form="newsletter" type="submit">Cadastrar</button>
+            </article>
+        </article>
+
+        <footer class="footer">
+            <div class="container">
+                <h2 class="footer__column">
+                    <a class="logo" href="#"><img class="logo__image" src="img/logo-branco.png" height="48" width="297" alt="Estofados Treviso"/></a>
+                </h2>
+                <address class="footer__column center">
+                    <div class="center__inner">
+                        <section>
+                            <h2>Contato</h2>
+                            <ul>
+                                <li><a href="#">
+                                    <svg class="social-media__icon footer__icon" xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512"><path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg>    
+                                    (54) 99192-2345</a></li>
+                                <li><a href="#">
+                                    <svg class="social-media__icon footer__icon" xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512"><path fill="currentColor" d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"></path></svg>
+                                    contato@trevisan<br/>estofados.com.br</a></li>
+                            </ul>
+                            <aside class="endereco">
+                                <svg class="social-media__icon footer__icon" xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512"><path fill="currentColor" d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path></svg>
+                                <p>Júlio de Castilhos, 01<br/>Bento Gonçalves - RS<br/>(CEP 95700-000)</p>
+                            </aside>
+                        </section>
+                    </div>
+                </address>
+                <section class="footer__column center">
+                    <div class="center__inner">
+                        <h2>Horário de atendimento</h2>
+                        <ul>
+                            <li>Segunda à Sexta: 08:00 - 17:00</li>
+                            <li>Sábado e Domingo: 12:00 - 19:00</li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="footer__column center colecoes" style="text-align: right;">
+                    <div class="center__inner">
+                        <h2>Coleções</h2>
+                        <ul>
+                            <li><a href="#">Sofás</a></li>
+                            <li><a href="#">Poltronas</a></li>
+                            <li><a href="#">Mesas</a></li>
+                            <li><a href="#">Cadeiras</a></li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="footer__column social">  
+                    <h2>Redes sociais</h2>
+                    <ul class="social-media">
+                        <li class="social-media__item">
+                            <a class="social-media__link" href="#">
+                                <svg class="social-media__icon" xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512"><path fill="currentColor" d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z"></path></svg>
+                                <!-- <svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512"><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg> -->
+                            </a>
+                        </li>
+                        <li class="social-media__item">
+                            <a class="social-media__link" href="#">
+                                <svg class="social-media__icon" xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
+                            </a>
+                        </li>
+                        <li class="social-media__item">
+                            <a class="social-media__link" href="#">
+                                <svg class="social-media__icon" xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512"><path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            <aside>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512"><path fill="currentColor" d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"></path></svg>
+                Site Seguro
+            </aside>
+            <section>
+                <p>2020 - Todos os direitos reservados. Todas as imagens são meramente ilustrativas</p>
+                <a class="logo" href="#">
+                    <img class="logo__image" src="img/logo-GOON.png" alt="Goon Design e Tecnologia"/>
+                </a>
+            </section>
+        </footer>
+        <script>
+            var header_button = document.getElementsByClassName("topbar__button")[0];
+
+            header_button.addEventListener("click", function() {
+                this.classList.toggle("show");
+            });
+
+            /* slider */
+
+            var slides = document.querySelectorAll(".slider .banner");
+            var currentSlide = 0;
+
+            var leftButton = document.getElementsByClassName("slider__left-button")[0];
+
+            leftButton.addEventListener("click", function() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                moveSlider();
+            });
+
+            var rightButton = document.getElementsByClassName("slider__right-button")[0];
+
+            rightButton.addEventListener("click", function() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                moveSlider();
+            });
+
+            // setInterval(function() {
+            //     currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            //     moveSlider();
+            // }, 5000);
+
+            function moveSlider () {
+                for (var i = 0; i < slides.length; i++) {
+                    slides[i].classList.remove("top");
+                    slides[i].classList.remove("next");
+                    slides[i].classList.remove("previous");
+                    slides[i].classList.add("animate");
+                }
+                
+                slides[currentSlide].classList.add("top");
+                slides[(currentSlide + 1) % slides.length].classList.add("next");
+                slides[(currentSlide - 1 + slides.length) % slides.length].classList.add("previous");
+            }
+
+            moveSlider();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+@use '../abstracts/all' as *;
+
+.bars-button {
+    @include icon(bars);
+    @include font(Bell);
+    @include font-rhythm(-1, rhythm(0.5));
+    @include transition(0.25s);
+    
+    color: white;
+    letter-spacing: rem(1px);
+    position: relative;
+    text-transform: uppercase;
+    z-index: 1;
+    
+    &.show {
+        @include icon(cancel);
+    }
+    
+    &:hover {
+        transform: scale(1.1);
+    }
+    
+    &:active {
+        transform: scale(0.95);
+    }
+    
+    &:before {
+        display: block;
+        font-size: rhythm($menu-button-height - 0.5);
+    }
+}

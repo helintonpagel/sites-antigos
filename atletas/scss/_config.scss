@@ -1,0 +1,32 @@
+@use 'sass:color';
+@use 'utilities/all' as *;
+
+/*
+* Config
+*/
+
+$base-font-size: 14px;
+
+$base-line-height: 2;
+
+$rhythm: $base-font-size * $base-line-height;
+
+$default-family: ("Neue Hans Kendrick", sans-serif);
+
+$wrapper: rem(1170px);
+
+$theme-color-1: hsl(12, 86%, 49%);
+
+$body-back: hsl(0, 0%, 0%);
+
+$body-text: hsl(0, 0%, 100%);
+
+$button-shadow: color.change($theme-color-1, $alpha: 0.75);
+
+$card-back: hsl(0, 0%, 93%);
+
+$footer-logo: rhythm(1.5);
+
+$form-width: rem(750px);
+
+$form-button: rem(180px);

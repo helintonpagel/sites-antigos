@@ -1,0 +1,30 @@
+@use '../abstracts/all' as *;
+
+.hovering-icon {
+    @include transition(0.25s);
+    
+    bottom: rhythm(0.5);
+    display: block;
+    height: rhythm(2.75);
+    position: fixed;
+    right: rhythm(0.5);
+    transform: translateX(150%);
+    width: rhythm(2.75);
+    
+    @include breakpoint(null 1100) {
+        display: none;
+    }
+    
+    &.show {
+        transform: translateX(0%);
+        
+        &:hover {
+            transform: translateX(0%) scale(1.1);
+        }
+    }
+    
+    &__image {
+        height: 100%;
+        width: 100%;
+    }
+}

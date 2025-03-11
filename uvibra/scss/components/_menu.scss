@@ -1,0 +1,32 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.menu {
+    &__item {
+        @media (min-width: 1200px) {
+            display: inline-block;
+        
+            &::after {
+                @include margin(null 1);
+                content: '|';
+            }
+
+            &:last-child::after {
+                content: none;
+            }
+        }
+    }
+    
+    &__link {
+        border-bottom: solid transparent rem(1px);
+        box-sizing: border-box;
+        display: inline-block;
+        height: rhythm(1);
+        transition-duration: 250ms;
+        transition-property: border-color;
+        
+        &:hover {
+            border-color: currentColor;
+        }
+    }
+}

@@ -1,0 +1,148 @@
+@use 'sass:color';
+@use '../abstracts/all' as *;
+
+.footer {
+    background: color.change($boulder, $lightness: 23%);
+    color: color.change($boulder, $lightness: 70%);
+    @include padding(3 null 0.25);
+    margin: 0;
+    position: relative;
+    
+    @include breakpoint(null 900) {
+        @include padding(1, top);
+    }
+    
+    &__row {
+        @include trunk;
+    }
+    
+    &__row {
+        text-align: justify;
+        
+        &:after {
+            content: '';
+            display: inline-block;
+            vertical-align: top;
+            width: 100%;
+        }
+    }
+    
+    &__column {
+        display: inline-block;
+        
+        @include breakpoint(null 900) {
+            display: block;
+            text-align: center;
+            @include margin(1, top);
+        }
+    }
+    
+    &__heading {
+        color: inherit;
+        @include font-rhythm(1);
+        text-align: left;
+        
+        @include breakpoint(null 900) {
+            text-align: center;
+        }
+    }
+    
+    &__paragraph, &__indented-paragraph {
+        @include font-rhythm(0);
+        text-align: inherit;
+    }
+    
+    &__indented-paragraph {
+        @include breakpoint(900) {
+            @include margin(rem(24px), left);
+        }
+    }
+    
+    &__leader {
+        @include margin(1, top);
+    }
+    
+    &__link {
+        text-decoration: none;
+        @include transition(0.25s);
+        
+        &:hover {
+            color: white;
+        }
+    }
+    
+    &__aside {
+        @include trunk;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+    }
+    
+    &__logo {
+        height: rhythm(4);
+    }
+    
+    &__aside-paragraph {
+        @include font-rhythm(-1);
+        @include margin(2, top);
+    }
+    
+    &__context {
+        overflow: hidden;
+    }
+    
+    &__icon {
+        &:before {
+            @include font-rhythm(0);
+            @include margin(rem(5px), right);
+            text-align: center;
+            width: rem(21px);
+        }
+        
+        @each $icon-name in (marker, clock, phone, envelope) {
+            &.#{$icon-name}-icon {
+                @include icon($icon-name)
+            }
+        }
+    
+        &.marker-icon:before {
+            @include font-rhythm(1);
+            
+            @include breakpoint(900) {
+                float: left;
+            }
+            
+            @include breakpoint(null 900) {
+                @include font-rhythm(2);
+                margin: 0;
+            }
+        }
+    
+        &.envelope-icon:before {
+            @include font-rhythm(-1);
+        }
+    }
+
+    &__lock {
+        @include icon(lock);
+        text-transform: uppercase;
+        vertical-align: middle;
+        height: rhythm(1);
+        
+        @include breakpoint(1000) {
+            position: absolute;
+            right: rhythm($trunk-space);
+            bottom: rhythm(2);
+        }
+        
+        @include breakpoint(null 1000) {
+            display: block;
+        }
+        
+        &:before {
+            @include font-rhythm(1);
+            @include margin(0.125, right);
+            vertical-align: -10%;
+        }
+    }
+}

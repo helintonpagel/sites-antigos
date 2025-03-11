@@ -1,0 +1,65 @@
+@use '../abstracts/all' as *;
+
+* {
+    border: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    margin: 0;
+    outline: {
+        color: transparent;
+        offset: rem(-2px);
+        style: dashed;
+        width: rem(1px);
+    }
+    padding: 0;
+    vertical-align: top;
+    
+    &:focus {
+        outline-color: $brand-color;
+    }
+}
+
+html {
+    @include font(Montserrat, light);
+
+    color: black;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-text-align-adjust: 100%;
+}
+
+body {
+    background-color: transparent;
+    overflow-x: hidden;
+
+    ::selection {
+        color: white;
+        background-color: $brand-color;
+    }
+}
+
+ol, ul {
+    list-style-type: none;
+}
+
+button {
+    background: transparent;
+    cursor: pointer;
+    -webkit-appearance: button;
+}
+
+input, textarea {
+    background: transparent;
+    height: rhythm(1);
+    width: 100%;
+}
+
+figure {
+    display: inline-block;
+}

@@ -1,0 +1,47 @@
+@use 'math' as *;
+@use 'directional' as *;
+
+$wrapper-width: null !default;
+
+@mixin ghost($string: "after") {
+    @if $string == "clear" {
+        &::after {
+            clear: both;
+            content: '';
+            display: table;
+        }
+    }
+    @else if $string == "after" or $string == "before" {
+        &::#{$string} {
+            content: '';
+            display: inline-block;
+            #{if($string == after, width, height)}: 100%;
+        }
+    }
+}
+
+@mixin wrapper($width: $wrapper-width) {
+    @include margin(null auto);
+    @include padding(null 1rem);
+
+    max-width: $width;
+}
+
+@mixin hide-visually {
+    clip-path: inset(50%);
+    height: rem(1px);
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: rem(1px);
+}
+
+@mixin focus-visible($color: currentColor) {
+    outline-color: $color;
+    outline-offset: rem(2px);
+    outline-style: dashed;
+
+    &:focus-visible {
+        outline-width: rem(2px);
+    }
+}

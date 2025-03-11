@@ -1,0 +1,170 @@
+@use 'sass:color';
+@use '../abstracts/all' as *;
+
+// it could be an object instead
+
+.form {
+    margin: {
+        left: auto;
+        right: auto;
+    }
+    max-width: rem(890px);
+    
+    
+    @at-root &__field, &__field--textarea {
+        @include font-rhythm(1);
+        
+        border: solid color(copper) 1px;
+        display: block;
+        font: 0;
+        height: rhythm(2, 2px);
+        letter-spacing: rem(1px);
+        line-height: rhythm(2, 2px);
+        margin-top: rhythm(1, 1px);
+        padding-left: rhythm(0.5);
+        padding-right: rhythm(0.5);
+        position: relative;
+        text-align: left;
+    }
+    
+    @at-root &__field--textarea {
+        display: block;
+        height: rhythm(8);
+        min-height: rhythm(2);
+        resize: vertical;
+        overflow: auto;
+    }
+    
+    @at-root &__placeholder {
+        display: block;
+        
+        @at-root .is-active & {
+            display: none;
+        }
+    }
+    
+    @at-root &__input, &__input--textarea {
+        box-sizing: border-box;
+        height: rhythm(2);
+        left: 0;
+        letter-spacing: rem(1px);
+        line-height: rhythm(2, 2px);
+        height: rhythm(2, 2px);
+        padding-left: rhythm(0.5);
+        padding-right: rhythm(0.5);
+        position: absolute;
+        top: 0;
+    }
+    
+    @at-root &__input--textarea {
+        @include font-rhythm(1);
+        
+        height: calc(100% - #{rhythm(0.5, 1px)});
+        resize: none;
+        top: rhythm(0.5, 1px);
+    }
+}
+
+/* .form {
+background: {
+        image: url('../img/gray-vineyard-path.jpg');
+        position: center center;
+        size: cover;
+    }
+    color: color(vista-white);
+    letter-spacing: rem(2px);
+    margin-top: rhythm(3);
+    padding-bottom: rhythm(2);
+    padding-left: rhythm(1.5);
+    padding-right: rhythm(1.5);
+    padding-top: rhythm(4);
+    text-align: center;
+    
+    @at-root &__title {
+        @include font(sans-serif, 600);
+        @include font-rhythm(1);
+
+        max-width: rhythm(30);
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    
+    @at-root &__form {
+        max-width: rhythm(30);
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    @at-root &__field {
+        @include font-rhythm(1);
+        
+        background: color.change(color(silver-chalice), $alpha: 0.25);
+        border: solid color(vista-white) 1px;
+        display: block;
+        font: 0;
+        height: rhythm(2, 2px);
+        letter-spacing: rem(1px);
+        line-height: rhythm(2, 2px);
+        margin-top: rhythm(1, 1px);
+        padding-left: rhythm(0.5);
+        padding-right: rhythm(0.5);
+        position: relative;
+        text-align: left;
+    }
+    
+    @at-root &__placeholder {
+        display: block;
+        
+        @at-root .is-active & {
+            display: none;
+        }
+    }
+    
+    @at-root &__input {
+        height: rhythm(2);
+        left: 0;
+        letter-spacing: rem(1px);
+        line-height: rhythm(2, 2px);
+        height: rhythm(2, 2px);
+        padding-left: rhythm(0.5);
+        padding-right: rhythm(0.5);
+        position: absolute;
+        top: 0;
+    }
+    
+    @at-root &__aside {
+        min-height: rhythm(2);
+        letter-spacing: rem(1px);
+        margin-top: rhythm(1);
+        text-align: center;
+    }
+    
+    @at-root &__error {
+        @include icon(cancel);
+        font-weight: 700;
+        color: hsl(0, 90%, 60%);
+        
+        &:before {
+            vertical-align: bottom;
+        }
+    }
+    
+    @at-root &__success {
+        @include icon(check);
+        color: hsl(120, 90%, 70%);
+        font-weight: 700;
+        
+        &:before {
+            vertical-align: bottom;
+        }
+    }
+    
+    @at-root &__button {
+        height: rhythm(2);
+        margin-top: rhythm(1);
+        margin-left: auto;
+        margin-right: auto;
+    }
+} */

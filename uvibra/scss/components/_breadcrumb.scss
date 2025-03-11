@@ -1,0 +1,28 @@
+@use 'sass:color';
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.breadcrumb {
+    font-family: $heading-family;
+    text-align: center;
+    
+    &__item {
+        display: inline-block;
+    }
+    
+    &__link {
+        background-color: $brand-color-2;
+        border-radius: 50%;
+        color: white;
+        display: block;
+        line-height: rhythm(1.75, 2px);
+        height: rhythm(1.75);
+        transition-duration: 250ms;
+        transition-property: background-color;
+        width: rhythm(1.75);
+        
+        &:hover, &:focus, &--active {
+            background-color: color.change($brand-color-2, $lightness: 15%);
+        }
+    }
+}

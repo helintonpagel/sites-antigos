@@ -1,0 +1,36 @@
+@use 'sass:list' as lst;
+
+@function expand-values($values) {
+    $length: lst.length($values);
+
+    @if $length == 2 {
+        @return lst.join($values, $values);
+    }
+
+    @if $length == 3 {
+        @return lst.append($values, lst.nth($values, 2));
+    }
+
+    @if $length == 4 {
+        @return $values;
+    }
+
+    @error "Invalid operation: $values length is #{$length}.";
+}
+
+@mixin directional($propty, $values) {
+    @if lst.index($values, null) == null {
+        #{$propty}: $values;
+    }
+    @else if ($values != null) {
+        $values: expand-values($values);
+
+        @each $string, $number in (bottom: 3, left: 4, right: 2, top: 1) {
+            #{$propty}-#{$string}: lst.nth($values, $number);
+        }
+    }
+}
+
+@mixin margin($values) { @include directional(margin, $values); }
+
+@mixin padding($values) { @include directional(padding, $values); }

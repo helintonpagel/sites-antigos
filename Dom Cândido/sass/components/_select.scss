@@ -1,0 +1,66 @@
+@use '../abstracts/all' as *;
+
+.select {
+    height: rhythm(1);
+    position: relative;
+    
+    &__field {
+        @include icon(chevron-down, after);
+        @include font(Montserrat, regular);
+
+        border-bottom: solid $leave-color rem(1px);
+        height: rhythm(1, 1);
+        text-align: left;
+
+        &:after {
+            @include transition(0.25s);
+            
+            right: 0;
+            font-size: rhythm(0.75);
+            vertical-align: -20%;
+        }
+        
+        &--active:after {
+            transform: rotateZ(180deg);
+        }
+    }
+    
+    &__list {
+        @include transition(0.25s);
+        
+        background: white;
+        box-shadow: (
+            0 0 rem(6px) 0 rgba(0, 0, 0, 0.2), 0 0 rem(3px) 0 rgba(0, 0, 0, 0.3)
+        );
+        display: inline-block;
+        left: 0;
+        max-height: 0px;
+        overflow-y: scroll;
+        position: absolute;
+        top: rhythm(0);
+        z-index: 1;
+        
+        @at-root .select__field--active ~ & {
+            max-height: rhythm(10);
+        }
+    }
+    
+    &__item {
+        @include transition(0.25s);
+        
+        cursor: pointer;
+        display: block;
+        list-style: none;
+    }
+    
+    &__link {
+        @include padding(null 0.25);
+        color: $leave-color !important;
+        display: block;
+        
+        &:hover {
+            background: $brand-color;
+            color: white !important;
+        }
+    }
+}

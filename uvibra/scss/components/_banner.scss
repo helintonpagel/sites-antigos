@@ -1,0 +1,75 @@
+@use 'sass:color';
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.banner {
+    color: white;
+    height: rhythm(10);
+    padding-bottom: rhythm(1);
+    position: relative;
+    
+    @media (min-width: 900px) {
+        height: rhythm(15);
+        text-align: center;
+    }
+    
+    &::after {
+        background-color: color.change($brand-color-2, $alpha: 0.75);
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: -1;
+    }
+    
+    &__pillar {
+        font-size: 0;
+        max-width: 1300px;
+        
+        &::after {
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+            width: 0;
+        }
+    }
+    
+    &__nav {
+        @include font-rhythm(-2);
+        text-align: left;
+        
+        @media (min-width: 900px) {
+            @include font-rhythm(-1, rhythm(1.5));
+        }
+    }
+    
+    &__header {
+        @include padding(null $gutter);
+        
+        display: inline-block;
+        vertical-align: middle;
+    }
+    
+    &__heading {
+        text-align: center;
+    }
+    
+    &__paragraph {
+        @include font-rhythm(0);
+        
+        margin-top: rhythm(0.25);
+        text-align: center;
+    }
+    
+    &__image {
+        position: absolute;
+        height: 100%;
+        left: 0;
+        object-fit: cover;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+    }
+}

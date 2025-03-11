@@ -1,0 +1,50 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.form-group {
+    @include margin(rhythm(1) rhythm(-0.5) null);
+    font-size: 0;
+    
+    @media screen and (max-width: 900px) {
+        margin-top: 0;
+    }
+    
+    &__field {
+        @include padding(null rhythm(0.5));
+        
+        box-sizing: border-box;
+        display: inline-block;
+        text-align: left;
+        width: 50%;
+        
+        @media screen and (max-width: 900px) {
+            margin-top: rhythm(1);
+            text-align: center;
+            width: 100%;
+        }
+        
+        &--fourth {
+            width: 25%;
+            
+            @media screen and (max-width: 900px) {
+                width: 100%;
+            }
+        }
+        
+        &--third {
+            width: div(100%, 3);
+            
+            @media screen and (max-width: 900px) {
+                width: 100%;
+            }
+        }
+        
+        &--sixth {
+            width: div(100%, 6);
+            
+            @media screen and (max-width: 900px) {
+                width: 100%;
+            }
+        }
+    }
+}

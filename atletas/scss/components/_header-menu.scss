@@ -1,0 +1,39 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.header-menu {
+    @include font-rhythm(ratio(1));
+    @include margin(null -1.25em);
+    
+    @media screen and (max-width: 899px) {
+        @include padding(rhythm(2) rhythm(1) null);
+        
+        background-color: $theme-color-1;
+        height: 100vh;
+        transform: translateX(100%);
+        transition-duration: 500ms;
+        transition-property: transform;
+        width: 100%;
+    }
+    
+    &__item {
+        @include margin(null 1.25em);
+        display: inline-block;
+        
+        @media screen and (max-width: 899px) {
+            margin-top: rhythm(0.5);
+            display: block;
+        }
+    }
+    
+    &__link {
+        transition-duration: 250ms;
+        transition-property: color;
+        
+        &:hover, &:focus {
+            @media screen and (min-width: 900px) {
+                color: $theme-color-1;
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "sequenceweb-dropshipping",
+  "version": "1.0.0",
+  "description": "Sequence Web Dropshipping",
+  "main": "index.js",
+  "watch": {
+    "build-js": {
+      "quiet": false,
+      "patterns": [
+        "js/src"
+      ],
+      "extensions": "js"
+    }
+  },
+  "scripts": {
+    "build-js": "browserify -t babelify ./js/src/index.js -o ./js/index.js",
+    "build-js:watch": "npm-watch build-js",
+    "build-css": "sass ./scss/style.scss ./css/style.css",
+    "build-css:watch": "sass ./scss/style.scss ./css/style.css --watch"
+  },
+  "author": "Goon",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0",
+    "nodemon": "^2.0.12",
+    "npm-watch": "^0.10.0"
+  }
+}

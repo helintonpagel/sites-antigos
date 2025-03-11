@@ -1,0 +1,132 @@
+@use '../utilities/all' as *;
+
+$fonts: (
+    (
+        family: "Neue Hans Kendrick",
+        path: "../fonts/neuehanskendrick-heavy",
+        style: normal,
+        weight: 900,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        family: "Neue Hans Kendrick",
+        path: "../fonts/neuehanskendrick-heavyitalic",
+        style: italic,
+        weight: 900,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        family: "Neue Hans Kendrick",
+        path: "../fonts/neuehanskendrick-light",
+        style: normal,
+        weight: 300,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        family: "Neue Hans Kendrick",
+        path: "../fonts/neuehanskendrick-lightitalic",
+        style: italic,
+        weight: 300,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        family: "Neue Hans Kendrick",
+        path: "../fonts/neuehanskendrick-medium",
+        style: normal,
+        weight: 500,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        family: "Neue Hans Kendrick",
+        path: "../fonts/neuehanskendrick-mediumitalic",
+        style: italic,
+        weight: 500,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        family: "Neue Hans Kendrick",
+        path: "../fonts/neuehanskendrick-bold",
+        style: normal,
+        weight: 700,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        family: "Neue Hans Kendrick",
+        path: "../fonts/neuehanskendrick-bolditalic",
+        style: italic,
+        weight: 700,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        family: "Neue Hans Kendrick",
+        path: "../fonts/neuehanskendrick-extrabold",
+        style: normal,
+        weight: 800,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        family: "Neue Hans Kendrick",
+        path: "../fonts/neuehanskendrick-extrabolditalic",
+        style: italic,
+        weight: 800,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        family: "Neue Hans Kendrick",
+        path: "../fonts/neuehanskendrick-extralight",
+        style: normal,
+        weight: 200,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        family: "Neue Hans Kendrick",
+        path: "../fonts/neuehanskendrick-extralightitalic",
+        style: italic,
+        weight: 200,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        family: "Neue Hans Kendrick",
+        path: "../fonts/neuehanskendrick-semibold",
+        style: normal,
+        weight: 600,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        family: "Neue Hans Kendrick",
+        path: "../fonts/neuehanskendrick-semibolditalic",
+        style: italic,
+        weight: 600,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        family: "Neue Hans Kendrick",
+        path: "../fonts/neuehanskendrick-thin",
+        style: normal,
+        weight: 100,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        family: "Neue Hans Kendrick",
+        path: "../fonts/neuehanskendrick-thinitalic",
+        style: italic,
+        weight: 100,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        family: "Neue Hans Kendrick",
+        path: "../fonts/neuehanskendrick-regular",
+        style: normal,
+        weight: 400,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        family: "Neue Hans Kendrick",
+        path: "../fonts/neuehanskendrick-regularitalic",
+        style: italic,
+        weight: 400,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+);
+
+@each $font in $fonts { @include font-face($font); }

@@ -1,0 +1,41 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.plans-button {
+    @include common-focus;
+    
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    &--back {
+        left: rhythm(-2.25);
+        
+        @include media(max-width px($wrapper - rhythm(1))) {
+            left: rhythm(-1);
+        }
+    }
+    
+    &--next {
+        right: rhythm(-2.25);
+        
+        @include media(max-width px($wrapper - rhythm(1))) {
+            right: rhythm(-1);
+        }
+    }
+    
+    &__icon {
+        @include transition(transform);
+        
+        height: rhythm(1.25);
+        width: auto;
+        
+        @include media(max-width px($wrapper - rhythm(1))) {
+            height: rhythm(0.875);
+        }
+        
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}

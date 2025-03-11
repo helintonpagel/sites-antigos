@@ -1,0 +1,19 @@
+@forward 'sass:math';
+
+@use '../config' as *;
+@use 'sass:math' as *;
+
+$phi: 1.61803398875; // The golden ratio
+
+@function rem($value) {
+    @if type-of($value) == number and unitless($value) == false {
+        @if unit($value) == rem {
+            @return $value;
+        }
+        @else if compatible($value, 0px) {
+            @return $value / $base-font-size * 1rem;
+        }
+    }
+
+    @error 'Argument $value must be a number with an absolute unit';
+}

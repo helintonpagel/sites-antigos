@@ -1,0 +1,47 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.header-card {
+    @include font-rhythm(0, rhythm(1.25));
+    @include padding(null 2 * $gutter 1 1);
+    
+    background-color: $brand-color-1;
+    box-sizing: border-box;
+    color: white;
+    font-family: $heading-family;
+    height: calc(100vh - #{rhythm($header-height)});
+    overflow: auto;
+    position: absolute;
+    transform: translateX(100%);
+    transition-duration: 500ms;
+    transition-property: transform;
+    
+    &--active {
+        transform: translateX(0%);
+    }
+    
+    &__heading {
+        font-size: inherit;
+        line-height: inherit;
+        padding-top: rhythm(1);
+        text-transform: uppercase;
+    }
+    
+    &__icon-bar {
+        font-size: rhythm(0.75);
+    }
+
+    &__search::before {
+        line-height: inherit;
+    }
+    
+    &__closure {
+        margin-top: rhythm(1);
+    }
+    
+    &__button {
+        font-family: $heading-family;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+}

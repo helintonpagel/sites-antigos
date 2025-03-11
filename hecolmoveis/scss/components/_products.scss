@@ -1,0 +1,78 @@
+@use '../config' as *;
+@use '../library/all' as *;
+@use '../utilities/all' as *;
+
+.products {
+    @media (max-width: 900px)  {
+        margin-top: rhythm(1);
+        text-align: center;
+    }
+    
+    &__heading {
+        @include hide-visually;
+    }
+    
+    &__content {
+        @include clearfix;
+        
+        position: relative;
+    }
+    
+    &__paragraph {
+        @include font-rhythm(1, rhythm(1.5));
+        @include padding(null 1);
+        
+        font-weight: 100;
+        text-transform: uppercase;
+        
+        @media (min-width: 900px) {
+            right: 100% / $PHI;
+            max-width: rem(330px);
+            margin-top: rhythm(-2);
+            padding-right: rhythm(2);
+            position: absolute;
+            text-align: right;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        @media (max-width: 1200px) {
+            @include font-rhythm(0, rhythm(1.5));
+        }
+    }
+    
+    &__image {
+        border-color: white;
+        border-style: solid;
+        border-width: rem(7px);
+        box-sizing: border-box;
+        height: auto;
+        width: 100% / $PHI;
+        margin-top: rhythm(1);
+    }
+    
+    @media (min-width: 900px) {
+        &__image {
+            margin-top: rhythm(-4);
+            min-height: rhythm(19);
+            object-fit: cover;
+        }
+        
+        &__content:nth-of-type(1) &__image {
+            border-right: 0;
+            float: right;
+        }
+
+        &__content:nth-of-type(2) &__image {
+            border-left: 0;
+        }
+    }
+    
+    &__watermark {
+        fill: hsl(60, 9%, 94%);
+        margin-left: rhythm(0.25);
+        height: 100%;
+        position: absolute;
+        width: auto;
+    }
+}

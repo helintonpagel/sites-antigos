@@ -1,0 +1,23 @@
+@use '../abstracts/all' as *;
+
+.upright-line {
+    @include font(Raleway, Light);
+    @include font-rhythm(3.5);
+
+    display: inline-block;
+    letter-spacing: rem(2px);
+    
+    @include breakpoint(null 600) {
+        @include font-rhythm(2.5);
+    }
+
+    &:before {
+        @include margin(1, bottom);
+
+        background-color: $alpha-color;
+        content: '';
+        display: block;
+        height: rhythm(3);
+        width: rem(5px);
+    }
+}

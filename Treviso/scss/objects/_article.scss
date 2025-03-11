@@ -1,0 +1,247 @@
+@use '../abstracts/all' as *;
+
+.hook-1 {
+    color: color(vista-white);
+    background: #303030;
+    margin-top: rhythm(2);
+    padding-top: rhythm(2);
+    padding-bottom: rhythm(2);
+    margin-left: rhythm(-3);
+    margin-right: rhythm(-3);
+    
+    .select {
+        @include icon(chevron-down);
+        
+        box-sizing: border-box;
+        color: black;
+        background: color(vista-white);
+        margin-top: rhythm(1);
+        margin: {
+            left: auto;
+            right: auto;
+        }
+        max-width: rhythm(20);
+        position: relative;
+        padding: {
+            top: rhythm(0.25);
+            bottom: rhythm(0.25);
+            left: rhythm(0.5);
+            right: rhythm(0.5);
+        };
+        text-align: left;
+        
+        &:before {
+            font-size: rhythm(1);
+            line-height: rhythm(1.5);
+            height: rhythm(1.5);
+            position: absolute;
+            right: rhythm(0.5);
+            top: rem(2px);
+        }
+    }
+}
+
+.hook-2 {
+    .newsletter__form {
+        max-width: 890px;
+        margin-top: 4.5rem;
+    }
+    
+    .newsletter__field {
+        background: transparent;
+        border-color: color(copper);
+    }
+    
+    .newsletter__field--textarea, textarea {
+        display: block;
+        height: rhythm(8);
+        resize: none;
+    }
+}
+
+
+
+.article {
+    @include trunk;
+    
+    @at-root &__title {
+        background: {
+            image:(
+                linear-gradient(to right, color(copper) 100%, transparent 100%),
+                linear-gradient(to left, color(copper) 100%, transparent 100%)
+            );
+            position: left center, right center;
+            repeat: no-repeat;
+        }
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: rhythm(3);
+        letter-spacing: rem(2px);
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    @at-root &__banner {
+        margin: {
+            left: 0;
+            right: 0;
+            top: rhythm(2)
+        }
+    }
+
+    @at-root &__small-title {
+        @include font(sans-serif, 500);
+        @include font-rhythm(1);
+        
+        letter-spacing: rem(1px);
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    @at-root &__section {
+        margin-top: rhythm(3);
+    }
+
+    @at-root &__text {
+        margin-top: rhythm(1);
+    }
+
+    @at-root &__paragraph, &__squared-paragraph {
+        @include font(sans-serif, 300);
+        @include font-rhythm(1);
+        
+        letter-spacing: rem(1px);
+        text-align: center;
+    }
+
+    @at-root &__illustration {
+        margin: {
+            left: rhythm(-3);
+            right: rhythm(-3);
+        }
+    }
+
+    @at-root &__squared-paragraph {
+        border: {
+            left: color(copper) 1px solid;
+            right: color(copper) 1px solid;
+        }
+        margin: {
+            top: rhythm(5);
+            left: auto;
+            right: auto;
+        }
+        padding: {
+            top: rhythm(1.5);
+            bottom: rhythm(1.5);
+        }
+        max-width: rhythm(42);
+        position: relative;
+        letter-spacing: rem(1px);
+        text-align: center;
+        
+        &:before, &:after {
+            content: ' ';
+            display: block;
+            width: 35%;
+            height: 1px;
+            background: color(copper);
+        }
+        
+        &:before {
+            position: absolute;
+            top: 0;
+        }
+        
+        &:after {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+
+    @at-root &__column, &__wide-column {
+        text-align: center;
+        margin-top: rhythm(3);
+        margin-bottom: rhythm(2);
+        margin: {
+            left: rhythm(1);
+            right: rhythm(1);
+        }
+        max-width: rhythm(12);
+
+        &:before {
+            @include font-rhythm(7);
+            color: color(copper);
+        }
+    }
+
+    @at-root &__wide-column {
+        max-width: rhythm(21);
+    }
+
+    @at-root &__photo {
+        border-radius: 10px;
+        margin-bottom: rhythm(1);
+        width: rhythm(12);
+    }
+
+
+
+    @at-root &__footer {
+        margin-top: rhythm(9);
+        position: relative;
+        padding-bottom: rhythm(3);
+    }
+
+    @at-root &__card {
+        bottom: 0;
+        background: color(soft-amber);
+        box-shadow: 0 0 rem(10px) rem(5px) rgba(0, 0, 0, 0.5);
+        box-sizing: border-box;
+        left: 50%;
+        max-width: rhythm(30);
+        opacity: 0;
+        padding: rhythm(10);
+        position: absolute;
+        text-align: center;
+        transform: (
+            translateX(-50%) translateY(rhythm(10))
+        );
+        transition-duration: 1s;
+        z-index: 1;
+        
+        &.is-active {
+            opacity: 1;
+            transform: (
+                translateX(-50%) translateY(0)
+            );
+        }
+        
+        @include breakpoint(900px) {
+            margin-left: 1.5rem;
+            margin-right: 1.5rem;
+            max-width: 100%;
+        }
+    }
+
+    @at-root &__button {
+        margin: {
+            top: rhythm(1);
+            bottom: rhythm(5);
+        }
+        text-align: center;
+    }
+
+    @at-root &__buttons {
+        margin: {
+            top: rhythm(5);
+            left: rhythm(1);
+            right: rhythm(1);
+        }
+
+        .button {
+            width: rhythm(8);
+        }
+    }
+}

@@ -1,0 +1,80 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.posts-widget {
+    @include padding(7 null 3);
+    
+    background-color: white;
+    box-shadow: (
+        0 rem(10px) rem(10px) rem(-10px) rgba(0, 0, 0, 0.375),
+        0 rem(5px) rem(5px) rem(-5px) rgba(0, 0, 0, 0.125)
+    );
+    margin-top: rhythm(-3);
+    text-align: center;
+    
+    @media (max-width: 600px) {
+        @include padding(5 null null null);
+    }
+    
+    &--transparent {
+        background: transparent;
+    }
+    
+    &__pillar {
+        margin-top: rhythm(1.5);
+        overflow: hidden;
+    }
+    
+    &__list {
+        @include margin(null 0 - 2 * $gutter);
+        
+        box-sizing: border-box;
+        font-size: 0;
+        transition-duration: 500ms;
+        transition-property: transform;
+        white-space: nowrap;
+    }
+    
+    &__item {
+        @include padding(null $gutter);
+        
+        box-sizing: border-box;
+        display: inline-block;
+        text-align: left;
+        white-space: normal;
+        width: 100%;
+        
+        @media (min-width: 450px) {
+            width: 50%;
+        }
+        
+        @media (min-width: 700px) {
+            width: (100% / 3);
+        }
+        
+        @media (min-width: 900px) {
+            width: 25%;
+        }
+    }
+    
+    &__control {
+        position: relative;
+    }
+    
+    &__prev, &__next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    &__next {
+        right: 0;
+    }
+    
+    &__prev {
+        left: 0;
+    }
+    &__button {
+        margin-top: rhythm(1.5);
+    }
+}

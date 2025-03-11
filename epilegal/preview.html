@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <title>
+            EPI Legal
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/index.js"></script> 
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    </head>
+    <body id="top">
+        <header class="header">
+            <div class="header__wrapper">
+                <h1 class="header__logo">
+                    <a class="logo" href="home.php">
+                        <img class="logo__image" src="img/epi-legal-logo.svg" width="103" height="48" alt="EPI Legal">
+                    </a>
+                </h1>
+                <button class="header__button menu-button">
+                    <img class="menu-button__icon" src="img/menu.svg" data-inline="true" width="24" height="24" alt="Menu">
+                </button>
+                <nav class="header__menu">
+                    <ul class="header-menu">
+                        <li class="header-menu__item">
+                            <a class="header-menu__link" href="about.php">Sobre</a>
+                        </li>
+                        <li class="header-menu__item">
+                            <a class="header-menu__link" href="terms.php">Termos de uso</a>
+                        </li>
+                        <li class="header-menu__item">
+                            <a class="header-menu__link" href="contact.php">Fale conosco</a>
+                        </li>
+                        <li class="header-menu__item">
+                            <a class="header-menu__link header-menu__link--access" href="#">Acesse</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header> 
+        <article class="banner">
+            <h2 class="banner__heading">
+                Fale Conosco
+            </h2>
+            <ol class="breadcrumb">
+                <li class="breadcrumb__item">
+                    <a class="breadcrumb__link" href="#">Home</a>
+                </li>
+                <li class="breadcrumb__item">
+                    <a class="breadcrumb__link" href="#">Formulário</a>
+                </li>
+            </ol>
+            <img class="banner__image" src="img/contact-banner.webp" height="336" width="1514" alt="" role="presentation">
+        </article>
+        <article class="formulary">
+            <h3 class="formulary__heading">
+                O Seu Plano <span class="formulary__stress">Foi Selecionado</span>
+            </h3>
+            <p class="formulary__paragraph">
+                Agora, preencha corretamente o formulário abaixo para que possamos receber suas informações e contatá-lo.
+            </p>
+            <form class="formulary__form" action="#">
+                <legend class="formulary__legend">
+                    Plano Selecionado: <strong>Até 10 funcionários - Mensal</strong>
+                </legend>
+                <label class="formulary-field">
+                    <input class="formulary-field__input" name="name" type="text">
+                    <span class="formulary-field__label">Razão Social</span>
+                </label>
+                <div>
+                    <label class="formulary-field formulary-field--one-half">
+                        <input class="formulary-field__input" name="cnpj" type="number" inputmode="numeric">
+                        <span class="formulary-field__label">CNPJ</span>
+                    </label>
+                    <label class="formulary-field formulary-field--one-half">
+                        <input class="formulary-field__input" name="employees" type="number" inputmode="numeric">
+                        <span class="formulary-field__label">Número de Funcionários</span>
+                    </label>
+                </div>
+                <div>
+                    <label class="formulary-field formulary-field--one-half">
+                        <input class="formulary-field__input" name="address" type="text">
+                        <span class="formulary-field__label">Endereço</span>
+                    </label>
+                    <label class="formulary-field formulary-field--one-sixth">
+                        <input class="formulary-field__input" name="number" type="number" inputmode="numeric">
+                        <span class="formulary-field__label">Número</span>
+                    </label>
+                    <label class="formulary-field formulary-field--one-third">
+                        <input class="formulary-field__input" name="complement" type="text">
+                        <span class="formulary-field__label">Complemento</span>
+                    </label>
+                </div>
+                <div>
+                    <label class="formulary-field formulary-field--one-fourth">
+                        <input class="formulary-field__input" name="cep" type="number" inputmode="numeric">
+                        <span class="formulary-field__label">CEP</span>
+                    </label>
+                    <label class="formulary-field formulary-field--one-half">
+                        <input class="formulary-field__input" name="city" type="text">
+                        <span class="formulary-field__label">Cidade</span>
+                    </label>
+                    <label class="formulary-field formulary-field--one-fourth">
+                        <input class="formulary-field__input" name="state" type="text">
+                        <span class="formulary-field__label">Estado</span>
+                    </label>
+                </div>
+                <div>
+                    <label class="formulary-field formulary-field--one-half">
+                        <input class="formulary-field__input" name="phone" type="tel" inputmode="tel">
+                        <span class="formulary-field__label">Telefone</span>
+                    </label>
+                    <label class="formulary-field formulary-field--one-half">
+                        <input class="formulary-field__input" name="email" type="email" inputmode="email">
+                        <span class="formulary-field__label">E-mail</span>
+                    </label>
+                </div>
+                <div class="formulary__group">
+                    <label class="formulary-checkbox">
+                        <input class="formulary-checkbox__input" name="newsletter" type="checkbox">
+                        <img class="formulary-checkbox__icon" src="img/check.svg" data-inline="true" width="24" height="24" alt="" role="presentation">
+                        <span class="formulary-checkbox__label">Aceito receber novidades</span>
+                    </label>
+                    <div class="formulary__recaptcha">
+                        <div class="g-recaptcha" data-sitekey="6LfGrGAbAAAAAHMc8qkTyVYVt3qq73yzOKCciYbp"></div>
+                    </div>
+                    <button class="formulary__button">Enviar</button>
+                </div>
+            </form>
+        </article>
+        <article class="newsletter">
+            <div class="newsletter__wrapper">
+                <h2 class="heading">
+                    News<span class="newsletter__stress">letter</span>
+                </h2>
+                <p class="newsletter__paragraph">
+                    Cadastre-se e receba nossas novidades.
+                </p>
+                <form class="newsletter__form" action="#">
+                    <label class="newsletter__field news-field">
+                        <input class="news-field__input" name="name" type="text">
+                        <span class="news-field__label">Nome</span>
+                    </label>
+                    <label class="newsletter__field news-field">
+                        <input class="news-field__input" name="name" type="email">
+                        <span class="news-field__label">E-mail</span>
+                    </label>
+                    <button class="newsletter__button">Enviar</button>
+                </form>
+            </div>
+        </article> 
+        <footer class="footer">
+            <div class="footer__wrapper">
+                <section class="footer__column">
+                    <h2 class="footer__logo logo">
+                        <img class="logo__image" src="img/epi-legal-light-logo.svg" width="103" height="48" alt="EPI Legal">
+                    </h2>
+                    <address>
+                        <ul class="footer-address">
+                            <li class="footer-address__item">
+                                <a class="footer-address__link" href="https://google.com/maps/place/R.+Nelson+Carraro,+395+-+Santo+Ant%C3%A3o,+Bento+Gon%C3%A7alves+-+RS,+95702-690/">
+                                    <img class="footer-address__icon" src="img/location-pin.svg" data-inline="true" width="24" height="24" alt="Endereço">
+                                    Avenida Nelson Carraro, 395 Santo Antão, <br> Bento Gonçalves - RS
+                                </a>
+                            </li>
+                            <li class="footer-address__item">
+                                <a class="footer-address__link" href="tel:05434529735">
+                                    <img class="footer-address__icon" src="img/phone.svg" data-inline="true" width="24" height="24" alt="Telefone">
+                                    (54) 3452-9735
+                                </a>
+                            </li>
+                            <li class="footer-address__item">
+                                <a class="footer-address__link" href="tel:054997088123">
+                                    <img class="footer-address__icon" src="img/whatsapp.svg" data-inline="true" width="24" height="24" alt="Whatsapp">
+                                    (54) 99708-8123
+                                </a>
+                            </li>
+                            <li class="footer-address__item">
+                                <a class="footer-address__link" href="mailto:epilegal@epilegal.com.br">
+                                    <img class="footer-address__icon" src="img/mail.svg" data-inline="true" width="24" height="24" alt="E-mail">
+                                    epilegal@epilegal.com.br
+                                </a>
+                            </li>
+                        </ul>
+                    </address>
+                </section>
+                <section class="footer__column">
+                    <h2 class="footer__heading">
+                        Menu
+                    </h2>
+                    <nav>
+                        <ul class="footer-menu">
+                            <li class="footer-menu__item">
+                                <a class="footer-menu__link" href="home.php">Home</a>
+                            </li>
+                            <li class="footer-menu__item">
+                                <a class="footer-menu__link" href="about.php">Sobre</a>
+                            </li>
+                            <li class="footer-menu__item">
+                                <a class="footer-menu__link" href="terms.php">Termos de uso</a>
+                            </li>
+                            <li class="footer-menu__item">
+                                <a class="footer-menu__link" href="contact">Fale conosco</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </section>
+                <section class="footer__column">
+                    <h2 class="footer__heading">
+                        Baixe o Aplicativo
+                    </h2>
+                    <ul class="store">
+                        <li class="store__item">
+                            <a class="store__link" href="https://play.google.com/store/apps/details?id=br.com.epilegal">
+                                <img class="store__image" src="img/google-play.webp" width="96" height="24" alt="Google Play">
+                            </a>
+                        </li>
+                        <li class="store__item">
+                            <a class="store__link" href="https://itunes.apple.com/br/app/epi-legal/id1537391246">
+                                <img class="store__image" src="img/app-store.webp" width="96" height="24" alt="App Store">
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            <aside class="credits">
+                <p class="credits__copy">2021 - Todos os direitos reservados</p>
+                <a class="credits__link credits-link" href="https://www.goondesign.com.br/">
+                    <img class="credits-link__image" src="img/goon-logo.svg" data-inline="true" width="193" height="24" alt="Goon, Design e Tecnologia">
+                    <span class="credits-link__paragraph">
+                        Goon Design e Tecnologia, parceiro da sua empresa na web. Acesse e confira nossos projetos!
+                    </span>
+                </a>
+            </aside>
+            <a class="top-button" href="#top">
+                <img class="top-button__icon" class="footer-address__icon" src="img/chevron-small-up.svg" data-inline="true" width="24" height="24" alt="Rolar para o topo">
+            </a>
+        </footer> 
+    </body>
+</html>

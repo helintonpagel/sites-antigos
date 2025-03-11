@@ -1,0 +1,23 @@
+@use '../abstracts/all' as *;
+
+.address {
+    @at-root &__title {
+        @include font(sans-serif, 700);
+        @include font-rhythm(1);
+        
+        text-transform: uppercase;
+    }
+    
+    @at-root &__list {
+        margin-top: rhythm(1);
+    }
+    
+    @at-root &__link {
+        text-decoration: none;
+        transition-duration: 0.25s;
+        
+        &:hover {
+            color: color(copper);
+        }
+    }
+}

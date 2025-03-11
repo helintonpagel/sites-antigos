@@ -1,0 +1,59 @@
+@use 'math' as *;
+@use '../config' as *;
+
+// Calculate rhythm units
+@function rhythm($number, $offset: 0) { @return rem($rhythm * $number - $offset); }
+
+// Increments up or down the squared golden ratio and returns adjusted $base-font-size
+@function scale-by($number) {
+    @if unitless($number) {
+        @return $base-font-size * pow(sqrt($PHI), $number);
+    }
+
+    @error 'Argument $number is not an unitless value';
+}
+
+// Calculate the minimum multiple of rhythm units needed to contain the font-size.
+@function lines-to($number) {
+    @if compatible($number, 0px) {
+        $result: ceil(2 * $number / $rhythm) / 2;
+
+        @if $result * $rhythm - $number < 1px {
+            $result: $result + 0.5;
+        }
+        
+        @return $result;
+    }
+
+    @error 'Argument $number is not an absolute value';
+}
+
+// Set font size and line height while maintaining vertical rhythm
+@mixin debug-lines($alpha: 1) {
+    background: {
+        image: linear-gradient(to top, $dusty-color 5%, transparent 5%);
+        position: left top;
+        size: auto rhythm(1);
+    }
+
+    @if $alpha != 1 {
+        > * {
+            opacity: $alpha;
+        }
+    }
+}
+
+@mixin font-rhythm($number, $height: auto) {
+    $font-size: scale-by($number);
+
+    @if $height != auto {
+        $font-size: rem($font-size);
+
+        font-size: $font-size;
+        line-height: $height / $font-size;
+    }
+    @else {
+        font-size: rem($font-size);
+        line-height: $rhythm * lines-to($font-size) / $font-size;
+    }
+}

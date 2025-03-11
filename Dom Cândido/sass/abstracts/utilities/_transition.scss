@@ -1,0 +1,93 @@
+@use 'sass:map';
+@use 'sass:list' as lst;
+
+@function is-number($val) {
+    @return type-of($val) == number;
+}
+
+@function is-string($val) {
+    @return type-of($val) == string;
+}
+
+@function filter($lst, $fun) {
+    $result: ();
+
+    @each $val in $lst {
+        @if (call($fun, $val)) {
+            $result: join($result, $val);
+        }
+    }
+
+    @return $result;
+}
+
+@function parse-transition($lst) {
+    $result: (
+        delay: 0s,
+        duration: 0s,
+        property: all,
+        timing-function: ease
+    );
+    $numbers: filter($lst, get-function(is-number));
+    $strings: filter($lst, get-function(is-string));
+
+    @if lst.length($numbers) > 0 {
+        $result: map.merge(
+            $result, (
+                duration: lst.nth($numbers, 1)
+            )
+        );
+
+        @if lst.length($numbers) > 1 {
+            $result: map.merge(
+                $result, (
+                    delay: lst.nth($numbers, 2)
+                )
+            );
+        }
+    }
+
+    @if lst.length($strings) > 0 {
+        $result: map.merge(
+            $result, (
+                property: lst.nth($strings, 1)
+            )
+        );
+
+        @if lst.length($strings) > 1 {
+            $result: map.merge(
+                $result, (
+                    timing-function: lst.nth($strings, 2)
+                )
+            );
+        }
+    }
+
+    @return $result;
+}
+
+@mixin transition($transition-lst...) {
+    $properties: ();
+
+    @each $transition in $transition-lst {
+        $parsed-transition: parse-transition($transition);
+
+        @each $propery, $value in $parsed-transition {
+            @if map.has-key($properties, $propery) {
+                $value: lst.join(
+                    map.get($properties, $propery), $value, comma
+                );
+            }
+
+            $properties: map.merge(
+                $properties, (
+                    #{$propery}: $value
+                )
+            );
+        }
+    }
+
+    @each $property, $value in $properties {
+        transition-#{$property}: $value;
+    }
+}

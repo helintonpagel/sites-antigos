@@ -1,0 +1,67 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.story-posts {
+    @include padding(2 2 * $gutter);
+    
+    background-color: white;
+    box-shadow: (
+        0 rem(10px) rem(10px) rem(-10px) rgba(0, 0, 0, 0.375),
+        0 rem(5px) rem(5px) rem(-5px) rgba(0, 0, 0, 0.125)
+    );
+    text-align: center;
+    
+    &--transparent {
+        background-color: transparent;
+    }
+    
+    &__view {
+        @include margin(1.5 auto null);
+        
+        border-radius: rem(3px);
+        height: rhythm($post-card-height);
+        overflow: hidden;
+        width: rem($post-card-width);
+    }
+    
+    &__list {
+        box-sizing: border-box;
+        font-size: 0;
+        height: 100%;
+        margin-left: rhythm(0 - $gutter);
+        transition-duration: 500ms;
+        transition-property: transform;
+        white-space: nowrap;
+        width: rem($post-card-width) + rhythm(2 * $gutter);
+    }
+    
+    &__item {
+        @include margin(null $gutter);
+        
+        display: inline-block;
+        height: 100%;
+        text-align: left;
+        white-space: normal;
+        width: rem($post-card-width);
+    }
+    
+    &__control {
+        @include margin(null auto);
+        
+        position: relative;
+        width: rem($post-card-width) + rhythm(2 * $gutter);
+    }
+    
+    &__prev, &__next {
+        position: absolute;
+        top: rhythm(0 - ($post-card-height + $chevron-size) / 2);
+    }
+    
+    &__next {
+        right: 0;
+    }
+    
+    &__button {
+        margin-top: rhythm(1.5);
+    }
+}

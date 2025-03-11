@@ -1,0 +1,33 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.result {
+    margin-top: rhythm(-3);
+    padding-bottom: rhythm(2);
+    
+    &--related {
+        margin-top: rhythm(1);
+        text-align: center;
+    }
+    
+    &__pillar {
+        @include padding(null 0);
+    }
+    
+    &--related &__pillar {
+        margin-top: rhythm(1);
+    }
+    
+    &__item {
+        margin-top: rhythm(1);
+        text-align: left;
+        
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+    
+    &__breadcrumb {
+        margin-top: rhythm(2);
+    }
+}

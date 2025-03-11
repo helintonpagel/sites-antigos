@@ -1,0 +1,67 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.search {
+    @include glyph(magnifier);
+    
+    display: inline-block;
+    font-size: 0;
+
+    &::before {
+        font-size: rhythm(0.75);
+        line-height: rhythm(1);
+    }
+}
+
+// .search {
+//     border-bottom: solid currentColor rem(1px);
+//     color: transparent;
+//     overflow: hidden;
+//     position: relative;
+//     transition-duration: 500ms;
+//     transition-property: color, width;
+//     width: rhythm(0.75);
+    
+//     &--expand {
+//         color: $dusty-color;
+//         width: rem(220px);
+//     }
+    
+//     &__input {
+//         box-sizing: border-box;
+//         height: rhythm(1);
+//         padding-right: rhythm(0.75, -4px);
+//         text-transform: none;
+//     }
+    
+//     &__label {
+//         display: block;
+//         height: 100%;
+//         position: absolute;
+//         top: 0;
+//         transition-duration: 250ms;
+//         transition-property: opacity;
+//         white-space: nowrap;
+//         z-index: -1;
+//     }
+    
+//     &__input--active + &__label {
+//         opacity: 0;
+//     }
+    
+//     &__button {
+//         @include glyph(magnifier);
+    
+//         display: inline-block;
+//         font-size: 0;
+//         position: absolute;
+//         right: 0;
+//         top: 0;
+
+//         &::before {
+//             color: $dusty-color;
+//             font-size: rhythm(0.75);
+//             line-height: rhythm(1);
+//         }
+//     }
+// }

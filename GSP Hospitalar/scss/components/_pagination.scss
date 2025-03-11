@@ -1,0 +1,32 @@
+@use '../abstracts/all' as *;
+
+.pagination {
+    text-align: center;
+    
+    &__item {
+        display: inline-block;
+    }
+    
+    &__button {
+        background-color: white;
+        border: {
+            color: $jacarta;
+            style: solid;
+            width: rem(1px);
+        }
+        color: $jacarta;
+        font-size: scale-by(2);
+        @include transition(0.25s);
+        height: rhythm($pagination-size);
+        width: rhythm($pagination-size);
+        
+        &:hover, &.is-active {
+            color: white;
+            background-color: $jacarta;
+        }
+        
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}

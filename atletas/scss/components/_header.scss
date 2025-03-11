@@ -1,0 +1,80 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.header {
+    padding-top: rhythm(2);
+    
+    @media screen and (max-width: 899px) {
+        padding-top: 0;
+    }
+    
+    &__wrapper {
+        @include wrapper;
+        position: relative;
+    }
+    
+    &__logo {
+        @include padding(rhythm(0.25) null);
+        font-size: 1rem * div(4, 9.25);
+        
+        @media screen and (max-width: 899px) {
+            padding-top: rhythm(1.25);
+        }
+        
+        @at-root .home & {
+            @media screen and (min-width: 1200px) {
+                font-size: 1rem;
+                padding-top: rhythm(5.5);
+            }
+            
+            @media screen and (min-width: 900px) and (max-width: 1199px) {
+                font-size: 1rem * div(6.25, 9.25);
+                padding-top: rhythm(3.5);
+            }
+        }
+    }
+    
+    &__button {
+        @media screen and (min-width: 900px) {
+            display: none;
+        }
+        
+        position: absolute;
+        right: rhythm(1);
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+    
+    &__menu {
+        @media screen and (min-width: 900px) {
+            position: absolute;
+            right: rhythm(1);
+            top: 0;
+        }
+        
+        @media screen and (max-width: 899px) {
+            right: 0;
+            max-width: 100%;
+            overflow: hidden;
+            position: absolute;;
+            top: 0;
+            transition-duration: 500ms;
+            transition-property: visibility;
+            visibility: hidden;
+            width: 50%;
+            
+            @at-root .header-button--active + &  {
+                visibility: visible;
+                
+                .header-menu {
+                    transform: translateX(0);
+                }
+            }
+        }
+        
+        @media screen and (max-width: 599px) {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+@use 'sass:color';
+@use '../abstracts/all' as *;
+
+.environment {
+    display: table;
+
+    @at-root &__side-bar {
+        display: table-cell;
+    }
+
+    @at-root &__stage {
+        background: $environment-background;
+        display: table-cell;
+        padding: 24px;
+        vertical-align: middle;
+    }
+    
+    @at-root &__inner-stage {
+        position: relative;
+    }
+
+    @at-root &__image {
+        box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.5);
+        width: 100%;
+    }
+    
+    @at-root &__layer {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+}

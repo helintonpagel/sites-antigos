@@ -1,0 +1,23 @@
+@use '../abstracts/all' as *;
+
+.article {
+    @include trunk;
+    @include padding(2, top);
+    
+    &__heading {
+        $offset: 100% * (2 - $phi);
+        @include font(Raleway, Extra-Light);
+        @include font-rhythm(3.5);
+        @include margin(null (0 - $offset) null $offset);
+        @include padding(5, left);
+        
+        @include breakpoint(null 900) {
+            @include font(Raleway, Light);
+            @include font-rhythm(3);
+            @include margin(null 0);
+            @include padding(0, left);
+        
+            text-align: center;
+        }
+    }
+}

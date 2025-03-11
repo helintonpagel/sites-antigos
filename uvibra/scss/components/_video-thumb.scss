@@ -1,0 +1,37 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.video-thumb {
+    @include glyph(play);
+    
+    position: relative;
+    height: 100%;
+    
+    &::before {
+        @include margin(-1 null null -1);
+        
+        color: white;
+        font-size: rhythm(2);
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        z-index: 1;
+    }
+    
+    &::after {
+        background-color: rgba(0, 0, 0, 0.5);
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+    }
+    
+    &__image {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+    }
+}

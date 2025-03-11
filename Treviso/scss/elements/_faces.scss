@@ -1,0 +1,24 @@
+@use '../abstracts/font' as *;
+
+// TODO: font configuration map
+
+// sans serif
+
+@include font-face(Icomoon, 900, normal, icomoon);
+
+// sans serif
+
+@include font-face(Oxygen, 300, normal, oxygen-light);
+@include font-face(Oxygen, 400, normal, oxygen-regular);
+@include font-face(Oxygen, 700, normal, oxygen-bold);
+
+@include font-face(Sukhumvit Set, 100, normal, sukhumvitset-thin);
+@include font-face(Sukhumvit Set, 300, normal, sukhumvitset-light);
+@include font-face(Sukhumvit Set, 400, normal, sukhumvitset-text);
+@include font-face(Sukhumvit Set, 500, normal, sukhumvitset-medium);
+@include font-face(Sukhumvit Set, 600, normal, sukhumvitset-semibold);
+@include font-face(Sukhumvit Set, 700, normal, sukhumvitset-bold);
+
+// serif
+
+@include font-face(Yeseva One, 400, normal, yesevaone-regular);

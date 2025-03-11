@@ -1,0 +1,1651 @@
+@use 'sass:color';
+@use '../config' as *;
+@use '../utilities/all' as *;
+@use '../utilities/patterns' as *;
+
+/*
+* editing
+*/
+
+.logo {
+    @include padding(rhythm(1.5));
+    background-color: $theme-color-2;
+    
+    @include media(max-width 900) {
+        @include padding(rhythm(1));
+    }
+    
+    &__link {
+        display: block;
+    }
+    
+    &__image {
+        height: rhythm(5.5);
+        width: auto;
+        
+        @include media(max-width 900) {
+            height: rhythm(4);
+        }
+    }
+}
+
+.header {
+    @include ghost(clear);
+    @include font($default, 500);
+    @include padding(rhythm(2.5) 2rem rhythm(1.5));
+    
+    background-color: $theme-color-2;
+    color: white;
+    position: relative;
+    z-index: 1;
+    
+    @include media(max-width 1200) {
+        @include padding(rhythm(1.5) 1rem rhythm(1));
+    }
+    
+    &::before {
+        @include transition(opacity visibility, 500ms);
+        
+        background-color: rgba(0, 0, 0, 0.375);
+        content: '';
+        height: 100vh;
+        left: 0;
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        visibility: hidden;
+        width: 100%;
+        z-index: 0;
+    }
+    
+    &--overlay::before {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__logo {
+        left: 50%;
+        position: absolute;
+        top: 0;
+        transform: translateX(-50%);
+        z-index: 0;
+        
+        @include media(max-width 1200) {
+            display: none;
+        }
+    }
+    
+    &__list {
+        float: right;
+        text-align: right;
+        
+        @include media(max-width 1200) {
+            display: none;
+        }
+    }
+    
+    &__item {
+        display: inline-block;
+        
+        &:first-of-type {
+            display: block;
+        }
+        
+        &::after {
+            content: '|';
+            display: inline-block;
+        }
+        
+        &:first-of-type::after, &:last-of-type::after {
+            content: none;
+        }
+    }
+    
+    &__link {
+        @include font-rhythm(ratio(-1));
+    }
+    
+    &__button {
+        @include margin(rhythm(1) - div($header-button-height, 2) null);
+        
+        float: left;
+        height: $header-button-height;
+    }
+}
+
+.header-menu {
+    @include transition(transform visibility, 500ms);
+    
+    background-color: $theme-color-2;
+    box-sizing: border-box;
+    left: 0;
+    min-height: $slideshow-height + rhythm(6);
+    padding: inherit;
+    position: absolute;
+    top: 0;
+    transform: translateX(-100%);
+    visibility: hidden;
+    width: rem(465px);
+    z-index: 0;
+    
+    @include media(max-width 1200) {
+        min-height: $slideshow-height + rhythm(4.5);
+    }
+    
+    @include media(max-width 600) {
+        width: 100%;
+    }
+    
+    &--visible {
+        transform: translateX(0);
+        visibility: visible;
+    }
+    
+    &__heading {
+        @include hide-visually;
+    }
+    
+    &__button {
+        @include margin(rhythm(1) - div($header-button-height, 2) null);
+        
+        height: $header-button-height;
+    }
+    
+    &__list {
+        @include margin(rhythm(1.5), top);
+        @include padding(rhythm(0.75) null rhythm(1));
+        
+        position: relative;
+        z-index: 0;
+        
+        &::before, &::after {
+            background-color: hsl(0, 0%, 50%);
+            content: '';
+            display: block;
+            height: rem(1px);
+            left: -2rem;
+            position: absolute;
+            right: -2rem;
+            z-index: 0;
+        }
+        
+        &::before {
+            top: 0;
+        }
+        
+        &::after {
+            bottom: 0;
+        }
+    }
+    
+    &__item {
+        @include margin(rhythm(0.25), top);
+    }
+    
+    &__link {
+        @include font-rhythm(ratio(1.75));
+        
+        position: relative;
+        z-index: 0;
+        
+        &::after {
+            @include transition(width, 250ms);
+            
+            background-color: currentColor;
+            bottom: rem(-2px);
+            content: '';
+            display: block;
+            height: rem(1px);
+            position: absolute;
+            width: 0;
+            z-index: 0;
+        }
+        
+        &:hover::after, &:focus-visible::after {
+            width: 100%;
+        }
+    }
+    
+    &__fall {
+        @include transition(max-height visibility, 250ms);
+        
+        margin-left: 1rem;
+        max-height: 0;
+        overflow: hidden;
+        visibility: hidden;
+    }
+    
+    &__link--show + &__fall {
+        max-height: rhythm(3.5);
+        visibility: visible;
+    }
+    
+    &__icon {
+        height: 1em;
+        vertical-align: -0.1875em;
+    }
+    
+    &__link--show &__icon {
+        transform: rotateZ(180deg);
+    }
+}
+
+.icon-bar {
+    @include margin(rhythm(1.5) -0.5rem null);
+    
+    text-align: center;
+    
+    &__item {
+        @include margin(null 0.5rem);
+        
+        display: inline-block;
+        height: rhythm(1.75);
+    }
+    
+    &__link {
+        @include transition(color);
+        
+        &--social:hover {
+            color: $theme-color-1;
+        }
+    }
+}
+
+.search-bar {
+    color: $theme-color-2;
+    margin-top: rhythm(1.25);
+    position: relative;
+    z-index: 0;
+    
+    &__field {
+        @include padding($search-icon-height + 0.25rem, left);
+
+        background-color: $body-background-color;
+        display: block;
+        font-size: ratio(-1);
+        line-height: div(rhythm(1.75), ratio(-1));
+    }
+    
+    &__input {
+        height: $field-height;
+    }
+    
+    &__label {
+        cursor: text;
+        left: $search-icon-height + 0.25rem;
+        position: absolute;
+    }
+    
+    &__icon {
+        height: $search-icon-height;
+        left: 0.25rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    &__button {
+        position: absolute;
+        height: 1.5 * $search-icon-height;
+        right: -0.375 * $search-icon-height;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes slide-image {
+    0% {
+        transform: scale(1);
+    }
+    5% {
+        transform: scale(1);
+    }
+    95% {
+        transform: scale(1.25);
+    }
+    100% {
+        transform: scale(1.25);
+    }
+}
+
+.slide {
+    @include font($default, 500);
+    
+    color: white;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+    
+    &::after {
+        background-color: rgba(0, 0, 0, 0.5);
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        z-index: 0;
+    }
+    
+    &__wrapper {
+        @include padding(rhythm(1.5), bottom);
+        
+        bottom: 0;
+        position: absolute;
+        z-index: 1;
+        
+        @include media (min-width 1200) {
+            left: 50%;
+            transform: translateX(-50%);
+            width: $wrapper-width;
+        }
+        
+        @include media (max-width 1200) {
+            @include padding(null 1rem);
+        }
+    }
+    
+    &__text {
+        @include font-rhythm(ratio(5));
+        
+        @include media (max-width 1200) {
+            @include font-rhythm(ratio(3));
+        }
+    }
+    
+    &__stress {
+        @include heading-rect;
+        display: inline-block;
+    }
+    
+    &__link {
+        @include font-rhythm(ratio(1.5));
+        @include margin(rhythm(1), top);
+        
+        display: block;
+        
+        @include media(max-width 900) {
+            @include font-rhythm(ratio(0.5));
+        }
+    }
+    
+    &__icon {
+        $size: 2.75em;
+        @include margin(div(0 - $size, 2) null div(0 - $size, 2) div(0 - $size, 3));
+        
+        height: $size;
+        vertical-align: 0.25em;
+    }
+    
+    &__image {
+        @include animation(slide-image, 30s, infinite, alternate, linear);
+        
+        height: 100%;
+        left: 0;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: -1
+    }
+}
+
+.slideshow {
+    height: $slideshow-height;
+    position: relative;
+    z-index: 0;
+    
+    @include media(max-width 900) {
+        height: $slideshow-height - rhythm(5);
+    }
+    
+    &__heading {
+        @include hide-visually;
+    }
+    
+    &__list {
+        height: 100%;
+    }
+    
+    &__item {
+        @include transition(opacity visibility, 1s);
+        
+        height: 100%;
+        opacity: 0;
+        position: absolute;
+        visibility: hidden;
+        width: 100%;
+        
+        &--visible {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.slideshow-bullets {
+    position: absolute;
+    right: rhythm(1);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 0;
+    
+    &__item {
+        $size: rhythm(0.675);
+        @include margin(rhythm(0.125) null);
+        
+        height: $size;
+        width: $size;
+    }
+    
+    &__button {
+        @include border(solid white rem(2px));
+        @include transition(background-color border-color, 1s);
+        
+        border-radius: 50%;
+        font-size: 0;
+        height: 100%;
+        width: 100%;
+        
+        &--active {
+            background-color: $theme-color-1;
+            border-color: $theme-color-1;
+        }
+    }
+}
+
+@keyframes slideshow-chevron {
+    from {
+        bottom: rhythm(0.25);
+        opacity: 0;
+    }
+    to {
+        bottom: rhythm(-0.25);
+        opacity: 1;
+    }
+}
+
+.slideshow-chevron {
+    @include animation(slideshow-chevron, 1.25s, infinite, linear);
+    
+    background-color: $theme-color-2;
+    border-radius: 50%;
+    box-shadow: 0 0 em(50px) em(2px) rgba(0, 0, 0, 0.375), 0 0 em(25px) em(1px) rgba(0, 0, 0, 0.75);
+    color: white;
+    height: rhythm(2.25);
+    position: absolute;
+    bottom: rhythm(0);
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: rhythm(2.25);
+    
+    @include media(max-width 900) {
+        height: rhythm(1.75);
+        width: rhythm(1.75);
+    }
+}
+
+.button {
+    @include border(solid transparent rhythm(0.125));
+    @include font($default, 500);
+    @include font-rhythm(ratio(1));
+    @include padding(rhythm(0.5));
+    @include transition(background-color color, 250ms);
+
+    color: currentColor;
+    display: inline-block;
+    
+    @include media(max-width 900) {
+        @include font-rhythm(ratio(0));
+        @include padding(rhythm(0.25));
+    }
+    
+    &:hover {
+        background-color: white;
+        color: $theme-color-3;
+    }
+    
+    &--featured {
+        background-color: $theme-color-3;
+        border-color: $theme-color-3;
+        color: white;
+        
+        &:hover {
+            background-color: white;
+            color: $theme-color-3;
+        }
+    }
+    
+    &__icon {
+        @include margin(div($button-icon-height, -2) -1.25em);
+        
+        height: $button-icon-height;
+        vertical-align: 0.3125em;
+    }
+}
+
+.poster {
+    color: white;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+    
+    &::after {
+        background-image: linear-gradient(to bottom, cubic-gradient(0.75 0.25, 0.75 0.25, 10, transparent, rgba(0, 0, 0, 0.575)));
+        content: '';
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+    
+    &__link {
+        height: 100%;
+        position: absolute;
+        width: 100%;
+    }
+    
+    &__icon {
+        bottom: rhythm(1.5);
+        height: rhythm(3.5);
+        position: absolute;
+        right: 3.5rem;
+        width: auto;
+        
+        @include media(max-width 900) {
+            height: rhythm(2);
+            right: 0;
+        }
+        
+        &--exhibit, &--related {
+            height: rhythm(2);
+            right: 2.5rem;
+        }
+        
+        &--exhibit {
+            bottom: rhythm(0.25);
+        }
+        
+        &--related {
+            bottom: rhythm(1.125);
+        }
+    }
+    
+    &:hover &__icon {
+        transform: translateX(0%);
+    }
+    
+    &__image {
+        @include transition(transform, 1s);
+        
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+    }
+    
+    &:hover &__image {
+        transform: scale(1.0625);
+    }
+}
+
+.poster-text {
+    @include font($default, 600);
+    @include font-rhythm(ratio(1));
+    @include padding(rhythm(1) 1.5rem null);
+
+    box-sizing: border-box;
+    bottom: rhythm(1.5);
+    position: absolute;
+    width: 100%;
+    
+    @include media(max-width 900) {
+        @include font-rhythm(ratio(0));
+    }
+    
+    &--exhibit {
+        @include font-rhythm(ratio(0));
+        bottom: rhythm(0.5);
+    }
+    
+    &__heading {
+        @include font($default, 600);
+        @include font-rhythm(ratio(2));
+        
+        text-transform: uppercase;
+        
+        @include media(max-width 900) {
+            @include font-rhythm(ratio(1));
+        }
+        
+        &--exhibit, &--related {
+            @include font-rhythm(ratio(1));
+        }
+    }
+    
+    &__category {
+        font-size: inherit;
+        line-height: inherit;
+        position: absolute;
+        top: 0;
+    }
+
+    &__paragraph {
+        font-size: inherit;
+        line-height: inherit;
+    }
+}
+
+.control {
+    @include margin(rhythm(1), top);
+    
+    display: inline-block;
+    height: rhythm(1.5);
+    font-size: 0;
+    position: relative;
+    z-index: 0;
+    
+    &::before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+    
+    &__button {
+        background-color: $theme-color-3;
+        border-radius: 50%;
+        color: white;
+        height: rhythm(1.75);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: rhythm(1.75);
+        z-index: 0;
+        
+        &--back {
+            left: rhythm(-2.25);
+        }
+
+        &--next {
+            right: rhythm(-2.25);
+        }
+    }
+}
+
+.control-bullets {
+    display: inline-block;
+    vertical-align: middle;
+    
+    &__item {
+        @include margin(null rhythm(0.125));
+        display: inline-block;
+    }
+    
+    &__button {
+        $size: rhythm(0.5625);
+
+        background-color: hsl(0, 0%, 62.5%);
+        border-radius: 50%;
+        height: $size;
+        width: $size;
+        
+        &--active {
+            background-color: $theme-color-3;
+        }
+    }
+}
+
+.featured {
+    @include padding(rhythm(3) null rhythm(3.25));
+    
+    overflow: hidden;
+    text-align: center;
+    
+    @include media (max-width 1200) {
+        @include padding(rhythm(2) null rhythm(2));
+    }
+    
+    &__wrapper {
+        @include wrapper;
+    }
+    
+    &__heading {
+        text-align: left;
+    }
+    
+    &__view {
+        @include media(min-width 900) {
+            @include wrapper(rem(960px));
+        }
+    }
+    
+    &__list {
+        @include transition(transform, 875ms);
+        
+        font-size: 0;
+        white-space: nowrap;
+    }
+    
+    &__item {
+        @include padding(rhythm(1.5) null);
+        @include transition(transform, 875ms);
+        
+        box-sizing: border-box;
+        display: inline-block;
+        font-size: 1rem;
+        height: rhythm(26);
+        white-space: normal;
+        text-align: left;
+        transform: scale(0.8125);
+        width: 100%;
+        
+        &--visible {
+            transform: scale(1);
+        }
+    }
+    
+    &__button {
+        @include margin(rhythm(1.5), top);
+        text-align: right;
+    }
+}
+
+.intro {
+    @include margin(rhythm(4), top);
+    
+    background-color: $theme-color-2;
+    color: white;
+    
+    @include media(max-width 900) {
+        @include margin(rhythm(2), top);
+    }
+    
+    &__wrapper {
+        @include wrapper;
+        @include ghost(clear);
+        @include padding(rhythm(5) null rhythm(2.75));
+        
+        @include media (max-width 900) {
+            @include padding(rhythm(3) null rhythm(2.5));
+        }
+        
+        position: relative;
+        z-index: 0;
+    }
+    
+    &__heading {
+        @include heading-rect;
+        
+        position: absolute;
+        top: 0;
+        transform: translateY(-50%);
+    }
+    
+    &__paragraph {
+        box-sizing: border-box;
+        float: left;
+        width: 50%;
+        
+        @include media (min-width 1200) {
+            @include padding(null rhythm(1));
+            
+            &:nth-of-type(1) {
+                padding-left: 0;
+            }
+
+            &:nth-of-type(2) {
+                padding-right: 0;
+            }
+        }
+        
+        @include media (max-width 1200) {
+            float: none;
+            width: 100%;
+        }
+    }
+    
+    &__button {
+        @include margin(rhythm(1), top);
+        float: right;
+    }
+}
+
+.short {
+    @include padding(rhythm(4) null);
+    
+    background-image: url(../img/short-background.webp);
+    background-position: center top;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    
+    @include media (max-width 1200) {
+        @include padding(rhythm(2) null);
+        @include wrapper;
+    }
+    
+    &--local {
+        @include padding(rhythm(2) null rhythm(3));
+    }
+    
+    &--inner {
+        @include padding(rhythm(8) null);
+    }
+    
+    &__wrapper {
+        @include padding(rhythm(1), right);
+        
+        float: left;
+        text-align: right;
+        width: 50%;
+        
+        @include media (max-width 1200) {
+            float: none;
+            text-align: left;
+            width: 100%;
+        }
+    }
+    
+    &__heading {
+        @include font-rhythm(ratio(5.75));
+        @include padding(rhythm(1), right);
+        
+        float: left;
+        text-align: right;
+        width: 50%;
+        
+        
+        @include media(max-width 1200) {
+            @include font-rhythm(ratio(3));
+            
+            float: none;
+            text-align: left;
+            width: 100%;
+        }
+        
+        &--local {
+            @include padding(0, right);
+        
+            float: none;
+            width: 100%;
+        }
+    }
+    
+    &__stress {
+        @include heading-rect;
+    }
+    
+    &__paragraph {
+        @include font($default, 500);
+        @include margin(0, top);
+        @include padding(rhythm(1), left);
+        
+        box-sizing: border-box;
+        float: left;
+        width: 18.5em;
+        
+        @include media(max-width 1200) {
+            @include margin(rhythm(1), top);
+            @include padding(rhythm(0), left);
+            
+            float: none;
+            width: 100%
+        }
+        
+        &--local {
+            @include margin(rhythm(1), top);
+            @include padding(0, left);
+            
+            float: right;
+            
+            @include media(max-width 1200) {
+                float: none;
+            }
+        }
+    }
+    
+    &__image {
+        @include margin(7rem, left);
+        
+        left: 50%;
+        height: rhythm(15);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: auto;
+        
+        @include media (max-width 1200) {
+            @include margin(rhythm(1) auto null);
+            
+            display: block;
+            height: rhythm(10);
+            position: static;
+            transform: none;
+        }
+    }
+}
+
+.short-link {
+    @include font($default, 500);
+    @include font-rhythm(ratio(1.5));
+    @include margin(1rem, left);
+    
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    &__icon {
+        $size: 3em;
+        @include margin(div($size, -2) -0.75em);
+        
+        display: inline-block;
+        height: $size;
+        vertical-align: 0.3125em;
+    }
+}
+
+.short-image {
+    background-attachment: fixed;
+    background-image: url(../img/museum.webp);
+    background-position: center;
+    background-size: cover;
+    height: rhythm(14);
+}
+
+@keyframes tour-image {
+    0% {
+        margin-left: 0;
+    }
+    10% {
+        margin-left: 0;
+    }
+    90% {
+        margin-left: $tour-offset;
+    }
+    100% {
+        margin-left: $tour-offset;
+    }
+}
+
+.tour {
+    background-color: $theme-color-2;
+    color: white;
+    position: relative;
+    z-index: 0;
+    
+    &__header {
+        @include wrapper;
+        @include padding(rhythm(3.5) null rhythm(1.5));
+        
+        @include media(max-width 1200) {
+            @include padding(rhythm(2) null rhythm(1));
+        }
+    }
+    
+    &__heading {
+        @include heading-rect;
+        
+        position: absolute;
+        top: 0;
+        transform: translateY(-50%);
+    }
+    
+    &__view {
+        overflow: hidden;
+        position: relative;
+    }
+    
+    &__icon {
+        height: rhythm(7);
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    &__image {
+/*         @include animation(tour-image, 10s, infinite, alternate, linear); */
+        
+        height: $tour-height;
+        object-fit: cover;
+        width: 150%;
+        
+        @include media(max-width 1200) {
+            height: $tour-height - rhythm(5);
+        }
+    }
+    
+    &__button {
+        @include wrapper;
+        @include padding(rhythm(1.5) null);
+        
+        display: block;
+        text-align: right;
+        
+        &::before {
+            bottom: rhythm(4.5);
+            content: '';
+            display: block;
+            height: $tour-height;
+            left: 0;
+            position: absolute;
+            width: 100%;
+            z-index: 0;
+        }
+    }
+}
+
+.social {
+    @include wrapper;
+    @include padding(rhythm(6) null);
+    
+    position: relative;
+    z-index: 0;
+    
+    @include media(max-width 1200) {
+        @include padding(rhythm(3) null);
+    }
+    
+    &__wrapper {
+        width: 50%;
+        
+        @include media (max-width 1200) {
+            width: 100%;
+        }
+    }
+    
+    &__icon-bar {
+        @include margin(rhythm(2.25), top);
+        text-align: left;
+    }
+}
+
+.social-video {
+    @include padding(rhythm(1), left);
+    
+    box-sizing: border-box;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    z-index: 0;
+    
+    @include media (max-width 1200) {
+        @include margin(rhythm(1), top);
+        @include padding(0, left);
+        
+        position: static;
+        transform: none;
+        width: 100%;
+    }
+    
+    &__heading {
+        @include hide-visually;
+    }
+    
+    &__iframe {
+        height: rhythm(11);
+        width: 100%;
+    }
+}
+
+.text-field {
+    @include border(outset white rem(2px), bottom);
+    @include padding(null null null 1em);
+    @include font($default, 600);
+    @include font-rhythm(ratio(1));
+    
+    @include media(max-width 900) {
+        @include font-rhythm(ratio(0));
+    }
+    
+    box-sizing: border-box;
+    height: $field-height;
+    display: block;
+    position: relative;
+    
+    &__input {
+        @include font($default, 400);
+        
+        height: 100%;
+        line-height: $field-height;
+    }
+    
+    &__label {
+        @include padding(0.25em, right);
+        @include transition(left transform, 250ms);
+        
+        background-color: $theme-color-2;
+        left: 1em;
+        position: absolute;
+        top: 100%;
+        transform: translateY(-100%);
+    }
+    
+    &__input:focus + &__label, &__input--active + &__label {
+        left: 0;
+        transform: translateY(-50%);
+    }
+}
+.newsletter {
+    @include padding(rhythm(7) null rhythm(2.75));
+    
+    background-color: $theme-color-2;
+    color: white;
+    
+    @include media (max-width 1200) {
+        @include padding(rhythm(3) null rhythm(2.75));
+    }
+    
+    &__wrapper {
+        @include wrapper;
+        @include ghost(clear);
+    }
+    
+    &__heading {
+        @include font($default, 400);
+        
+        float: left;
+        width: 50%;
+        
+        @include media (max-width 1200) {
+            float: none;
+            width: 100%;
+        }
+    }
+    
+    &__form {
+        float: right;
+        width: 50%;
+        
+        @include media (max-width 1200) {
+            float: none;
+            width: 100%;
+        }
+    }
+    
+    &__field {
+        @include margin(rhythm(0.5), top);
+        
+        &:first-of-type {
+            @include margin(0, top);
+        }
+    }
+    
+    &__button {
+        @include margin(rhythm(4), top);
+        float: right;
+    }
+}
+
+.footer {
+    @include font($default, 500);
+    @include font-rhythm(ratio(-1));
+    
+    background-color: $theme-color-2;
+    color: white;
+    position: relative;
+    z-index: 0;
+    
+    &::before {
+        @include border(outset white rem(2px), bottom);
+        
+        content: '';
+        display: block;
+        position: absolute;
+        top: $footer-image-height + rhythm(5);
+        width: 100%;
+        z-index: 0;
+    }
+
+    &__image {
+        background-attachment: fixed;
+        background-image: url(../img/footer-background.webp);
+        background-position: center;
+        background-size: cover;
+        height: $footer-image-height;
+    }
+    
+    &__logo {
+        left: 50%;
+        position: absolute;
+        top: $footer-image-height;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+    }
+    
+    &__wrapper {
+        @include wrapper;
+        @include ghost(after);
+        @include padding(rhythm(5), top);
+        
+        text-align: justify;
+    }
+    
+    &__column {
+        display: inline-block;
+    
+        @include media(max-width 900) {
+            display: block;
+            text-align: center;
+        }
+    }
+    
+    &__heading {
+        @include font($default, 600);
+        @include margin(rhythm(1), top);
+        
+        text-transform: uppercase;
+    }
+    
+    &__paragraph {
+        font-size: inherit;
+        line-height: inherit;
+    }
+}
+
+.footer-address {
+    &__icon {
+        height: 1em;
+        vertical-align: -0.21875em;
+
+        &--location {
+            @include margin(null -0.25em);
+        
+            height: 1.5em;
+            vertical-align: -0.40625em;
+        }
+    }
+}
+
+.finale {
+    @include wrapper;
+    @include margin(rhythm(1), top);
+    
+    padding-bottom: rhythm(1);
+    position: relative;
+    z-index: 0;
+    
+    @include media(max-width 900) {
+        text-align: center;
+    }
+    
+    &__text {
+        display: block;
+        margin-top: rhythm(0.5);
+        
+        &--stress {
+            text-transform: uppercase;
+        }
+    }
+    
+    &__icon {
+        height: 1.25em;
+        vertical-align: -0.25em;
+    }
+    
+    &__tooltip {
+        position: absolute;
+        right: 1rem;
+        top: rhythm(0.3125);
+        z-index: 0;
+        
+        @include media(max-width 900) {
+            position: static;
+        }
+    }
+}
+
+.tooltip {
+    @include font-rhythm(ratio(0));
+    
+    display: inline-block;
+    height: rhythm(0.375);
+    
+    &__logo {
+        height: 100%;
+        width: auto;
+    }
+    
+    &__paragraph {
+        @include font($default, italic);
+        @include font-rhythm(ratio(0));
+        @include margin(rhythm(-10), top);
+        @include padding(4em 2em);
+        @include transition(transform, 250ms);
+        
+        background-image: url(../img/baloon.svg);
+        background-size: 100% 100%;
+        box-sizing: border-box;
+        color: black;
+        display: block;
+        left: 50%;
+        position: absolute;
+        text-align: center;
+        transform: translateX(-50%) scale(0) rotateZ(-90deg);
+        transform-origin: bottom center;
+        width: 18em;
+        z-index: 0;
+    }
+    
+    &:hover &__paragraph, &:focus &__paragraph {
+        transform: translateX(-50%) scale(1) rotateZ(0);
+    }
+}
+
+.banner {
+    height: rhythm(15);
+    position: relative;
+    z-index: 0;
+    
+    &::after {
+        background-image: linear-gradient(to top, cubic-gradient(0.75 0.25, 0.75 0.25, 10, transparent, rgba(0, 0, 0, 0.575)));
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 0;
+    }
+    
+    &__wrapper {
+        @include wrapper;
+    }
+    
+    &__heading {
+        @include heading-rect;
+        
+        position: absolute;
+        bottom: 0;
+        transform: translateY(50%);
+        z-index: 0;
+    }
+    
+    &__image {
+        height: 100%;
+        left: 0;
+        object-fit: cover;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+    }
+    
+    &__breadcrumb {
+        position: absolute;
+        left: 2rem;
+        top: rhythm(1);
+        z-index: 1;
+    }
+}
+
+.breadcrumb {
+    @include font($default, 500);
+    
+    color: white;
+    
+    &__item {
+        display: inline-block;
+    }
+    
+    &__link {
+        display: inline-block;
+    }
+    
+    &__icon {
+        @include margin(-1.5em -0.75em);
+        
+        display: inline-block;
+        height: 3em;
+        vertical-align: 0.3125em;
+    }
+};
+
+.about {
+    @include wrapper;
+    @include ghost(clear);
+    @include padding(rhythm(5) null rhythm(4));
+    
+    &__column {
+        box-sizing: border-box;
+        float: left;
+        width: 50%;
+        
+        &:nth-of-type(1) {
+            @include padding(0.5rem, right);
+        }
+        
+        &:nth-of-type(2) {
+            @include padding(0.5rem, left);
+        }
+    }
+    
+    &__paragraph {
+        @include margin(rhythm(2), top);
+        
+        &:nth-of-type(1) {
+            @include margin(0, top);
+        }
+    }
+}
+
+.video {
+    color: white;
+    height: rhythm(22);
+    position: relative;
+    text-align: center;
+    z-index: 0;
+    
+    &::after {
+        background-color: rgba(0, 0, 0, 0.5);
+        content: '';
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 0;
+    }
+    
+    &__wrapper {
+        left: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        z-index: 1;
+    }
+    
+    &__icon {
+        height: rhythm(4);
+    }
+    
+    &__heading {
+        @include font($default, 400);
+        @include font-rhythm(ratio(2));
+        @include margin(rhythm(0.5), top);
+    }
+    
+    &__image {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+    }
+}
+
+.mission {
+    @include margin(rhythm(5), top);
+    @include padding(rhythm(4) null rhythm(3));
+    
+    background-color: $theme-color-2;
+    color: white;
+    position: relative;
+    z-index: 0;
+    
+    &__wrapper {
+        @include ghost(clear);
+        @include wrapper;
+        
+        font-size: 0;
+    }
+    
+    &__heading {
+        @include heading-rect;
+        
+        position: absolute;
+        top: 0;
+        transform: translateY(-50%);
+        z-index: 0;
+    }
+    
+    &__paragraph {
+        @include padding(0.5rem, right);
+        
+        box-sizing: border-box;
+        width: 50%;
+    }
+    
+    &__image {
+        @include margin(5rem, left);
+
+        height: rhythm(9);
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: auto;
+    }
+}
+
+.exhibit {
+    @include padding(rhythm(3.5) null rhythm(1));
+    
+    text-align: center;
+    
+    &--related {
+        @include padding(rhythm(2.5) null);
+    }
+    
+    &__menu {
+        @include wrapper;
+        text-align: left;
+    }
+    
+    &__heading {
+        @include hide-visually;
+    }
+    
+    &__list {
+        @include margin(rhythm(1.5) 1rem null);
+        
+        font-size: 0;
+        text-align: left;
+    }
+    
+    &__item {
+        @include margin(rhythm(1), top);
+        @include padding(null 1rem);
+        
+        box-sizing: border-box;
+        display: inline-block;
+        height: rhythm(14);
+        width: 50%;
+    }
+    
+    &__control {
+        @include margin(rhythm(2), top);
+    }
+}
+
+.exhibit-menu {
+    @include font-rhythm(ratio(2));
+    @include margin(null -0.75rem);
+    
+    &__item {
+        @include margin(null 0.75rem);
+        display: inline-block;
+    }
+}
+
+.paper {
+    @include wrapper;
+    @include ghost(clear);
+    @include padding(rhythm(4) null rhythm(3));
+    
+    position: relative;
+    z-index: 0;
+    
+    &__paragraph {
+        @include padding(0.5rem, right);
+        
+        box-sizing: border-box;
+        width: 50%;
+    }
+    
+    &__image {
+        height: auto;
+        position: absolute;
+        right: 0;
+        top: rhythm(4);
+        width: 47%;
+        z-index: 0;
+    }
+}
+
+.search {
+    @include wrapper;
+    @include padding(rhythm(3), bottom);
+    
+    text-align: center;
+    
+    &__list {
+        text-align: left;
+    }
+    
+    &__item {
+        @include margin(rhythm(3), top);
+    }
+    
+    &__control {
+        margin-top: rhythm(4);
+    }
+}
+
+.search-media {
+    @include ghost(clear);
+    
+    &__wrapper {
+        @include padding(rhythm(0.5) null null 2rem);
+        
+        box-sizing: border-box;
+        float: right;
+        width: 70%;
+    }
+    
+    &__heading {
+        @include font($default, 600);
+        @include font-rhythm(ratio(2));
+    }
+    
+    &__paragraph {
+        @include font-rhythm(ratio(1), 0.5);
+        @include margin(rhythm(1), top);
+    }
+    
+    &__button {
+        @include margin(rhythm(1), top);
+        float: right;
+    }
+    
+    &__image {
+        float: left;
+        height: rhythm(9);
+        object-fit: cover;
+        width: 30%;
+    }
+}

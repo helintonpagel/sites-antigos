@@ -1,0 +1,16 @@
+@use '../abstracts/all' as *;
+
+.history-card {
+    $space: $history-image-width / 2 + $trunk-space + 1;
+        
+    @include padding(3 null 4 $space);
+    background-color: $pampas;
+    
+    &__paragraph {
+        max-width: rhythm($paragraph-width);
+    }
+    
+    &__button {
+        @include margin(1, top);
+    }
+}

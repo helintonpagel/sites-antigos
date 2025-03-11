@@ -1,0 +1,10 @@
+@use '../abstracts/all' as *;
+
+.trunk {
+    box-sizing: border-box;
+    height: 100%;
+    @include margin(null auto);
+    max-width: rhythm($trunk-width);
+    @include padding(null $trunk-space);
+    width: 100%;
+}

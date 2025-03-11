@@ -1,0 +1,69 @@
+@use 'sass:color';
+@use '../abstracts/all' as *;
+
+@for $i from 1 through 4 {
+    h#{$i} {
+        @include font(Bell);
+        @include font-rhythm(4 - $i);
+        
+        text-transform: uppercase;
+    }
+}
+
+strong {
+    text-transform: uppercase;
+}
+
+.column__text {
+    @for $i from 1 through 4 {
+        h#{$i} {
+            @include margin(1, top);
+
+            &:first-child {
+                @include margin(0, top);
+            }
+        }
+    }
+    
+    p {
+        @include margin(1, top);
+
+        &:first-child {
+            @include margin(0, top);
+        }
+    }
+
+    ul {
+        @include margin(1, top);
+    }
+
+    li {
+        list-style-type: circle;
+        list-style-position: inside;
+    }
+
+    a {
+        @include transition(0.25s);
+
+        color: $brand-color;
+        text-decoration: none;
+
+        &:hover {
+            color: color.mix($leave-color, $brand-color, 50%);
+        }
+    }
+    
+    .button {
+        color: white;
+        
+        &:hover {
+            color: white;
+        }
+    }
+}
+
+body {
+    @include break(null 600) {
+        @include font-rhythm(-1);
+    }
+}

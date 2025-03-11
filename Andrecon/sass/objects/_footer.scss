@@ -1,0 +1,73 @@
+@use '../abstracts/all' as *;
+
+.footer {
+    @include margin(3, top);
+    
+    background-color: $brand-color;
+    color: white;
+    
+    &__content {
+        @include padding(1 null 1);
+        @include trunk;
+
+        &:after {
+            clear: both;
+            content: '';
+            display: table;
+        }
+    }
+    
+    &__text {
+        @include padding(1, right);
+        
+        box-sizing: border-box;
+        float: left;
+        width: 100% * (2 - $phi);
+        
+        @include breakpoint(null 1100) {
+            float: none;
+            width: 100%;
+        }
+        
+        @include breakpoint(null 1100) {
+            text-align: center;
+        }
+    }
+    
+    &__heading {
+        @include font-rhythm(1);
+        @include margin(2, top);
+    }
+    
+    &__paragraph {
+        @include font-rhythm(0);
+        text-align: left;
+    
+        &:first-of-type {
+            @include margin(1, top);
+        }
+        
+        @include breakpoint(null 1100) {
+            text-align: center;
+        }
+    }
+    
+    &__anchor {
+        @include font(Raleway, Bold);
+        text-decoration: none;
+    }
+    
+    &__map {
+        @include padding(2, top);
+        
+        box-sizing: border-box;
+        float: right;
+        height: rhythm(18);
+        width: 100% / $phi;
+        
+        @include breakpoint(null 1100) {
+            float: none;
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.plan-price {
+    @include font-rhythm(ratio(4));
+    
+    display: block;
+    margin-top: rhythm(2);
+    font-weight: 700;
+    
+    &__super {
+        @include font-rhythm(ratio(1.75));
+        @include margin(-0.5em null -0.5em 0.125em);
+        
+        display: inline-block;
+        vertical-align: 0.0625em;
+        text-align: left;
+    }
+    
+    &__cycle {
+        @include font-rhythm(ratio(-2.25));
+        @include margin(rhythm(-0.125) null null 0.25em);
+        
+        display: block;
+    }
+}

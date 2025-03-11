@@ -1,0 +1,158 @@
+@use 'abstracts/all' as *;
+@use 'sass:color';
+
+.editing {
+    display: none;
+}
+
+.loader {
+    background: white;
+    font-size: 0;
+    height: 100%;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+    
+    &:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+    
+    &.hide {
+        @include transition(0.5s);
+        
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+    &__image {
+        display: inline-block;
+        height: auto;
+        max-height: 100%;
+        max-width: 100%;
+        vertical-align: middle;
+        width: auto;
+    }
+}
+
+.bars-button {
+    @include icon(bars);
+    @include transition(0.25s);
+    
+    color: $brand-color;
+    font-size: 0;
+    vertical-align: middle;
+    text-align: center;
+    width: rem(30px);
+    
+    &:before {
+        @include font-rhythm(2.5);
+    }
+    
+    &.show {
+        @include icon(cancel);
+        
+        &.show:before {
+            @include font-rhythm(2.25);
+        }
+    }
+    
+    &:hover {
+        transform: scale(1.1);
+    }
+    
+    &:active {
+        transform: scale(0.95);
+    }
+    
+    @include breakpoint(900) {
+        display: none;
+    }
+}
+
+.checkbox {
+    display: block;
+    
+    &__input {
+        display: none;
+    }
+    
+    &__label {
+        @include icon(check);
+        cursor: pointer;
+        line-height: rhythm(1);
+        height: rhythm(1);
+        
+        &:before {
+            @include margin(0.25, right);
+            @include transition(0.25s);
+            
+            background: white;
+            border-width: rem(1px);
+            border-radius: rem(2px);
+            border-style: solid;
+            border-color: color.change($mine-shaft, $lightness: 85%);
+            color: transparent;
+            display: inline-block;
+            height: rhythm(0.75);
+            line-height: rhythm(0.75);
+            vertical-align: -10%;
+            text-align: center;
+            width: rhythm(0.75);
+        }
+    }
+        
+    &__input:checked ~ &__label:before {
+        background-color: $brand-color;
+        border-color: $brand-color;
+        color: white;
+    }
+}
+
+.alert--loading, .alert--success, .alert--failure {
+    @include font(Raleway, Medium);
+    font-size: inherit;
+    height: rhythm(1);
+    
+    &:before {
+        display: inline-block;
+        line-height: rhythm(0.5);
+        @include margin(0.25, right);
+        vertical-align: -10%;
+    }
+}
+
+.alert--failure {
+    color: hsl(0, 90%, 67.5%);
+    @include icon(cancel);
+}
+
+.alert--loading {
+    @include icon(hourglass);
+    
+    &:before {
+        animation: {
+            duration: 0.75s;
+            iteration-count: infinite;
+            name: loading-hourglass;
+        }
+    }
+}
+
+.alert--success {
+    color: hsl(120, 90%, 37.5%);
+    @include icon(check);
+}
+
+@keyframes loading-hourglass {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}

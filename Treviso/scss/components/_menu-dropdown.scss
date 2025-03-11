@@ -1,0 +1,60 @@
+@use 'sass:color';
+@use '../abstracts/all' as *;
+
+.menu-dropdown {
+    @include font-rhythm(0, rhythm(1.5));
+        
+    @at-root &__anchor {
+        text-decoration: none;
+        
+        @include breakpoint(1200px) {
+            transition-duration: 0.25s;
+            
+            &:hover {
+                color: color(copper);
+            }
+        }
+    }
+
+    @include breakpoint($min: 1201px) {
+        @include font(sans-serif, 700);
+    
+        background-color: color.adjust(color(copper), $alpha: -0.1);
+        color: white;
+        cursor: default;
+        height: rhythm(1);
+        padding: {
+            bottom: rhythm(3);
+            left: rhythm(2);
+            right: rhythm(2);
+            top: rhythm(3);
+        }
+        text-transform: none;
+        text-align: justify;
+        
+        &:after {
+            content: ' ';
+            display: inline-block;
+            line-height: 0;
+            width: 100%;
+        }
+        
+        @at-root &__item {
+            display: inline-block;
+            
+            &:after {
+                background: color(vista-white);
+                content: ' ';
+                display: block;
+                height: rem(2px);
+                margin-top: rhythm(0.0625);
+                transition-duration: 0.25s;
+                width: 0px;
+            }
+            
+            &:hover:after {
+                width: 100%;
+            }
+        }
+    }
+}

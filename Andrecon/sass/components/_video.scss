@@ -1,0 +1,14 @@
+@use '../abstracts/all' as *;
+
+.video {
+    @include padding(1 null 2);
+    
+    &__iframe {
+        @include margin(1 auto null);
+        
+        display: block;
+        height: rhythm(19);
+        max-width: rhythm(29);
+        width: 100%;
+    }
+}

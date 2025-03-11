@@ -1,0 +1,53 @@
+@use '../abstracts/all' as *;
+
+.gallery {
+    @include margin(5, top);
+    position: relative;
+    
+    &:after {
+        background: {
+            color: $leave-color;
+            image: url(../img/leave.png);
+            position: center;
+            repeat: no-repeat;
+            size: cover;
+        }
+        content: '';
+        display: block;
+        height: rhythm(20);
+        position: absolute;
+        right: 0;
+        top: rhythm(-2);
+        width: (2 - $phi) * 100%;
+        z-index: -1;
+    }
+    
+    &__content {
+        @include trunk;
+    }
+    
+    &__list {
+        @include margin(0 - $gallery-gutter 0 - $gallery-gutter / 2);
+        font-size: 0;
+    }
+    
+    &__item {
+        @include padding($gallery-gutter $gallery-gutter / 2 null);
+        
+        box-sizing: border-box;
+        display: inline-block;
+        width: 25%;
+        
+        @include break(null 900) {
+            width: (100% / 3);
+        }
+        
+        @include break(null 600) {
+            width: (100% / 2);
+        }
+        
+        @include break(null 400) {
+            width: (100% / 1);
+        }
+    }
+}

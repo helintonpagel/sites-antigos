@@ -1,0 +1,22 @@
+@use '../abstracts/all' as *;
+
+.intent {
+    @include margin(2, top left);
+    
+    @include breakpoint(null 900) {
+        @include margin(1 0, top left);
+    }
+    
+    &__heading {
+        @include font(Raleway, Bold);
+        @include font-rhythm(1);
+        
+        color: $alpha-color;
+        letter-spacing: rem(1px);
+    }
+    
+    &__paragraph {
+        @include font-rhythm(0);
+        @include margin(0.5, top);
+    }
+}

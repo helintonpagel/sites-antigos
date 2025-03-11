@@ -1,0 +1,45 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.tooltip {
+    @include common-focus;
+    
+    display: inline-block;
+    height: 0.875em;
+    line-height: 1;
+    position: relative;
+    
+    @include media(max-width 900) {
+        height: 0.5em;
+    }
+    
+    &__logo {
+        height: 100%;
+        width: auto;
+    }
+    
+    &__text {
+        @include font-rhythm(1rem);
+        @include padding(4em 2em);
+        @include transition(transform);
+        
+        background-image: url(../img/baloon.svg);
+        background-size: 100% 100%;
+        color: black;
+        display: block;
+        font-family: sans-serif;
+        font-style: italic;
+        font-weight: normal;
+        left: 50%;
+        margin-top: rhythm(-8);
+        position: absolute;
+        text-align: center;
+        transform: translateX(-50%) scale(0) rotateZ(-90deg);
+        transform-origin: bottom center;
+        width: 15.125em;
+    }
+    
+    &:hover &__text, &:focus &__text {
+        transform: translateX(-50%) scale(1) rotateZ(0);
+    }
+}

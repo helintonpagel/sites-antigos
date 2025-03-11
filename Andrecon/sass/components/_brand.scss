@@ -1,0 +1,17 @@
+@use '../abstracts/all' as *;
+
+.brand {
+    @include transition(0.25s);
+    
+    display: inline-block;
+    height: 100%;
+    
+    &:hover {
+        transform: scale(1.05);
+    }
+    
+    &__image {
+        height: 100%;
+        width: auto;
+    }
+}

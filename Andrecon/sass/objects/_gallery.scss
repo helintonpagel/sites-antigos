@@ -1,0 +1,71 @@
+@use 'sass:color';
+@use '../abstracts/all' as *;
+
+.gallery {
+    @include margin(1, top);
+    font-size: 0;
+    
+    &__item {
+        @include padding(null 0.125);
+        @include margin(0.25, top);
+        
+        box-sizing: border-box;
+        display: none;
+        height: rhythm(7);
+        overflow: hidden;
+        width: (100% / 5);
+        
+        @include breakpoint(null 1000) {
+            width: (100% / 4);
+        }
+        
+        @include breakpoint(null 800) {
+            width: (100% / 3);
+        }
+        
+        @include breakpoint(null 600) {
+            width: (100% / 2);
+        }
+        
+        @include breakpoint(null 400) {
+            width: 100%;
+        }
+        
+        &.show {
+            display: inline-block;
+        }
+    }
+    
+    &__curtain {
+        cursor: pointer;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        
+        &:after {
+            @include transition(0.25s);
+            
+            background: color.change($brand-color, $alpha: 0.5);
+            content: '';
+            display: block;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            transform: translateY(-100%);
+            width: 100%;
+        }
+        
+        &:hover:after {
+            transform: translateY(0%);
+        }
+    }
+    
+    &__image {
+        display: inline-block;
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+    }
+}

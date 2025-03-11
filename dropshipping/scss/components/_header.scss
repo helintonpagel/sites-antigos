@@ -1,0 +1,46 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.header {
+    @include media(min-width 900) {
+        padding-top: rhythm(2);
+    }
+    
+    &__wrapper {
+        @include wrapper;
+        
+        position: relative;
+        z-index: 1;
+        
+        @include media(max-width 900) {
+            padding-top: rhythm(1);
+        }
+    }
+    
+    &__menu {
+        position: absolute;
+        top: 0;
+        
+        @include media(min-width 900) {
+            right: rhythm(1);
+        }
+        
+        @include media(max-width 900) {
+            @include transition(visibility, 500ms);
+            
+            right: 0;
+            max-width: 100%;
+            overflow: hidden;
+            visibility: hidden;
+            width: 50%;
+            
+            @at-root .header-button--active + &  {
+                visibility: visible;
+            }
+        }
+        
+        @include media(max-width 600) {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.field-group {
+    @include margin(null rhythm(-0.5));
+    font-size: 0;
+    
+    &__field {
+        @include padding(null rhythm(0.5));
+        
+        box-sizing: border-box;
+        display: inline-block;
+        text-align: center;
+        width: 50%;
+        
+        @include media(max-width 900) {
+            margin-top: rhythm(1);
+            width: 100%;
+        }
+        
+        &--fourth {
+            width: 25%;
+            
+            @include media(max-width 900) {
+                width: 100%;
+            }
+        }
+        
+        &--third {
+            width: div(100%, 3);
+            
+            @include media(max-width 900) {
+                width: 100%;
+            }
+        }
+        
+        &--sixth {
+            width: div(100%, 6);
+            
+            @include media(max-width 900) {
+                width: 100%;
+            }
+        }
+    }
+}

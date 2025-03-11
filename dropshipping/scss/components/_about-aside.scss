@@ -1,0 +1,25 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.about-aside {
+    @include padding(rhythm(3) null rhythm(4));
+    
+    @include media(max-width 1200) {
+        margin-top: rhythm(2);
+        @include padding(rhythm(2) null);
+    }
+    
+    @include media(max-width 600) {
+        margin-top: rhythm(1.5);
+        @include padding(rhythm(1.5) null);
+    }
+        
+    background-color: $theme-color-1;
+    color: $body-back;
+    font-weight: 400;
+    margin-top: rhythm(3);
+    
+    &__wrapper {
+        @include wrapper;
+    }
+}

@@ -1,0 +1,35 @@
+@use '../abstracts/all' as *;
+
+.checkbox {
+    display: block;
+    
+    &__input {
+        display: none;
+    }
+    
+    &__label {
+        @include icon(check);
+        
+        cursor: pointer;
+        line-height: rhythm(1);
+        height: rhythm(1);
+        
+        &:before {
+            @include margin(0.25, right);
+            @include transition(0.25s);
+
+            background: white;
+            color: transparent;
+            display: inline-block;
+            height: rhythm(0.675);
+            line-height: rhythm(0.675);
+            vertical-align: -10%;
+            text-align: center;
+            width: rhythm(0.675);
+        }
+    }
+    
+    &__input:checked ~ &__label:before {
+        color: $brand-color;
+    }
+}

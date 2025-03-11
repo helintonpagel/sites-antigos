@@ -1,0 +1,10 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.home {
+    background-color: $body-back;
+    background-image: url(../img/background.svg);
+    background-position: rhythm(-8) rhythm(18.5);
+    background-size: ($wrapper + rhythm(9)) auto;
+    background-repeat: no-repeat;
+}

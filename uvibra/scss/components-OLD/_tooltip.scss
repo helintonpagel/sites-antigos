@@ -1,0 +1,12 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.tooltip {
+    &__trigger {
+        height: rhythm(0.25);
+    }
+    
+    &__baloon {
+        display: none;
+    }
+}

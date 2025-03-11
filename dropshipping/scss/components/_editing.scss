@@ -1,0 +1,84 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+/*
+* editing
+*/
+
+// body {
+//     @include debug-lines(0.5);
+// }
+
+.error {
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+    
+    @include media(max-width 900) {
+        text-align: center;
+    }
+    
+    &__wrapper {
+        @include wrapper;
+        @include padding(rhythm(5) null);
+
+        position: relative;
+    
+        @include media(max-width 900) {
+            @include padding(rhythm(2) null);
+        }
+    }
+    
+    &__heading {
+        @include font-rhythm(ratio(9));
+        
+        color: inherit;
+        text-transform: uppercase;
+        
+        @include media(max-width 1200) {
+            @include font-rhythm(ratio(8));
+        }
+        
+        @include media(max-width 600) {
+            @include font-rhythm(ratio(7));
+        }
+    }
+    
+    &__paragraph {
+        @include font-rhythm(ratio(4.5));
+        
+        font-weight: 500;
+        margin-top: rhythm(0.5);
+        
+        @include media(max-width 1200) {
+            @include font-rhythm(ratio(3.5));
+        }
+        
+        @include media(max-width 600) {
+            @include font-rhythm(ratio(1.5));
+        }
+    }
+    
+    &__image {
+        @include media(min-width 900) {
+            height: auto;
+            position: absolute;
+            right: 0;
+            top: rhythm(2);
+            width: 40%;
+        }
+        
+        @include media(max-width 900) {
+            @include margin(null auto);
+            
+            display: block;
+            height: rhythm(10);
+            margin-top: rhythm(0.5);
+            width: auto;
+        }
+    }
+    
+    &__button {
+        margin-top: rhythm(1);
+    }
+}

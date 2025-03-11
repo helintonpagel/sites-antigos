@@ -1,0 +1,59 @@
+@use '../abstracts/all' as *;
+
+.card {
+    border-radius: 10px;
+    padding: {
+        bottom: rhythm(1);
+        left: rhythm(1);
+        right: rhythm(1);
+        top: rhythm(1);
+    };
+    
+    @at-root &__title {
+        @include font-rhythm(3);
+
+        background: {
+            image:(
+                linear-gradient(to right, color(copper) 100%, transparent 100%),
+                linear-gradient(to left, color(copper) 100%, transparent 100%)
+            );
+            position: left center, right center;
+            repeat: no-repeat;
+        }
+        max-width: rem(1000px);
+        margin-left: auto;
+        margin-right: auto;
+        letter-spacing: rem(2px);
+        text-align: center;
+        text-transform: uppercase;
+    }
+    
+    @at-root &__paragraph {
+        @include font-rhythm(1);
+        
+        letter-spacing: calculate-rem(2px);
+        margin-top: rhythm(1);
+        text-align: center;
+    }
+
+    @at-root &__button {
+        margin-top: rhythm(1);
+    }
+}
+
+.card--dune {
+    @extend .card;
+    background-color: color(dune);
+    padding: {
+        bottom: rhythm(2);
+        left: rhythm(1);
+        right: rhythm(1);
+        top: rhythm(2);
+    };
+
+    @include breakpoint(900px) {
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+    }
+}

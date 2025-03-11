@@ -1,0 +1,15 @@
+@use '../abstracts/all' as *;
+
+.contact {
+    @include trunk(29);
+    @include padding(3 null);
+    
+    &__form {
+        @include margin(1, top);
+        text-align: center;
+    }
+    
+    &__field, &__button {
+        @include margin(1, top);
+    }
+}

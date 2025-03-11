@@ -1,0 +1,106 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+$font-list: (
+    (
+        name: "Hind",
+        path: "../fonts/hind-bold",
+        style: normal,
+        weight: 700,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Hind",
+        path: "../fonts/hind-light",
+        style: normal,
+        weight: 300,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Hind",
+        path: "../fonts/hind-medium",
+        style: normal,
+        weight: 500,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Hind",
+        path: "../fonts/hind-semibold",
+        style: normal,
+        weight: 600,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    
+    (
+        name: "Poppins",
+        path: "../fonts/poppins-bold",
+        style: normal,
+        weight: 700,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Poppins",
+        path: "../fonts/poppins-bolditalic",
+        style: italic,
+        weight: 700,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Poppins",
+        path: "../fonts/poppins-italic",
+        style: italic,
+        weight: 400,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Poppins",
+        path: "../fonts/poppins-light",
+        style: normal,
+        weight: 300,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Poppins",
+        path: "../fonts/poppins-lightitalic",
+        style: italic,
+        weight: 300,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Poppins",
+        path: "../fonts/poppins-medium",
+        style: normal,
+        weight: 500,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Poppins",
+        path: "../fonts/poppins-mediumitalic",
+        style: italic,
+        weight: 500,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Poppins",
+        path: "../fonts/poppins-regular",
+        style: normal,
+        weight: 400,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Poppins",
+        path: "../fonts/poppins-semibold",
+        style: normal,
+        weight: 600,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Poppins",
+        path: "../fonts/poppins-semibolditalic",
+        style: italic,
+        weight: 600,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+);
+
+@each $font in $font-list { @include font-face($font); }

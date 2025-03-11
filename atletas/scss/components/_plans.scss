@@ -1,0 +1,73 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.plans {
+    background-color: $theme-color-1;
+    text-align: center;
+    
+    &__wrapper {
+        @include wrapper;
+        @include padding(rhythm(3) null);
+        
+        @media screen and (max-width: 899px) {
+            @include padding(rhythm(2) null);
+        }
+    }
+    
+    &__control {
+        position: relative;
+    }
+    
+    &__paragraph {
+        @include font-rhythm(ratio(3.875));
+        margin-top: rhythm(1);
+        
+        @media screen and (max-width: 1199px) {
+            @include font-rhythm(ratio(2.875));
+        }
+
+        @media screen and (max-width: 899px) {
+            @include font-rhythm(ratio(1));
+        }
+    }
+    
+    &__view {
+        @include margin(null rhythm(-0.5));
+        @include padding(rhythm(0.5));
+        
+        margin-top: rhythm(1.5);
+        overflow: hidden;
+    }
+    
+    &__list {
+        @include margin(null rhythm(-0.5));
+        
+        font-size: 0;
+        transition-duration: 500ms;
+        transition-property: transform;
+        white-space: nowrap;
+    }
+    
+    &__item {
+        @include padding(null rhythm(0.5));
+        
+        box-sizing: border-box;
+        display: inline-block;
+        font-size: 1rem;
+        width: div(100%, 3);
+        
+        @media screen and (max-width: 899px) {
+            width: div(100%, 2);
+        }
+        
+        @media screen and (max-width: 599px) {
+            width: div(100%, 1);
+        }
+    }
+    
+    &__aside {
+        color: $body-back;
+        font-weight: 400;
+        margin-top: rhythm(1);
+    }
+}

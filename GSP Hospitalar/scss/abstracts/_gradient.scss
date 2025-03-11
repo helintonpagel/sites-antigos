@@ -1,0 +1,43 @@
+@use 'sass:color';
+@use 'sass:math' as *;
+@use 'sass:list' as lst;
+
+@function curve-point($var, $ctr) {
+    $point: ();
+
+    @for $i from 1 through 2 {
+        $point: lst.join(
+            $point,
+            ($var - pow($var, 2)) * lst.nth($ctr, $i) * 2 + pow($var, 2)
+        );
+    }
+
+    @return $point;
+}
+
+
+@function bezier-gradient($point, $stops, $start-color, $final-color) {
+    $lst: ();
+
+    @for $i from 0 through $stops {
+        $pnt: curve-point($i / $stops, $point);
+        $lst: lst.join(
+            $lst, (
+                color.mix(
+                    $start-color, $final-color, (1 - lst.nth($pnt, 2)) * 100%
+                ):
+                lst.nth($pnt, 1) * 100%
+            )
+        );
+    }
+
+    @return $lst;
+}
+
+@function scrim-gradient($color) {
+    $point: 0.9 0.1;
+
+    @return linear-gradient(
+        to bottom, bezier-gradient($point, 8, transparent, $color)
+    );
+}

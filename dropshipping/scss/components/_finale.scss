@@ -1,0 +1,36 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.finale {
+    background-color: $theme-color-1;
+    color: white;
+    font-weight: 400;
+    margin-top: rhythm(2);
+    text-align: center;
+    
+    @include media(max-width 900) {
+        margin-top: rhythm(1);
+    }
+    
+    &__wrapper {
+        @include wrapper;
+        @include padding(rhythm(0.5) null);
+    }
+    
+    &__tooltip {
+        margin-right: 0.25em;
+        vertical-align: -0.25em;
+        
+        @include media(max-width 900) {
+            display: block;
+        }
+    }
+    
+    &__icon {
+        @include margin(-0.5em null);
+        
+        height: 1em;
+        margin-right: -0.5em;
+        vertical-align: 0.375em;
+    }
+}

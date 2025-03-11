@@ -1,0 +1,36 @@
+@use '../abstracts/all' as *;
+
+.card-link {
+    box-shadow: 0 0 rem(40px) 0 rgba(0, 0, 0, 0.375), 0 0 rem(20px) 0 rgba(0, 0, 0, 0.125);
+    display: block;
+    height: rhythm($card-height);
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    width: 100%;
+    
+    &__text {
+        @include font(Aguafina);
+        @include font-rhythm(2);
+        @include padding(0.5 0.5 0.25);
+        @include transition(0.25s);
+        
+        background-color: $brand-color;
+        color: white;
+        display: inline-block;
+        left: rhythm(-1);
+        min-width: rhythm(6);
+        position: absolute;
+        top: 100% / $phi;
+    }
+    
+    .card-link:hover &__text, .card-link:focus &__text {
+        background-color: $leave-color;
+    }
+    
+    &__image {
+        height: 100%;
+        object-fit: cover;  
+        width: 100%;
+    }
+}

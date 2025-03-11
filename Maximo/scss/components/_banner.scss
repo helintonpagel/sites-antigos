@@ -1,0 +1,30 @@
+@use '../abstracts/all' as *;
+
+
+.banner {
+    $height: rhythm(21);
+    
+    height: $height;
+    overflow: hidden;
+    position: relative;
+    
+    @include breakpoint(900px) {
+        margin: {
+            left: rhythm(-1.5);
+            right: rhythm(-1.5)
+        }
+    }
+    
+    @at-root &__image {
+        margin-top: $height / 2;
+        position: absolute;
+        transform: translateY(-50%);
+        width: 100%;
+        min-width: rem(900px);
+        
+        
+        @include breakpoint(900px) {
+            margin-left: calc(50% - #{rem(450px)});
+        }
+    }
+}

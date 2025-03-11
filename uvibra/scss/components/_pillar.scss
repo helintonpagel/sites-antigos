@@ -1,0 +1,19 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.pillar {
+    @include margin(null auto);
+    @include padding(null $gutter);
+    
+    height: 100%;
+    box-sizing: border-box;
+    max-width: rem($pillar);
+    width: 100%;
+    
+    &:after {
+        content: '';
+        clear: both;
+        display: table;
+        width: 100%;
+    }
+}

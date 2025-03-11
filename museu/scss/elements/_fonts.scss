@@ -1,0 +1,100 @@
+@use '../utilities/all' as *;
+
+$fonts: (
+    (
+        family: "Montserrat",
+        generic: sans-serif,
+        source: "../fonts/montserrat-bold",
+        style: normal,
+        weight: 700,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        family: "Montserrat",
+        generic: sans-serif,
+        source: "../fonts/montserrat-bolditalic",
+        style: italic,
+        weight: 700,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        family: "Montserrat",
+        generic: sans-serif,
+        source: "../fonts/montserrat-extralight",
+        style: normal,
+        weight: 200,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        family: "Montserrat",
+        generic: sans-serif,
+        source: "../fonts/montserrat-extralightitalic",
+        style: italic,
+        weight: 200,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        family: "Montserrat",
+        generic: sans-serif,
+        source: "../fonts/montserrat-italic",
+        style: italic,
+        weight: 400,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        family: "Montserrat",
+        generic: sans-serif,
+        source: "../fonts/montserrat-light",
+        style: normal,
+        weight: 300,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        family: "Montserrat",
+        generic: sans-serif,
+        source: "../fonts/montserrat-lightitalic",
+        style: italic,
+        weight: 300,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        family: "Montserrat",
+        generic: sans-serif,
+        source: "../fonts/montserrat-medium",
+        style: normal,
+        weight: 500,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        family: "Montserrat",
+        generic: sans-serif,
+        source: "../fonts/montserrat-mediumitalic",
+        style: italic,
+        weight: 500,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        family: "Montserrat",
+        generic: sans-serif,
+        source: "../fonts/montserrat-regular",
+        style: normal,
+        weight: 400,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        family: "Montserrat",
+        generic: sans-serif,
+        source: "../fonts/montserrat-semibold",
+        style: normal,
+        weight: 600,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        family: "Montserrat",
+        generic: sans-serif,
+        source: "../fonts/montserrat-semibolditalic",
+        style: italic,
+        weight: 600,
+        formats: (eot, ttf, woff, woff2, svg)
+    )
+);

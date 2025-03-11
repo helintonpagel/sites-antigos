@@ -1,0 +1,18 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.header-button {
+    @include glyph(bars);
+    
+    display: inline-block;
+    font-size: 0;
+    position: relative;
+    
+    &--active {
+        @include glyph(cancel);
+    }
+    
+    &::before {
+        font-size: rhythm($header-button-height);
+    }
+}

@@ -1,0 +1,23 @@
+@use '../icons' as *;
+@use 'sass:map';
+@use 'sass:string' as str;
+
+@mixin icon($name, $pseudo: before) {
+    $icon: map.get($icons, str.to-lower-case($name));
+
+    @if $icon != null {
+        &:#{$pseudo} {
+            content: $icon;
+            display: inline-block;
+            font: {
+                family: 'Icomoon' !important;      
+                style: normal;
+                weight: normal;
+            }
+            line-height: 1;
+        }
+    }
+    @else {
+        @error 'Icon was not found: #{$name}';
+    }
+}

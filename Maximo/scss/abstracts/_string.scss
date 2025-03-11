@@ -1,0 +1,90 @@
+@forward 'sass:string';
+
+@use 'sass:list' as lst;
+@use 'sass:string' as *;
+
+@function last-index($str, $sub) {
+    @if $str == '' {
+        @return null;
+    }
+
+    $first: index($str, $sub);
+
+    @if $first != null {
+        $index: last-index(slice($str, $first + 1, -1), $sub);
+
+        @if $index != null {
+            @return $first + $index;
+        }
+    }
+
+    @return $first;
+}
+
+@function split($str, $sub) {
+    @if length($sub) == 0 {
+        $lst: ();
+
+        @for $i from 1 through length($str) {
+            $lst: join(
+                slice($str, $i, $i),
+                $lst
+            );
+        }
+
+        @return $lst;
+    }
+    @else {
+        @return _split($str, $sub);
+    }
+}
+
+@function _split($str, $sub: '') {
+    $idx: index($str, $sub);
+
+    @if $idx != null {
+        $val: slice($str, 1, $idx - 1);
+        $lst: _split(
+            slice($str, $idx + length($sub), -1),
+            $sub
+        );
+
+        @if $val == '' {
+            @return $lst;
+        }
+        @else {
+            @return join($val, $lst);
+        }
+    }
+    @else {
+        @return if($str != '', $str, ());
+    }
+}
+
+// omg..........
+
+@function evaluate($values) {
+    @if lst.length($values) == 0 {
+        $values: null;
+    }
+
+    @if lst.length($values) == 1 or lst.length($values) == 2 {
+        $values: evaluate(lst.join($values, $values));
+    }
+    @else if lst.length($values) == 3 {
+        $values: lst.join($values, lst.nth($values, 2));
+    }
+    
+    @return $values;
+}
+
+@mixin box-property($property, $shorthand) {
+    $values: evaluate($shorthand);
+
+    #{$property}: {
+        bottom: lst.nth($values, 3);
+          left: lst.nth($values, 4);
+         right: lst.nth($values, 2);
+           top: lst.nth($values, 1);
+    }
+}

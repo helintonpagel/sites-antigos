@@ -1,0 +1,100 @@
+@use '../abstracts/all' as *;
+
+@use '../abstracts/all' as *;
+
+.carousel {
+    background: {
+        image: url(../img/purple-background.jpg);
+        position: center center;
+        repeat: no-repeat;
+        size: cover;
+    }
+    color: white;
+    @include padding(3 null 1);
+    text-align: center;
+    
+    &__trunk {
+        @include trunk;
+        position: relative;
+    }
+    
+    &__heading {
+        color: white;
+    }
+    
+    &__paragraph {
+        @include font(Poppins, Medium);
+    }
+    
+    &__view  {
+        @include margin(2 null);
+        overflow: hidden;
+        
+        @include breakpoint(null 900) {
+            @include margin(null auto);
+            max-width: rhythm(32);
+        }
+        
+        @include breakpoint(null 600) {
+            max-width: rhythm(16);
+        }
+    }
+    
+    &__list {
+        font-size: 0;
+        @include margin(null 0 - $inline-gutter / 2);
+        @include transition(0.25s);
+        white-space: nowrap;
+    }
+    
+    &__item {
+        box-sizing: border-box;
+        display: inline-block;
+        height: rhythm(16);
+        @include padding(null $inline-gutter / 2);
+        width: (100% / 3);
+        
+        @include breakpoint(null 900) {
+            width: (100% / 2);
+        }
+        
+        @include breakpoint(null 600) {
+            width: (100%);
+        }
+    }
+    
+    &__chevron--back, &__chevron--next {
+        background: transparent;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        
+        &:before {
+            font-size: rhythm(1.25);
+            
+            @include breakpoint(1400) {
+                font-size: rhythm(2);
+            }
+        }
+    }
+    
+    &__chevron--back {
+        left: 0;
+        
+        @include breakpoint(1400) {
+            left: rhythm(0 - $trunk-space);
+        }
+    }
+    
+    &__chevron--next {
+        right: 0;
+        
+        @include breakpoint(1400) {
+            right: rhythm(0 - $trunk-space);
+        }
+    }
+    
+    &__button {
+        @include margin(1, top);
+    }
+}

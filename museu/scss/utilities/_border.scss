@@ -1,0 +1,38 @@
+@use 'types' as *;
+@use 'directional' as *;
+@use 'sass:map';
+@use 'sass:list' as lst;
+
+@function map-border($args) {
+    $return: ();
+
+    @each $arg in $args {
+        $lst: remove-null($arg);
+
+        @if each($lst, is-color) {
+            $return: map-value($return, "color", $arg);
+        }
+        @else if each($lst, is-string) {
+            $return: map-value($return, "style", $arg);
+        }
+        @else if each($lst, is-number) {
+            $return: map-value($return, "width", $arg);
+        }
+    }
+
+    @return map.merge((color: null, style: solid, width: 0), $return);
+}
+
+@function remove-null($lst) {
+    $return: ();
+
+    @each $val in $lst {
+        @if $val != null { $return: lst.append($return, $val); }
+    }
+
+    @return $return;
+}
+
+@mixin border($args, $direct: all) {
+    @each $suffix, $values in map-border($args) { @include directional(border, $values, $direct, $suffix); }
+}

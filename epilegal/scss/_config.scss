@@ -1,0 +1,32 @@
+@use 'utilities/all' as *;
+
+/*
+* Config
+*/
+
+$base-font-size: 16px;
+
+$base-line-height: 1.5;
+
+$rhythm: $base-font-size * $base-line-height;
+
+
+$default-family: ("Poppins", sans-serif);
+
+$heading-family: ("Hind", sans-serif);
+
+
+$theme-color-1: hsl(32, 100%, 40%);
+
+$theme-color-2: hsl(123, 31%, 56%);
+
+$theme-color-3: $theme-color-1;
+
+
+$wrapper-width: rem(1040px);
+
+$logo-height: rhythm(3);
+
+$header-leader: rhythm(0.75);
+
+$scroll-margin: 2 * $header-leader + $logo-height;

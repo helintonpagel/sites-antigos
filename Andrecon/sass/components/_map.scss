@@ -1,0 +1,9 @@
+@use '../abstracts/all' as *;
+
+.map {
+    width: 115%;
+    
+    @include breakpoint(null 1300) {
+        width: 100%;
+    }
+}

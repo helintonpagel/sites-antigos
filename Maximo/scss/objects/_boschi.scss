@@ -1,0 +1,46 @@
+@use '../abstracts/all' as *;
+
+.boschi {
+    background: {
+        image: linear-gradient(to right, transparent -40%, white 40%), url(../img/vineyard-path.jpg);
+        size: cover, auto 100%;
+    }
+    padding: {
+        bottom: rhythm(8);
+        left: rhythm(1.5);
+        right: rhythm(1.5);
+        top: rhythm(8);
+    }
+    letter-spacing: rem(2px);
+    text-align: center;
+    
+    @include breakpoint(900px) {
+        padding: {
+            bottom: rhythm(4);
+            top: rhythm(4);
+        }
+    }
+    
+    @include breakpoint(600px) {
+        background: transparent;
+        padding: {
+            bottom: rhythm(2);
+            top: rhythm(2);
+        }
+    }
+    
+    @at-root &__title {
+        text-transform: uppercase;
+    }
+    
+    @at-root &__paragraph {
+        // @include font(Sukhumvit Set, 400);
+        @include font-rhythm(1);
+        
+        margin-top: rhythm(2);
+    }
+    
+    @at-root &__button {
+        margin-top: rhythm(2);
+    }
+}

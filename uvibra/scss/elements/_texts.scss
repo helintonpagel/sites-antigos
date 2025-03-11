@@ -1,0 +1,34 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+%heading {
+    font-family: $heading-family;
+    font-weight: 700;
+}
+
+@for $i from 1 through 6 {
+    $limit: 3;
+
+    h#{$i} {
+        @extend %heading;
+        @if $i < $limit { @include font-rhythm($limit - $i); }
+    }
+}
+
+a, abbr {
+    text-decoration: none;
+}
+
+q {
+    display: block;
+    
+    &:before {
+        content: open-quote;
+        margin-right: rem(-6px);
+    }
+    
+    &:after {
+        content: close-quote;
+        margin-left: rem(-6px);
+    }
+}

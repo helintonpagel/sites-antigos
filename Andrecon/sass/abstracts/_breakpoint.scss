@@ -1,0 +1,45 @@
+@use 'math' as *;
+@use 'list' as lst;
+
+@function parse-breakpoints($lst) {
+    $length: lst.length($lst);
+
+    @if $length != 2 {
+        @if $length == 1 {
+            $lst: lst.join($lst, null);
+        }
+        @else {
+            @error 'Wrong number of breakpoints, #{$length} breakpints was given.';
+        }
+    }
+
+    @for $i from 1 through $length {
+        $val: lst.nth($lst, $i);
+
+        @if $val != null and unitless($val) {
+            $val: if(
+                $i != 2,
+                rem($val + 0px),
+                rem($val - 1px)
+            );
+            $lst: lst.set-nth($lst, $i, $val);
+        }
+    }
+
+    @return $lst;
+}
+
+@mixin breakpoint($lst: null) {
+    $media: screen;
+    $lst: parse-breakpoints($lst);
+
+    @if lst.nth($lst, 1) != null {
+        $media: $media + ' and (min-width: #{lst.nth($lst, 1)})';
+    }
+
+    @if lst.nth($lst, 2) != null {
+        $media: $media + ' and (max-width: #{lst.nth($lst, 2)})';
+    }
+
+    @media #{$media} { @content; }
+}

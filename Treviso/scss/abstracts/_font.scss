@@ -1,0 +1,43 @@
+@use 'sass:map';
+@use 'settings' as *;
+
+@mixin font-face($name, $weight: normal, $style: normal, $file) {
+    @font-face {
+        font-family: '#{$name}';
+        font-style: $style;
+        font-weight: $weight;
+
+        src: url('../fonts/#{$file}.eot');
+        src: (
+            url('../fonts/#{$file}.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/#{$file}.ttf') format('truetype'),
+            url('../fonts/#{$file}.woff') format('woff'),
+            url('../fonts/#{$file}.svg') format('svg')
+        );
+    }
+}
+
+@mixin font($name, $weight: normal, $style: normal) {
+    $family: map.get($families, $name);
+
+    @if $family == null {
+        @error 'Invalid operation: family was not found';
+    }
+
+    font-family: $family;
+    font-style: $style;
+    font-weight: $weight;
+}
+
+@mixin icon($name) {
+    $code: map.get($icons, $name);
+
+    @if $code == null {
+        @error 'Invalid operation: icon "#{$name}" was not found';
+    }
+    
+    &:before {
+        content: $code;
+        @include font(icomoon, 900);
+    }
+}

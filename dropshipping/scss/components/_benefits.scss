@@ -1,0 +1,78 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.benefits {
+    @include wrapper(rem(1000px));
+    @include padding(rhythm(1) null rhythm(0.5));
+    
+    text-align: center;
+    
+    @include media(max-width 900) {
+        padding-top: 0
+    }
+    
+    &__list {
+        @include ruler;
+        @include margin(rhythm(1) auto null);
+        
+        counter-reset: benefit-counter;
+        font-size: 0;
+        text-align: justify;
+    }
+    
+    &__item {
+        @include clearfix;
+        
+        counter-increment: benefit-counter;
+        display: inline-block;
+        font-size: 1rem;
+        margin-top: rhythm(1);
+        text-align: left;
+        width: 49%;
+        
+        @include media(max-width 900) {
+            display: block;
+            width: 100%;
+        }
+        
+        &::before {
+            content: counter(benefit-counter);
+            color: $theme-color-1;
+            float: left;
+            font-size: rhythm(3);
+            font-weight: 700;
+            line-height: 1;
+            margin-right: 0.125em;
+            
+            @include media(max-width 900) {
+                font-size: rhythm(2.5);
+            }
+        }
+    }
+    
+    &__title {
+        @include font-rhythm(ratio(4));
+        
+        color: $theme-color-1;
+        font-weight: 300;
+        
+        @include media(max-width 900) {
+            @include font-rhythm(ratio(3));
+        }
+        
+        @include media(max-width 600) {
+            @include font-rhythm(ratio(2));
+        }
+    }
+    
+    &__paragraph {
+        margin-left: 5.375em;
+        text-align: justify;
+        overflow: hidden;
+        
+        @include media(max-width 900) {
+            margin-left: 4.375em;
+            text-align: left
+        }
+    }
+}

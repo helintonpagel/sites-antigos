@@ -1,0 +1,22 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.about {
+    @include padding(rhythm(3) null rhythm(2));
+    
+    @include media(max-width 1200) {
+        @include padding(rhythm(2) null);
+    }
+    
+    @include media(max-width 600) {
+        @include padding(rhythm(1.5) null);
+    }
+    
+    &__wrapper {
+        @include wrapper;
+    }
+    
+    &__paragraph:first-of-type {
+        margin-top: rhythm(1);
+    }
+}

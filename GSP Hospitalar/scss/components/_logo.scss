@@ -1,0 +1,11 @@
+@use '../abstracts/all' as *;
+
+.logo {
+    display: inline-block;
+    height: 100%;
+
+    &__image {
+        height: 100%;
+        width: auto;
+    }
+}

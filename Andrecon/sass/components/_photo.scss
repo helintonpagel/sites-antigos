@@ -1,0 +1,22 @@
+@use '../abstracts/all' as *;
+
+.photo {
+    @include margin(null 50% - $paper-photo-width / 2);
+    @include transition(1s);
+
+    box-shadow: (
+        0 0 rem(20px) 0 rgba(0, 0, 0, 0.3), 0 0 rem(10px) 0 rgba(0, 0, 0, 0.3)
+    );
+    height: auto;
+    transform: translateX(-20%);
+    width: $paper-photo-width;
+    
+    &.show {
+        transform: translateX(0);
+    }
+    
+    @include breakpoint(null 1100) {
+        @include margin(null 0);
+        width: 100%;
+    }
+}

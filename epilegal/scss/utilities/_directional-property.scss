@@ -1,0 +1,61 @@
+@use 'math' as *;
+@use 'rhythm' as *;
+@use 'sass:list' as lst;
+
+@mixin directional-property($property, $shorthand) {
+    $shorthand: convert-units($shorthand);
+
+    @if lst.index($shorthand, null) == null {
+        #{$property}: $shorthand;
+    }
+    @else {
+        $shorthand: expand-shorthand($shorthand);
+
+        @each $direction, $i in (bottom: 3, left: 4, right: 2, top: 1) {
+            #{$property}-#{$direction}: lst.nth($shorthand, $i);
+        }
+    }
+}
+
+@function convert-units($values) {
+    @for $i from 1 through lst.length($values) {
+        $val: lst.nth($values, $i);
+
+        @if $val != null and type-of($val) == number {
+            @if unitless($val) {
+                $values: lst.set-nth($values, $i, rhythm($val));
+            }
+            @else if compatible($val, 0px) {
+                $values: lst.set-nth($values, $i, rem($val));
+            }
+        }
+    }
+
+    @return $values;
+}
+
+@function expand-shorthand($lst) {
+    $length: lst.length($lst);
+
+    @if $length <= 2 {
+        @if $length == 2 {
+            @return lst.join($lst, $lst);
+        }
+        @else {
+            @return ($lst, $lst, $lst, $lst); // $length is one
+        }
+    }
+    @else if $length == 3 {
+        @return lst.join($lst, lst.nth($lst, 2));
+    }
+
+    @return $lst;
+}
+
+@mixin margin($shorthand) {
+    @include directional-property(margin, $shorthand);
+}
+
+@mixin padding($shorthand) {
+    @include directional-property(padding, $shorthand);
+}

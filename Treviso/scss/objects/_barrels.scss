@@ -1,0 +1,60 @@
+@use '../abstracts/all' as *;
+
+.barrels {
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: {
+        left: rhythm(3);
+        right: rhythm(3);
+        top: rhythm(6);
+    }
+    position: relative;
+    
+    @include breakpoint(1300px) {
+        margin: {
+            left: rhythm(1.5);
+            right: rhythm(1.5);
+        }
+    }
+    
+    @include breakpoint(1200px) {
+        margin: {
+            left: rhythm(0);
+            right: rhythm(0);
+            top: rhythm(0);
+        }
+    }
+    
+    @at-root &__card {
+        box-sizing: border-box;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        margin-top: rhythm(14) ;
+        max-width: rhythm(30);
+        
+        @include breakpoint(900px) {
+            margin-left: 1.5rem;
+            margin-right: 1.5rem;
+            max-width: 100%;
+        }
+    }
+    
+    @at-root &__window {
+        display: block;
+        background: {
+            image: url('../img/gray-wine-barrels.jpg');
+            size: cover;
+            position: center center;
+        };
+        height: rhythm(21);
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+    }
+
+    @at-root &__button {
+        margin-top: rhythm(1);
+    }
+}

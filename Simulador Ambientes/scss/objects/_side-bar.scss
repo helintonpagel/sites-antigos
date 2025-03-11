@@ -1,0 +1,83 @@
+@use 'sass:color';
+@use '../abstracts/all' as *;
+
+.side-bar {
+    background-color: $side-bar-background;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.5);
+    color: white;
+    direction: rtl;
+    height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: rhythm(17);
+    scrollbar-color: (
+        color.adjust(
+            $outer-space, $lightness: 50%
+        )
+        color.adjust(
+            $outer-space, $lightness: 75%
+        )
+    );
+
+    @at-root &__tab-menu {
+        direction: ltr;
+        overflow: hidden;
+    }
+    
+    @at-root &__section {
+        background-color: $side-bar-background;
+        box-sizing: border-box;
+        direction: ltr;
+        padding: {
+            bottom: rhythm(3);
+            left: rhythm(1);
+            right: rhythm(1);
+            top: rhythm(1);
+        }
+        position: absolute;
+        opacity: 0;
+        transition-duration: 0.5s;
+        transform: translateX(-100%);
+        width: 100%;
+        
+        &.is-active {
+            opacity: 1;
+            transform: translateX(0%);
+            z-index: 1;
+        }
+    }
+
+    @at-root &__thumb {
+        margin: {
+            left: rhythm(1);
+            right: rhythm(1);
+            top: rhythm(1);
+        }
+        text-align: center;
+    }
+    
+    @at-root &__title {
+        @include font-rhythm(0);
+        
+        font-weight: 300;
+        letter-spacing: rem(2px);
+        margin-top: rhythm(1);
+        text-transform: uppercase;
+        text-align: center;
+    }
+    
+    @at-root &__inline {
+        margin-top: rhythm(1);
+    }
+    
+    @at-root &__buttons {
+        overflow: hidden;
+    }
+    
+    @at-root &__button {
+        width: 50%;
+        text-align: center;
+        float: left;
+    }
+}

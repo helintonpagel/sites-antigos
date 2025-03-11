@@ -1,0 +1,103 @@
+// The default font size for all text in pixels
+$font-size: 16px;
+
+// The default unitless line height for all text
+$line-height: 1.5;
+
+// The scale between consecutive font sizes
+$font-size-scale: 1.27201965;
+
+// The map of font family to be used with @font
+$families: (
+    Poppins: (Poppins, sans-serif),
+    Roboto: (Roboto, Poppins, sans-serif),
+    Icomoon: Icomoon
+);
+
+// The brand colors
+$jacarta: hsl(258, 42%, 27%);
+$cerulean: hsl(196, 100%, 42%);
+$solitude: hsl(205, 92%, 95%);
+$boulder: hsl(0, 0%, 46%);
+
+
+// The maximun width of the page content
+$trunk-width: 54;
+
+//
+$inner-width: 38;
+
+// The minimun space between the screen edges and the page content
+$trunk-space: 1;
+
+// The height of the top bar
+$header-height: 7;
+
+// The height of the top bar on smaller screens
+$minimum-header-height: 5;
+
+// The height of the top bar logo
+$logo-height: 3.5;
+
+// The height of the top bar logo on smaller screens
+$minimum-logo-height: 3;
+
+// The height of the top bar button
+$header-button-size: 1.75;
+
+// The distance between two consecutive items on the header
+$header-gutter: 1.5;
+
+// The height in pixels of the hover effect below header items
+$dash-height: 2px;
+
+// The distance in pixels between the dash and header link
+$dash-margin: 2px;
+
+// The default size of the header icons
+$icon-size: 1;
+
+// The size of slideshow arrows
+$chevron-size: 2;
+
+// The size of the slideshow breadcrumb
+$breadcrumb-size: 0.75;
+
+// The height of the green 'stamp' graphic
+$stamp-height: 8;
+
+// The height of an image of a smiling woman in white clothes
+$shelf-image-height: 20;
+
+// The size of the fixed whatsapp link
+$hanging-whatsapp-size: 2.5;
+
+// The distance between two item in an inline list
+$inline-gutter: 1.5;
+
+// The height of the thumbnail of homepage in rhythm units
+$carousel-height: 12;
+
+// The height of the form field in rhythm units
+$form-field-height: 2;
+
+// The footer arrow that scrolls to top
+$hanging-chevron-size: 2;
+
+
+$tooltip-height: 0.5;
+
+
+// The pagination size in unit thythms
+$pagination-size: 2;
+
+
+
+
+$contact-form-width: 61.803%;
+
+// The size of the checkbox in rhythm units
+$checkbox-size: 0.675;
+
+
+$banner-height: 20;

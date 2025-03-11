@@ -1,0 +1,107 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+* {
+    border: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: top;
+}
+
+article, aside, figcaption, figure, footer, header, nav, section {
+    display: block;
+}
+
+html {
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    scroll-behavior: smooth;
+    -webkit-text-align-adjust: 100%;
+}
+
+body {
+    background-color: $body-back;
+    color: $body-text;
+    font-family: $default-family;
+    font-weight: 400;
+    
+    ::selection {
+        color: $body-text;
+        background-color: $theme-color-1;
+    }
+}
+
+h2 {
+    @include font-rhythm(ratio(5.25));
+    
+    color: $theme-color-1;
+    font-weight: 700;
+    
+    @include media(max-width 1200) {
+        @include font-rhythm(ratio(4));
+    }
+    
+    @include media(max-width 600) {
+        @include font-rhythm(ratio(3));
+    }
+}
+
+ol, ul {
+    list-style-type: none;
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+abbr {
+    border-bottom: none;
+    text-decoration: none;
+}
+
+b, strong {
+    font-weight: 700;
+}
+
+i, em {
+    font-style: italic;
+}
+
+button {
+    background: transparent;
+    cursor: pointer;
+    text-transform: inherit;
+    -webkit-appearance: button;
+}
+
+input, textarea {
+    background: transparent;
+    height: rhythm(1);
+    width: 100%;
+}
+
+textarea {
+    overflow: auto;
+}
+
+img {
+    border-style: none;
+}
+
+svg {
+    fill: currentColor;
+}

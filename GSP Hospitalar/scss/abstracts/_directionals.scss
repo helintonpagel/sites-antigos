@@ -1,0 +1,64 @@
+@use 'rhythm' as *;
+@use 'list' as lst;
+@use 'sass:math' as *;
+
+@function parse-shorthand($lst) {
+    @if lst.length($lst) == 1 {
+        $lst: lst.join($lst, $lst);
+    }
+
+    @if lst.length($lst) == 2 {
+        @return lst.join($lst, $lst);
+    }
+
+    @if lst.length($lst) == 3 {
+        @return lst.join($lst, lst.nth($lst, 2));
+    }
+
+    @if lst.length($lst) == 4 {
+        @return $lst;
+    }
+
+    @error "Wrong number of values to this property";
+}
+
+@function parse-unitless($lst) {
+    @for $i from 1 through lst.length($lst) {
+        $val: lst.nth($lst, $i);
+    
+        @if $val != null and $val != auto and unitless($val) {
+            $lst: lst.set-nth(
+                $lst,
+                $i,
+                rhythm(
+                    lst.nth($lst, $i)
+                )
+            );
+        }
+    }
+    @return $lst;
+}
+
+@mixin directional-property($property, $shorthand, $directions) {
+    $value: parse-shorthand(
+        parse-unitless($shorthand)
+    );
+
+    @each $direction, $index in (bottom: 3, left: 4, right: 2, top: 1) {
+        @if ($directions == all or lst.index($directions, $direction)) {
+            #{$property}-#{$direction}: lst.nth($value, $index);
+        }
+    }
+}
+
+@mixin border($shorthand, $directions: all) {
+    @include directional-property(border, $shorthand, $directions);
+}
+
+@mixin margin($shorthand, $directions: all) {
+    @include directional-property(margin, $shorthand, $directions);
+}
+
+@mixin padding($shorthand, $directions: all) {
+    @include directional-property(padding, $shorthand, $directions);
+}

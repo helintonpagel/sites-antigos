@@ -1,0 +1,92 @@
+@use 'sass:color';
+@use '../abstracts/all' as *;
+
+.internal-product {
+    border: {
+        color: color.change($boulder, $lightness: 87.5%);
+        radius: rem(5px);
+        style: solid;
+        width: rem(1px);
+    }
+    display: block;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    
+    &:after, &:before {
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        @include transition(0.5s);
+        width: 100%;
+    }
+    
+    &:after {
+        background-color: hsla(0, 100%, 0%, 0.5);
+        transform: translateY(100%);
+    }
+    
+    &:hover:after {
+        transform: translateY(0%);
+    }
+    
+    &:before {
+        background: {
+            image: scrim-gradient(black);
+            position: center bottom;
+            repeat: no-repeat;
+            size: 100% 70%;
+        }
+        opacity: 1;
+        @include transition(0.5s);
+        z-index: 1;
+    }
+    
+    &:hover:before {
+        opacity: 0;
+    }
+    
+    &__content  {
+        bottom: rhythm(0.5);
+        color: white;
+        @include margin(null $trunk-space 2.5);
+        position: absolute;
+        transform: translateY(100%);
+        @include transition(0.5s);
+        z-index: 1;
+    }
+    
+    &:hover &__content {
+        @include margin(0.5, bottom);
+        transform: translateY(0%);
+    }
+    
+    &__heading {
+        color: inherit;
+        @include font(Poppins, Regular);
+        text-align: left;
+        text-transform: none;
+    }
+    
+    &__paragraph {
+        @include font(Poppins, Light);
+        @include font-rhythm(1);
+        opacity: 0;
+        text-align: left;
+        @include transition(0.25s);
+    }
+    
+    &:hover &__paragraph {
+        opacity: 1;
+    }
+    
+    &__image {
+        height: auto;
+        @include margin(50%, top);
+        transform: translateY(-50%);
+        @include transition(0.5s);
+        width: 100%;
+    }
+}

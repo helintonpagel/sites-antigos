@@ -1,0 +1,62 @@
+@use '../config' as *;
+@use '../library/all' as *;
+@use '../utilities/all' as *;
+
+.header-menu {
+    @media (min-width: 900px) {
+        @include padding(1 null);
+    }
+    
+    @media (max-width: 899px) {
+        margin-top: rhythm(1);
+    }
+    
+    &__heading {
+        @include font-rhythm(0);
+            
+        font-weight: 600;
+        text-transform: uppercase;
+        
+        @media (min-width: 900px) {
+            @include hide-visually;
+        }
+    }
+    
+    &__list {
+        @media (max-width: 899px) {
+            margin-top: rhythm(0.5);
+        }
+        
+        @media (min-width: 900px) {
+            @include margin(null 0 - 1.25);
+        }
+    }
+    
+    &__item {
+        @media (min-width: 900px) {
+            @include margin(null 1.5);
+            display: inline-block;
+        }
+    }
+    
+    &__link {
+        position: relative;
+        
+        &::after {
+            background-color: currentColor;
+            bottom: rem(-5px);
+            content: '';
+            left: 0;
+            height: rem(2px);
+            max-width: 0;
+            position: absolute;
+            transition-duration: 250ms;
+            transition-property: max-width;
+            width: 100%;
+        }
+        
+        &:hover::after, &:focus::after {
+            max-width: 100%;
+        }
+    }
+}

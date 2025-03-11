@@ -1,0 +1,43 @@
+@use 'sass:map';
+@use 'sass:math' as *;
+@use 'sass:list' as lst;
+
+@function is-color($value) {
+    @return type-of($value) == color;
+}
+
+@function is-string($value) {
+    @return type-of($value) == string;
+}
+
+@function is-number($value) {
+    @return type-of($value) == number;
+}
+
+@function has-time-unit($value) {
+    @return is-number($value) and compatible($value, 1s);
+}
+
+@function has-pixel-unit($value) {
+    @return is-number($value) and compatible($value, 1px);
+}
+
+@function each($lst, $function) {
+    $function: if(is-string($function), get-function($function), $function);
+
+    @each $val in $lst {
+        @if call($function, $val) == false { @return false; }
+    }
+
+    @return lst.length($lst) > 0;
+}
+
+@function map-value($return, $lst, $value) {
+    @each $key in $lst {
+        @if map.get($return, $key) == null {
+            @return map.merge($return, (#{$key}: if(type-of($value) == list, lst.join((), $value, comma), $value)));
+        }
+    }
+
+    @return $return;
+}

@@ -1,0 +1,31 @@
+@use '../abstracts/all' as *;
+
+.banner {
+    background: {
+        attachment: fixed;
+        color: #1e3047;
+        image: url(../img/header-background.jpg);
+        position: center;
+        size: cover;
+    }
+    height: calc(100vh - #{rhythm($header-height + $ribbon-height)});
+    
+    &__content {
+        @include trunk;
+        font-size: 0;
+        
+        &:before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+            width: 0;
+        }
+    }
+    
+    &__heading {
+        color: white;
+        max-width: rhythm(21);
+        vertical-align: middle;
+    }
+}

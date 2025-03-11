@@ -1,0 +1,32 @@
+@use '../abstracts/all' as *;
+
+.waves {
+    background: {
+        image: url(../img/waves.jpg);
+        position: center -60%;
+        repeat: no-repeat;
+        size: cover;
+    }
+    
+    @include breakpoint(1500) {
+        background: {
+            position: center -20%;
+        }
+    }
+    
+    @include breakpoint(null 1200) {
+        background: {
+            size: auto rem(1200px);
+        }
+    }
+    
+    @include breakpoint(null 900) {
+        background: {
+            position: center -1000%;
+        }
+    }
+    
+    @include breakpoint(null 600) {
+        background: transparent;
+    }
+}

@@ -1,0 +1,43 @@
+@use 'sass:map';
+@use 'font' as *;
+@use 'sass:string' as str;
+
+@mixin icon($name) {
+    $icons: (
+        bars: '\e900',
+        cancel: '\e901',
+        check: '\e902',
+        chevron-down: '\e903',
+        chevron-left: '\e904',
+        chevron-right: '\e905',
+        chevron-up: '\e906',
+        clock: '\e907',
+        compass: '\e908',
+        download: '\e909',
+        envelope: '\e90a',
+        facebook: '\e90b',
+        hourglass: '\e90c',
+        instagram: '\e90d',
+        lock: '\e90e',
+        marker: '\e90f',
+        medal: '\e910',
+        phone: '\e911',
+        shopping: '\e912',
+        spyglass: '\e913',
+        whatsapp: '\e914',
+        zoom: '\e915',
+    );
+
+    $icon: map.get(
+        $icons, str.to-lower-case($name)
+    );
+
+    @if $icon == null {
+        @error 'The icons map does not have this key';
+    }
+    
+    &:before {
+        content: $icon;
+        @include font(Icomoon, Heavy Normal);
+    }
+}

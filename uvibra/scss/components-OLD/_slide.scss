@@ -1,0 +1,65 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.slide {
+    box-shadow: (
+        0 0 rem(20px) 0 rgba(0, 0, 0, 0.5),
+        0 0 rem(10px) 0 rgba(0, 0, 0, 0.25)
+    );
+    box-sizing: border-box;
+    position: relative;
+    
+    &:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+    
+    &:after {
+        background: {
+            image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0% 100%);
+            size: 100%;
+        }
+        bottom: 0;
+        content: '';
+        display: block;
+        left: 0;
+        right: 0;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+    }
+    
+    &__content {
+        @include padding(null $gutter);
+        
+        display: inline-block;
+        vertical-align: middle;
+        
+        @include breakpoint-min(900) {
+            background-color: white;
+            
+            right: 0;
+            width: 25%;
+        }
+    }
+    
+    &__heading {
+        @include font-rhythm(2);
+        color: white;
+    }
+    
+    &__button {
+        margin-top: rhythm(0.5);
+    }
+    
+    &__image {
+        position: absolute;
+        height: 100%;
+        left: 0;
+        object-fit: cover;
+        width:100%;
+        z-index: -1;
+    }
+}

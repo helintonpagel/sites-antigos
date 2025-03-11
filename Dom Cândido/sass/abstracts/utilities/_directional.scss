@@ -1,0 +1,64 @@
+@use 'rhythm' as *;
+@use 'sass:list' as lst;
+
+@function convert-units($values) {
+    @for $i from 1 through lst.length($values) {
+        $val: lst.nth($values, $i);
+
+        @if $val != null and type-of($val) == number {
+            @if unitless($val) {
+                $values: lst.set-nth($values, $i, rhythm($val));
+            }
+            @else if compatible($value, 0px) {
+                $values: lst.set-nth($values, $i, rem($val));
+            }
+        }
+    }
+
+    @return $values;
+}
+
+@function expand-shorthand($lst) {
+    @if lst.length($lst) == 1 {
+        $lst: lst.join($lst, $lst);
+    }
+
+    @if lst.length($lst) == 2 {
+        @return lst.join($lst, $lst);
+    }
+
+    @if lst.length($lst) == 3 {
+        @return lst.join($lst, lst.nth($lst, 2));
+    }
+
+    @if lst.length($lst) == 4 {
+        @return $lst;
+    }
+
+    @error "Wrong number of values, #{lst.length($lst)} was given";
+}
+
+@mixin directional($property, $shorthand, $directions) {
+    $shorthand: convert-units($shorthand);
+
+    @if $directions == all and lst.index($shorthand, null) == null {
+        #{$property}: $shorthand;
+    }
+    @else {
+        $shorthand: expand-shorthand($shorthand);
+
+        @each $direction, $i in (bottom: 3, left: 4, right: 2, top: 1) {
+            @if (lst.index($directions, $direction) or $directions == all) {
+                #{$property}-#{$direction}: lst.nth($shorthand, $i);
+            }
+        }
+    }
+}
+
+@mixin margin($shorthand, $directions: all) {
+    @include directional(margin, $shorthand, $directions);
+}
+
+@mixin padding($shorthand, $directions: all) {
+    @include directional(padding, $shorthand, $directions);
+}

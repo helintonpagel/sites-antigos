@@ -1,0 +1,27 @@
+@use '../abstracts/all' as *;
+
+.embed {
+    background: $jacarta;
+    color: white;
+    @include padding(0.5 null 3);
+
+    &__heading, &__frame {
+        @include trunk;
+    }
+    
+    &__heading {
+        color: inherit;
+        text-align: center;
+    }
+    
+    &__frame {
+        display: block;
+        height: rhythm(20);
+        max-width: rhythm($inner-width);
+        @include margin(0.5 auto null);
+        width: 100%;
+        @include breakpoint(null 900) {
+            height: rhythm(15);
+        }
+    }
+}

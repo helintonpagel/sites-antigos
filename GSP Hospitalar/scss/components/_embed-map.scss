@@ -1,0 +1,10 @@
+@use '../abstracts/all' as *;
+
+.embed-map {
+    height: rhythm(24);
+    
+    &__frame {
+        height: 100%;
+        width: 100%;
+    }
+}

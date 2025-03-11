@@ -1,0 +1,28 @@
+@use '../abstracts/all' as *;
+
+.thumbnail {
+    height: rhythm($thumbnail-height);
+    position: relative;
+    
+    &:after {
+        @include transition(0.25s);
+        
+        background-color: rgba(0, 0, 0, 0.325);
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+    
+    &:hover:after, &:focus:after {
+        opacity: 0;
+    }
+    
+    &__image {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+    }
+}

@@ -1,0 +1,108 @@
+@use 'sass:color';
+@use '../abstracts/all' as *;
+
+.article {
+    @include padding(3 null);
+    @include trunk;
+    
+    @include breakpoint(null 700) {
+        text-align: center;
+    }
+    
+    &__heading {
+        text-align: center;
+        
+        @include breakpoint(null 600) {
+            @include font-rhythm(2.5);
+        }
+    }
+    
+    &__paragraph {
+        margin: 0 auto;
+        max-width: rhythm($inner-width);
+        text-align: center;
+        
+        &:first-of-type {
+            @include margin(1.5, top);    
+        }
+    }
+    
+    &__subheading {
+        color: $jacarta;
+        text-align: center;
+        
+        @include breakpoint(null 600) {
+            @include font-rhythm(1);
+        }
+    }
+    
+    &__select {
+        @include margin(3, top);
+        min-width: rem(300px);
+        
+        @include breakpoint(null 1200) {
+            text-align: center;
+        }
+        
+        @include breakpoint(null 600) {
+            @include margin(2, top);
+        }
+    }
+    
+    &__list {
+        font-size: 0;
+        @include margin(
+            1
+            0 - $inline-gutter / 2
+            null
+        );
+        text-align: center;
+    }
+    
+    &__item, &__informative {
+        box-sizing: border-box;
+        display: inline-block;
+        height: rhythm(16);
+        max-width: rhythm(18);
+        @include padding(
+            $inline-gutter
+            $inline-gutter / 2
+            null
+        );
+        width: (100% / 3);
+        
+        @include breakpoint(null 1100) {
+            width: (100% / 2);
+        }
+        
+        @include breakpoint(null 700) {
+            width: (100% / 1);
+        }
+    }
+    
+    &__leading {
+        @include margin(1, top)
+    }
+    
+    &__informative {
+        height: rhythm(24);
+    }
+    
+    &__underlined-heading {
+        @include font(Poppins, Medium);
+        @include font-rhythm(2.5);
+        
+        &:after {
+            background: $jacarta;
+            content: '';
+            display: block;
+            width: 50%;
+            @include margin(0 - $dash-height, bottom);
+            height: $dash-height;
+            
+            @include breakpoint(null 900) {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,78 @@
+@use '../abstracts/all' as *;
+
+.header {
+    @include transition(0.5s);
+    
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    
+    @include break(null 600) {
+        background-color: $brand-color;
+        box-shadow: 0 0 rem(40px) 0 rgba(0, 0, 0, 0.375), 0 0 rem(20px) 0 rgba(0, 0, 0, 0.125);
+    }
+    
+    &--small {
+        background-color: $brand-color;
+        box-shadow: 0 0 rem(40px) 0 rgba(0, 0, 0, 0.375), 0 0 rem(20px) 0 rgba(0, 0, 0, 0.125);
+    }
+    
+    &__content {
+        @include trunk;
+    }
+    
+    &__brand {
+        @include margin(($header-height - $brand-height) / 2 null);
+        @include transition(0.25s);
+        
+        float: left;
+        height: rhythm($brand-height);
+        
+        @include break(null 600) {
+            @include margin(($small-header-height - $small-brand-height) / 2 null);
+            height: rhythm($small-brand-height);
+        }
+        
+        @at-root .header--small & {
+            @include margin(($small-header-height - $small-brand-height) / 2 null);
+            height: rhythm($small-brand-height);
+        }
+    }
+    
+    &__button {
+        @include margin(($header-height - $header-button-height) / 2 null);
+        @include transition(0.25s);
+        
+        float: right;
+        
+        @include break(null 600) {
+            @include margin(($small-header-height - $header-button-height + 0.5) / 2 null);
+        }
+        
+        @at-root .header--small & {
+            @include margin(($small-header-height - $header-button-height) / 2 null);
+            
+            @include break(null 600) {
+                @include margin(($small-header-height - $header-button-height + 0.5) / 2 null);
+            }
+        }
+    }
+
+    .header-button--active ~ &__overlay {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    &__menu {
+        @include transition(0.5s);
+        transform: translateX(100%);
+        
+        @at-root .header-button--active ~ & {
+            transform: translateX(0%);
+        }
+        
+        &:focus-within {
+            transform: translateX(0%);
+        }
+    }
+}

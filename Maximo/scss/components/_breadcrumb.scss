@@ -1,0 +1,32 @@
+@use 'sass:color';
+@use '../abstracts/all' as *;
+
+.breadcrumb {
+    text-align: center;
+    width: 100%;
+    
+    @at-root &__item {
+        display: inline-block;
+    }
+    
+    @at-root &__button {
+        background: white;
+        border-radius: 50%;
+        height: rhythm(0.625);
+        margin-left: rem(2px);
+        margin-right: rem(2px);
+        opacity: 0.875;
+        overflow: hidden;
+        text-indent: -1000%;
+        transition-duration: 0.5s;
+        width: rhythm(0.625);
+        
+        &.is-active {
+            background: color.change(color(copper), $lightness: 62.5%);
+        }
+        
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}

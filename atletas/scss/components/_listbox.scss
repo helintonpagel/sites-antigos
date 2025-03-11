@@ -1,0 +1,81 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.listbox {
+    @include font-rhythm(ratio(-1), $addend: 1);
+    
+    background-color: white;
+    color: $body-back;
+    display: inline-block;
+    font-weight: 500;
+    position: relative;
+    vertical-align: middle;
+    width: 100%;
+    z-index: 1;
+    
+    &__label {
+        left: 1em;
+        padding-left: inherit;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+    }
+    
+    &__button {
+        @include padding(0 1em);
+        
+        box-sizing: border-box;
+        height: rhythm(1.5);
+        width: 100%;
+    
+        &:focus {
+            outline-color: $theme-color-1;
+            outline-style: dashed;
+            outline-offset: rem(5px);
+            outline-width: rem(2px);
+        }
+    }
+    
+    &__icon {
+        height: rhythm(0.75);
+        position: absolute;
+        right: 1em;
+        top: 50%;
+        transform: translateY(-50%);
+        transform-origin: center;
+        transition-duration: 500ms;
+        transition-property: transform;
+        width: auto;
+    }
+    
+    &__button--active &__icon {
+        transform: translateY(-50%) rotateZ(180deg);
+    }
+    
+    &__list {
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        position: absolute;
+        transition-duration: 500ms;
+        transition-property: max-height, padding-bottom;
+        width: 100%;
+    }
+    
+    &__button--active + &__list {
+        max-height: rhythm(10);
+        padding-bottom: rhythm(1.5);
+    }
+    
+    &__item {
+        @include padding(0 1em);
+        
+        cursor: pointer;
+        transition-duration: 250ms;
+        transition-property: background-color;
+        
+        &:hover {
+            background-color: $theme-color-1;
+        }
+    }
+}

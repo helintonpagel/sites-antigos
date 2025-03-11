@@ -1,0 +1,93 @@
+@use '../abstracts/all' as *;
+
+.form {
+    @include margin(0 - $form-offset, right);
+    @include padding(3 2 + $form-offset 3 2); 
+    
+    @include break(null 1200) {
+        @include margin(1 auto null);
+        @include padding(2 1); 
+        
+        max-width: rhythm($trunk-width / 2);
+    }
+    
+    @include break(null 600) {
+        @include margin(null -0.5);
+        @include padding(null 0.5);
+    }
+    
+    background-color: $brand-color;
+    box-shadow: 0 0 rem(40px) 0 rgba(0, 0, 0, 0.375), 0 0 rem(20px) 0 rgba(0, 0, 0, 0.125);
+    color: white;
+    
+    &__field {
+        @include margin(1, top);
+        @include padding(0.5, left);
+        
+        border-bottom: {
+            color: white;
+            style: solid;
+            width: rem(1px);
+        };
+        box-sizing: border-box;
+        display: block;
+        line-height: rhythm($field-height, 1px);
+        position: relative;
+    }
+    
+    &__input, &__textarea {
+        height: rhythm($field-height);
+        line-height: rhythm($field-height);
+        width: 100%;
+        resize: vertical;
+        
+        &::selection {
+            color: $brand-color;
+            background-color: white;
+        }
+    }
+    
+    &__textarea {
+        min-height: rhythm(1);
+        max-height: rhythm(6);
+    }
+    
+    &__label {
+        @include transition(0.25s);
+        
+        cursor: text;
+        display: block;
+        height: rhythm($field-height);
+        position: absolute;
+        left: rhythm(0.5);
+        transform-origin: left bottom;
+        top: 0;
+        
+        @at-root .form__input--active ~ &, .form__textarea--active ~ & {
+            transform: translateY(-100%) scale(0.675);
+        }
+    }
+    
+    &__checkbox {
+        @include margin(1, top);
+    }
+    
+    &__recaptcha {
+        @include margin(1, top);
+        
+        @include break(null 364px) {
+            .g-recaptcha {
+                display: inline-block;
+                margin-left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+    
+    &__button  {
+        @include margin(2, top);
+        
+        border: solid white rem(1px);
+        line-height: rhythm(1, 2);
+    }
+}

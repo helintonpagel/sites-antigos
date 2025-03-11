@@ -1,0 +1,44 @@
+@use 'types' as *;
+@use 'sass:map';
+@use 'sass:list' as lst;
+@use 'sass:string' as str;
+
+@function is-media($value) {
+    @return lst.index(("all" "print" "screen" "speech"), $value) != null;
+}
+
+@function is-orientation($value) {
+    @return $value == portrait or $value == landscape;
+}
+
+@function map-media($args) {
+    $return: ();
+
+    @each $key, $arg in $args {
+        @if has-pixel-unit($arg) {
+            $arg: if(str.index($key, max), $arg - 1px, $arg + 0px);
+        }
+
+        @if is-media($key) {
+            $return: map-value($return, ("type"), $key);
+        }
+        @else if is-orientation($key) {
+            $return: map-value($return, ("orientation"), $key);
+        }
+        @else {
+            $return: map-value($return, ($key), $arg);
+        }
+    }
+
+    @return map.merge((type: screen), $return);
+}
+
+@mixin media($args...) {
+    $result: '';
+    
+    @each $key, $arg in map-media($args) {
+        $result: if($key == type, $arg, "#{$result} and (#{$key}: #{$arg})");
+    }
+
+    @media #{$result} { @content; }
+}

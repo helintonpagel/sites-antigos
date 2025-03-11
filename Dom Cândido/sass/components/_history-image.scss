@@ -1,0 +1,16 @@
+@use '../abstracts/all' as *;
+
+.history-image {
+    background-color: $cod-gray;
+    position: relative;
+    
+    &__image {
+        height: rhythm($leaves-image-height);
+        position: absolute;
+        right: 0;
+        top: rhythm(5);
+        transform: translateX(50%);
+        width: rhythm($leaves-image-width);
+        object-fit: cover;
+    }
+}

@@ -1,0 +1,12 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.lang-bar {
+    @include margin(null -0.125);
+    
+    &__item {
+        @include margin(null 0.125);
+        
+        display: inline-block;
+    }
+}

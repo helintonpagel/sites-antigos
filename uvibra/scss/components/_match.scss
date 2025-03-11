@@ -1,0 +1,32 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.match {
+    @include padding(1.5 4.5);
+    
+    background-color: white;
+    border-radius: rem(3px);
+    box-shadow: (
+        0 0 rem(10px) 0 rgba(0, 0, 0, 0.375),
+        0 0 rem(5px) 0 rgba(0, 0, 0, 0.125)
+    );
+    
+    @media (max-width: 900px) {
+        @include padding(null $gutter * 2);
+    }
+    
+    &__heading {
+        color: $brand-color-2;
+    }
+    
+    &__time {
+        @include font-rhythm(-1);
+        
+        display: block;
+        margin-top: rhythm(1);
+    }
+    
+    &__button {
+        margin-top: rhythm(1);
+    }
+}

@@ -1,0 +1,14 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.search-button {
+    @include glyph(magnifier);
+    
+    font-size: 0;
+    right: rhythm(0.25);
+    vertical-align: middle;
+
+    &::before {
+        font-size: rhythm($search-button-height);
+    }
+}

@@ -1,0 +1,51 @@
+@use '../abstracts/mixins' as *;
+@forward '../objects/container';
+
+.newsletter {
+    @extend .container;
+    max-width: 40rem;
+    text-align: center;
+    padding: 10rem 1.5rem;
+    
+    @media (max-width: 899px) {
+        padding: 6rem 1.5rem;
+    }
+    
+    @at-root &__title {
+        @include font((size: 1.25rem, weight: 400));
+        margin-bottom: 1.5rem;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    
+    @at-root &__field {
+        border-bottom: {
+            color: black;
+            style: solid;
+            width: 1px;
+        }
+        margin-top: 0.5rem;
+        padding-left: 0.75rem;
+        line-height: 2.5rem;
+        height: 2.5rem;
+        text-indent: 0.75rem;
+    }
+    
+    @at-root &__text {
+        @include font((size: 0.8125rem));
+        line-height: 1rem;
+        margin-top: 1.5rem;
+        text-align: center;
+    }
+    
+    @at-root &__button {
+        color: black;
+        outline-color: black;
+        margin-top: 1.5rem;
+
+        &:hover {
+            background:  #424242;
+            color: white;
+        }
+    }
+}

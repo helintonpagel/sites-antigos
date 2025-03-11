@@ -1,0 +1,85 @@
+@use 'abstracts/all' as *;
+@use 'sass:color';
+
+.editing {
+    display: none;
+}
+
+.alert--loading, .alert--success, .alert--failure {
+    @include font(Montserrat, medium);
+    @include font-rhythm(-1);
+    text-shadow: 2px 1px rgba(0, 0, 0, 0.75);
+    
+    &:before {
+        display: inline-block;
+        line-height: rhythm(0.5);
+        @include margin(0.25, right);
+        vertical-align: -15%;
+    }
+}
+
+.alert--failure {
+    color: hsl(0, 100%, 90%);
+    @include icon(cancel);
+}
+
+.alert--loading {
+    @include icon(spinner);
+    text-shadow: none;
+    
+    &:before {
+        animation: {
+            duration: 0.75s;
+            iteration-count: infinite;
+            name: loading-hourglass;
+        }
+    }
+}
+
+.alert--success {
+    color: hsl(120, 90%, 60%);
+    @include icon(check);
+}
+
+@keyframes loading-hourglass {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader {
+    @at-root div[vw] {
+        z-index: 1 !important;;
+    }
+    
+    background: white;
+    font-size: 0;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    z-index: 3;
+    
+    &--hidden {
+        @include transition(0.5s);
+        
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+    &:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+    
+    &__image {
+        height: rhythm(8);
+        vertical-align: middle;
+        width: auto;
+    }
+}

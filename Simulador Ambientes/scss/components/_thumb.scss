@@ -1,0 +1,88 @@
+@use 'sass:color';
+@use '../abstracts/all' as *;
+
+$thumb-height: rhythm(7);
+$thumb-width: $thumb-height * 1.5;
+
+.thumb {
+    height: $thumb-height;
+    position: relative;
+    overflow: hidden;
+    transition-duration: 0.5s;
+    width: $thumb-width;
+    
+    @at-root &__label {
+        background: color.change($toast, $alpha: 0.875);
+        display: block;
+        font-weight: 300;
+        letter-spacing: rem(2px);
+        line-height: $thumb-height;
+        position: absolute;
+        opacity: 0;
+        text-align: center;
+        text-transform: uppercase;
+        top: 0;
+        transform: translateY(-100%);
+        transition-duration: 0.5s;
+        width: 100%;
+        z-index: 1;
+    }
+    
+    &:hover &__label {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+    
+    @at-root &__image {
+        height: 100%;
+        transition-duration: 0.5s;
+        width: auto;
+    }
+    
+    &:hover &__image {
+        transform: scale(1.2);
+    }
+}
+
+/* .thumbnail {
+    $thumbnail-height: rhythm(5);
+    
+    background: {
+        image: url('../img/wine-glasses-table.jpg');
+        position: center;
+        size: 100% auto;
+    }
+    cursor: pointer;
+    height: $thumbnail-height;
+    margin: {
+        left: auto;
+        right: auto;
+    }
+    overflow: hidden;
+    transition-duration: 0.5s;
+    width: $thumbnail-height * 1.5;
+    
+    &:hover {
+        background-size: 120% auto;
+    }
+    
+    @at-root &__label {
+        @include font-rhythm(2);
+        
+        background: color.change(color(toast), $alpha: 0.875);
+        display: block;
+        font-weight: 300;
+        letter-spacing: rem(2px);
+        line-height: $thumbnail-height;
+        opacity: 0;
+        text-align: center;
+        text-transform: uppercase;
+        transform: translateY(-100%);
+        transition-duration: 0.5s;
+        
+        @at-root .thumbnail:hover & {
+            opacity: 1;
+            transform: translateX(0%);
+        }
+    }
+} */

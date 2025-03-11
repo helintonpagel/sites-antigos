@@ -1,0 +1,7 @@
+<?xml version="1.0" standalone="no"?>
+<svg height="192" width="192" viewBox="0 0 192 192" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <!--
+        radius is equal to 96 minus stroke width
+    -->
+    <circle cx="96" cy="96" r="94" fill="none" stroke="white" stroke-width="1"/>
+</svg>

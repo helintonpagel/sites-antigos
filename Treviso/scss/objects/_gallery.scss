@@ -1,0 +1,102 @@
+@use '../abstracts/all' as *;
+
+.gallery {
+    @include trunk;
+
+    background: {
+        color: color(mine-shaft);
+        image: url('../img/pattern.png');
+        repeat: repeat-x;
+        size: rem(1300px) auto;
+    }
+    color: color(vista-white);
+    padding-bottom: rhythm(3);
+    padding-top: rhythm(4);
+    text-align: justify;
+    
+    &:after {
+        content: ' ';
+        display: inline-block;
+        width: 100%;
+        
+        @include breakpoint(900px) {
+            margin: 0;
+            padding: 0;
+        }
+    }
+  
+    @at-root &__card {
+        box-sizing: border-box;
+        display: inline-block;
+        vertical-align: middle;
+        width: 50%;
+        
+        @include breakpoint(900px) {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    @at-root &__section {
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        
+        @include breakpoint(1200px) {
+            float: right;
+            width: 50%;
+        }
+        
+        @include breakpoint(900px) {
+            display: block;
+            margin-top: rhythm(1);
+            width: 100%;
+        }
+    }
+
+    @at-root &__blazon {
+        @include breakpoint(900px) {
+            display: none;
+        }
+    }
+    
+    @at-root &__button {
+        margin-top: rhythm(0.5);
+        
+        @include breakpoint(900px) {
+            margin-top: rhythm(1);
+        }
+    }
+    
+    @at-root &__bottle {
+        $height: rhythm(28);
+        $width: $height / 3.21;
+        
+        display: inline-block;
+        background: {
+            image: url('../img/chardonnay.png');
+            size: 100% 100%;
+            position: center;
+        }
+        height: $height;
+        margin: {
+            bottom: rhythm(-10);
+            top: rhythm(-10);
+        }
+        opacity: 0;
+        right: rhythm(3);
+        transform: translateX($width + rhythm(3));
+        transition-duration: 1s;
+        vertical-align: middle;
+        width: $width;
+        
+        &.is-active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        @include breakpoint(1200px) {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,57 @@
+{
+  "name": "epilegal",
+  "version": "1.0.0",
+  "description": "EPI Legal",
+  "main": "index.js",
+  "watch": {
+    "build-js": {
+      "quiet": false,
+      "patterns": [
+        "src"
+      ],
+      "extensions": "js"
+    },
+    "build-css": {
+      "quiet": false,
+      "patterns": [
+        "scss"
+      ],
+      "extensions": "scss"
+    },
+    "build-all": {
+      "quiet": false,
+      "patterns": [
+        "src", "scss"
+      ],
+      "extensions": "js,scss"
+    }
+  },
+  "scripts": {
+    "build-js": "browserify -t babelify ./src/index.js -o ./js/index.js",
+    "postbuild-js": "minify ./js/index.js > ./js/index.min.js",
+    "build-js:watch": "npm-watch build-js",
+
+    "build-css": "sass ./scss/style.scss ./css/style.css",
+    "postbuild-css": "minify ./css/style.css > ./css/style.min.css",
+    "build-css:watch": "npm-watch build-css",
+
+    "sass-only": "sass ./scss/style.scss ./css/style.css --watch",
+
+    "build-all": "npm run build-js && npm run build-css",
+    "build-all:watch": "npm-watch build-all"
+  },
+  "author": "Goon",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0",
+    "minify": "^7.0.2",
+    "nodemon": "^2.0.7",
+    "npm-watch": "^0.10.0",
+    "rimraf": "^3.0.2",
+    "sass": "^1.35.1"
+  }
+}

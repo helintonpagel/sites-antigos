@@ -1,0 +1,22 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.terms {
+    @include padding(rhythm(1) null);
+    
+    & + & {
+        margin-top: rhythm(0.5);
+    }
+    
+    &__wrapper {
+        @include wrapper;
+    }
+    
+    &__heading {
+        color: $theme-color-1;
+    }
+    
+    &__paragraph {
+        margin-top: rhythm(1);
+    }
+}

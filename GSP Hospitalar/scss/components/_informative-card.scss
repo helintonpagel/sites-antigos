@@ -1,0 +1,66 @@
+@use '../abstracts/all' as *;
+
+.informative-card {
+    border-radius: rem(5px);
+    box-shadow: 0 0 rem(10px) rem(3px) hsla(0, 100%, 0%, 0.5);
+    color: white;
+    display: block;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    @include transition(0.5s);
+    width: 100%;
+    
+    &:hover {
+        box-shadow: 0 0 rem(15px) rem(5px) hsla(0, 100%, 0%, 0.5);
+        transform: scale(1.05);
+    }
+    
+    &:before {
+        background: {
+            image: scrim-gradient(black);
+            position: center bottom;
+            repeat: no-repeat;
+            size: 100% 100%;
+        }
+        content: '';
+        display: block;
+        height: 100%;
+        top: 0;
+        opacity: 1;
+        position: absolute;
+        @include transition(0.5s);
+        width: 100%;
+        @include transition(0.5s);
+        z-index: 1;
+    }
+    
+    &__content {
+        bottom: 0;
+        @include margin(null 1 1.5);
+        position: absolute;
+        text-align: left;
+        z-index: 1;
+    }
+    
+    &__date {
+        @include font-rhythm(1);
+    }
+    
+    &__heading {
+        color: inherit;
+        @include font(Poppins, Medium);
+        font-size: scale-by(2);
+        line-height: rhythm(1.5);
+        min-height: rhythm(3);
+        text-align: left;
+        text-transform: none;
+    }
+    
+    &__image {
+        height: 100%;
+        transform: translateX(-50%);
+        @include margin(50%, left);
+        width: auto;
+    }
+}

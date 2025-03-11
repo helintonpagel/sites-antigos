@@ -1,0 +1,43 @@
+@use '../abstracts/all' as *;
+
+.button {
+    @include font(sans-serif, 500);
+
+    background: color(copper);
+    border: solid color(copper) rem(1px);
+    border-radius: rem(3px);
+    color: color(vista-white);
+    display: inline-block;
+    font-size: 1.2rem;
+    line-height: rhythm(2, 2px);
+    padding: {
+        left: rhythm(1);
+        right: rhythm(1);
+    }
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.25s;
+    
+    &:hover {
+        color: color(copper);
+        background: color(vista-white);
+    }
+    
+    @at-root &__icon {
+        margin-left: rhythm(0.125);
+        vertical-align: middle;
+    }
+}
+
+.button--header {
+    @extend .button;
+
+    border-radius: 5px;
+    font-size: 1rem;
+    line-height: rhythm(1.5, 2px);
+    height: rhythm(1.5, 2px);
+    padding: {
+        left: rhythm(0.5);
+        right: rhythm(0.5);
+    }
+}

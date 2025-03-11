@@ -1,0 +1,44 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.header-logo {
+    @include padding(rhythm(0.25) null);
+    font-size: 1rem * div(2.5, 5.25);
+    
+    @include media(max-width 900) {
+        @include padding(rhythm(0.5) null);
+        font-size: 1rem * div(2, 5.25);
+    }
+    
+    .home & {
+        @include media(min-width 1200) {
+            @include padding(rhythm(5.5) null rhythm(0.25));
+            font-size: 1rem;
+        }
+        
+        @include media(min-width 900, max-width 1200) {
+            padding-top: rhythm(4.5);
+            font-size: 1rem * div(3.25, 5.25);
+        }
+    }
+    
+    &__link {
+        @include common-focus($theme-color-1);
+        display: inline-block;
+    }
+    
+    &__image {
+        display: block;
+        height: 2.5em;
+        width: auto;
+    }
+    
+    &__label {
+        @include font-rhythm(5.875em, 0.5);
+        
+        color: $theme-color-1;
+        display: block;
+        font-weight: 700;
+        margin-left: -0.09375em;
+    }
+}

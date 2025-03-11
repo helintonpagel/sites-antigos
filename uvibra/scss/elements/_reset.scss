@@ -1,0 +1,61 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+* {
+    border: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: top;
+}
+
+html {
+    color: $dusty-color;
+    font-family: $default-family;
+    font-size: $base-font-size;
+    font-weight: 400;
+    line-height: $base-line-height;
+    scroll-behavior: smooth;
+    -webkit-text-align-adjust: 100%;
+}
+
+body {
+    background: $light-color;
+    padding-top: rhythm($logo-height + 1);
+    
+    @media (min-width: 600px) {
+        padding-top: rhythm($logo-height + 2);
+    }
+    
+    @media (min-width: 900px) {
+        padding-top: rhythm($logo-height + 3.5);
+    }
+
+    ::selection {
+        color: $light-color;
+        background-color: $brand-color-1;
+    }
+}
+
+ol, ul {
+  list-style-type: none;
+}
+
+button {
+    background: transparent;
+    cursor: pointer;
+    text-transform: inherit;
+    -webkit-appearance: button;
+}
+
+input, textarea {
+    background: transparent;
+    height: rhythm(1);
+    width: 100%;
+}

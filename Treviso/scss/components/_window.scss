@@ -1,0 +1,191 @@
+@use '../abstracts/mixins' as *;
+@forward 'moon';
+
+@media (max-width: 899px) {
+    .window {
+        background: white;
+        height: 34rem * 2;
+        background: {
+            image: url('../img/breda.png');
+            position: 90% 50%;
+            repeat: no-repeat;
+            size: auto 100%;
+        }
+
+        @at-root &__rag {
+            background: transparent;
+            height: 37rem;
+        }
+
+        @at-root &__inner-rag {
+            box-sizing: border-box;
+            padding: {
+                left: 1.5rem;
+                right: 1.5rem;
+                top: 6rem;
+            }
+        }
+
+        @at-root &__text {
+            color: black;
+            margin-top: 0.75rem;
+            text-align: center;
+        }
+
+        @at-root &__button {
+            outline-color: black;
+            color: black;
+            display: block;
+            margin: {
+                left: auto;
+                right: auto;
+                top: 2rem;
+            }
+            width: 7rem;
+            
+            &:hover {
+                background: black;
+                color: #bebebe
+            }
+        }
+    }
+
+     .window--left {
+         
+        height: 34rem * 1;
+        background: #424242;
+
+         .window__rag {
+             margin-top: -3rem;
+         }
+
+         .window__inner-rag {
+/*              float: right; */
+             padding: {
+                 left: 1.5rem;
+                 right: 1.5rem;
+             }
+         }
+
+         .window__text {
+             color: white;
+             text-align: center;
+         }
+         
+         .window__button {
+             color: white;
+            outline-color: white;
+            display: block;
+            margin: {
+                left: auto;
+                right: auto;
+                top: 2rem;
+            }
+            width: 7rem;
+            
+            &:hover {
+                background: black;
+                color: #bebebe
+            }
+            
+             
+        }
+    }
+}
+
+@media (min-width: 900px) {
+    .window {
+        background: #eee;
+        height: 34rem;
+        background: {
+            image: url('../img/breda.png');
+            position: 350% 50%;
+            repeat: no-repeat;
+            size: 120% auto;
+        }
+
+        @at-root &__rag {
+            background: #424242;
+            float: right;
+            height: 37rem;
+            width: 50%;
+            
+            transition: 1s all ease-in-out;
+        }
+
+        @at-root &__inner-rag {
+            box-sizing: border-box;
+            max-width: 27rem;
+            padding: {
+                left: 3rem;
+                top: 6rem;
+            }
+            @media (min-width: 1400px) {
+                max-width: 30vw;
+            }
+        }
+
+        @at-root &__text {
+            color: white;
+            margin-top: 0.75rem;
+            text-align: right;
+        }
+
+        @at-root &__button {
+            display: block;
+            margin: {
+                left: auto;
+                right: auto;
+                top: 2rem;
+            }
+            width: 7rem;
+        }
+    }
+
+     .window--left {
+         
+         background: {
+            image: url('../img/mapa.svg');
+            position: 100% 0%;
+            repeat: repeat-x;
+            size: auto 100%;
+        }
+
+         .window__rag {
+             float: left;
+             margin-top: -3rem;
+         }
+
+         .window__inner-rag {
+             float: right;
+             padding: {
+                 left: 0rem;
+                 right: 3rem;
+             }
+             
+            transform: translateX(0%);
+         }
+
+         .window__text {
+             text-align: left;
+         }
+    }
+}
+
+@media (max-width: 600px) {
+    .moon--left, .moon {
+        transform: scale(0.7);
+    }
+}
+
+:not(.window--left) > .window__rag {
+    transform: translateX(100%);
+}
+
+.window--left > .window__rag {
+    transform: translateX(-100%);
+}
+
+.window__rag.show {
+    transform: translateX(0%);
+}

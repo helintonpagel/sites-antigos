@@ -1,0 +1,78 @@
+/*
+cd C:\wamp64\www\uvibraconsevitis\modelo\scss\
+sass style.scss ../css/style.css --watch
+
+*/
+
+@forward 'elements/faces';
+@forward 'elements/reset';
+@forward 'elements/texts';
+
+@forward 'components/icon-bar';
+@forward 'components/link-bar';
+@forward 'components/lang-bar';
+
+@forward 'components/pillar';
+@forward 'components/top-bar';
+
+@forward 'components/logo';
+@forward 'components/search';
+@forward 'components/menu';
+@forward 'components/header';
+
+@forward 'components/toggle';
+@forward 'components/address';
+@forward 'components/glyph';
+@forward 'components/mobile';
+
+@forward 'components/button';
+@forward 'components/slide';
+@forward 'components/chevron';
+@forward 'components/slider';
+
+@forward 'components/heading';
+@forward 'components/foreword';
+@forward 'components/posts';
+
+@forward 'components/card';
+@forward 'components/post-widget';
+
+@forward 'components/about';
+
+@forward 'components/field';
+@forward 'components/newsletter';
+
+@forward 'components/footer';
+
+@forward 'components/padlock';
+@forward 'components/tooltip';
+@forward 'components/bottom';
+
+@forward 'components/banner-nav';
+@forward 'components/banner';
+
+@forward 'components/topics';
+
+@forward 'components/topic-posts';
+@forward 'components/breadcrumb';
+
+@forward 'components/notices';
+
+@forward 'components/video-thumb';
+@forward 'components/video';
+
+@forward 'components/values-widget';
+@forward 'components/people';
+
+@forward 'components/check';
+@forward 'components/contact';
+@forward 'components/map';
+
+@forward 'components/match';
+@forward 'components/result';
+
+@forward 'components/photos';
+@forward 'components/post';
+
+@forward 'EDIT';
+// @forward 'EDIT-OLD';

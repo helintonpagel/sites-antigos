@@ -1,0 +1,38 @@
+@use '../abstracts/all' as *;
+
+.icon-bar {
+    display: inline-block;
+    
+    &__item {
+        display: inline-block;
+        @include margin(null 0.25);
+        @include transition(0.25s);
+        
+        &:first-child {
+            margin-left: 0;
+        }
+        
+        &:last-child {
+            margin-right: 0;
+        }
+        
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+    
+    &__icon {
+        font-size: 0;
+        text-decoration: none;
+        
+        &:before {
+            font-size: scale-by($icon-size);
+        }
+
+        @each $icon-name in (facebook, instagram, whatsapp) {
+            &.#{$icon-name}-icon {
+                @include icon($icon-name);
+            }
+        }
+    }
+}

@@ -1,0 +1,63 @@
+@use 'settings' as *;
+@use 'sass:math' as *;
+
+$ratio: $golden-square;
+$rhythm: $font-size * $line-height;
+
+@function is-absolute($value) {
+    @return (
+        $value != null and
+        unitless($value) == false and compatible($value, 1px)
+    );
+}
+
+@function rem($value) {
+    @if is-absolute($value) == false {
+        @error 'Invalid operation: argument must have an absolute unit';
+    }
+    
+    @return $value / $font-size * 1rem;
+}
+
+@function rhythm($number, $offset: 0) {
+    @return rem(
+        $number * $rhythm - $offset
+    );
+}
+
+@function scale-by($power, $value) {
+    $result: pow($ratio, $power) * $value;
+
+    @if is-absolute($result) {
+        $result: round(0px + $result);
+    }
+
+    @return $result;
+}
+
+@mixin debug-lines($alpha: 1) {
+    background: {
+        image: linear-gradient(to top, hsla(0, 0%, 0%, 0.85) 5%, transparent 5%);
+        position: left top;
+        size: auto rem($font-size * $line-height);
+    }
+
+    @if $alpha != 1 {
+        > * {
+            opacity: $alpha;
+        }
+    }
+}
+
+@mixin font-rhythm($power, $lines: auto) {
+    $size: rem(
+        scale-by($power, $font-size)
+    );
+
+    @if $lines == auto {
+        $lines: round($size) / $size * $line-height;
+    }
+
+    font-size: $size;
+    line-height: $lines;
+}

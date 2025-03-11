@@ -1,0 +1,69 @@
+@use '../config' as *;
+@use '../library/all' as *;
+@use '../utilities/all' as *;
+
+/*
+ * New component
+ */
+
+.banner-heading {
+    @include wrapper;
+        
+    color: white;
+    font-family: $heading-family;
+    font-weight: 600;
+    height: 100%;
+    position: relative;
+/*     transform: translateX(50%); */
+    
+    transition: all 500ms 1500ms;
+    
+    &.banner__item--lowed {
+        transform: translateX(0%);
+    }
+    
+    &__content {
+        @include padding(1.25 null);
+        @include font-rhythm(4);
+        
+        background-color: rgba(0, 0, 0, 0.75);
+        border-top-left-radius: rhythm(3) rhythm(3);
+        margin-right: rem(-500px);
+        padding-right: rem(500px);
+        position: absolute;
+        right: rhythm(1);
+        text-align: right;
+        text-transform: lowercase;
+        transform: translateY(-50%);
+        top: 75%;
+        width: rem(480px);
+        
+        &::first-line {
+            @include font-rhythm(3.5);
+
+            display: block;
+            padding-bottom: rhythm(0.25);
+            font-weight: 300;
+            font-family: "Arvin", $heading-family;
+            font-style: italic;
+        }
+    
+        @media (max-width: rem(899px)) {
+            @include font-rhythm(2);
+            width: rem(360px);
+            
+            &::first-line {
+                @include font-rhythm(1.5);
+            }
+        }
+        
+        @media (max-width: rem(599px)) {
+            @include font-rhythm(1.5);
+            width: rem(300px);
+            
+            &::first-line {
+                @include font-rhythm(1);
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+@use '../abstracts/all' as *;
+
+.inline {
+    font-size: 0;
+    text-align: center;
+
+    @at-root &__item {
+        display: inline-block;
+        font-size: 1rem;
+    }
+}
+
+.inline--justified {
+    @extend .inline;
+
+    text-align: justify;
+
+    &:after {
+        content: '';
+        display: inline-block;
+        width: 100%;
+    }
+}

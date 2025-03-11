@@ -1,0 +1,38 @@
+@use 'sass:color';
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.fresh-posts {
+    @include padding(1 2 * $gutter);
+    
+    background-color: $brand-color-1;
+    color: white;
+    
+    &__heading:after {
+        background-color: white;
+    }
+    
+    &__list {
+        margin-top: rhythm(1);
+    }
+    
+    &__item {
+        @include margin(null -0.25);
+    }
+    
+    &__link {
+        @include font-rhythm(-1);
+        @include padding(0.25);
+        
+        display: block;
+        text-decoration: underline;
+        text-decoration-color: color.mix($light-color, $brand-color-1);
+        transition-duration: 250ms;
+        transition-property: background-color, color;
+        
+        &:hover, &:focus {
+            background-color: white;
+            color: $brand-color-1;
+        }
+    }
+}

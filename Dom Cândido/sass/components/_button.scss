@@ -1,0 +1,55 @@
+@use 'sass:color';
+@use '../abstracts/all' as *;
+
+.button, .button--light {
+    @include font(Bell);
+    @include font-rhythm(-1);
+    @include padding(0.25 0.5);
+    @include transition(0.25s);
+    
+    background-color: $brand-color;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    z-index: 0;
+    
+    &:after {
+        @include transition(0.5s);
+        @include margin(-0.5, top left);
+        
+        background-color: color.mix($leave-color, $brand-color, 50%);
+        border-radius: 50%;
+        content: '';
+        display: block;
+        height: rhythm(1);
+        left: 50%;
+        opacity: 1;
+        position: absolute;
+        top: 50%;
+        transform: scale(0);
+        width: rhythm(1);
+        z-index: -1;
+    }
+    
+    &:hover:after, &:focus:after {
+        opacity: 1;
+        transform: scale(9);
+    }
+}
+
+.button--light {
+    &:after {
+        background-color: white;
+        opacity: 0;
+    }
+    
+    &:hover, &:focus {
+        color: $brand-color;
+    }
+}

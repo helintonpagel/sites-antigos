@@ -1,0 +1,222 @@
+@use 'sass:color';
+@use '../config' as *;
+@use '../library/all' as *;
+@use '../utilities/all' as *;
+
+.catalog {
+    margin-top: rhythm(1);
+    position: relative;
+    font-size: 0;
+    text-align: center;
+    width: 100%;
+    
+    &::after {
+        background-color: white;
+        content: '';
+        left: 0;
+        height: rem(3px);
+        position: absolute;
+        top: rhythm(12);
+        width: 100%;
+    }
+    
+    &__content {
+        color: white;
+        display: inline-block;
+        vertical-align: middle;
+        width: 50%;
+        z-index: 0;
+        
+        &:nth-of-type(1) {
+            position: relative;
+            text-align: left;
+            z-index: 0;
+            
+            &::after {
+                background-color: color.change($brand-color-2, $alpha: 0.75);
+                content: '';
+                height: rhythm(11);
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 100%;
+                z-index: -1;
+            }
+        }
+        
+        &:nth-of-type(2) {
+            @include padding(12 null 4);
+            
+            background-color: $brand-color-2;
+            box-shadow: (0 0 rem(10px) 0 rgba(0, 0, 0, 0.25), 0 0 rem(5px) 0 rgba(0, 0, 0, 0.375));
+            text-align: right;
+        }
+    }
+    
+    &__wrapper {
+        max-width: rem($wrapper / 2);
+        width: 100%;
+    }
+    
+    &__content:nth-of-type(1) &__wrapper {
+        float: right;
+        padding-left: rhythm($gutter);
+    }
+    
+    &__content:nth-of-type(2) &__wrapper {
+        padding-right: rhythm($gutter);
+    }
+    
+    &__heading {
+        @include padding(2.5 null 3);
+        @include font-rhythm(3);
+        
+        font-weight: 300;
+        text-transform: uppercase;
+        
+        &::first-line {
+            @include font-rhythm(0.5, rhythm(2));
+            font-weight: 100;
+        }
+    }
+    
+    &__image {
+        height: rhythm(21);
+        left: 0;
+        object-fit: cover;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        z-index: -1;
+    }
+    
+    &__logo {
+        height: rhythm(8);
+    }
+    
+    &__button {
+        @include font-rhythm(0);
+        @include default-focus;
+        
+        margin-top: rhythm(5);
+        text-transform: uppercase;
+        right: rhythm(1);
+    }
+    
+    &__icon {
+        height: 3em;
+        margin-left: 0.25em;
+        vertical-align: -0.875em;
+        width: auto;
+    }
+
+    @media (max-width: 1200px) {
+        margin-top: rhythm(1);
+        position: relative;
+        font-size: 0;
+        text-align: center;
+        width: 100%;
+
+        &::after {
+            background-color: white;
+            content: '';
+            left: 0;
+            height: rem(3px);
+            position: absolute;
+            top: rhythm(12);
+            width: 100%;
+        }
+
+        &__content {
+            
+            color: white;
+            display: block;
+            vertical-align: middle;
+            width: 100%;
+            z-index: 0;
+
+            &:nth-of-type(1) {
+                margin-top: rhythm(3);
+                
+                position: relative;
+                text-align: left;
+                z-index: 0;
+
+                &::after {
+                    background-color: color.change($brand-color-2, $alpha: 0.75);
+                    content: '';
+                    height: rhythm(8);
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
+                    width: 100%;
+                    z-index: -1;
+                }
+            }
+
+            &:nth-of-type(2) {
+                @include padding(6 null 3);
+
+                background-color: $brand-color-2;
+                box-shadow: (0 0 rem(10px) 0 rgba(0, 0, 0, 0.25), 0 0 rem(5px) 0 rgba(0, 0, 0, 0.375));
+                text-align: right;
+            }
+        }
+
+        &__wrapper {
+            max-width: rem($wrapper);
+            width: 100%;
+        }
+
+        &__content:nth-of-type(1) &__wrapper {
+            float: none;
+            padding-left: rhythm($gutter);
+        }
+
+        &__content:nth-of-type(2) &__wrapper {
+            padding-right: rhythm($gutter);
+            text-align: center;
+        }
+
+        &__heading {
+            @include padding(2.5 null 3);
+            @include font-rhythm(3);
+
+            font-weight: 300;
+            text-transform: uppercase;
+
+            &::first-line {
+                @include font-rhythm(0.5, rhythm(2));
+                font-weight: 100;
+            }
+        }
+
+        &__image {
+            height: rhythm(15);
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &__logo {
+            height: rhythm(4);
+        }
+
+        &__button {
+            @include font-rhythm(0);
+            @include default-focus;
+
+            margin-top: rhythm(2);
+            text-transform: uppercase;
+            right: rhythm(1);
+        }
+
+        &__icon {
+            height: 3em;
+            margin-left: 0.25em;
+            vertical-align: -0.875em;
+            width: auto;
+        }
+    }
+}

@@ -1,0 +1,298 @@
+@charset "UTF-8";
+/*
+ * ATENÇÃO
+ * 
+ * Essa folha de estilos foi compilada por um pré-processador de CSS
+ *
+ * Se você pretende editar esse arquivo, considere criar um arquivo CSS extra, ou comentar as
+ * regiões que você alterar.
+ */
+* {
+  border: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: top;
+}
+
+html {
+  color: rgba(0, 0, 0, 0.85);
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-text-align-adjust: 100%;
+}
+@media screen and (min-width: 93.75rem) {
+  html {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 112.5rem) {
+  html {
+    font-size: 20px;
+  }
+}
+
+ol, ul {
+  list-style-type: none;
+}
+
+button {
+  background: transparent;
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+input[type=text], textarea {
+  background: transparent;
+  height: calculate-rem(24px);
+  width: 100%;
+}
+
+.side-bar {
+  background-color: #495155;
+  color: white;
+  height: 100vh;
+  overflow-y: scroll;
+  position: fixed;
+  right: 0;
+  width: 27rem;
+}
+.side-bar__button {
+  margin-top: 1.5rem;
+}
+
+.side-bar__page {
+  background-color: #495155;
+  padding-bottom: 4.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  position: absolute;
+  opacity: 1;
+  transition-duration: 0.5s;
+  transform: translateX(-100%);
+}
+.side-bar__page.is-active {
+  opacity: 1;
+  transform: translateX(0%);
+  z-index: 1;
+}
+
+.side-bar__thumbnail {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.side-bar__heading {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  font-weight: 300;
+  letter-spacing: 0.125rem;
+  margin-top: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.side-bar__leader {
+  margin-top: 1.5rem;
+}
+
+.inline, .inline--justified {
+  font-size: 0;
+  text-align: center;
+}
+.inline__item {
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.inline--justified {
+  text-align: justify;
+}
+.inline--justified:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+}
+
+.button {
+  font-weight: 300;
+  letter-spacing: 0.125rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  text-transform: uppercase;
+  transition-duration: 0.25s;
+}
+.button:after {
+  background: white;
+  content: "";
+  display: block;
+  height: 0.0625rem;
+  margin-top: 0.3125rem;
+  margin-bottom: -0.375rem;
+  transition-duration: 0.25s;
+  width: 0%;
+}
+.button:hover:after {
+  width: 100%;
+}
+.button.is-active {
+  color: white;
+}
+.palette {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
+.palette__color {
+  background-color: gray;
+  cursor: pointer;
+  display: block;
+  height: 3rem;
+  margin-top: 1.5rem;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+  overflow: hidden;
+  transition-duration: 0.5s;
+  width: 6rem;
+}
+.palette__color:hover {
+  background-size: 120% auto;
+}
+
+.palette__label {
+  font-size: 1rem;
+  line-height: 1.5;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  display: block;
+  font-weight: 300;
+  line-height: 3rem;
+  opacity: 0;
+  text-align: center;
+  text-transform: uppercase;
+  transform: translateY(-100%);
+  transition-duration: 0.5s;
+}
+
+.palette__color:hover .palette__label {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.thumbnail {
+  height: 10.5rem;
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.5s;
+  width: 15.75rem;
+}
+.thumbnail__label {
+  background: rgba(163, 118, 98, 0.875);
+  display: block;
+  font-weight: 300;
+  letter-spacing: 0.125rem;
+  line-height: 10.5rem;
+  position: absolute;
+  opacity: 0;
+  text-align: center;
+  text-transform: uppercase;
+  top: 0;
+  transform: translateY(-100%);
+  transition-duration: 0.5s;
+  width: 100%;
+  z-index: 1;
+}
+
+.thumbnail:hover .thumbnail__label {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.thumbnail__image {
+  height: 100%;
+  transition-duration: 0.5s;
+}
+
+.thumbnail:hover .thumbnail__image {
+  transform: scale(1.2);
+}
+
+/* .thumbnail {
+    $thumbnail-height: rhythm(5);
+
+    background: {
+        image: url('../img/wine-glasses-table.jpg');
+        position: center;
+        size: 100% auto;
+    }
+    cursor: pointer;
+    height: $thumbnail-height;
+    margin: {
+        left: auto;
+        right: auto;
+    }
+    overflow: hidden;
+    transition-duration: 0.5s;
+    width: $thumbnail-height * 1.5;
+
+    &:hover {
+        background-size: 120% auto;
+    }
+
+    @at-root &__label {
+        @include font-rhythm(2);
+
+        background: color.change(color(toast), $alpha: 0.875);
+        display: block;
+        font-weight: 300;
+        letter-spacing: rem(2px);
+        line-height: $thumbnail-height;
+        opacity: 0;
+        text-align: center;
+        text-transform: uppercase;
+        transform: translateY(-100%);
+        transition-duration: 0.5s;
+
+        @at-root .thumbnail:hover & {
+            opacity: 1;
+            transform: translateX(0%);
+        }
+    }
+} */
+.tab-menu {
+  overflow: hidden;
+}
+.tab-menu__tab {
+  box-sizing: border-box;
+  float: left;
+  width: 50%;
+}
+
+.tab-menu__button {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  background-color: #31373a;
+  font-weight: 300;
+  letter-spacing: 0.125rem;
+  padding-bottom: 0.75rem;
+  padding-top: 1.5rem;
+  width: 100%;
+  text-transform: uppercase;
+  transition-duration: 0.25s;
+}
+.tab-menu__button.is-active {
+  background: transparent;
+}
+
+.editing {
+  display: none;
+}
+
+/*# sourceMappingURL=environment.css.map */

@@ -1,0 +1,91 @@
+@use '../abstracts/all' as *;
+
+.media {
+    height: rem(550px);
+    margin-top: rhythm(3);
+    
+    @include breakpoint(900px) {
+        height: auto;
+    }
+    
+    @at-root &__content-trunk{
+        display: table;
+        height: 100%;
+        width: 50%;
+        float: right;
+        text-align: left;
+        
+        @include breakpoint(900px) {
+            width: 100%;
+            float: none;
+        }
+    }
+    
+    @at-root &__content {
+        display:table-cell;
+        vertical-align: middle;
+        height: 100%;
+        padding-left: rhythm(3);
+        padding-right: rhythm(3);
+        
+        @include breakpoint(900px) {
+            text-align: center;
+        }
+    }
+    
+    @at-root &__title {
+        @include font-rhythm(3);
+        
+        letter-spacing: rem(2px);
+        text-transform: uppercase;
+        
+        @include breakpoint(900px) {
+            margin-top: rhythm(2);
+        }
+    }
+    
+    @at-root &__paragraph {
+        @include font(sans-serif, 300);
+        @include font-rhythm(1);
+        
+        letter-spacing: rem(1px);
+    }
+    
+    @at-root &__button {
+        margin-top: rhythm(1);
+    }
+    
+    @at-root &__image-trunk{
+        width: 50%;
+        float: left;
+        text-align: center;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        
+        @include breakpoint(900px) {
+            width: 100%;
+            float: none;
+            height: rem(350px);
+        }
+    }
+    
+    @at-root &__bottle-image {
+        height: 100%;
+        display: inline-block;
+    }
+    
+    @at-root &__image {
+        width: 100%;
+        display: inline-block;
+        left: 0;
+        margin-top: rem(275px);
+        transform: translateY(-50%);
+        
+        @include breakpoint(900px) {
+            width: 100%;
+            float: none;
+            margin-top: rem(150px);
+        }
+    }
+}

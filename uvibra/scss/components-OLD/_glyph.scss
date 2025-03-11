@@ -1,0 +1,35 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.glyph {
+    &--phone {
+        @include glyph(phone);
+        
+        &::before {
+            font-size: 1.2em;
+            vertical-align: -20%;
+        }
+    }
+    
+    &--email {
+        @include glyph(email);
+        
+        &::before {
+            font-size: 0.8871595330739302em;
+            vertical-align: -10%;
+        }
+    }
+    
+    &--marker {
+        @include glyph(marker);
+        
+        &::before {
+            font-size: 1.92090395480226em;
+            vertical-align: middle;
+        }
+    }
+    
+    &::before {
+        line-height: rhythm(0.5);
+    }
+}

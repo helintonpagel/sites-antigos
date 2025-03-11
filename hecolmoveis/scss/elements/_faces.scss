@@ -1,0 +1,190 @@
+@use '../utilities/all' as *;
+
+$font-list: (
+    (
+        name: "Arvin",
+        path: "../fonts/arvin_bold_italic",
+        style: italic,
+        weight: 700,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Arvin",
+        path: "../fonts/arvin_bold",
+        style: normal,
+        weight: 700,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Arvin",
+        path: "../fonts/arvin_italic",
+        style: italic,
+        weight: 400,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Arvin",
+        path: "../fonts/arvin_light_italic",
+        style: italic,
+        weight: 300,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Arvin",
+        path: "../fonts/arvin_light",
+        style: normal,
+        weight: 300,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Arvin",
+        path: "../fonts/arvin",
+        style: normal,
+        weight: 400,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+
+    (
+        name: "Intro",
+        path: "../fonts/intro_thin_regular",
+        style: normal,
+        weight: 100,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Intro",
+        path: "../fonts/intro_thin_italic_italic",
+        style: italic,
+        weight: 100,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Intro",
+        path: "../fonts/intro_regular_regular",
+        style: normal,
+        weight: 400,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Intro",
+        path: "../fonts/intro_regular_italic_italic",
+        style: italic,
+        weight: 400,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Intro",
+        path: "../fonts/intro_light_regular",
+        style: normal,
+        weight: 200,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Intro",
+        path: "../fonts/intro_light_italic_italic",
+        style: italic,
+        weight: 200,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Intro",
+        path: "../fonts/intro_book_regular",
+        style: normal,
+        weight: 300,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Intro",
+        path: "../fonts/intro_book_italic_italic",
+        style: italic,
+        weight: 300,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Intro",
+        path: "../fonts/intro_bold_regular",
+        style: normal,
+        weight: 700,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Intro",
+        path: "../fonts/intro_bold_italic_italic",
+        style: italic,
+        weight: 700,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Intro",
+        path: "../fonts/intro_black_regular",
+        style: normal,
+        weight: 900,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Intro",
+        path: "../fonts/intro_black_italic_italic",
+        style: italic,
+        weight: 900,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+
+    (
+        name: "Open Sans",
+        path: "../fonts/opensans-bold",
+        style: normal,
+        weight: 700,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Open Sans",
+        path: "../fonts/opensans-bolditalic",
+        style: italic,
+        weight: 700,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Open Sans",
+        path: "../fonts/opensans-italic",
+        style: italic,
+        weight: 400,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Open Sans",
+        path: "../fonts/opensans-light",
+        style: normal,
+        weight: 300,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Open Sans",
+        path: "../fonts/opensans-lightitalic",
+        style: italic,
+        weight: 300,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Open Sans",
+        path: "../fonts/opensans-regular",
+        style: normal,
+        weight: 400,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Open Sans",
+        path: "../fonts/opensans-semibold",
+        style: normal,
+        weight: 600,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+    (
+        name: "Open Sans",
+        path: "../fonts/opensans-semibolditalic",
+        style: italic,
+        weight: 600,
+        formats: (eot, ttf, woff, woff2, svg)
+    ),
+);
+
+@each $font in $font-list { @include font-face($font); }

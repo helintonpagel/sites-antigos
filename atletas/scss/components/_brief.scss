@@ -1,0 +1,47 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.brief {
+    @include wrapper;
+    @include padding(rhythm(3) null);
+    
+    text-align: center;
+    
+    @media screen and (max-width: 899px) {
+        @include padding(rhythm(2) null);
+    }
+    
+    &__paragraph {
+        margin-top: rhythm(1.5);
+        text-align: left;
+    }
+    
+    &__product {
+        text-transform: uppercase;
+    }
+    
+    &__list {
+        margin-top: rhythm(1);
+        text-align: left;
+    }
+    
+    &__item {
+        &::before {
+            color: $theme-color-1;
+            content: "\2022";
+            display: inline-block;
+            font-size: 2.5em;
+            line-height: 0.5;
+            margin-right: 0.125em;
+            vertical-align: -0.25em;
+        }
+    }
+    
+    &__button {
+        margin-top: rhythm(3.5);
+        
+        @media screen and (max-width: 899px) {
+            margin-top: rhythm(2.5);
+        }
+    }
+}

@@ -1,0 +1,14 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.footer-address {
+    margin-top: rhythm(0.5);
+    
+    &__link {
+        @include transition(color);
+
+        &:hover, &:focus {
+            color: $theme-color-1;
+        }
+    }
+}

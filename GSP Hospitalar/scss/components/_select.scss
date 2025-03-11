@@ -1,0 +1,103 @@
+@use 'sass:color';
+@use '../abstracts/all' as *;
+
+.select {
+    display: inline-block;
+    position: relative;
+    
+    &__field {
+        @include font(Poppins, Medium);
+        @include font-rhythm(1.5);
+        text-transform: uppercase;
+        text-align: left;
+        @include transition(0.25s);
+        
+        @include breakpoint(null 600px) {
+            @include font-rhythm(0.5);
+        }
+        
+        &:after {
+            background-color: $boulder;
+            content: '';
+            display: block;
+            height: rem($dash-height);
+            @include margin(
+                rem($dash-margin)
+                null
+                0 - rem($dash-margin + $dash-height)
+            );
+            @include transition(0.25s);
+            width: 100%;
+        }
+        
+        &:hover {
+            color: $jacarta;
+            
+            &:after {
+                background-color: $jacarta;
+            }
+        }
+    }
+    
+    &__chevron {
+        @include icon(chevron-down);
+        @include margin(0.25, left);
+        float: right;
+        @include transition(0.25s);
+        
+        .is-active & {
+            transform: rotateZ(180deg);
+        }
+        
+        &:before {
+            font-size: scale-by(1);
+            line-height: rhythm(0.5);
+            vertical-align: -20%;
+        }
+    }
+    
+    &__list {
+        background: white;
+        box-sizing: border-box;
+        border: {
+            color: color.change($boulder, $lightness: 87.5%);
+            style: solid;
+            width: rem(1px);
+        }
+        border-top: {
+            color: $jacarta;
+            width: rem($dash-height);
+        }
+        @include padding(0.5 null);
+        position: absolute;
+        opacity: 0;
+        top: rhythm(1, -2px);
+        transform-origin: left top;
+        transform: scaleY(0);
+        @include transition(0.25s);
+        width: 100%;
+        z-index: 2;
+        
+        .is-active ~ & {
+            opacity: 1;
+            transform: scaleY(1);
+        }
+    }
+    
+    &__item {
+        cursor: pointer;
+        @include font(Poppins, Light);
+        @include font-rhythm(1, rhythm(1.5));
+        @include padding(null 0.5);
+        @include transition(0.25s);
+        
+        &:hover {
+            background: $jacarta;
+            color: white;
+        }
+    }
+    
+    &__option {
+        text-decoration: none;
+    }
+}

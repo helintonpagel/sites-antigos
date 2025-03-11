@@ -1,0 +1,50 @@
+@use 'sass:list' as lst;
+@use 'sass:string' as str;
+
+@function expand-values($lst) {
+    $length: lst.length($lst);
+
+    @if $length == 2 {
+        @return lst.join($lst, $lst);
+    }
+    @else if $length == 3 {
+        @return lst.append($lst, lst.nth($lst, 2));
+    }
+    @else if $length <= 1 {
+        @error '$lst is not a shorthand; expand-values($lst: #{inspect($lst)})';
+    }
+    
+    @return $lst;
+}
+
+@function join($lst...) {
+    $return: '';
+
+    @each $string in $lst {
+        @if $string != '' {
+            $return: if($return != '', $return + '-', '') + $string;
+        }
+    }
+
+    @return $return;
+}
+
+@mixin directional($property, $values, $direct, $suffix: '') {
+    @if $direct != all {
+        #{join($property, $direct, $suffix)}: $values;
+    }
+    @else if lst.index($values, inherit) == null and lst.index($values, null) == null {
+        #{join($property, $suffix)}: $values;
+    }
+    @else if $values != null{
+        $values: expand-values($values);
+
+        @each $direct, $number in (bottom: 3, left: 4, right: 2, top: 1) {
+            #{join($property, $direct, $suffix)}: lst.nth($values, $number);
+        }
+    }
+}
+
+@mixin margin($values, $direct: all) { @include directional(margin, $values, $direct); }
+
+@mixin padding($values, $direct: all) { @include directional(padding, $values, $direct); }

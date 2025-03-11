@@ -1,0 +1,108 @@
+@use '../abstracts/all' as *;
+
+* {
+    border: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: top;
+}
+
+html {
+    @include font(Raleway, Regular);
+
+    color: $mine-shaft;
+    font-size: $font-size;
+    line-height: $line-height;
+    scroll-behavior: smooth;
+    -webkit-text-align-adjust: 100%;
+}
+
+:target {
+    scroll-margin-top: rhythm(5);
+}
+
+body {
+    @include padding($header-height + $ribbon-height, top);
+    
+    background-color: $gallery;
+    overflow-x: hidden;
+    
+    @include breakpoint(null 600) {
+        background-color: white;
+    }
+}
+
+@include selection {
+    color: white;
+    background: $brand-color;
+}
+
+ol, ul {
+    list-style-type: none;
+}
+
+@for $i from 1 through 5 {
+    h#{$i} {
+        @include font(Raleway, Semi-Bold);
+        @include font-rhythm(5 - $i);
+    }
+}
+
+p {
+    @include font-rhythm(0.5);
+    @include margin(1, top);
+
+    text-align: justify;
+    
+    @include breakpoint(null 600) {
+        @include font-rhythm(-0.5);
+    }
+}
+
+em {
+    @include font(Raleway, Bold);
+    @include font-rhythm(0.5);
+    @include margin(1, top);
+}
+
+i {
+    @include font(Raleway, Regular Italic)
+}
+
+abbr {
+    border-bottom: {
+        color: $mine-shaft;
+        style: dashed;
+        width: rem(1px);
+    }
+    text-decoration: none !important;
+}
+
+button {
+    background: transparent;
+    cursor: pointer;
+    -webkit-appearance: button;
+}
+
+input, textarea {
+    background: transparent;
+    height: rhythm(1);
+    width: 100%;
+}
+
+img {
+    height: auto;
+    width: 100%;
+}
+
+iframe {
+    height: 100%;
+    width: 100%;
+}

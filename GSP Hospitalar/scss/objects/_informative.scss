@@ -1,0 +1,83 @@
+@use '../abstracts/all' as *;
+
+.informative {
+    @include padding(2 null);
+    @include trunk($inner-width);
+    
+    &__heading {
+        color: $boulder;
+        @include font(Poppins, Semi-Bold);
+        @include font-rhythm(2.5);
+        
+        @include breakpoint(null 600) {
+            @include font-rhythm(1.5, rhythm(1.5));
+            text-align: center;
+        }
+    }
+    
+    &__paragraph {
+        @include font(Poppins, Light);
+        @include margin(1, top);
+        text-indent: rhythm(1);
+        
+        @include breakpoint(null 600) {
+            @include font-rhythm(1, rhythm(1.5));
+        }
+    }
+    
+    &__list {
+        @include margin(1 0 - $inline-gutter / 4 null);
+        font-size: 0;
+        text-align: left;
+        
+        &:after {
+            content: '';
+            display: inline-block;
+            width: 100%;
+        }
+        
+        
+    }
+    
+    &__item {
+        box-sizing: border-box;
+        display: inline-block;
+        height: rhythm(5);
+        line-height: rhythm(5);
+        @include padding(null $inline-gutter / 4);
+        @include margin($inline-gutter / 2, top);
+        width: (100% / 5);
+        
+        @include breakpoint(null 1000) {
+            width: (100% / 5);
+        }
+        
+        @include breakpoint(null 800) {
+            width: (100% / 4);
+        }
+        
+        @include breakpoint(null 800) {
+            width: (100% / 4);
+        }
+        
+        @include breakpoint(null 700) {
+            width: (100% / 3);
+        }
+        
+        @include breakpoint(null 500) {
+            width: (100% / 2);
+        }
+    }
+    
+    &__video {
+        @include margin(1, top);
+    }
+    
+    &__video-heading {
+        @include font(Poppins, Semi-Bold);
+        @include font-rhythm(2);
+/*         @include margin(1, top); */
+        text-transform: none;
+        text-align: center;
+    }
+}

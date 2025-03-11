@@ -1,0 +1,37 @@
+@use '../abstracts/all' as *;
+
+.featured-leaves {
+    background: {
+        color: $leave-color;
+        image: url(../img/leave.png);
+        position: center;
+        repeat: no-repeat;
+        size: cover;
+    }
+    position: relative;
+    
+    @include break(null 1200) {
+        overflow: hidden;
+        text-align: center;
+    }
+    
+    &__image {
+        @include break(1200) {
+            height: rhythm($featured-image-height);
+            position: absolute;
+            right: 0;
+            top: rhythm(5);
+            transform: translateX(50%);
+            width: rhythm($featured-image-width);
+            object-fit: cover;
+        }
+        
+        @include break(null 1200) {
+            height: 100%;
+            margin-top: rhythm(6);
+            min-height: rhythm(16);
+            transform: translateY(-50%);
+            width: auto;
+        }
+    }
+}

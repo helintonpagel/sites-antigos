@@ -1,0 +1,117 @@
+@use '../abstracts/all' as *;
+
+.footer {
+    @include font(sans-serif, 500);
+    
+    background: color(mine-shaft);
+    color: color(silver-chalice);
+    letter-spacing: rem(1px);
+    text-align: center;
+    padding-top: rhythm(2);
+    padding-bottom: rhythm(1);
+    position: relative;
+    
+    @at-root &__column {
+        display: inline-block;
+        margin-left: rhythm(3);
+        margin-right: rhythm(3);
+        margin-top: rhythm(1);
+        text-align: left;
+        
+        @include breakpoint(1200px) {
+            margin-left: rhythm(1);
+            margin-right: rhythm(1);
+        }
+        
+        @include breakpoint(900px) {
+            display: block;
+            text-align: center;
+        }
+    }
+    
+    @at-root &__title {
+        @include font(sans-serif, 500);
+        @include font-rhythm(1);
+        
+        margin-top: rhythm(1);
+        text-transform: uppercase;
+    }
+    
+    @at-root &__link {
+        text-decoration: none;
+        transition-duration: 0.25s;
+        
+        &:hover {
+            color: color(copper);
+        }
+    }
+    
+    @at-root &__location {
+        @include icon(marker);
+        
+        display: block;
+        margin-top: rhythm(1);
+        text-decoration: none;
+        transition-duration: 0.25s;
+    }
+
+    @at-root &__icon-bar {
+        margin-left: rem(2px);
+    }
+    
+    @at-root &__aside {
+        @include font-rhythm(-1);
+
+        display: inline-block;
+        padding-top: rhythm(7);
+        text-align: center;
+        width: 100%;
+
+        @include breakpoint(900px) {
+            display: block;
+            box-sizing: border-box;
+            padding: {
+                left: rhythm(1.5);
+                right: rhythm(1.5);
+            }
+        }
+    }
+    
+    @at-root &__tooltip {
+        margin-bottom: rhythm(1);
+        margin-top: rhythm(1);
+    }
+    
+    @at-root &__lock {
+        bottom: rhythm(1);
+        height: rhythm(1);
+        line-height: rhythm(1);
+        position: absolute;
+        right: rhythm(3);
+        text-transform: uppercase;
+        
+        @include breakpoint(1300px) {
+            right: rhythm(1.5);
+        }
+        
+        @include breakpoint(900px) {
+            display: block;
+            position: static;
+        }
+        
+        &:before {
+            font-size: rhythm(1);
+            margin-right: rhythm(0.25);
+            vertical-align: rhythm(-0.125);
+        }
+    }
+
+    @at-root &__emphasis {
+        text-transform: uppercase;
+        
+        @include breakpoint(900px) {
+            display: block;
+            margin-top: rhythm(1);
+        }
+    }
+}

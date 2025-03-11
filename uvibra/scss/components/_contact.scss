@@ -1,0 +1,83 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.contact {
+    @include margin(-3 $gutter null);
+    
+    &__pillar {
+        @include padding(2 $gutter);
+        
+        background-color: white;
+        border-radius: rem(3px);
+        box-shadow: (
+            0 0 rem(10px) 0 rgba(0, 0, 0, 0.375),
+            0 0 rem(5px) 0 rgba(0, 0, 0, 0.125)
+        );
+    }
+    
+    &__form {
+        @include padding(null rem(80px));
+        
+        float: left;
+        width: rem(300px);
+        
+        @media (max-width: 900px) {
+            box-sizing: border-box;
+            @include padding(null $gutter);
+            width: 100%;
+            float: none;
+        }
+    }
+    
+    &__field {
+        margin-top: rhythm(1);
+    }
+    
+    &__checkbox {
+        @include font-rhythm(-1);
+        display: block;
+        margin-top: rhythm(1);
+    }
+    
+    &__button {
+        margin-top: rhythm(1);
+    }
+    
+    &__response {
+        @include font-rhythm(-1);
+        margin-top: rhythm(0.5);
+    }
+    
+    &__list {
+        
+        @include font-rhythm(1);
+        @include padding(null rem(80px));
+        
+        font-family: $heading-family;
+        float: right;
+        margin-top: rhythm(5);
+        
+        @media (max-width: 900px) {
+            box-sizing: border-box;
+            @include padding(null $gutter);
+            width: 100%;
+            margin-top: rhythm(1);
+            float: none;
+        }
+    }
+
+    &__item {
+        &:first-of-type {
+            margin-bottom: rhythm(1);
+        }
+    }
+    
+    &__icon {
+        margin-right: rhythm(0.25);
+        width: rhythm(0.875);
+        
+        &.address__icon--marker {
+            margin-right: rhythm(0.55);
+        }
+    }
+}

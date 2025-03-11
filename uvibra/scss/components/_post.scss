@@ -1,0 +1,119 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.post {
+    &__pillar {
+        @include padding(1 null 2);
+        
+        background-color: white;
+        border-radius: rem(3px);
+        box-shadow: (
+            0 0 rem(10px) 0 rgba(0, 0, 0, 0.375),
+            0 0 rem(5px) 0 rgba(0, 0, 0, 0.125)
+        );
+        margin-top: rhythm(-3);
+    }
+    
+    &__header {
+        @include margin(1 null 3);
+        @include padding(null 4);
+        
+        text-align: center;
+        
+        @media (max-width: 900px) {
+            @include padding(null $gutter * 2 null);
+        }
+    }
+    
+    &__heading {
+        @include font-rhythm(2);
+    }
+    
+    &__time {
+        @include font-rhythm(-1);
+        
+        font-family: $heading-family;
+    }
+    
+    &__paragraph, h3, &__list, section {
+        @include padding(null 5);
+        
+        text-align: justify;
+        margin-top: rhythm(1);
+        
+        @media (max-width: 900px) {
+            @include padding(null $gutter);
+        }
+    }
+    
+    em {
+        display: block;
+        margin-top: rhythm(1);
+        font-style: italic;
+    }
+    
+    h3 {
+        @include font-rhythm(1);
+        margin-top: rhythm(2);
+    }
+    
+    &__list {
+        list-style-type: disc;
+        list-style-position: inside;
+        text-align: left;
+    }
+    
+    &__item {
+        &::marker {
+            content: '\2022';
+        }
+    }
+    
+    abbr {
+        text-decoration: underline dotted;
+    }
+    
+    &__photos {
+        margin-top: rhythm(2);
+    }
+    
+    &__link-list {
+        @include padding(3 4 null);
+        
+        @media (max-width: 900px) {
+            @include padding(2 $gutter * 2 null);
+        }
+    }
+    
+    &__button {
+        @include glyph(cloud, after);
+        
+        &::after {
+            font-size: rhythm(1);
+            margin-left: rhythm(0.5);
+            vertical-align: bottom;
+        }
+    }
+    
+    &__link {
+        @include glyph(back);
+        @include font-rhythm(-2);
+        
+        display: inline-block;
+        font-weight: 700;
+        height: rhythm(1);
+        margin-top: rhythm(5);
+        text-transform: uppercase;
+        transition-duration: 250ms;
+        transition-property: color;
+        
+        &:hover {
+            color: $brand-color-2;
+        }
+        
+        &::before {
+            font-size: rhythm(0.75);
+            vertical-align: -10%;
+        }
+    }
+}

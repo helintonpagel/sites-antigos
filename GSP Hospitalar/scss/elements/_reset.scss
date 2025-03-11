@@ -1,0 +1,66 @@
+@use '../abstracts/all' as *;
+
+* {
+    border: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: top;
+}
+
+html {
+    // @include debug-lines;
+    @include font(Poppins, Regular);
+
+    color: $boulder;
+    font-size: $font-size;
+    line-height: $line-height;
+    scroll-behavior: smooth;
+    -webkit-text-align-adjust: 100%;
+}
+
+@each $selector in ('::selection', '::-moz-selection', '::-webkit-selection') {
+    #{$selector} {
+        color: white;
+        background: $cerulean;
+    }
+}
+
+ol, ul {
+    list-style-type: none;
+}
+
+%heading {
+    color: $jacarta;
+    text-transform: uppercase;
+}
+
+@for $i from 1 through 5 {
+    h#{$i} {
+        @extend %heading;
+        @include type-rhythm(5 - $i);
+    }
+}
+
+p {
+    font-size: scale-by(1.25);
+    line-height: rhythm(1.5) / scale-by(1.25);
+}
+
+button {
+    background: transparent;
+    cursor: pointer;
+    -webkit-appearance: button;
+}
+
+input, textarea {
+    background: transparent;
+    height: rhythm(1);
+    width: 100%;
+}

@@ -1,0 +1,21 @@
+@use '../abstracts/all' as *;
+
+.bottle {
+    @include margin(3.5, bottom);
+    @include padding(1, top);
+    
+    background: $light-color;
+    box-sizing: border-box;
+    height: rhythm($branding-bottle-height);
+    width: rhythm($branding-bottle-width);
+    
+    &__image {
+        height: rhythm($branding-bottle-height + 1);
+        width: auto;
+    }
+    
+    &__text {
+        @include font-rhythm(-1, rhythm(0.5));
+        @include margin(0.5, top);
+    }
+}

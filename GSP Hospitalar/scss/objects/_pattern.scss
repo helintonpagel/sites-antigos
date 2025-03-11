@@ -1,0 +1,33 @@
+@use '../abstracts/all' as *;
+
+.pattern {
+    background: {
+        image: url(../img/pattern.png);
+        size: rem(1300px) auto;
+    }
+    @include padding(4, top);
+    text-align: center;
+    
+    &__logo {
+        height: rhythm(7);
+        
+        @include breakpoint(null 600) {
+            height: rhythm(5);
+        }
+    }
+    
+    &__trunk {
+        @include trunk($inner-width);
+    }
+    
+    &__paragraph {
+        @include margin(2, top);
+        
+        @include breakpoint(null 900) {
+        }
+    }
+    
+    &__button {
+        @include margin(2 null -1.25);
+    }
+}

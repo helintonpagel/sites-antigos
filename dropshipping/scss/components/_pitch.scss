@@ -1,0 +1,45 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.pitch {
+    background-color: $theme-color-1;
+    color: white;
+    
+    &__wrapper {
+        @include wrapper;
+        @include padding(rhythm(0.75) null);
+        
+        position: relative;
+        
+        @include media(max-width 900) {
+            text-align: center;
+        }
+    }
+    
+    &__heading {
+        color: inherit;
+    }
+    
+    &__list {
+        margin-top: rhythm(0.5);
+    }
+    
+    &__price {
+        @include media(min-width 900) {
+            padding-right: inherit;
+            position: absolute;
+            right: 0;
+            text-align: right;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        @include media(max-width 900) {
+            margin-top: rhythm(1);
+        }
+    }
+    
+    &__button {
+        margin-top: rhythm(1);
+    }
+}

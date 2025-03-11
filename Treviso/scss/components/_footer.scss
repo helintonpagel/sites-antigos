@@ -1,0 +1,223 @@
+@use '../abstracts/mixins' as *;
+
+.footer {
+  overflow: hidden;
+  background: #424242;
+  color: #bebebe;
+  @include font((size: ratio(0)));
+  line-height: 1.5;
+  padding-top: lines(5);
+  padding-bottom: lines(1);
+  position: relative;
+  
+  @media (max-width: 899px) {
+    padding-top: lines(2);
+    
+  }
+
+  .container {
+    overflow: hidden;
+  }
+
+  @at-root &__column {
+    float: left;
+    width: 20%;
+  }
+
+  .logo {
+    line-height: 1.5rem;
+    height: 1.5rem;
+  }
+  
+  h2 {
+    @include font((size: ratio(0), weight: 700));
+    text-transform: uppercase;
+  }
+  
+  a {
+    color: #bebebe;
+    text-decoration: none;
+  }
+  
+  .colecoes {
+    text-transform: uppercase;
+  }
+  
+  .center {
+    text-align: center;
+    
+    &__inner {
+      display: inline-block;
+      text-align: left;
+    }
+  }
+  
+  .social {
+    text-align: right;
+    
+    .social-media__item {
+      margin-right: 0;
+    }
+    
+    
+  }
+  
+  .social-media__icon {
+    width: 1.2rem;
+  }
+  
+  .footer__icon {
+    height: 1rem;
+    vertical-align: middle;
+  }
+  
+  .endereco {
+    margin-top: lines(0.5);
+  }
+  
+  .endereco svg {
+    float: left;
+  }
+  
+  .endereco p {
+    overflow: hidden;
+  }
+  
+  > aside {
+    margin-top: 6rem;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0 1.5rem;
+
+    svg {
+      margin-right: 0rem;
+      height: 1rem;
+    }
+  }
+  
+  > section:last-of-type {
+    text-align: center;
+    
+    a {
+      height: 1rem;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .footer__column {
+    width: 100% !important;
+      text-align: center !important;
+    
+    &[style="text-align: right;"] {
+      text-align: center !important;
+    }
+  }
+  
+  .footer {
+    font-size: 16px;
+    
+    * {
+      
+      text-align: center;
+    }
+    
+    .logo {
+      text-align: center;
+    }
+    
+    h2 {
+      @include font((size: 1.2rem));
+      margin-top: 3rem;
+    }
+    .social {
+      text-align: center;
+    }
+  }
+}
+
+@font-face {
+  font-family: "Oxygen";
+  src: url("../fonts/oxygen-regular.ttf") format("truetype");
+}
+
+.tooltip__base {
+  width: 260px;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 2.5rem;
+  left: calc(50% - 130px);
+  transition: all 0.25s ease-in-out;
+  transform: scale(0) rotateZ(-90deg);
+  transform-origin: bottom;
+  
+  .tooltip__content {
+    font-family: Oxygen, Arial, Helvetica, sans-serif;
+    @include font((size: ratio(-1), style: italic));
+    color: black;
+    position: absolute;
+    padding: 3rem;
+    bottom: 5px;
+  }
+  
+  svg {
+    fill: white;
+  }
+}
+
+.tooltip__trigger {
+  display: inline-block;
+}
+
+.tooltip__trigger:hover ~ .tooltip__base, .tooltip__base:hover{
+  transform: scale(1) rotateZ(0deg);
+}
+
+.voodoo {
+  @include font((size: ratio(-1)));
+    padding: 0 1.5rem;
+}
+
+footer .social-media__item {
+  padding-left: 0 !important;
+}
+
+
+
+/**/
+
+.footer {
+  text-align: justify;
+}
+
+.footer .container:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+
+.footer__column {
+  float: none;
+  width: auto;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.footer__column .atendimento {
+  margin-top: 1.5rem;
+}
+
+.endereco {
+  display: inline-block;
+}
+
+
+.footer .social-media__icon.facebook {
+  border: solid #bebebe 2px;
+  border-radius: 5px;
+  display: block;
+  height: 14px;
+  width: 14px;
+  padding: 1px;
+}
+

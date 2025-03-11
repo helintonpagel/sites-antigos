@@ -1,0 +1,66 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.top-bar {
+    @include font-rhythm(-1);
+    
+    background-color: $light-color;
+    font-family: $heading-family;
+    position: fixed;
+    text-align: right;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    
+    // display: none;
+    
+    &__pillar {
+        @include margin(0.25 null);
+        
+        display: none;
+        height: rhythm(1);
+        max-height: rhythm(1);
+        max-width: 1300px;
+        transition-duration: 500ms;
+        transition-property: max-height, margin;
+        
+        @media (min-width: 899px) {
+            display: block;
+        }
+    }
+    
+    &--shrink &__pillar {
+        @include margin(0 null);
+        max-height: 0;
+    }
+    
+    &__heading {
+        color: transparent;
+        height: rem(1px);
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: rem(1px);
+    }
+    
+    &__icons {
+        @include font-rhythm(0);
+        
+        display: inline-block;
+        vertical-align: sub;
+    }
+    
+    &__links {
+        display: inline-block;
+        margin-left: rhythm(0.5);
+        
+        &::after {
+            @include margin(null 0.25);
+            content: '|';
+        }
+    }
+    
+    &__langs {
+        display: inline-block;
+    }
+}

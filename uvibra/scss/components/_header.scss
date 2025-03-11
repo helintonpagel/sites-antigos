@@ -1,0 +1,67 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.header {
+    @include font-rhythm(0);
+    @include padding(0.5 null);
+    
+    background-color: white;
+    box-shadow: (
+        0 0 rem(6px) 0 rgba(0, 0, 0, 0.25),
+        0 0 rem(3px) 0 rgba(0, 0, 0, 0.125)
+    );
+    font-family: $default-family;
+    position: relative;
+
+    &__pillar {
+        max-width: 1300px;
+    }
+    
+    @media (min-width: 600px) {
+        @include padding(1 null);
+    }
+    
+    &__logo {
+        float: left;
+        height: rhythm($logo-height);
+    }
+    
+    &__menu {
+        @include padding(($logo-height / 2 - 0.5) null);
+            
+        display: none;
+        float: right;
+        
+        @media (min-width: 1200px) {
+            display: block;
+        }
+    }
+    
+    &__toggle {
+        float: right;
+        margin-top: rhythm(0 - ($logo-height + $toggle-height) / 2);
+        margin-right: rhythm($gutter);
+        
+        @media (min-width: 1200px) {
+            display: none;
+        }
+    }
+    
+    &__mobile {
+        $my-height: rhythm($logo-height + 1);
+        
+        height: calc(100vh - #{$my-height});
+        top: $my-height;
+        
+        @media (min-width: 600px) {
+            $my-height: rhythm($logo-height + 2);
+        
+            height: calc(100vh - #{$my-height});
+            top: $my-height;
+        }
+        
+        @media (min-width: 1200px) {
+            display: none;
+        }
+    }
+}

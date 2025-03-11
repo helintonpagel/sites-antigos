@@ -1,0 +1,43 @@
+/*
+ * CONFIG
+ */
+
+$base-font-size: 16px;
+
+$base-line-height: 1.5;
+
+$rhythm: $base-font-size * $base-line-height;
+
+
+$default-family: ("Neutra Text", sans-serif);
+
+$heading-family: ("Chalet Book", sans-serif);
+
+
+$dusty-color: hsl(300, 1%, 29%);
+
+$light-color: hsl(0, 0%, 94%);
+
+$brand-color-1: hsl(189, 84%, 15%);
+
+$brand-color-2: rgb(115, 18, 44);
+
+
+$gutter: 0.75;
+
+$pillar: 1100px;
+
+$pillar-smaller: 1100px;
+
+$logo-height: 1.75;
+
+$toggle-height: 1.25;
+
+$slider-height: 11;
+
+
+$card-width: 200px; //?
+
+$card-height: 14; //?
+
+$field-height: 1.5;

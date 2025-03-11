@@ -1,0 +1,27 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.banner-nav {
+    font-family: $heading-family;
+    font-weight: 400;
+    
+    &__heading {
+        display: inline-block;
+    }
+    
+    &__list {
+        display: inline-block;
+    }
+    
+    &__item {
+        display: inline-block;
+        
+        &::after {
+            content: ">";
+        }
+        
+        &:last-child::after {
+            content: "";
+        }
+    }
+}

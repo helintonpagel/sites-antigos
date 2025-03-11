@@ -1,0 +1,44 @@
+@use '../abstracts/all' as *;
+
+.illustration {
+    @include font-rhythm(1);
+    
+    background: color(shark);
+    color: color(vista-white);
+    letter-spacing: rem(1px);
+    margin-top: rhythm(9);
+    padding: {
+        left: rhythm(3);
+    }
+    text-align: justify;
+    
+    &:after {
+        display: inline-block;
+        content: ' ';
+        width: 100%;
+    }
+    
+    @at-root &__legend {
+        display: inline-block;
+        width: 50%;
+        vertical-align: middle;
+        text-align: left;
+    }
+    
+    @at-root &__figure {
+        display: inline-block;
+        background: {
+            image: url('../img/two-bottles.png');
+            size: cover;
+            position: center;
+        }
+        height: rhythm(10);
+        width: 45%;
+        height: 43vw;
+        margin: {
+            top: rhythm(-3);
+            bottom: rhythm(-3);
+        }
+        vertical-align: middle;
+    }
+}

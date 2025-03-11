@@ -1,0 +1,29 @@
+@use 'sass:map';
+@use 'sass:list' as lst;
+
+@mixin font-resources($path, $formats) {
+    $resources: ();
+
+    @if lst.index($formats, "eot") {
+        src: url("#{$path}.eot");
+        $resources: lst.join($resources, unquote('url("#{$path}.eot?#iefix") format("embedded-opentype")'), comma);
+    }
+
+    @each $key, $value in (ttf: 'url("#{$path}.ttf") format("truetype")', svg: 'url("#{$path}.svg") format("svg")', woff: 'url("#{$path}.woff") format("woff")', woff2: 'url("#{$path}.woff2") format("woff2")') {
+        @if lst.index($formats, $key) {
+            $resources: lst.join($resources, unquote($value));
+        }
+    }
+
+    src: $resources;
+}
+
+@mixin font-face($font) {
+    @font-face {
+        font-family: map.get($font, "name");
+        font-style: map.get($font, "style");
+        font-weight: map.get($font, "weight");
+
+        @include font-resources(map.get($font, "path"), map.get($font, "formats"))
+    }
+}

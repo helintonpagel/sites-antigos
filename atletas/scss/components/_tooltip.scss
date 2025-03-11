@@ -1,0 +1,48 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.tooltip {
+    font-size: rhythm(0.4375);
+    display: inline-block;
+    height: 1em;
+    line-height: 1;
+    position: relative;
+    
+    &:focus-visible {
+        outline-color: currentColor;
+        outline-style: dashed;
+        outline-offset: rem(5px);
+        outline-width: rem(2px);
+    }
+    
+    &__logo {
+        height: 100%;
+        width: auto;
+    }
+    
+    &__text {
+        @include font-rhythm(ratio(0));
+        @include padding(4em 2em);
+        
+        background-image: url(../img/baloon.svg);
+        background-size: 100% 100%;
+        color: black;
+        display: block;
+        font-family: sans-serif;
+        font-style: italic;
+        font-weight: normal;
+        left: 50%;
+        margin-top: rhythm(-8);
+        position: absolute;
+        text-align: center;
+        transform: translateX(-50%) scale(0) rotateZ(-90deg);
+        transform-origin: bottom center;
+        transition-duration: 250ms;
+        transition-property: transform;
+        width: 15.125em;
+    }
+       
+    &:hover &__text {
+        transform: translateX(-50%) scale(1) rotateZ(0);
+    }
+}

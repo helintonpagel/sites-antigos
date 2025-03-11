@@ -1,0 +1,241 @@
+@use 'abstracts/mixins' as *;
+
+* {
+    border: 0;
+    font: {
+        family: inherit;
+        size: 100%;
+        style: inherit;
+        weight: inherit;
+    }
+    line-height: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: bottom;
+}
+
+html {
+    //@include debug-lines;
+    font: {
+        family: 'Work Sans', sans-serif;
+        size: 100%;
+        weight: 300;
+    };
+    line-height: 1.5;
+    -webkit-text-align-adjust: 100%;
+}
+
+html.no-scroll {
+    overflow: hidden;
+}
+
+body, html {
+    overflow-x: hidden;
+}
+
+article, aside, div, figcaption, figure, footer, header, nav, section {
+    display: block;
+}
+
+ol, ul {
+    list-style-type: none;
+}
+
+h1 {
+    @include font((size: 2.625rem));
+}
+
+h2 {
+    @include font((size: 2.0625rem));
+}
+
+h3 {
+    @include font((size: 1.625rem));
+}
+
+button, [type="button"], [type="reset"], [type="submit"] {
+    background: transparent;
+    cursor: pointer;
+    -webkit-appearance: button;
+}
+
+[type="password"], [type="text"] {
+    background: transparent;
+    width: 100%;
+}
+
+/**/
+
+.a {
+    margin-top: lines(5);
+    
+    
+    @media (min-width: 1200px) {
+        .vertical-align {
+            margin-top: 33%;
+            transform: translateY(-50%);
+        }
+        
+        
+        .media__left {
+            width: 50%;
+
+            img {
+                width: 100%;
+            }
+        }
+    
+        .media__right {
+            width: 50%;
+        }
+        
+        h2 {
+            display: block;
+            color: black;
+            margin: 0;
+            text-align: center;
+            font-style: normal;
+        }
+
+        p {
+            text-align: center;
+            margin-top: lines(2);
+            display: block;
+            max-width: 70%;
+            margin: lines(2) auto 0;
+
+        }
+        
+    }
+    @media (max-width: 1199px) {
+         .media__right, .media__left {
+            float: none;
+            width: 100%;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 54rem;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            width: calc(100% - 3rem);
+        }
+
+        h2 {
+            display: block;
+            color: black;
+            margin: 0;
+            text-align: center;
+            font-style: normal;
+            margin-top: lines(5);
+        }
+
+        p {
+            margin-top: lines(2);
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 54rem;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            font-size: 1.25rem;
+            font-weight: 300;
+            line-height: 1.2;
+
+        }
+    }
+}
+
+.b {
+        margin-top: lines(4);
+    margin-bottom: lines(4);
+    p {
+        margin-top: lines(1);
+        @include font((size: ratio(1), weight: 300));
+    }
+}
+
+/**/
+
+
+.conheca_mais {
+    background: #565251;
+    padding-top: 1px;
+    
+    h2 {
+        font-style: normal;
+        text-align: center;
+        margin: 6rem 0 3rem 0;
+    }
+    
+    ul {
+        text-align: center;
+    }
+    
+    li {
+        display: inline-block;
+        margin: 0 1.5rem;
+        
+        a {
+            font-size: 1.2rem;
+        }
+    }
+    
+    ul:after {
+        content: '';
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 6rem ;
+    }
+    
+    @media (max-width: 600px) {
+        ul {
+            text-align: center;
+        }
+        li {
+            width: 100%;
+            margin: 0.75rem 0;
+        }
+    }
+}
+
+
+  .social-media__item {
+    vertical-align: middle !important;
+  }
+  
+.social-media__icon.facebook {
+    border: solid black 2px;
+    border-radius: 5px;
+    display: block;
+    height: 15px;
+    width: 15px;
+    padding: 1px;
+}
+
+@media (max-width: 900px) {
+    .topbar .facebook {
+        border-color: #bebebe;
+    }
+}
+
+.the {
+  text-align: justify;
+}
+
+.the > li {
+  float: none;
+  width: auto;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+}
+
+.the:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+}
+  

@@ -1,0 +1,55 @@
+@use 'sass:color';
+@use '../abstracts/all' as *;
+
+.menu {
+    display: inline-block;
+    @include font(Poppins, Medium Normal);
+    text-transform: uppercase;
+    
+    @at-root &__item {
+        @include breakpoint(1200) {
+            display: inline-block;
+        
+            &:after {
+                background: transparent;
+                border-radius: rem($dash-height / 2);
+                content: '';
+                display: block;
+                height: rem($dash-height);
+                @include margin(
+                    rem($dash-margin)
+                    null
+                    rem($dash-height + $dash-margin) * -1
+                );
+                @include transition(0.25s);
+                width: 0;
+            }
+
+            &:hover:after {
+                background: $jacarta;
+                width: 100%;
+            }
+        }
+        
+        @include breakpoint(null 1200) {
+            display: block;
+        }
+    }
+    
+    @at-root &__anchor {
+        cursor: pointer;
+        @include padding(null $header-gutter / 2);
+        text-decoration: none;
+        
+        @include breakpoint(null 1200) {
+            display: block;
+            @include font-rhythm(1, rhythm(1.5));
+            padding: 0;
+            @include transition(0.25s);
+            
+            &:hover {
+                color: color.change($jacarta, $lightness: 75%);
+            }
+        }
+    }
+}

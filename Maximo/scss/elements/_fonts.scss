@@ -1,0 +1,12 @@
+@use '../abstracts/fonts' as *;
+
+// sans-serif
+
+@include font-face(Sukhumvit-Set, 'Light', $file: 'SukhumvitSet-Light');
+@include font-face(Sukhumvit-Set, 'Regular', $file: 'SukhumvitSet-Text');
+@include font-face(Sukhumvit-Set, 'Medium', $file: 'SukhumvitSet-Medium');
+@include font-face(Sukhumvit-Set, 'Bold', $file: 'SukhumvitSet-Bold');
+
+// serif
+
+@include font-face(Yeseva-One, 'Regular', $file: 'YesevaOne-Regular');

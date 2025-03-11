@@ -1,0 +1,45 @@
+@use '../config' as *;
+@use '../library/all' as *;
+@use '../utilities/all' as *;
+
+.about {
+    background-image: url(../img/mark.svg);
+    background-position: -12.5vw center;
+    background-repeat: no-repeat;
+    background-size: auto 130%;
+    
+    &__wrapper {
+        @include wrapper;
+        padding-top: rhythm(4);
+        
+        @media (max-width: rem(600px)) {
+            @include padding(1 0 null);
+        }
+    }
+    
+    &__content {
+        @include font-rhythm(-1, rhythm(1.5));
+        @include padding(3 1 7 5);
+        
+        background-color: $light-color-2;
+        margin-left: 15%;
+        position: relative;
+        width: auto;
+    
+        @media (max-width: rem(900px)) {
+            @include padding(2 1 2 3);
+            
+            margin-left: rhythm(1.5);
+        }
+        
+        @media (max-width: rem(600px)) {
+            
+            padding-left: rhythm(1);
+            margin-left: 0;
+        }
+    }
+    
+    &__heading {
+        @include heading-card;
+    }
+}

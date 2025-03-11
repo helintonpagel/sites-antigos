@@ -1,0 +1,22 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.address {
+    &__icon {
+        @include margin(-0.6em null -0.3em);
+        
+        height: auto;
+        width: rhythm(0.75);
+        vertical-align: middle;
+        
+        &--marker {
+            @include margin(0 null);
+            
+            float: left;
+        }
+    }
+    
+    &__paragraph {
+        overflow: hidden;
+    }
+}

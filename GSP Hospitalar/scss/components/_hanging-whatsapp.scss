@@ -1,0 +1,34 @@
+@use '../abstracts/all' as *;
+
+.hanging-whatsapp {
+    height: rhythm($hanging-whatsapp-size);
+    margin-top: rhythm(0 - $hanging-whatsapp-size / 2);
+    position: fixed;
+    right: rhythm($trunk-space);
+    bottom: rhythm($trunk-space);
+    transform: translateX(200%);
+    @include transition(0.25s);
+    z-index: 2;
+    
+    &.show {
+        transform: translateX(0%);
+    }
+    
+    @include breakpoint(null 1200) {
+        
+    }
+    
+    @include breakpoint(null 900) {
+        display: none;
+    }
+    
+    &:hover {
+        transform: scale(1.1);
+    }
+        
+    &__image {
+        height: 100%;
+        width: auto;
+        z-index: 2;
+    }
+}

@@ -1,0 +1,7 @@
+@use 'sass:map';
+@use '../abstracts/all' as *;
+@use '../abstracts/faces' as *;
+
+@each $family in map.values($faces) {
+    @include font-face($family);
+}

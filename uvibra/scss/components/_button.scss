@@ -1,0 +1,36 @@
+@use 'sass:color';
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.button {
+    @include font-rhythm(-1);
+    @include padding(rhythm(0.23, 1px) 0.75 rhythm(0.27, 1px));
+    
+    background-color: $brand-color-2;
+    color: white;
+    border-color: $brand-color-2;
+    border-radius: rem(3px);
+    border-style: solid;
+    border-width: rem(1px);
+    display: inline-block;
+    font-family: $heading-family;
+    position: relative;
+    text-transform: uppercase;
+    transition-duration: 250ms;
+    transition-property: background-color, border-color;
+    
+    @media (min-width: 900px) {
+        @include padding(null 1.25);
+    }
+    
+    &:hover {
+        background-color: color.change($brand-color-2, $lightness: 15%);
+        border-color: color.change($brand-color-2, $lightness: 20%);
+        color: white;
+    }
+
+    &--light {
+        background-color: transparent;
+        color: $brand-color-2;
+    }
+}

@@ -1,0 +1,14 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.recaptcha {
+    height: rhythm(2);
+    position: relative;
+    
+    &__iframe {
+        left: 50%;
+        position: absolute;
+        transform-origin: top center;
+        transform: translateX(-50%) scale(div(56, 78));
+    }
+}

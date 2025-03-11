@@ -1,0 +1,37 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.scroll-button {
+    background-color: $theme-color-1;
+    border-radius: 0.5em;
+    box-shadow: em(0) em(0) em(12px) em(1px) $button-shadow;
+    position: absolute;
+    right: rhythm(-1.25);
+    top: rhythm(-2);
+    transition-duration: 250ms;
+    transition-property: box-shadow, transform;
+    
+    @media screen and (max-width: $wrapper) {
+        font-size: 0.875rem;
+        right: rhythm(0.5);
+    }
+    
+    &__icon {
+        @include padding(0.75em);
+        
+        height: 1.25em;
+        width: 1.25em;
+    }
+    
+    &:hover, &:focus {
+        box-shadow: em(0) em(0) em(24px) em(1px) $button-shadow;
+        transform: scale(1.1);
+    }
+    
+    &:focus-visible {
+        outline-color: $theme-color-1;
+        outline-offset: rem(5px);
+        outline-style: dashed;
+        outline-width: rem(2px);
+    }
+}

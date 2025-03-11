@@ -1,0 +1,41 @@
+@use 'utilities/all' as *;
+
+/*
+* Config
+*/
+
+$base-font-size: 16px;
+
+$base-line-height: 1.5;
+
+$rhythm: $base-font-size * $base-line-height;
+
+$default: Montserrat;
+
+$body-color: hsl(0, 0%, 18%);
+
+$body-background-color: white;
+
+$theme-color-1: hsl(357, 100%, 23%);
+
+$theme-color-2: black;
+
+$theme-color-3: $body-color;
+
+$wrapper-width: rem(1070px);
+
+$header-button-height: rhythm(1.125);
+
+$slideshow-height: rhythm(26);
+
+$field-height: rhythm(1.75);
+
+$search-icon-height: rhythm(1.5);
+
+$button-icon-height: 3.75em;
+
+$tour-offset: -30%;
+
+$tour-height: rhythm(32);
+
+$footer-image-height: rhythm(11);

@@ -1,0 +1,15 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.column {
+    @include margin(null auto);
+    @include padding(null $gutter);
+    
+    max-width: rem(1250px);
+
+    &:after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+}

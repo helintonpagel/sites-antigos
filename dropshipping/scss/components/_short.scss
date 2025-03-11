@@ -1,0 +1,59 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.short {
+    @include wrapper;
+    
+    padding-bottom: rhythm(3);
+    text-align: center;
+    
+    @include media(max-width 1200) {
+        padding-bottom: rhythm(2);
+    }
+    
+    @include media(max-width 600) {
+        padding-bottom: rhythm(1.5);
+    }
+    
+    &__wrapper {
+        @include media(min-width 900) {
+            position: relative;
+            width: 50%;
+        }
+    }
+    
+    &__heading {
+        @include hide-visually;
+    }
+    
+    &__paragraph {
+        margin-top: rhythm(1);
+        text-align: left;
+    }
+    
+    &__image {
+        @include media(min-width 900) {
+            height: auto;
+            position: absolute;
+            right: -100%;
+            top: rhythm(-8);
+            width: 85%;
+        }
+        
+        @include media(max-width 1200) {
+            top: rhythm(-5);
+        }
+        
+        @include media(max-width 900) {
+            @include margin(rhythm(1) auto null);
+            
+            display: block;
+            height: rhythm(12);
+            width: auto;
+        }
+    }
+    
+    &__button {
+        margin-top: rhythm(1.5);
+    }
+}

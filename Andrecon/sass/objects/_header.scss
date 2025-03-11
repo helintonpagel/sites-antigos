@@ -1,0 +1,70 @@
+@use '../abstracts/all' as *;
+
+.header {
+    background-color: white;
+    box-shadow: (
+        0 0 rem(10px) 0 rgba(0, 0, 0, 0.2), 0 0 rem(5px) 0 rgba(0, 0, 0, 0.3)
+    );
+    position: fixed;
+    top: rhythm($ribbon-height);
+    width: 100%;
+    z-index: 2;
+    
+    &__content {
+        @include trunk;
+        @include padding(($header-height - $brand-height) / 2 null);
+        
+        font-size: 0;
+        text-align: justify;
+        
+        &:after {
+            content: '';
+            display: inline-block;
+            width: 100%;
+        }
+    }
+    
+    &__brand {
+        display: inline-block;
+        height: rhythm($brand-height);
+        vertical-align: middle;
+    }
+    
+    &__menu {
+        display: inline-block;
+        vertical-align: middle;
+        
+        @include breakpoint(null 900) {
+            @include transition(0.5s);
+            
+            background: $brand-color;
+            box-shadow: (
+                0 rem(5px) rem(10px) 0 rgba(0, 0, 0, 0.2), 0 0 rem(5px) 0 rgba(0, 0, 0, 0.3)
+            );
+            box-sizing: border-box;
+            color: white;
+            max-height: 0;
+            overflow: hidden;
+            position: fixed;
+            right: 0;
+            top: rhythm(5);
+            width: 50%;
+            
+            @at-root .show ~ & {
+                max-height: rhythm(11);
+            }
+            
+            @include breakpoint(null 600) {
+                width: 100%;
+            }
+        }
+    }
+        
+    &__icon-bar {
+        @include margin(1, left top);
+        
+        @include breakpoint(600) {
+            display: none;
+        }
+    }
+}

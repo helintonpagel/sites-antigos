@@ -1,0 +1,42 @@
+@use '../abstracts/all' as *;
+@use 'sass:color';
+
+.scrawl {
+    background: {
+        image: linear-gradient(
+            to bottom,
+            $pampas (200% / 9),
+            color.scale($pampas, $lightness: 20%) (200% / 9) (400% / 9),
+            color.scale($pampas, $lightness: 40%) (400% / 9) (600% / 9),
+            color.scale($pampas, $lightness: 60%) (600% / 9) (800% / 9),
+            color.scale($pampas, $lightness: 80%) (800% / 9) 100%
+        ), url(../img/lines.jpg);
+        repeat: no-repeat, no-repeat;
+        position: top, center 70%;
+        size: 100% rhythm($scrawl-gradient-height), 120%;
+    }
+    
+    &__paragraph {
+        max-width: rhythm($paragraph-width);
+    }
+    
+    &__content {
+        @include trunk;
+        @include padding(2, bottom);
+    }
+    
+    &__list {
+        font-size: 0;
+        text-align: center;
+    }
+    
+    &__bottle {
+        @include margin(2 1.5 null);
+        display: inline-block;
+    }
+    
+    &__button {
+        display: inline-block;
+        @include margin(3 0.125 null);
+    }
+}

@@ -1,0 +1,45 @@
+@use '../abstracts/all' as *;
+
+.alert--loading, .alert--success, .alert--failure {
+    @include font(Poppins, Medium);
+    font-size: inherit;
+    height: rhythm(1);
+    
+    &:before {
+        display: inline-block;
+        line-height: rhythm(0.5);
+        @include margin(0.25, right);
+        vertical-align: -15%;
+    }
+}
+
+.alert--failure {
+    color: hsl(0, 90%, 67.5%);
+    @include icon(cancel);
+}
+
+.alert--loading {
+    @include icon(hourglass);
+    
+    &:before {
+        animation: {
+            duration: 0.75s;
+            iteration-count: infinite;
+            name: loading-hourglass;
+        }
+    }
+}
+
+.alert--success {
+    color: hsl(120, 90%, 37.5%);
+    @include icon(check);
+}
+
+@keyframes loading-hourglass {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}

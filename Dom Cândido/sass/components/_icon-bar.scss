@@ -1,0 +1,56 @@
+@use '../abstracts/all' as *;
+
+.icon-bar {
+    font-size: 0;
+    
+    &__item, a[class*="2a_button"] {
+        @include margin(null 0.25);
+        display: inline-block;
+        vertical-align: middle;
+        /*overwritting*/
+        padding: 0;
+        
+        &:first-child {
+            margin-left: 0;
+        }
+        
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    
+    &__link, .a2a_s__default {
+        @include transition(0.25s);
+        display: block;
+        text-decoration: none;
+        
+        /*overwritting*/
+        background: none !important;
+        overflow: visible;
+        height: auto;
+        line-height: 1;
+        width: auto;
+        
+        &:hover, &:focus {
+            color: inherit;
+            transform: scale(1.1);
+        }
+        
+        &:focus {
+            outline-color: white;
+        }
+        
+        &:before {
+            font-size: rhythm(1);
+            line-height: rhythm(2);
+        }
+        
+        &.tripadvisor-icon:before {
+            font-size: rhythm(1.65);
+        }
+        
+        svg {
+            display: none;
+        }
+    }
+}

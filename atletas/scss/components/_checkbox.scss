@@ -1,0 +1,33 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.checkbox {
+    @include font-rhythm(ratio(-1));
+    cursor: pointer;
+    
+    &:focus-within {
+        outline-color: $theme-color-1;
+        outline-offset: rem(5px);
+        outline-style: dashed;
+        outline-width: rem(2px);
+    }
+    
+    &__input {
+        @include hide-visually;
+    }
+    
+    &__icon {
+        background-color: currentColor;
+        border-radius: 0.125em;
+        fill: currentColor;
+        font-size: 1.375em;
+        height: 1em;
+        margin-right: 0.25em;
+        vertical-align: -0.1875em;
+        width: 1em;
+    }
+    
+    &__input:checked + &__icon {
+        fill: $body-back;
+    }
+}

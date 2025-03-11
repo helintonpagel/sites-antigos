@@ -1,0 +1,29 @@
+@forward 'sass:list';
+@use 'sass:list' as *;
+
+@function concat($lst, $div) {
+    $result: '';
+    $length: length($lst);
+
+    @for $i from 1 through $length {
+        $result: $result + nth($lst, $i);
+
+        @if $i != $length {
+            $result: $result + $div;
+        }
+    }
+
+    @return $result;
+}
+
+@function filter($lst, $fun) {
+    $result: ();
+
+    @each $val in $lst {
+        @if (call($fun, $val)) {
+            $result: join($result, $val);
+        }
+    }
+
+    @return $result;
+}

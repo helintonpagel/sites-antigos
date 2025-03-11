@@ -1,0 +1,51 @@
+@use '../abstracts/all' as *;
+
+.palette {
+    $height: rhythm(2);
+    
+    margin: {
+        left: rhythm(-0.5);
+        right: rhythm(-0.5);
+    }
+    
+    @at-root &__color {
+        background: {
+            color: gray;
+        }
+        cursor: pointer;
+        display: block;
+        height: $height;
+        margin: {
+            top: rhythm(1);
+            left: rhythm(0.5);
+            right: rhythm(0.5);
+        }
+        overflow: hidden;
+        transition-duration: 0.5s;
+        width: $height * 2;
+
+        &:hover {
+            background-size: 120% auto;
+        }
+    }
+    
+    @at-root &__label {
+        @include font-rhythm(0);
+        
+        background: rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        display: block;
+        font-weight: 300;
+        line-height: $height;
+        opacity: 0;
+        text-align: center;
+        text-transform: uppercase;
+        transform: translateY(-100%);
+        transition-duration: 0.5s;
+    }
+    
+    @at-root &__color:hover &__label {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}

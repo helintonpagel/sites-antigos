@@ -1,0 +1,164 @@
+@use 'sass:color';
+@use '../abstracts/all' as *;
+
+.column {
+    @include padding(1, top);
+    
+    background: {
+        image: linear-gradient(to bottom,
+            $light-color 0% (200% / 9),
+            color.scale($light-color, $lightness: 20%) (200% / 9) (400% / 9),
+            color.scale($light-color, $lightness: 40%) (400% / 9) (600% / 9),
+            color.scale($light-color, $lightness: 60%) (600% / 9) (800% / 9),
+            color.scale($light-color, $lightness: 80%) (800% / 9) 100%
+        );
+        repeat: no-repeat;
+        size: 100% rhythm(10);
+    }
+    min-height: rhythm(9);
+    
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+    
+    &__content {
+        @include trunk;
+    }
+    
+    &__header {
+        @include break(1200) {
+            float: left;
+            width: (2 - $phi) * 100%;
+        }
+    }
+    
+    &__text {
+        box-sizing: border-box;
+        @include break(1200) {
+            @include padding(1, left);
+            float: right;
+            width: 100% / $phi;
+        }
+        
+        @include break(null 1200) {
+            @include padding(1, top);
+        }
+    }
+    
+    &__select {
+        @include margin(1 null 3);
+    }
+    
+    &__address {
+        @include font-rhythm(-1);
+    }
+    
+    &__email {
+        display: block;
+        text-decoration: none;
+    }
+    
+    &__strong {
+        @include font-rhythm(-1);
+        @include margin(1, top);
+        text-transform: uppercase;
+    }
+    
+    &__button {
+        @include margin(2, top);
+    }
+    
+    .footer__phone {
+        margin-left: 0;
+        
+        &:hover, &:focus {
+            color: $brand-color;
+        }
+    }
+}
+
+.banner {
+    text-align: center;
+    
+    &__image {
+        height: rhythm(8);
+        margin-left: 50%;
+        transform: translateX(-50%);
+        width: auto;
+    }
+}
+
+.consult {
+    @include trunk;
+    @include padding(3, top);
+    
+    &__list {
+        font-size: 0;
+    }
+    
+    &__item {
+        display: inline-block;
+        width: (100% / 3);
+        
+        @include break(null 900) {
+            width: (100% / 2);
+        }
+        
+        @include break(null 600) {
+            width: (100% / 1);
+        }
+    }
+    
+    &__breadcrumb {
+        @include margin(2, top);
+        text-align: center;
+    }
+}
+
+.address {
+    @include font-rhythm(-1);
+    @include padding(0.5);
+    
+    box-sizing: border-box;
+    
+    &__content {
+        @include padding(1);
+        background-color: $light-color;
+        box-shadow: 0 0 rem(20px) 0 rgba(0, 0, 0, 0.375), 0 0 rem(10px) 0 rgba(0, 0, 0, 0.125);
+    }
+    
+    &__heading {
+        @include font(Bell);
+        @include margin(1 null);
+        text-transform: uppercase;
+    }
+}
+
+.breadcrumb {
+    &__item {
+        display: inline-block;
+        text-align: center;
+    }
+    
+    &__link, &__link--active {
+        @include padding(0.3 null 0.2);
+        @include transition(0.25s);
+        
+        background-color: $light-color;
+        display: block;
+        width: rhythm(1.5);
+        text-decoration: none;
+        
+        &:hover, &:focus {
+            background-color: $leave-color;
+            color: white;
+        }
+    }
+    
+    &__link--active {
+        background-color: $leave-color;
+        color: white;
+    }
+}

@@ -1,0 +1,21 @@
+@use 'types' as *;
+@use 'sass:map';
+
+@function map-transition($args) {
+    $return: ();
+
+    @each $arg in $args {
+        @if each($arg, has-time-unit) {
+            $return: map-value($return, ("duration", "delay"), $arg);
+        }
+        @else if each($arg, is-string) {
+            $return: map-value($return, ("property", "timing-function"), $arg);
+        }
+    }
+
+    @return map.merge((delay: null, duration: null, property: null, timing-function: ease), $return);
+}
+
+@mixin transition($args...) {
+    @each $key, $value in map-transition($args) { transition-#{$key}: $value; }
+}

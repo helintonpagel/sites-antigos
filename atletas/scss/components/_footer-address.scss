@@ -1,0 +1,15 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.footer-address {
+    margin-top: rhythm(0.5);
+    
+    &__link {
+        transition-duration: 250ms;
+        transition-property: color;
+        
+        &:hover, &:focus {
+            color: $theme-color-1;
+        }
+    }
+}

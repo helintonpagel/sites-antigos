@@ -1,0 +1,86 @@
+@use '../abstracts/all' as *;
+
+.header-menu {
+    @include padding($header-height, top);
+    
+    background-color: $brand-color;
+    box-sizing: border-box;
+    color: white;
+    height: 100%;
+    min-height: 100vh;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    width: 100% * (2 - $phi);
+    
+    @include break(null 1200) {
+        width: 50%;
+    }
+    
+    @include break(null 900) {
+        min-width: 0%;
+        width: (100% / $phi);
+    }
+    
+    @include break(null 600) {
+        width: 100%;
+    }
+    
+    &__link {
+        @include font(Bell);
+        @include font-rhythm(1);
+        @include padding(0.5 null 0.5 2);
+        @include transition(0.25s);
+        
+        display: block;
+        text-decoration: none;
+        text-transform: uppercase;
+        
+        @include break(null 600) {
+            @include padding(null 0.5);
+        }
+        
+        &:hover, &:focus {
+            background: white;
+            color: $brand-color;
+        }
+        
+        &:focus {
+            outline-color: transparent;
+        }
+    }
+    
+    &__icon-bar {
+        @include margin(1, top);
+        @include padding(2, left);
+        
+        @include break(null 600) {
+            @include padding(null 0.5);
+        }
+    }
+    
+    &__contact {
+        @include padding(2, left);
+        @include transition(0.25s);
+        
+        display: inline-block;
+        text-decoration: none;
+        transform-origin: left;
+        
+        @include break(null 600) {
+            @include padding(null 0.5);
+        }
+        
+        &:before {
+            vertical-align: middle;
+        }
+        
+        &:hover, &:focus {
+            transform: scale(1.05);
+        }
+        
+        &:focus {
+            outline-color: white;
+        }
+    }
+}

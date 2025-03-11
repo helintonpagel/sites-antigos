@@ -1,0 +1,60 @@
+@use 'sass:color';
+@use '../abstracts/all' as *;
+
+%button {
+    border-color: white;
+    border-radius: rem(5px);
+    border-style: solid;
+    border-width: rem(1px);
+    box-sizing: border-box;
+    color: white;
+    display: inline-block;
+    @include font(Poppins, Medium);
+    // line-height: rhythm(1, 2px);
+    @include padding(rhythm(0.25, -2) 1.5 rhythm(0.25, 2));
+    text-decoration: none;
+    @include transition(0.25s);
+    
+    &:hover {
+        box-shadow: rem(1px) rem(1px) rem(3px) rem(2px) rgba(0, 0, 0, 0.5);
+        transform: scale(1.05);
+    }
+    
+    &:active {
+        box-shadow: none;
+        transform: scale(1);
+    }
+}
+
+.button {
+    @extend %button;
+    font-size: scale-by(2);
+}
+
+@mixin button-theme($color: null) {
+    background: $color;
+    border-color: $color;
+    font-size: scale-by(2.5);
+    line-height: rhythm(2, 2px);
+    @include padding(null 1);
+    
+    @include breakpoint(null 600) {
+        font-size: scale-by(1);
+        @include padding(null 0.5);
+    }
+}
+
+.button--alpha {
+    @extend %button;
+    @include button-theme();
+}
+
+.button--dusky {
+    @extend %button;
+    @include button-theme($jacarta);
+}
+
+.button--light {
+    @extend %button;
+    @include button-theme($cerulean);
+}

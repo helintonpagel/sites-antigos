@@ -1,0 +1,51 @@
+// The golden ratio
+$phi: 1.61803398875;
+
+// The default font size for all text in pixels
+$font-size: 16px;
+
+// The default unitless line height for all text
+$line-height: 1.5;
+
+// The scale between consecutive font sizes
+$font-size-scale: 1.27201965;
+
+// The map of font family to be used with @font
+$families: (
+    Raleway: (Raleway, sans-serif)
+);
+
+$mine-shaft: hsl(0, 0%, 20%);
+$gallery: hsl(0, 0%, 94%);
+
+$alpha-color: hsl(353, 100%, 60%);
+$brand-color: hsl(201, 96%, 21%);
+$gamma-color: hsl(209, 100%, 50%) ;
+
+// The maximun width of the page content
+$trunk-width: 48;
+
+// The minimun space between the screen edges and the page content
+$trunk-space: 1;
+
+$ribbon-height: 1.5;
+
+$brand-height: 2.5;
+
+$header-height: 3.5;
+
+$menu-gutter: 1.5;
+
+// The height in pixels of the hover effect below header items
+$dash-height: 2px;
+
+// The distance in pixels between the dash and header link
+$dash-margin: 2px;
+
+$paper-photo-width: 130%;
+
+$field-width: 22;
+
+$field-height: 2;
+
+$button-height: 1.5;

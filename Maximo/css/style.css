@@ -1,0 +1,2256 @@
+@charset "UTF-8";
+/*
+ * ATENÇÃO
+ * 
+ * Essa folha de estilos foi compilada por um pré-processador de CSS
+ *
+ * Se você pretende editar esse arquivo, considere criar um arquivo CSS extra, ou comentar as
+ * regiões que você alterar.
+ */
+* {
+  border: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: top;
+}
+
+::selection {
+  color: #fbf7f4;
+  background: #b77334;
+}
+
+::-moz-selection {
+  color: #fbf7f4;
+  background: #b77334;
+}
+
+::-webkit-selection {
+  color: #fbf7f4;
+  background: #b77334;
+}
+
+html {
+  font-family: "Sukhumvit Set", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-text-align-adjust: 100%;
+}
+@media screen and (min-width: 93.75rem) {
+  html {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 112.5rem) {
+  html {
+    font-size: 20px;
+  }
+}
+
+ol, ul {
+  list-style-type: none;
+}
+
+h1 {
+  font-family: "Yeseva One", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.625rem;
+  line-height: 1.7142857143;
+}
+
+h2 {
+  font-family: "Yeseva One", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.0625rem;
+  line-height: 1.4545454545;
+}
+
+h3 {
+  font-family: "Yeseva One", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.625rem;
+  line-height: 1.8461538462;
+}
+
+h4 {
+  font-family: "Yeseva One", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+button {
+  background: transparent;
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+input[type=text], textarea {
+  background: transparent;
+  height: calculate-rem(24px);
+  width: 100%;
+}
+
+@font-face {
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+  src: url("../fonts/icomoon.eot");
+  src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.svg") format("svg");
+}
+@font-face {
+  font-family: "Oxygen";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/oxygen-light.eot");
+  src: url("../fonts/oxygen-light.eot?#iefix") format("embedded-opentype"), url("../fonts/oxygen-light.ttf") format("truetype"), url("../fonts/oxygen-light.woff") format("woff"), url("../fonts/oxygen-light.svg") format("svg");
+}
+@font-face {
+  font-family: "Oxygen";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/oxygen-regular.eot");
+  src: url("../fonts/oxygen-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/oxygen-regular.ttf") format("truetype"), url("../fonts/oxygen-regular.woff") format("woff"), url("../fonts/oxygen-regular.svg") format("svg");
+}
+@font-face {
+  font-family: "Oxygen";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/oxygen-bold.eot");
+  src: url("../fonts/oxygen-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/oxygen-bold.ttf") format("truetype"), url("../fonts/oxygen-bold.woff") format("woff"), url("../fonts/oxygen-bold.svg") format("svg");
+}
+@font-face {
+  font-family: "Sukhumvit Set";
+  font-style: normal;
+  font-weight: 100;
+  src: url("../fonts/sukhumvitset-thin.eot");
+  src: url("../fonts/sukhumvitset-thin.eot?#iefix") format("embedded-opentype"), url("../fonts/sukhumvitset-thin.ttf") format("truetype"), url("../fonts/sukhumvitset-thin.woff") format("woff"), url("../fonts/sukhumvitset-thin.svg") format("svg");
+}
+@font-face {
+  font-family: "Sukhumvit Set";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/sukhumvitset-light.eot");
+  src: url("../fonts/sukhumvitset-light.eot?#iefix") format("embedded-opentype"), url("../fonts/sukhumvitset-light.ttf") format("truetype"), url("../fonts/sukhumvitset-light.woff") format("woff"), url("../fonts/sukhumvitset-light.svg") format("svg");
+}
+@font-face {
+  font-family: "Sukhumvit Set";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/sukhumvitset-text.eot");
+  src: url("../fonts/sukhumvitset-text.eot?#iefix") format("embedded-opentype"), url("../fonts/sukhumvitset-text.ttf") format("truetype"), url("../fonts/sukhumvitset-text.woff") format("woff"), url("../fonts/sukhumvitset-text.svg") format("svg");
+}
+@font-face {
+  font-family: "Sukhumvit Set";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/sukhumvitset-medium.eot");
+  src: url("../fonts/sukhumvitset-medium.eot?#iefix") format("embedded-opentype"), url("../fonts/sukhumvitset-medium.ttf") format("truetype"), url("../fonts/sukhumvitset-medium.woff") format("woff"), url("../fonts/sukhumvitset-medium.svg") format("svg");
+}
+@font-face {
+  font-family: "Sukhumvit Set";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/sukhumvitset-semibold.eot");
+  src: url("../fonts/sukhumvitset-semibold.eot?#iefix") format("embedded-opentype"), url("../fonts/sukhumvitset-semibold.ttf") format("truetype"), url("../fonts/sukhumvitset-semibold.woff") format("woff"), url("../fonts/sukhumvitset-semibold.svg") format("svg");
+}
+@font-face {
+  font-family: "Sukhumvit Set";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/sukhumvitset-bold.eot");
+  src: url("../fonts/sukhumvitset-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/sukhumvitset-bold.ttf") format("truetype"), url("../fonts/sukhumvitset-bold.woff") format("woff"), url("../fonts/sukhumvitset-bold.svg") format("svg");
+}
+@font-face {
+  font-family: "Yeseva One";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/yesevaone-regular.eot");
+  src: url("../fonts/yesevaone-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/yesevaone-regular.ttf") format("truetype"), url("../fonts/yesevaone-regular.woff") format("woff"), url("../fonts/yesevaone-regular.svg") format("svg");
+}
+.top-header {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 87rem;
+  padding-left: 4.5rem;
+  padding-right: 4.5rem;
+  background: #362d2b;
+  color: #fbf7f4;
+  height: 9rem;
+}
+@media screen and (max-width: 81.25rem) {
+  .top-header {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+  }
+}
+.top-header__blazon {
+  float: left;
+  margin-top: 0.875rem;
+}
+
+.top-header__button {
+  display: none;
+}
+@media screen and (max-width: 75rem) {
+  .top-header__button {
+    display: block;
+    float: right;
+    font-size: 0;
+    margin-top: 2.25rem;
+    transition-duration: 0.25s;
+  }
+  .top-header__button:before {
+    content: "";
+    font-family: "Icomoon";
+    font-style: normal;
+    font-weight: 900;
+  }
+  .top-header__button:before {
+    font-size: 2.625rem;
+    line-height: 1.7142857143;
+  }
+  .top-header__button.is-active:before {
+    content: "";
+    font-family: "Icomoon";
+    font-style: normal;
+    font-weight: 900;
+  }
+  .top-header__button.is-active:before {
+    font-size: 2.3125rem;
+    line-height: 4.5rem;
+  }
+  .top-header__button:hover {
+    transform: scale(1.2);
+  }
+  .top-header__button:active {
+    transform: scale(1);
+  }
+}
+
+.top-header__inline {
+  float: right;
+  height: 2.25rem;
+  margin-top: 3.375rem;
+  z-index: 1;
+}
+@media screen and (max-width: 75rem) {
+  .top-header__inline {
+    background: #282929;
+    height: auto;
+    position: absolute;
+    margin-top: 9rem;
+    max-width: 28.125rem;
+    min-height: 100%;
+    opacity: 0;
+    right: 0;
+    transform: perspective(1000px) rotateY(-90deg);
+    transform-origin: right top;
+    transition-duration: 0.5s;
+    width: 100%;
+  }
+  .is-active ~ .top-header__inline {
+    display: block;
+    opacity: 1;
+    transform: perspective(1000px) rotateY(0deg);
+  }
+}
+@media screen and (max-width: 56.25rem) {
+  .top-header__inline {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 37.5rem) {
+  .top-header__inline {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.top-header__item, .top-header__menu, .top-header__icon-bar {
+  display: inline-block;
+  margin-left: 1.5rem;
+  vertical-align: middle;
+}
+@media screen and (max-width: 75rem) {
+  .top-header__item, .top-header__menu, .top-header__icon-bar {
+    display: block;
+    margin-left: 2.25rem;
+    margin-top: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 75rem) {
+  .top-header__menu {
+    margin-top: 4.5rem;
+  }
+}
+
+@media screen and (max-width: 75rem) {
+  .top-header__icon-bar {
+    margin-top: 2.25rem;
+  }
+}
+
+.top-header__address {
+  display: none;
+}
+@media screen and (max-width: 75rem) {
+  .top-header__address {
+    display: block;
+    margin-left: 2.25rem;
+    margin-top: 3rem;
+  }
+}
+
+.slideshow {
+  height: 31.5rem;
+  position: relative;
+  overflow: hidden;
+}
+@media screen and (max-width: 56.25rem) {
+  .slideshow {
+    height: 22.5rem;
+  }
+}
+@media screen and (max-width: 37.5rem) {
+  .slideshow {
+    background-image: url("../img/wine-shelf.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+}
+.slideshow__slide {
+  margin-top: 15.75rem;
+  opacity: 0;
+  position: absolute;
+  top: -17.7903vw;
+  z-index: -1;
+  transition-duration: 0.5s;
+}
+.slideshow__slide.show {
+  opacity: 1;
+}
+@media screen and (max-width: 56.25rem) {
+  .slideshow__slide {
+    margin-top: 11.25rem;
+  }
+}
+@media screen and (max-width: 37.5rem) {
+  .slideshow__slide {
+    display: none;
+  }
+}
+
+.slideshow__image {
+  height: auto;
+  width: 100%;
+}
+
+.slideshow__back, .slideshow__next {
+  color: white;
+  font-size: 0;
+  opacity: 0.75;
+  position: absolute;
+  top: 13.5rem;
+}
+.slideshow__back:before, .slideshow__next:before {
+  font-size: 3.3125rem;
+  line-height: 1.358490566;
+}
+@media screen and (max-width: 56.25rem) {
+  .slideshow__back, .slideshow__next {
+    top: 9rem;
+  }
+}
+@media screen and (max-width: 37.5rem) {
+  .slideshow__back, .slideshow__next {
+    display: none;
+  }
+}
+
+.slideshow__back {
+  left: 4.5rem;
+}
+.slideshow__back:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+@media screen and (max-width: 81.25rem) {
+  .slideshow__back {
+    left: 2.25rem;
+  }
+}
+
+.slideshow__next {
+  right: 4.5rem;
+}
+.slideshow__next:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+@media screen and (max-width: 81.25rem) {
+  .slideshow__next {
+    right: 2.25rem;
+  }
+}
+
+.slideshow__breadcrumb {
+  bottom: 0;
+  position: absolute;
+}
+@media screen and (max-width: 37.5rem) {
+  .slideshow__breadcrumb {
+    display: none;
+  }
+}
+
+.hero {
+  background-image: linear-gradient(to right, transparent -40%, white 40%), url(../img/vineyard-path.jpg);
+  background-size: cover, auto 100%;
+  padding-bottom: 12rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  padding-top: 12rem;
+  letter-spacing: 0.125rem;
+  text-align: center;
+}
+@media screen and (max-width: 56.25rem) {
+  .hero {
+    padding-bottom: 6rem;
+    padding-top: 6rem;
+  }
+}
+@media screen and (max-width: 37.5rem) {
+  .hero {
+    background: transparent;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+  }
+}
+.hero__heading {
+  background-image: linear-gradient(to right, #b77334 100%, transparent 100%), linear-gradient(to left, #b77334 100%, transparent 100%);
+  background-position: left center, right center;
+  background-repeat: no-repeat;
+  background-size: 0px 1px;
+  max-width: 62.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-transform: uppercase;
+}
+
+.hero__paragraph {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  margin-top: 3rem;
+}
+
+.hero__button {
+  margin-top: 3rem;
+}
+
+.gallery {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 87rem;
+  padding-left: 4.5rem;
+  padding-right: 4.5rem;
+  background-color: #303030;
+  background-image: url("../img/pattern.png");
+  background-repeat: repeat-x;
+  background-size: 81.25rem auto;
+  color: #fbf7f4;
+  padding-bottom: 4.5rem;
+  padding-top: 6rem;
+  text-align: justify;
+}
+@media screen and (max-width: 81.25rem) {
+  .gallery {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+  }
+}
+.gallery:after {
+  content: " ";
+  display: inline-block;
+  width: 100%;
+}
+@media screen and (max-width: 56.25rem) {
+  .gallery:after {
+    margin: 0;
+    padding: 0;
+  }
+}
+.gallery__card {
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+  width: 50%;
+  opacity: 0;
+  transform: translateY(4.5rem);
+  transition-duration: 1s;
+}
+.gallery__card.is-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media screen and (max-width: 56.25rem) {
+  .gallery__card {
+    display: block;
+    width: 100%;
+  }
+}
+
+.gallery__section {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+}
+@media screen and (max-width: 75rem) {
+  .gallery__section {
+    float: right;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 56.25rem) {
+  .gallery__section {
+    display: block;
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 56.25rem) {
+  .gallery__blazon {
+    display: none;
+  }
+}
+
+.gallery__button {
+  margin-top: 0.75rem;
+}
+@media screen and (max-width: 56.25rem) {
+  .gallery__button {
+    margin-top: 1.5rem;
+  }
+}
+
+.gallery__bottle {
+  display: inline-block;
+  background-image: url("../img/chardonnay.png");
+  background-size: 100% 100%;
+  background-position: center;
+  height: 42rem;
+  margin-bottom: -15rem;
+  margin-top: -15rem;
+  opacity: 0;
+  right: 4.5rem;
+  transform: translateX(17.5841121495rem);
+  transition-duration: 1s;
+  vertical-align: middle;
+  width: 13.0841121495rem;
+}
+.gallery__bottle.is-active {
+  opacity: 1;
+  transform: translateX(0);
+}
+@media screen and (max-width: 75rem) {
+  .gallery__bottle {
+    display: none;
+  }
+}
+
+.product-article {
+  margin-bottom: 10.5rem;
+}
+
+.article {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 87rem;
+  padding-left: 4.5rem;
+  padding-right: 4.5rem;
+  position: relative;
+}
+@media screen and (max-width: 81.25rem) {
+  .article {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+  }
+}
+.article__title {
+  background-image: linear-gradient(to right, #b77334 100%, transparent 100%), linear-gradient(to left, #b77334 100%, transparent 100%);
+  background-position: left center, right center;
+  background-repeat: no-repeat;
+  background-size: 0px 1px;
+  margin-top: 4.5rem;
+  letter-spacing: 0.125rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.article__banner {
+  margin-top: 3rem;
+}
+.article__small-title {
+  font-family: "Sukhumvit Set", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  letter-spacing: 0.0625rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.article__section {
+  margin-top: 4.5rem;
+}
+
+.article__text {
+  margin-top: 1.5rem;
+}
+
+.article__paragraph, .article__paragraph--leader, .article__squared-paragraph {
+  font-family: "Sukhumvit Set", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  letter-spacing: 0.0625rem;
+  text-align: center;
+}
+
+.article__text--small-column {
+  margin-top: 1.5rem;
+  max-width: 62.5rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.article__paragraph--leader {
+  margin-top: 3rem;
+}
+
+.article__illustration {
+  margin-left: -4.5rem;
+  margin-right: -4.5rem;
+}
+@media screen and (max-width: 81.25rem) {
+  .article__illustration {
+    margin-left: -2.25rem;
+    margin-right: -2.25rem;
+  }
+}
+
+.article__squared-paragraph {
+  border-left: #b77334 1px solid;
+  border-right: #b77334 1px solid;
+  margin-top: 7.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+  max-width: 63rem;
+  position: relative;
+  letter-spacing: 0.0625rem;
+  text-align: center;
+}
+@media screen and (max-width: 75rem) {
+  .article__squared-paragraph {
+    margin-top: 4.5rem;
+    margin-bottom: 3rem;
+  }
+}
+.article__squared-paragraph:before, .article__squared-paragraph:after {
+  content: " ";
+  display: block;
+  width: 35%;
+  height: 1px;
+  background: #b77334;
+}
+.article__squared-paragraph:before {
+  position: absolute;
+  top: 0;
+}
+.article__squared-paragraph:after {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.article__column, .article__wide-column {
+  text-align: center;
+  margin-top: 4.5rem;
+  margin-bottom: 3rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  max-width: 18rem;
+}
+@media screen and (max-width: 75rem) {
+  .article__column, .article__wide-column {
+    margin-top: 0rem;
+  }
+}
+.article__column:before, .article__wide-column:before {
+  font-size: 5.375rem;
+  line-height: 1.3953488372;
+  color: #b77334;
+}
+
+.article__wide-column {
+  max-width: 31.5rem;
+}
+@media screen and (max-width: 75rem) {
+  .article__wide-column {
+    margin-top: 3rem;
+  }
+}
+
+.article__partners-column {
+  margin-top: 3rem;
+  margin-left: 2.25rem;
+  margin-right: 2.25rem;
+}
+
+.article__photo {
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  width: 18rem;
+}
+
+.article__footer {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 87rem;
+  padding-left: 4.5rem;
+  padding-right: 4.5rem;
+  box-sizing: border-box;
+  margin-top: 13.5rem;
+  position: relative;
+  padding-bottom: 4.5rem;
+}
+@media screen and (max-width: 81.25rem) {
+  .article__footer {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+  }
+}
+@media screen and (max-width: 75rem) {
+  .article__footer {
+    margin-top: 2.25rem;
+    margin-bottom: -3rem;
+  }
+}
+@media screen and (max-width: 56.25rem) {
+  .article__footer {
+    margin-top: 0rem;
+  }
+}
+
+.article__card {
+  bottom: 0;
+  background: #d0c3ae;
+  box-shadow: 0 0 0.625rem 0.3125rem rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  left: 50%;
+  max-width: 45rem;
+  opacity: 0;
+  padding: 15rem;
+  position: absolute;
+  text-align: center;
+  transform: translateX(-50%) translateY(4.5rem);
+  transition-duration: 1s;
+  z-index: 1;
+}
+.article__card.is-active {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+@media screen and (max-width: 56.25rem) {
+  .article__card {
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(100% - 4.5rem);
+  }
+}
+
+.article__button {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.article__sized-button {
+  margin-top: 6rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.article__sized-button .button {
+  width: 12rem;
+}
+@media screen and (max-width: 56.25rem) {
+  .article__sized-button {
+    margin-top: 3rem;
+  }
+}
+
+.article__partners {
+  color: #fbf7f4;
+  background: #303030;
+  margin-top: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 6rem;
+  margin-left: -4.5rem;
+  margin-right: -4.5rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+}
+@media screen and (max-width: 75rem) {
+  .article__partners {
+    margin-left: -2.25rem;
+    margin-right: -2.25rem;
+  }
+}
+
+.article__location {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  display: block;
+  text-decoration: none;
+  text-align: left;
+  letter-spacing: 0.125rem;
+  transition-duration: 0.25s;
+  position: relative;
+  transition-duration: 0.25s;
+  line-height: 2.25rem;
+  margin-right: 7.5rem;
+  padding-left: 3rem;
+}
+.article__location:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+@media screen and (max-width: 75rem) {
+  .article__location {
+    margin-right: 1.5rem;
+  }
+}
+.article__location:before {
+  text-align: right;
+  font-size: 1.875rem;
+  color: #b77334;
+  display: inline-block;
+  width: 1.875rem;
+  height: 2.25rem;
+  line-height: 2.25rem;
+  text-align: right;
+  vertical-align: top;
+  margin-right: 0.375rem;
+  position: absolute;
+  left: 0.75rem;
+}
+
+.article__link-list {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.article__link {
+  position: relative;
+  text-decoration: none;
+  line-height: 2.25rem;
+  transition-duration: 0.25s;
+}
+.article__link:hover {
+  color: #b77334;
+}
+.article__link:before {
+  color: #b77334;
+  font-size: 1.5rem;
+  display: inline-block;
+  width: 1.875rem;
+  height: 2.25rem;
+  line-height: 2.25rem;
+  text-align: right;
+  vertical-align: top;
+  margin-right: 0.375rem;
+}
+
+.article__maps-iframe {
+  width: 100%;
+  height: 31.5rem;
+  margin-bottom: -4.5rem;
+  margin-top: 4.5rem;
+}
+
+.newsletter {
+  background-image: url("../img/gray-vineyard-path.jpg");
+  background-position: center center;
+  background-size: cover;
+  color: #fbf7f4;
+  letter-spacing: 0.125rem;
+  margin-top: 4.5rem;
+  padding-bottom: 3rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  padding-top: 6rem;
+  text-align: center;
+}
+.newsletter__title {
+  font-family: "Sukhumvit Set", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  max-width: 45rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.newsletter__form {
+  max-width: 45rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.newsletter__field {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  background: rgba(173, 173, 173, 0.25);
+  border: solid #fbf7f4 1px;
+  display: block;
+  font: 0;
+  height: 2.875rem;
+  letter-spacing: 0.0625rem;
+  line-height: 2.875rem;
+  margin-top: 1.4375rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  position: relative;
+  text-align: left;
+}
+
+.newsletter__placeholder {
+  display: block;
+}
+.is-active .newsletter__placeholder {
+  display: none;
+}
+
+.newsletter__input {
+  height: 3rem;
+  left: 0;
+  letter-spacing: 0.0625rem;
+  line-height: 2.875rem;
+  height: 2.875rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  position: absolute;
+  top: 0;
+}
+
+.newsletter__aside {
+  min-height: 1.5rem;
+  letter-spacing: 0.0625rem;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.newsletter__error {
+  font-weight: 700;
+  color: #f53d3d;
+}
+.newsletter__error:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+.newsletter__error:before {
+  vertical-align: bottom;
+}
+
+.newsletter__success {
+  color: #6ef76e;
+  font-weight: 700;
+}
+.newsletter__success:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+.newsletter__success:before {
+  vertical-align: bottom;
+}
+
+.newsletter__button {
+  height: 3rem;
+  margin-top: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer {
+  font-family: "Sukhumvit Set", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  background: #303030;
+  color: #adadad;
+  letter-spacing: 0.0625rem;
+  text-align: center;
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+  position: relative;
+}
+.footer__column {
+  display: inline-block;
+  margin-left: 4.5rem;
+  margin-right: 4.5rem;
+  margin-top: 1.5rem;
+  text-align: left;
+}
+@media screen and (max-width: 75rem) {
+  .footer__column {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+}
+@media screen and (max-width: 56.25rem) {
+  .footer__column {
+    display: block;
+    text-align: center;
+  }
+}
+
+.footer__title {
+  font-family: "Sukhumvit Set", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  margin-top: 1.5rem;
+  text-transform: uppercase;
+}
+
+.footer__link {
+  text-decoration: none;
+  transition-duration: 0.25s;
+}
+.footer__link:hover {
+  color: #b77334;
+}
+
+.footer__location {
+  display: block;
+  margin-top: 1.5rem;
+  text-decoration: none;
+  transition-duration: 0.25s;
+}
+.footer__location:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+
+.footer__icon-bar {
+  margin-left: 0.125rem;
+}
+
+.footer__aside {
+  font-size: 0.8125rem;
+  line-height: 1.8461538462;
+  display: inline-block;
+  padding-top: 10.5rem;
+  text-align: center;
+  width: 100%;
+}
+@media screen and (max-width: 56.25rem) {
+  .footer__aside {
+    display: block;
+    box-sizing: border-box;
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+  }
+}
+
+.footer__tooltip {
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.footer__lock {
+  bottom: 1.5rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  position: absolute;
+  right: 4.5rem;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 81.25rem) {
+  .footer__lock {
+    right: 2.25rem;
+  }
+}
+@media screen and (max-width: 56.25rem) {
+  .footer__lock {
+    display: block;
+    position: static;
+  }
+}
+.footer__lock:before {
+  font-size: 1.5rem;
+  margin-right: 0.375rem;
+  vertical-align: -0.1875rem;
+}
+
+.footer__emphasis {
+  text-transform: uppercase;
+}
+@media screen and (max-width: 56.25rem) {
+  .footer__emphasis {
+    display: block;
+    margin-top: 1.5rem;
+  }
+}
+
+.inline {
+  text-align: center;
+}
+.inline__column {
+  display: inline-block;
+}
+
+.inline--leading {
+  margin-top: 7.5rem;
+  text-align: center;
+}
+
+.media {
+  height: 34.375rem;
+  margin-top: 4.5rem;
+}
+@media screen and (max-width: 56.25rem) {
+  .media {
+    height: auto;
+  }
+}
+.media__content-trunk {
+  display: table;
+  height: 100%;
+  width: 50%;
+  float: right;
+  text-align: left;
+}
+@media screen and (max-width: 56.25rem) {
+  .media__content-trunk {
+    width: 100%;
+    float: none;
+  }
+}
+
+.media__content {
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+  padding-left: 4.5rem;
+  padding-right: 4.5rem;
+}
+@media screen and (max-width: 56.25rem) {
+  .media__content {
+    text-align: center;
+  }
+}
+
+.media__title {
+  font-size: 2.0625rem;
+  line-height: 1.4545454545;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 56.25rem) {
+  .media__title {
+    margin-top: 3rem;
+  }
+}
+
+.media__paragraph {
+  font-family: "Sukhumvit Set", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  letter-spacing: 0.0625rem;
+}
+
+.media__button {
+  margin-top: 1.5rem;
+}
+
+.media__image-trunk {
+  width: 50%;
+  float: left;
+  text-align: center;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+@media screen and (max-width: 56.25rem) {
+  .media__image-trunk {
+    width: 100%;
+    float: none;
+    height: 21.875rem;
+  }
+}
+
+.media__bottle-image {
+  height: 100%;
+  display: inline-block;
+}
+
+.media__image {
+  width: 100%;
+  display: inline-block;
+  left: 0;
+  margin-top: 17.1875rem;
+  transform: translateY(-50%);
+}
+@media screen and (max-width: 56.25rem) {
+  .media__image {
+    width: 100%;
+    float: none;
+    margin-top: 9.375rem;
+  }
+}
+
+.blazon, .blazon--larger, .blazon--darker {
+  height: 7.5rem;
+  width: 9.75rem;
+  background-image: url("../img/boschi-light-logo.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  text-indent: -1000%;
+}
+.blazon__anchor {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.blazon--darker {
+  height: 10.5rem;
+  width: 13.65rem;
+  background-image: url("../img/boschi-logo.svg");
+}
+
+.blazon--larger {
+  height: 10.5rem;
+  width: 13.65rem;
+}
+
+.menu {
+  font-family: "Yeseva One", serif;
+  font-style: normal;
+  font-weight: 400;
+  cursor: default;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+}
+.menu__item {
+  display: inline-block;
+  margin-left: 1.5rem;
+}
+@media screen and (max-width: 80.75rem) and (min-width: 75.0625rem) {
+  .menu__item {
+    margin-left: 0.75rem;
+  }
+}
+@media screen and (max-width: 75rem) {
+  .menu__item {
+    font-family: "Sukhumvit Set", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    display: block;
+    line-height: 2.25rem;
+    margin-left: 0;
+  }
+}
+
+.menu__anchor {
+  cursor: pointer;
+  text-decoration: none;
+  transition-duration: 0.25s;
+}
+.menu__anchor:hover {
+  color: #b77334;
+}
+
+@media screen and (max-width: 75rem) {
+  .menu__menu-dropdown {
+    padding-left: 0.5625rem;
+    height: 0;
+    opacity: 0;
+    transform: scaley(0);
+    transition-duration: 0.5s;
+    transform-origin: center top;
+  }
+  .is-active ~ .menu__menu-dropdown {
+    height: 13.5rem;
+    opacity: 1;
+    transform: scaley(1);
+  }
+}
+@media screen and (min-width: 75.0625rem) {
+  .menu__menu-dropdown {
+    background-color: #b77334;
+    box-sizing: border-box;
+    left: 0;
+    opacity: 0;
+    padding-left: 7.5rem;
+    padding-right: 7.5rem;
+    position: absolute;
+    top: 9rem;
+    transform-origin: center top;
+    transform: perspective(1000px) rotateX(-90deg);
+    transition-duration: 0.5s;
+    width: 100%;
+    z-index: 1;
+  }
+  .is-active ~ .menu__menu-dropdown {
+    opacity: 1;
+    transform: perspective(1000px) rotateX(0deg);
+  }
+}
+
+.menu-dropdown {
+  font-size: 1rem;
+  line-height: 2.25rem;
+}
+.menu-dropdown__anchor {
+  text-decoration: none;
+}
+@media screen and (max-width: 75rem) {
+  .menu-dropdown__anchor {
+    transition-duration: 0.25s;
+  }
+  .menu-dropdown__anchor:hover {
+    color: #b77334;
+  }
+}
+
+@media screen and (min-width: 75.0625rem) {
+  .menu-dropdown {
+    font-family: "Sukhumvit Set", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    color: white;
+    cursor: default;
+    height: 1.5rem;
+    padding-bottom: 4.5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 4.5rem;
+    text-transform: none;
+    text-align: justify;
+  }
+  .menu-dropdown:after {
+    content: " ";
+    display: inline-block;
+    line-height: 0;
+    width: 100%;
+  }
+  .menu-dropdown__item {
+    display: inline-block;
+  }
+  .menu-dropdown__item:after {
+    background: #fbf7f4;
+    content: " ";
+    display: block;
+    height: 0.125rem;
+    margin-top: 0.09375rem;
+    transition-duration: 0.25s;
+    width: 0px;
+  }
+  .menu-dropdown__item:hover:after {
+    width: 100%;
+  }
+}
+
+.button, .button--header {
+  font-family: "Sukhumvit Set", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  background: #b77334;
+  border: solid #b77334 0.0625rem;
+  border-radius: 0.1875rem;
+  color: #fbf7f4;
+  display: inline-block;
+  font-size: 1.2rem;
+  line-height: 2.875rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.25s;
+}
+.button:hover, .button--header:hover {
+  color: #b77334;
+  background: #fbf7f4;
+}
+.button__icon {
+  margin-left: 0.1875rem;
+  vertical-align: middle;
+}
+
+.button--header {
+  border-radius: 5px;
+  font-size: 1rem;
+  line-height: 2.125rem;
+  height: 2.125rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.bars-icon:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+
+.cancel-icon:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+
+.chevron-down-icon:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+
+.chevron-left-icon:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+
+.chevron-right-icon:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+
+.chevron-up-icon:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+
+.compass-icon:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+
+.download-icon:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+
+.envelope-icon:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+
+.facebook-icon:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+
+.instagram-icon:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+
+.lock-icon:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+
+.marker-icon:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+
+.medal-icon:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+
+.play-icon:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+
+.shopping-icon:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+
+.spyglass-icon:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+
+.tripadvisor-icon:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+
+.whatsapp-icon:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+
+.icon-bar__item {
+  margin-left: 0.375rem;
+  display: inline-block;
+  letter-spacing: 0;
+  transition-duration: 0.25s;
+}
+.icon-bar__item:hover {
+  transform: scale(1.2);
+}
+.icon-bar__item:first-child {
+  margin-left: 0rem;
+}
+
+.icon-bar__icon {
+  font-size: 0;
+  text-decoration: none;
+}
+.icon-bar__icon:before {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+
+.address__title {
+  font-family: "Sukhumvit Set", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.address__list {
+  margin-top: 1.5rem;
+}
+
+.address__link {
+  text-decoration: none;
+  transition-duration: 0.25s;
+}
+.address__link:hover {
+  color: #b77334;
+}
+
+.breadcrumb {
+  text-align: center;
+  width: 100%;
+}
+.breadcrumb__item {
+  display: inline-block;
+}
+
+.breadcrumb__button {
+  background: white;
+  border-radius: 50%;
+  height: 0.9375rem;
+  margin-left: 0.125rem;
+  margin-right: 0.125rem;
+  opacity: 0.875;
+  overflow: hidden;
+  text-indent: -1000%;
+  transition-duration: 0.5s;
+  width: 0.9375rem;
+}
+.breadcrumb__button.is-active {
+  background: #d59e6a;
+}
+.breadcrumb__button:hover {
+  transform: scale(1.2);
+}
+
+.card, .card--dune {
+  border-radius: 10px;
+  padding-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1.5rem;
+}
+.card__title {
+  font-size: 2.0625rem;
+  line-height: 1.4545454545;
+  background-image: linear-gradient(to right, #b77334 100%, transparent 100%), linear-gradient(to left, #b77334 100%, transparent 100%);
+  background-position: left center, right center;
+  background-repeat: no-repeat;
+  max-width: 62.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  letter-spacing: 0.125rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.card__paragraph {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  letter-spacing: calculate-rem(2px);
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.card__button {
+  margin-top: 1.5rem;
+}
+
+.card--dune {
+  background-color: #362d2b;
+  padding-bottom: 3rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 3rem;
+}
+@media screen and (max-width: 56.25rem) {
+  .card--dune {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+}
+
+.tooltip {
+  display: inline-block;
+  margin-top: 1.5rem;
+  position: relative;
+  text-align: center;
+}
+.tooltip__title {
+  display: inline-block;
+  line-height: 1.5rem;
+  height: 1.5rem;
+}
+
+.tooltip__image {
+  height: 0.75rem;
+  vertical-align: middle;
+  width: auto;
+}
+
+.tooltip__content {
+  font-family: "Oxygen", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  box-sizing: border-box;
+  background-image: url(../img/baloon.svg);
+  background-size: 100% 100%;
+  color: black;
+  display: inline-block;
+  display: block;
+  height: 12.5rem;
+  margin-top: -13.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.75rem;
+  padding-top: 3.4375rem;
+  padding-left: 2.1875rem;
+  padding-right: 2.1875rem;
+  transform-origin: bottom center;
+  transition-duration: 0.25s;
+  transform: scale(0) rotateZ(-90deg);
+  width: 16.25rem;
+}
+
+.tooltip:hover .tooltip__content {
+  transform: scale(1) rotateZ(0deg);
+}
+
+.banner {
+  height: 31.5rem;
+  overflow: hidden;
+  position: relative;
+}
+@media screen and (max-width: 56.25rem) {
+  .banner {
+    margin-left: -2.25rem;
+    margin-right: -2.25rem;
+  }
+}
+.banner__image {
+  margin-top: 15.75rem;
+  position: absolute;
+  transform: translateY(-50%);
+  width: 100%;
+  min-width: 56.25rem;
+}
+@media screen and (max-width: 56.25rem) {
+  .banner__image {
+    margin-left: calc(50% - 28.125rem);
+  }
+}
+
+.illustration {
+  background: #282929;
+  color: #fbf7f4;
+  letter-spacing: 0.0625rem;
+  margin-top: 13.5rem;
+  padding-left: 0rem;
+  text-align: justify;
+}
+@media screen and (max-width: 56.25rem) {
+  .illustration {
+    margin-bottom: 7.5rem;
+  }
+}
+.illustration:after {
+  display: inline-block;
+  content: " ";
+  width: 100%;
+}
+.illustration__legend {
+  font-size: 1.3125rem;
+  line-height: 1.1428571429;
+  box-sizing: border-box;
+  display: inline-block;
+  padding-left: 4.5rem;
+  padding-right: 2.25rem;
+  padding-top: 3.75rem;
+  padding-bottom: 2.25rem;
+  text-align: left;
+  vertical-align: middle;
+  width: 50%;
+}
+@media screen and (max-width: 56.25rem) {
+  .illustration__legend {
+    text-align: center;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 81.25rem) {
+  .illustration__legend {
+    padding-left: 2.25rem;
+  }
+}
+
+.illustration__figure {
+  display: inline-block;
+  background-image: url("../img/two-bottles.png");
+  background-size: cover;
+  background-position: center;
+  width: 50%;
+  height: 45vw;
+  margin-top: -4.5rem;
+  margin-bottom: -6rem;
+  min-width: 25rem;
+  vertical-align: middle;
+}
+@media screen and (max-width: 75rem) {
+  .illustration__figure {
+    height: 60vw;
+  }
+}
+@media screen and (max-width: 56.25rem) {
+  .illustration__figure {
+    display: block;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -6rem;
+    height: 18.75rem;
+  }
+}
+
+.video {
+  margin-top: 4.5rem;
+  margin-bottom: 6rem;
+  /*     @at-root &__close-button {
+          @include icon(cancel);
+
+          color: color(vista-white);
+          display: block;
+          font-size: 0;
+          height: rhythm(5);
+          line-height: rhythm(5);
+          top: rhythm(0);
+          right: 0;
+          transform: translateX(-50%);
+          position: absolute;
+          opacity: 0.9;
+          transition-duration: 0.25s;
+          z-index: 1;
+          width: rhythm(5);
+          transform-origin: left center;
+
+          &:hover {
+              transform: scale(1.2) translateX(-50%);
+          }
+
+          &:before{
+              @include font-rhythm(7);
+          }
+      } */
+}
+.video__title {
+  font-family: "Sukhumvit Set", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.625rem;
+  line-height: 1.8461538462;
+  color: #fbf7f4;
+  display: block;
+  letter-spacing: 0.125rem;
+  text-align: center;
+  text-transform: uppercase;
+  position: absolute;
+  top: 1.5rem;
+  width: 100%;
+  z-index: 1;
+}
+
+.video__play-button {
+  color: #fbf7f4;
+  display: block;
+  font-size: 0;
+  height: 7.5rem;
+  line-height: 7.5rem;
+  top: 12rem;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  opacity: 0.9;
+  transition-duration: 0.25s;
+  z-index: 1;
+  width: 7.5rem;
+  transform-origin: left center;
+}
+.video__play-button:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+.video__play-button:hover {
+  transform: scale(1.2) translateX(-50%);
+}
+.video__play-button:before {
+  font-size: 5.375rem;
+  line-height: 1.3953488372;
+}
+
+.video__modal {
+  display: table;
+  background: rgba(0, 0, 0, 0.85);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  vertical-align: middle;
+  display: none;
+}
+.is-active .video__modal {
+  display: table;
+}
+
+.video__embed {
+  display: table-cell;
+  height: 100%;
+  padding: 2.25rem;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.video__iframe {
+  height: 100%;
+  width: 100%;
+  max-width: 56.25rem;
+  max-height: 37.5rem;
+}
+
+.select {
+  font-family: "Sukhumvit Set", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 2.25rem;
+  border-left: solid 0.0625rem #303030;
+  border-right: solid 0.0625rem #303030;
+  color: black;
+  background: #fbf7f4;
+  position: relative;
+  letter-spacing: 0.0625rem;
+  margin-bottom: 3rem;
+  margin-top: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 33rem;
+  text-transform: uppercase;
+  transition-duration: 0.25s;
+}
+.select__field {
+  font-family: "Sukhumvit Set", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 2.875rem;
+  letter-spacing: 0.0625rem;
+  display: block;
+  box-sizing: border-box;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  width: 100%;
+  position: relative;
+  text-align: left;
+  border-top: solid 0.0625rem #303030;
+  border-bottom: solid 0.0625rem #303030;
+  text-transform: uppercase;
+}
+.select__field:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+.select__field:before {
+  font-size: 1.5rem;
+  line-height: 3rem;
+  height: 3rem;
+  position: absolute;
+  right: 0.75rem;
+  transition-duration: 0.25s;
+}
+.is-active .select__field:before {
+  transform: rotateZ(180deg);
+}
+
+.select__option-list {
+  background: #fbf7f4;
+  padding-top: 0;
+  padding-bottom: 0;
+  position: absolute;
+  transition-duration: 0.25s;
+  width: 100%;
+}
+.is-active .select__option-list {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.select__option {
+  font-size: 1.25rem;
+  line-height: 3rem;
+  cursor: pointer;
+  height: 0;
+  opacity: 0;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  transform: scaleY(0);
+  transition-duration: 0.25s;
+}
+.select__option:hover {
+  background-color: #b77334;
+}
+.is-active .select__option {
+  height: 3rem;
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+.form {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+  max-width: 55.625rem;
+  text-align: center;
+}
+.form__field, .form__field--textarea {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  border: solid #b77334 1px;
+  display: block;
+  font: 0;
+  height: 2.875rem;
+  letter-spacing: 0.0625rem;
+  line-height: 2.875rem;
+  margin-top: 1.4375rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  position: relative;
+  text-align: left;
+}
+
+.form__field--textarea {
+  display: block;
+  height: 12rem;
+  min-height: 3rem;
+  resize: vertical;
+  overflow: auto;
+}
+
+.form__placeholder {
+  display: block;
+}
+.is-active .form__placeholder {
+  display: none;
+}
+
+.form__input, .form__input--textarea {
+  box-sizing: border-box;
+  height: 3rem;
+  left: 0;
+  letter-spacing: 0.0625rem;
+  line-height: 2.875rem;
+  height: 2.875rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  position: absolute;
+  top: 0;
+}
+
+.form__input--textarea {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  height: calc(100% - 0.6875rem);
+  resize: none;
+  top: 0.6875rem;
+}
+
+.form__inline {
+  font-family: "Sukhumvit Set", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.0625rem;
+  display: inline-block;
+  margin-top: 3rem;
+}
+
+.form__checkbox {
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 0.9rem;
+  height: 0.9rem;
+  width: 0.9rem;
+  border: solid #b77334 0.0625rem;
+  vertical-align: baseline;
+  margin-right: 0.1875rem;
+  color: transparent;
+  background: transparent;
+  transition-duration: 0.25s;
+}
+.form__checkbox:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+input:checked ~ .form__checkbox {
+  color: #fbf7f4;
+  background: #b77334;
+}
+
+.form__checkbox:before {
+  display: block;
+  text-align: right;
+}
+
+.form__error, .form__success {
+  margin-top: 1.5rem;
+}
+.form__error:before, .form__success:before {
+  vertical-align: bottom;
+}
+
+.form__error {
+  font-weight: 700;
+  color: #f53d3d;
+}
+.form__error:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+
+.form__success {
+  color: #6ef76e;
+  font-weight: 700;
+}
+.form__success:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+
+.modal {
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 1.5rem;
+  position: fixed;
+  height: 100vh;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  transition-duration: 0.25s;
+  display: none;
+}
+.modal.is-active {
+  display: table;
+}
+.modal__cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal__card {
+  background: white;
+  box-sizing: border-box;
+  max-width: 45rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2.25rem;
+}
+
+.modal__inline {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 1.5rem;
+}
+
+.modal__checkbox {
+  display: inline-block;
+  font-size: 0.9rem;
+  line-height: 1.05rem;
+  height: 1.05rem;
+  width: 1.05rem;
+  border: solid #b77334 0.0625rem;
+  vertical-align: baseline;
+  margin-right: 0.1875rem;
+  color: transparent;
+  background: transparent;
+  transition-duration: 0.25s;
+}
+.modal__checkbox:before {
+  content: "";
+  font-family: "Icomoon";
+  font-style: normal;
+  font-weight: 900;
+}
+.is-checked .modal__checkbox {
+  color: #fbf7f4;
+  background: #b77334;
+}
+
+.modal__checkbox:before {
+  display: block;
+  text-align: center;
+}
+
+.modal__button {
+  margin-top: 1.5rem;
+}
+
+.modal__paragraph, .modal__paragraph--error {
+  letter-spacing: 0.0625rem;
+}
+
+.modal__paragraph--error {
+  font-family: "Sukhumvit Set", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.3333333333;
+  color: #df2020;
+  opacity: 0;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  transition-duration: 0.25s;
+}
+.has-error .modal__paragraph--error {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=style.css.map */

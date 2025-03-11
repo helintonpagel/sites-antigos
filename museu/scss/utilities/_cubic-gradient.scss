@@ -1,0 +1,29 @@
+@use 'sass:color';
+@use 'sass:math' as *;
+@use 'sass:list' as lst;
+
+@function curve-point($t, $p, $q) {
+    $point: ();
+
+    @for $i from 1 through 2 {
+        $point: lst.join(
+            $point, 3 * pow(1 - $t, 2) * $t * lst.nth($p, $i) + 3 * (1 - $t) * pow($t, 2) * lst.nth($q, $i) + pow($t, 3)
+        );
+    }
+
+    @return $point;
+}
+
+@function cubic-gradient($ctr-1, $ctr-2, $stops, $start-color, $final-color) {
+    $lst: ();
+
+    @for $i from 0 through $stops {
+        $pnt: curve-point(div($i, $stops), $ctr-1, $ctr-2);
+
+        $lst: lst.join(
+            $lst, (color.mix($start-color, $final-color, (1 - lst.nth($pnt, 2)) * 100%): lst.nth($pnt, 1) * 100%)
+        );
+    }
+
+    @return $lst;
+}

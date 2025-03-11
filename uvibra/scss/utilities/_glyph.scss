@@ -1,0 +1,40 @@
+@use 'sass:map';
+
+$glyphs: (
+    back: "\e900",
+    bars: "\e901",
+    cancel: "\e902",
+    check: "\e903",
+    chevron-down: "\e904",
+    chevron-left: "\e905",
+    chevron-right: "\e906",
+    chevron-up: "\e907",
+    cloud: "\e908",
+    email: "\e909",
+    facebook: "\e90a",
+    facebook-solid: "\e90b",
+    instagram: "\e90c",
+    magnifier: "\e90d",
+    marker: "\e90e",
+    padlock: "\e90f",
+    phone: "\e910",
+    play: "\e911",
+    whatsapp: "\e912",
+);
+
+@mixin glyph($name, $pseudo: before) {
+    $glyph: map.get($glyphs, $name);
+
+    @if $glyph == null {
+        @error 'Glyph was not found: #{$name}';
+    }
+    @else {
+        &:#{$pseudo} {
+            content: $glyph;
+    
+            display: inline-block;
+            font-family: 'Icomoon' !important;
+            line-height: 1;
+        }
+    }
+}

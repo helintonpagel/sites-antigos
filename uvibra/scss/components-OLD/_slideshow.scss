@@ -1,0 +1,28 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.slideshow {
+    @include padding(1 null);
+    
+    height: rhythm($slideshow-height);
+    overflow: hidden;
+    
+    @include breakpoint-min(900) {
+        height: rhythm(21);
+    }
+    
+    &__list {
+        font-size: 0;
+        height: 100%;
+        white-space: nowrap;
+    }
+    
+    &__item {
+        @include margin(null $gutter);
+        
+        display: inline-block;
+        height: 100%;
+        white-space: normal;
+        width: calc(100% - #{rhythm($gutter * 2)});
+    }
+}

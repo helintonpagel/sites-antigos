@@ -1,0 +1,36 @@
+@use 'sass:math' as *;
+@use 'sass:list' as lst;
+
+@function is-color($value) {
+    @return type-of($value) == color;
+}
+
+@function is-string($value) {
+    @return type-of($value) == string;
+}
+
+@function is-number($value) {
+    @return type-of($value) == number;
+}
+
+@function is-time($value) {
+    @return is-number($value) and compatible($value, 1s);
+}
+
+@function is-media($value) {
+    @return $value == all or $value == print or $value == screen or $value == speech;
+}
+
+@function is-orientation($value) {
+    @return $value == portrait or $value == landscape;
+}
+
+@function every($lst, $method) { //list module
+    $method: if(type-of($method) == string, get-function($method), $method);
+
+    @each $val in $lst {
+        @if call($method, $val) == false { @return false; }
+    }
+
+    @return lst.length($lst) > 0;
+}

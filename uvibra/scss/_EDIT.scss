@@ -1,0 +1,166 @@
+@use 'sass:color';
+@use 'config' as *;
+@use 'utilities/all' as *;
+
+/*
+ * EDIT
+ */
+
+.related {
+    text-align: center;
+    
+    &__list {
+        @include padding(null 5);
+    }
+}
+
+
+
+.modal {
+    background-color: rgba(0, 0, 0, 0.875);
+    bottom: 0;
+    font-size: 0;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    text-align: center;
+    top: 0;
+    visibility: hidden;
+    transition-duration: 500ms;
+    transition-property: opacity, visibility;
+    z-index: 1;
+    
+    &--active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    &::before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+    
+    &__image {
+        height: auto;
+        max-height: 100%;
+        max-width: 100%;
+        width: auto;
+        vertical-align: middle;
+    }
+    
+    &__prev, &__next {
+        background: transparent;
+        box-shadow: none;
+        color: white;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    &__prev {
+        left: rhythm(2 * $gutter);
+    }
+    
+    &__next {
+        right: rhythm(2 * $gutter);
+    }
+}
+
+.menu__item {
+    position: relative;
+}
+
+button.menu__link {
+    @include margin(-1.375 null);
+    
+    height: rhythm(3.75);
+    transition-duration: 500ms;
+    transition-property: background, border-color;
+    
+    &:hover {
+/*         color: white;
+        background: $brand-color-1; */
+        border-color: transparent;
+    }
+    
+    @media (max-width: 900px) {
+        display: none;
+    }
+}
+
+.drop {
+    
+    color: white;
+    background-color: $brand-color-1;
+    box-shadow: (
+        0 0 rem(6px) 0 rgba(0, 0, 0, 0.25),
+        0 0 rem(3px) 0 rgba(0, 0, 0, 0.125)
+    );
+    position: absolute;
+    text-align: left;
+    top: rhythm(1.75);
+    transition-duration: 500ms;
+    transition-property: opacity, visibility;
+    left: rhythm(-1);
+    width: rem(500px);
+    
+    
+    @media (min-width: 900px) {
+        opacity: 0;
+        visibility: hidden;
+    }
+            
+     @media (min-width: 900px) {
+        &:before {
+            content: '';
+            display: block;
+            height: rhythm(1);
+            width: rhythm(1);
+            position: absolute;
+            top: rhythm(-1);
+            border: solid transparent rhythm(0.5);
+            border-bottom-color: $brand-color-1;
+            box-sizing: border-box;
+            left: rhythm(3.5)
+            
+        }
+    }
+    
+    @media (max-width: 900px) {
+        background: transparent;
+        box-shadow: none;
+        position: static;
+        text-align: left;
+    }
+    
+    @at-root :focus + &, &:focus-within, :hover + &, &:hover {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    &__item {
+        
+        @media (min-width: 900px) {
+            transition-duration: 250ms;
+            transition-duration: color, background-color;
+            
+            &:hover {
+                color: $brand-color-1;
+                background-color: white;
+            }  
+        }
+        
+        
+    }
+    
+    &__link {
+        @media (min-width: 900px) {
+            @include padding(0.25 1.5 .25 1);
+            display: block;
+            line-height: rhythm(2);
+        }
+    }
+}

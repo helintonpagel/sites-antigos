@@ -1,0 +1,16 @@
+@use 'sass:math' as *;
+@forward 'sass:math';
+
+$phi: 1.61803398875;
+
+$base-font-size: 16px !default;
+
+@function rem($length) {
+    $return: if(unit($length) == px, 1rem * div($length, $base-font-size), $length);
+
+    @if compatible($return, 1rem) == false {
+        @error "Unsupported operation: em(#{inspect($length)}, #{inspect($parent)})";
+    }
+
+    @return $return;
+}

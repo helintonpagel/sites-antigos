@@ -1,0 +1,25 @@
+@use 'sass:color';
+@use '../abstracts/all' as *;
+
+.service {
+    &__heading {
+        color: inherit;
+        @include font-rhythm(1, rhythm(1.5));
+        @include margin(1, top);
+    }
+    
+    &__paragraph, &__link {
+        @include font(Poppins, Medium Normal);
+        @include font-rhythm(0);
+    }
+    
+    &__link {
+        display: block;
+        text-decoration: none;
+        @include transition(0.25s);
+            
+        &:hover {
+            color: color.change($jacarta, $lightness: 75%);
+        }
+    }
+}

@@ -1,0 +1,52 @@
+$font-size: 16px;
+$line-height: 1.5;
+
+$golden-square: 1.27201965;
+
+$icomoon: ('Icomoon');
+$oxygen: ('Oxygen', sans-serif);
+$yeseva-one: ('Yeseva One', serif);
+$sukhumvit-set: ('Sukhumvit Set', sans-serif);
+
+$families: (
+    oxygen: $oxygen,
+    icomoon: $icomoon,
+    serif: $yeseva-one,
+    sans-serif: $sukhumvit-set
+);
+
+$colors: (
+    copper: hsl(29, 56%, 46%),
+    dune: hsl(11, 11%, 19%),
+    mine-shaft: hsl(0, 0%, 19%),
+    shark: hsl(180, 1%, 16%),
+    soft-amber: hsl(37, 27%, 75%),
+    silver-chalice: hsl(0, 0%, 68%),
+    vista-white: hsl(26, 47%, 97%),
+);
+
+$icons: (
+    bars: '\e900',
+    cancel: '\e901',
+    check: '\e902',
+    chevron-down: '\e903',
+    chevron-left: '\e904',
+    chevron-right: '\e905',
+    chevron-up: '\e906',
+    compass: '\e907',
+    download: '\e908',
+    envelope: '\e909',
+    facebook: '\e90a',
+    instagram: '\e90b',
+    lock: '\e90c',
+    marker: '\e90d',
+    medal: '\e90e',
+    play: '\e90f',
+    shopping: '\e910',
+    spyglass: '\e911',
+    tripadvisor: '\e912',
+    whatsapp: '\e913'
+);
+
+
+

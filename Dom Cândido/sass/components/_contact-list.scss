@@ -1,0 +1,14 @@
+@use '../abstracts/all' as *;
+
+.contact-list {
+    &__link {
+        @include padding(null $trunk-space + 1);
+        
+        display: block;
+        text-decoration: none;
+        
+        &:before {
+            vertical-align: middle;
+        }
+    }
+}

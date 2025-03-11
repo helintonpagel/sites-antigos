@@ -1,0 +1,339 @@
+@use '../abstracts/mixins' as *;
+
+.banner {
+    background: {
+        position: center center;
+        repeat: no-repeat;
+        size: 100% auto;
+    }
+    box-sizing: border-box;
+    height: 37rem;
+    padding-top: 4.5rem;
+    
+    @at-root .slider & {
+        height: calc(100vh - 4.5rem);
+        min-height: 37rem;
+    }
+    
+    @media (max-width: 888px) {
+        background: {
+            position: center center;
+            repeat: no-repeat;
+            size: auto 100%;
+        }
+    }
+    
+    @at-root &--centralized {
+        @extend .banner;
+        padding-top: 14.75rem;
+        text-align: center;
+        
+        
+    }
+    
+    @at-root &--sofa-1 {
+        background: {
+            image: url('../img/sofa-1.png');
+            position: center 70%;
+        }
+    }
+    
+    @at-root &--sofa-2 {
+        background: {
+            image: url('../img/sofa-2.png');
+            position: center 70%;
+        }
+    }
+
+    @at-root &--sofa-3 {
+        background: {
+            image: url('../img/sofa-3.png');
+            position: center 70%;
+        }
+    }
+
+    @at-root &--sofa-4 {
+        background: {
+            image: url('../img/sofa-4.png');
+            position: center 70%;
+        }
+    }
+    @at-root &--pb {
+        background: {
+            image: url('../img/preto-branco.png');
+            position: center 70%;
+        }
+    }
+    
+    @at-root &--sofas {
+        background: {
+            image: url('../img/sofas.png');
+            position: center 70%;
+        }
+    }
+    
+    @at-root &--sofa-cama {
+        background: {
+            image: url('../img/sofa-cama.png');
+            position: center 70%;
+        }
+    }
+    
+    @at-root &--chaises {
+        background: {
+            image: url('../img/chaises.png');
+            position: center 70%;
+        }
+    }
+    
+    @at-root &--recamier {
+        background: {
+            image: url('../img/recamier.png');
+            position: center 70%;
+        }
+    }
+    
+    @at-root &--poltronas {
+        background: {
+            image: url('../img/poltronas.png');
+            position: center 70%;
+        }
+    }
+    
+    @at-root &--puffs {
+        background: {
+            image: url('../img/puffs.png');
+            position: center 70%;
+        }
+    }
+    
+    /////////////////
+    
+    
+    
+    @at-root &__title {
+        color: white;
+        @include font((size: 3.3125rem, style: italic, weight: 200));
+        text-transform: uppercase;
+        
+        
+        
+/*         @media (max-width: 600px) {
+            @include font((size: 2rem, style: italic, weight: 200));
+            text-align: center;
+            display: block !important;
+        } */
+    }
+    
+    @at-root &__small-title {
+        display: block;
+        @include font((size: 1.25rem, style: normal, weight: 300));
+        letter-spacing: -1px;
+        margin-top: -0.75rem;
+    }
+    
+    @at-root &__text {
+        color: white;
+        margin: {
+            left: auto;
+            right: auto;
+            top: 0.75rem;
+        }
+        max-width: 33rem;
+        text-align: center;
+    }
+    
+    @at-root &__button {
+        margin-top: 1.5rem;
+    }
+}
+
+
+.banner--dark {
+    @extend .banner;
+    
+    background: {
+        repeat: no-repeat;
+        size: 100% auto;
+        position: center 70%;
+    }
+    
+    &.show, &.foo {
+        @media (max-width: 888px) {
+            background: {
+                position: center center;
+                repeat: no-repeat;
+                size: auto 100%;
+            }
+        }
+    }
+    
+    @media (max-width: 394px) {
+        background: {
+            position: center center;
+            repeat: no-repeat;
+            size: auto 100%;
+        }
+    }
+
+    // @at-root &--sofa-1 {
+    //     background: {
+    //         image: url('../img/sofa-1.png');
+    //         position: center 70%;
+    //     }
+    // }
+    
+    // @at-root &--sofa-2 {
+    //     background: {
+    //         image: url('../img/sofa-2.png');
+    //         position: center 70%;
+    //     }
+    // }
+    
+    .banner__title {
+        display: inline-block;
+        font-style: normal;
+        margin-top: lines(15);
+        padding: 0 lines(0.5);
+    }
+    
+    .banner__text {
+        background: #424242;
+        text-align: left;
+        margin: {
+            left: 0;
+            top: - lines(1);
+        }
+        padding: lines(0.5) lines(0.5);
+    }
+}
+
+.accordion {
+    section {
+        cursor: pointer;
+        height: lines(11);
+        overflow: hidden;
+        transition: all 0.5s linear;
+        padding: 0;
+        
+        &.show {
+            height: 37rem;
+            
+            .banner__title {
+                background: #424242;
+                margin-top: lines(15);
+                
+            }
+            .banner__text {
+                color: white;
+                background: #424242;
+            }
+            .filter {
+                background: rgba(0, 0, 0, 0);
+            }
+        }
+    }
+    
+    .banner__title {
+        background: transparent;
+        margin-top: lines(4);
+        z-index: 2;
+        transition: all 0.5s linear;
+        
+        @media (max-width: 600px) {
+            @include font((size: 2.2rem));
+            margin-bottom: 0.75rem;
+        }
+    }
+
+    .banner__text {
+        color: transparent;
+        background: transparent;
+        transition: all 0.5s linear;
+    }
+    
+    .filter {
+        background: rgba(0, 0, 0, 0.5);
+        height: 100%;
+        padding-top: 0.01px;
+    }
+}
+
+
+/* .accordion {
+    section {
+        height: lines(12.5);
+        overflow: hidden;
+        position: relative;
+        
+        :after {
+            background: rgba(0, 0, 0, 0.25);
+            content: ' ';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: lines(12.5);
+            width: 100%;
+            z-index: 1;
+        }
+        
+        .banner__title {
+            background: transparent;
+            margin-top: lines(2);
+            z-index: 2;
+        }
+        
+        .banner__text {
+            opacity: 0;
+        }
+    }
+} */
+
+.bg-1 {
+    background: {
+        image: url('../img/bg-1.png');
+        position: center 70%;
+    }
+}
+
+.bg-2 {
+    background: {
+        image: url('../img/bg-2.png');
+        position: center 70%;
+    }
+}
+.bg-3 {
+    background: {
+        image: url('../img/bg-3.png');
+        position: center 70%;
+    }
+}
+.bg-4 {
+    background: {
+        image: url('../img/bg-3.png');
+        position: center 70%;
+    }
+}
+
+
+.fix {
+    background-attachment: fixed;
+    height: 100vh;
+    min-height: 40rem;
+    @media (max-width: 888px) {
+            background: {
+                position: center center;
+                repeat: no-repeat;
+                size: 100% auto;
+            }
+        }
+        
+        @media (max-width: 843px) {
+            background: {
+                position: center center;
+                repeat: no-repeat;
+                size: auto 100%;
+            }
+        }
+}

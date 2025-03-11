@@ -1,0 +1,9 @@
+@use '../abstracts/rhythm' as *;
+
+.header {
+    background: hsl(180, 1%, 16%);
+    padding-bottom: length-rhythm(1);
+    padding-left: length-rhythm(3);
+    padding-right: length-rhythm(3);
+    padding-top: length-rhythm(1);
+}

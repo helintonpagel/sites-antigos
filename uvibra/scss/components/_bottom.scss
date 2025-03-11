@@ -1,0 +1,22 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.bottom {
+    @include padding(null $gutter 0.75);
+    
+    background-color: $brand-color-1;
+    font-family: $heading-family;
+    margin-top: rhythm(-1);
+    color: white;
+    
+    text-align: center;
+    
+    &__paragraph {
+        @include font-rhythm(-2);
+        margin-top: rhythm(0.5);
+    }
+    
+    &__tooltip {
+        margin-top: rhythm(0.5);
+    }
+}

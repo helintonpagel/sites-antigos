@@ -1,0 +1,114 @@
+@use '../abstracts/all' as *;
+
+.slideshow {
+    height: rhythm($slideshow-height);
+    position: relative;
+    z-index: 1;
+    
+    @include break(null 600) {
+        height: auto;
+    }
+    
+    &__guide {
+        @include break(600) {
+            display: none;
+        }
+    }
+    
+    &__list {
+        height: 100%;
+        overflow: hidden;
+        
+        @include break(null 600) {
+            display: none;
+        }
+        
+        &:after {
+            background: {
+                image: url(../img/scrawl.png);
+                position: center bottom;
+                repeat: no-repeat;
+                size: auto 100%;
+            }
+            content: '';
+            bottom: 0;
+            height: rhythm($scrawl-height);
+            position: absolute;
+            width: 100%;
+        }
+    }
+    
+    &__item {
+        @include transition(0.5s);
+        
+        height: 100%;
+        opacity: 0;
+        position: absolute;
+        visibility: hidden;
+        width: 100%;
+        
+        &.show {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    
+    &__link {
+        height: 100%;
+        display: block;
+        
+        &:after {
+            background-image: scrim-gradient(rgba(0, 0, 0, 0.5));
+            content: '';
+            display: block;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+    }
+    
+    &__image {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+    }
+    
+    &__prev, &__next {
+        @include transition(0.25s);
+        
+        background: rgba(0, 0, 0, 0.25);
+        color: white;
+        font-size: 0;
+        position: absolute;
+        top: 100% / $phi;
+        transform: translateY(-50%);
+        
+        &:hover, &:focus {
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        &:focus {
+            outline-color: white;
+        }
+        
+        &:before {
+            font-size: rhythm($slideshow-button-height);
+            line-height: 1;
+        }
+        
+        @include break(null 600) {
+            display: none;
+        }
+    }
+    
+    &__prev {
+        @include icon(chevron-left);
+        left: rhythm(1);
+    }
+    
+    &__next {
+        @include icon(chevron-right);
+        right: rhythm(1);
+    }
+}

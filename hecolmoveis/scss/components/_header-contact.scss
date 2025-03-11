@@ -1,0 +1,48 @@
+@use '../config' as *;
+@use '../library/all' as *;
+@use '../utilities/all' as *;
+
+.header-contact {
+    @include font-rhythm(-1);
+    
+    @media (min-width: 900px) {
+        @include padding(1 null);
+    }
+    
+    &__heading {
+        @include font-rhythm(0);
+            
+        font-weight: 600;
+        text-transform: uppercase;
+        
+        @media (min-width: 900px) {
+            @include hide-visually;
+        }
+    }
+    
+    &__item {
+        @media (min-width: rem(900px)) {
+            display: inline-block;
+            
+            &:first-child::after {
+                @include margin(null 0.5);
+                content: '|';
+            }
+
+            &:last-child {
+                @include hide-visually;
+            }
+        }
+    }
+    
+    &__link {
+        @include default-focus;
+    }
+    
+    &__icon {
+        height: 1.5em;
+        margin-right: 0.25em;
+        vertical-align: -0.4375em;
+        width: auto;
+    }
+}

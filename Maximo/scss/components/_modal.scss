@@ -1,0 +1,93 @@
+@use '../abstracts/all' as *;
+
+.modal {
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.75);
+    padding: rhythm(1);
+    position: fixed;
+    height: 100vh;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    transition-duration: 0.25s;
+    display: none;
+    
+    &.is-active {
+        display: table;
+    }
+    
+    @at-root &__cell {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    
+    @at-root &__card {
+        background: white;
+        box-sizing: border-box;
+        max-width: rem(720px);
+        margin: {
+            left: auto;
+            right: auto;
+        }
+        padding: rhythm(1.5);
+        
+    }
+    
+    @at-root &__inline {
+        @include font-rhythm(1);
+        
+        cursor: pointer;
+        display: inline-block;
+        margin-top: rhythm(1);
+    }
+    
+    @at-root &__checkbox {
+        @include icon(check);
+        
+        display: inline-block;
+        font-size: rhythm(0.6);
+        line-height: rhythm(0.7);
+        height: rhythm(0.7);
+        width: rhythm(0.7);
+        border: solid color(copper) rem(1px);
+        vertical-align: baseline;
+        margin-right: rhythm(0.125);
+        color: transparent;
+        background: transparent;
+        transition-duration: 0.25s;
+        
+        @at-root .is-checked & {
+            color: color(vista-white);
+            background: color(copper);
+        }
+        
+        &:before {
+            display: block;
+            text-align: center;
+        }
+    }
+    
+    @at-root &__button {
+        margin-top: rhythm(1);
+    }
+    
+    @at-root &__paragraph, &__paragraph--error {
+        letter-spacing: rem(1px);
+    }
+    
+    @at-root &__paragraph--error {
+        @include font(sans-serif, 500);
+        @include font-rhythm(0.5);
+        
+        color: hsl(0, 75%, 50%);
+        opacity: 0;
+        margin-top: rhythm(0.5);
+        margin-bottom: rhythm(0.5);
+        transition-duration: 0.25s;
+        
+        @at-root .has-error & {
+            opacity: 1;
+        }
+    }
+}

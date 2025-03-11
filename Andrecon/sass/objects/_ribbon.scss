@@ -1,0 +1,42 @@
+@use '../abstracts/all' as *;
+
+.ribbon {
+    background-color: $brand-color;
+    color: white;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    
+    &__content {
+        @include trunk;
+        @include padding(($ribbon-height - 1) / 2 null);
+        
+        overflow: hidden;
+    }
+    
+    &__heading {
+        @include font-rhythm(0);
+        
+        float: left;
+        letter-spacing: rem(1px);
+        
+        @include breakpoint(null 600) {
+            float: none;
+            text-align: center;
+        }
+    }
+    
+    &__phone {
+        text-decoration: none;
+    }
+    
+    &__icon-bar {
+        float: right;
+        
+        @include breakpoint(null 600) {
+            display: none;
+        }
+    }
+}

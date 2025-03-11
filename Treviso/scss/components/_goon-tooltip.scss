@@ -1,0 +1,15 @@
+@use '../abstracts/all' as *;
+
+.goon-tooltip {
+    @at-root &__trigger {
+        line-height: rhythm(1);
+        height: rhythm(1);
+    }
+    
+    @at-root &__image {
+        height: rhythm(0.5);
+        vertical-align: middle;
+        width: auto;
+    }
+    
+}

@@ -1,0 +1,46 @@
+@use '../abstracts/all' as *;
+
+.tooltip {
+    cursor: pointer;
+    display: inline-block;
+    height: rhythm($tooltip-height);
+    @include padding(1 null 0.5);
+    position: relative;
+    
+    &__trigger {
+        box-sizing: border-box;
+        display: inline-block;
+        height: inherit;
+        @include transition(0.25s);
+    }
+    
+    &:hover &__trigger {
+        transform: scale(1.1);
+    }
+    
+    &__content {
+        box-sizing: border-box;
+        background: {
+            image: url(../img/baloon.svg);
+            size: 100% 100%;
+        }
+        @include font(Roboto, Light Italic);
+        @include font-rhythm(-1);
+        bottom: rhythm($tooltip-height);
+        color: black;
+        display: block;
+        height: rem(200px);
+        left: 50%;
+        @include margin(rem(-130px), left);
+        position: absolute;
+        @include padding(rem(55px) rem(35px) null);
+        transform: scale(0) rotateZ(-90deg);
+        transform-origin: bottom center;
+        @include transition(0.25s);
+        width: rem(260px);
+    }
+    
+    &:hover &__content {
+        transform: scale(1) rotateZ(0deg);
+    }
+}

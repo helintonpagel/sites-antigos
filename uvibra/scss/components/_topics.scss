@@ -1,0 +1,50 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.topics {
+    color: $brand-color-2;
+    
+    &__pillar {
+        @include padding(3 5);
+        
+        background-color: white;
+        border-radius: rem(3px);
+        box-shadow: (
+            0 0 rem(10px) 0 rgba(0, 0, 0, 0.375),
+            0 0 rem(5px) 0 rgba(0, 0, 0, 0.125)
+        );
+        margin-top: rhythm(-3);
+        
+        @media (max-width: 900px) {
+            @include padding(1 $gutter * 2);
+        }
+    }
+    
+    &--bottom &__pillar {
+        background: transparent;
+        box-shadow: none;
+        margin-top: 0;
+    }
+    
+    &__list {
+        @include margin(1 -0.125 null);
+    }
+    
+    &__item {
+        @include margin(0.25 0.125 / 2 null);
+        
+        display: inline-block;
+    }
+    
+    @media (min-width: 900px) {
+        &__list {
+            @include margin(1.5 -0.25 null);
+        }
+
+        &__item {
+            @include margin(0.5 0.25 null);
+
+            display: inline-block;
+        }
+    }
+}

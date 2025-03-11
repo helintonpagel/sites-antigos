@@ -1,0 +1,57 @@
+@use '../abstracts/all' as *;
+
+.header-button {
+    @include font(Bell);
+    @include font-rhythm(-1.75, rhythm(0.5));
+    @include transition(0.25s);
+    
+    color: white;
+    position: relative;
+    text-transform: uppercase;
+    z-index: 1;
+    
+    @include break(null 600) {
+        @include font-rhythm(-3, rhythm(0.5));
+    }
+    
+    &:focus {
+        outline-color: transparent;
+    }
+    
+    &__icon {
+        @include icon(bars);
+        @include icon(cancel, after);
+        
+        display: block;
+        height: rhythm($header-button-height - 0.5);
+        position: relative;
+        
+        &:before, &:after {
+            @include transition(0.5s);
+            
+            display: block;
+            font-size: rhythm($header-button-height - 0.5);
+            position: absolute;
+
+            @include break(null 600) {
+                font-size: rhythm($header-button-height - 1);
+            }
+        }
+        
+        &:after {
+            opacity: 0;
+            transform: scale(0, 1);
+        }
+        
+        @at-root .header-button--active & {
+            &:before {
+                opacity: 0;
+                transform: scale(0, 1);
+            }
+            &:after {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    }
+}

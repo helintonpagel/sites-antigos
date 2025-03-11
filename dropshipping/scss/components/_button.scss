@@ -1,0 +1,36 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.button {
+    @include common-focus($theme-color-1);
+    @include font-rhythm(ratio(1));
+    @include padding(rhythm(0.1875) 2.25em rhythm(0.3125));
+    @include transition((box-shadow, transform));
+    
+    background-color: $theme-color-1;
+    border-radius: rhythm(0.75);
+    box-shadow: em(0) em(0) em(12px) em(1px) color-change($theme-color-1, $alpha: 0.75);
+    color: white;
+    display: inline-block;
+    font-weight: 400;
+    
+    @include media(max-width 900) {
+        @include font-rhythm(ratio(0));
+    }
+    
+    &--reverse {
+        background-color: $body-back;
+        box-shadow: em(0) em(0) em(12px) em(1px) color-change($body-back, $alpha: 0.75);
+        color: $theme-color-1;
+        outline-color: $body-back;
+    }
+    
+    &:hover, &:focus {
+        box-shadow: em(0) em(0) em(24px) em(2px) color-change($theme-color-1, $alpha: 0.625);
+        transform: scale(1.05);
+    }
+    
+    &--reverse:hover, &--reverse:focus {
+        box-shadow: em(0) em(0) em(24px) em(2px) color-change($body-back, $alpha: 0.625);
+    }
+}

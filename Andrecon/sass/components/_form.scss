@@ -1,0 +1,64 @@
+@use '../abstracts/all' as *;
+
+.form {
+    @include trunk;
+    overflow: hidden;
+        
+    &:first-of-type {
+        @include margin(3, top);
+    }
+    
+    &__header {
+        @include padding(1, right);
+        
+        box-sizing: border-box;
+        float: left;
+        width: 100% * (2 - $phi);
+        
+        @include breakpoint(null 900) {
+            float: none;
+            width: 100%;
+        }
+    }
+    
+    &__paragraph {
+        @include font(Raleway, Light);
+        @include font-rhythm(1);
+        @include margin(0, top);
+        
+        text-align: left;
+    }
+    
+    &__content {
+        box-sizing: border-box;
+        float: right;
+        width: 100% / $phi;
+        
+        @include breakpoint(null 900) {
+            @include margin(1, top);
+            
+            float: none;
+            width: 100%;
+        }
+    }
+    
+    &__field {
+        @include margin(1, top);
+        
+        &:first-of-type {
+            @include margin(0, top);
+        }
+    }
+    
+    &__button, &__checkbox, &__recaptcha {
+        @include margin(1, top);
+        
+        @include breakpoint(null 900) {
+             text-align: center;
+        }
+    }
+    
+    &__recaptcha .g-recaptcha {
+        display: inline-block;
+    }
+}

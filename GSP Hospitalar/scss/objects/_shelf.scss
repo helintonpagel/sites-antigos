@@ -1,0 +1,90 @@
+@use '../abstracts/all' as *;
+
+.shelf {
+    background-color: $solitude;
+    
+    @include breakpoint(null 1000) {
+        text-align: center;
+    }
+    
+    @include breakpoint(null 900) {
+        @include padding(2, top);
+    }
+    
+    &__stamp {
+        @include trunk;
+        line-height: rhythm($stamp-height);
+        position: relative;
+    }
+    
+    &__image {
+        box-shadow: rem(2px) rem(5px) rem(5px) rem(2px) rgba(0, 0, 0, 0.5);
+        height: rhythm($shelf-image-height);
+        float: right;
+        @include margin(null 2 -2 null);
+        width: auto;
+        
+        @include breakpoint(null 1300) {
+            height: rhythm($shelf-image-height - 1);
+        }
+        
+        @include breakpoint(null 1200) {
+            height: rhythm($shelf-image-height - 2);
+        }
+        
+        @include breakpoint(null 1250) {
+            height: rhythm($shelf-image-height - 3);
+        }
+        
+        @include breakpoint(null 1100) {
+            height: rhythm($shelf-image-height - 4);
+        }
+        
+        @include breakpoint(null 1000) {
+            float: none;
+            height: rhythm($shelf-image-height - 5);
+            margin: 0;
+        }
+        
+        @include breakpoint(null 600) {
+            height: rhythm($shelf-image-height - 6);
+        }
+        
+        @include breakpoint(null 500) {
+            height: rhythm($shelf-image-height - 11);
+        }
+        
+        @include breakpoint(null 400) {
+            height: rhythm($shelf-image-height - 12);
+        }
+    }
+    
+    &__content {
+        position: relative;
+        
+        @include breakpoint(1000) {
+            @include margin(2, bottom);
+            @include padding(3, bottom);
+        }
+        
+        @include breakpoint(null 1000) {
+            @include margin(1, top);
+            width: 100%
+        }
+    }
+    
+    &__button {
+        position: absolute;
+        bottom: 0;
+        
+        @include breakpoint(null 1000) {
+            font-size: scale-by(2.5);
+            @include margin(1 null);
+            position: static;
+        }
+        
+        @include breakpoint(null 600) {
+            font-size: scale-by(1);
+        }
+    }
+}

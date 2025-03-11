@@ -1,0 +1,54 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.header {
+    background-color: white;
+    box-shadow: (
+        0 0 rem(5px) 0 rgba(0, 0, 0, 0.25),
+        0 0 rem(2.5px) 0 rgba(0, 0, 0, 0.0625)
+    );
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    
+    // @include breakpoint-min(900) {
+    //     top: rhythm($top-strip-height);
+    // }
+    
+    &__column {
+        @include padding(($header-height - $logo-height) / 2 null);
+        
+        // @include breakpoint-min(900) {
+        //     @include padding(($desktop-header-height - $logo-height) / 2 null);
+        // }
+    }
+    
+    &__logo {
+        float: left;
+        height: rhythm($logo-height);
+    }
+    
+    &__menu {
+        display: none;
+        float: right;
+        margin-top: rhythm(0.5 * ($logo-height - 1));
+        
+        @media screen and (min-width: 900px) {
+            display: block;
+        }
+    }
+    
+    &__button {
+        float: right;
+        margin-top: rhythm(0.5 * ($logo-height - $header-button-height));
+        
+        // @include breakpoint-min(900) {
+        //     display: none;
+        // }
+    }
+
+    &__card {
+        width: 100%;
+    }
+}

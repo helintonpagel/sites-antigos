@@ -1,0 +1,92 @@
+@use '../abstracts/all' as *;
+
+.slideshow {
+    height: rhythm(21);
+    position: relative;
+    overflow: hidden;
+    
+    @include breakpoint(900px) {
+        height: rhythm(15);
+    }
+    
+    @include breakpoint(600px) {
+        background: {
+            image: url('../img/wine-shelf.jpg');
+            size: cover;
+            position: center;
+        }
+    }
+    
+    @at-root &__slide {
+        margin-top: rhythm(10.5);
+        opacity: 0;
+        position: absolute;
+        top: -17.7903vw; // adjust it with javascript
+        z-index: -1;
+        transition-duration: 0.5s;
+        
+        &.show  {
+            opacity: 1;
+        }
+        
+        @include breakpoint(900px) {
+            margin-top: rhythm(15 / 2);
+        }
+        
+        @include breakpoint(600px) {
+            display: none;
+        }
+    }
+
+    @at-root &__image {
+        height: auto;
+        width: 100%;
+    }
+    
+    @at-root &__back, &__next {
+        color: white;;
+        font-size: 0;
+        opacity: 0.75;
+        position: absolute;
+        top: rhythm(9);
+        
+        &:before {
+            @include font-rhythm(5);
+        }
+        
+        @include breakpoint(900px) {
+            top: rhythm(6);
+        }
+        
+        @include breakpoint(600px) {
+            display: none;
+        }
+    }
+    
+    @at-root &__back {
+        @include icon(chevron-left);
+        left: rhythm(3);
+        
+        @include breakpoint(1300px) {
+            left: rhythm(1.5);
+        }
+    }
+    
+    @at-root &__next {
+        @include icon(chevron-right);
+        right: rhythm(3);
+        
+        @include breakpoint(1300px) {
+            right: rhythm(1.5);
+        }
+    }
+
+    @at-root &__breadcrumb {
+        bottom: 0;
+        position: absolute;
+        
+        @include breakpoint(600px) {
+            display: none;
+        }
+    }
+}

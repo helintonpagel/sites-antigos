@@ -1,0 +1,27 @@
+@use '../abstracts/all' as *;
+    
+.slideshow-button--back, .slideshow-button--next {
+    background-color: rgba(0, 0, 0, 0.375);
+    color: white;
+    font-size: 0;
+    opacity: 0.5;
+    transform: translateY(-50%);
+    @include transition(0.25s);
+    
+    &:hover {
+        opacity: 1;
+        transform: translateY(-50%) scale(1.1);
+    }
+    
+    &:before {
+        font-size: rhythm($chevron-size);
+    }
+}
+
+.slideshow-button--back {
+    @include icon(chevron-left);
+}
+
+.slideshow-button--next {
+    @include icon(chevron-right);
+}

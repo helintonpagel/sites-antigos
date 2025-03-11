@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Museu do Imigrante
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/index.js"></script> 
+    </head>
+    <body>
+        <header class="header">
+            <h1 class="header__logo logo">
+                <a class="logo__link" href="#">
+                    <img class="logo__image" src="img/museum-logo.svg" width="132" height="120" alt="Museu do Imigrante">
+                </a>
+            </h1>
+            <ul class="header__list">
+                <li class="header__item">
+                    <a class="header__link" href="#">Acessibilidade</a>
+                </li>
+                <li class="header__item">
+                    <a class="header__link" href="tel:05437714230">54 3771-4230</a>
+                </li>
+                <li class="header__item">
+                    <a class="header__link" href="mailto:museudoimigrante@bentogonçalves.rs.gov.br">museudoimigrante@bentogonçalves.rs.gov.br</a>
+                </li>
+            </ul>
+            <button class="header__button">
+                <img data-graphics="inline" src="img/menu.svg" width="44" height="24" alt="Abrir menu">
+            </button>
+            <div class="header-menu">
+                <div class="header-menu__wrapper">
+                    <button class="header-menu__button">
+                        <img data-graphics="inline" src="img/cross.svg" width="18" height="24" alt="Abrir menu">
+                    </button>
+                    <section>
+                        <h2 class="header-menu__heading">
+                            Navegação
+                        </h2>
+                        <nav>
+                            <form class="search-bar" action="#">
+                                <label class="search-bar__field">
+                                    <input class="search-bar__input" name="search" type="search">
+                                    <span class="search-bar__label">Pesquisar...</span>
+                                </label>
+                                <img class="search-bar__icon" data-graphics="inline" src="img/magnifying-glass.svg" width="24" height="24" alt="" role="presentation">
+                                <button class="search-bar__button">
+                                    <img data-graphics="inline" src="img/chevron-small-right.svg" width="24" height="24" alt="Enviar">
+                                </button>
+                            </form>
+                            <ul class="header-menu__list">
+                                <li class="header-menu__item">
+                                    <a class="header-menu__link" href="home.php">Home</a>
+                                </li>
+                                <li class="header-menu__item">
+                                    <a class="header-menu__link" href="about.php">História</a>
+                                </li>
+                                <li class="header-menu__item">
+                                    <a class="header-menu__link" href="visit.php">Visitas</a>
+                                </li>
+                                <li class="header-menu__item">
+                                    <a class="header-menu__link" href="collection.php">Acervo</a>
+                                </li>
+                                <li class="header-menu__item">
+                                    <button class="header-menu__link header-menu__link--fall">
+                                        Exposições <img class="header-menu__icon" data-graphics="inline" src="img/chevron-small-down.svg" width="24" height="24" alt="" role="presentation">
+                                    </button>
+                                    <ul class="header-menu__fall">
+                                        <li class="header-menu__item">
+                                            <a class="header-menu__link" href="temporary.php">Exposições Temporárias</a>
+                                        </li>
+                                        <li class="header-menu__item">
+                                            <a class="header-menu__link" href="standing.php">Exposições Permanentes</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="header-menu__item">
+                                    <a class="header-menu__link" href="actions.php">Ações Educativas</a>
+                                </li>
+                                <li class="header-menu__item">
+                                    <a class="header-menu__link" href="#">Parceiros</a>
+                                </li>
+                                <li class="header-menu__item">
+                                    <a class="header-menu__link" href="#">Loja</a>
+                                </li>
+                                <li class="header-menu__item">
+                                    <a class="header-menu__link" href="#">Contato</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </section>
+                    <section>
+                        <h2 class="header-menu__heading">
+                            Redes Sociais
+                        </h2>
+                        <ul class="icon-bar">
+                            <li class="icon-bar__item">
+                                <a class="icon-bar__link" href="#">
+                                    <img data-graphics="inline" src="img/whatsapp.svg" width="24" height="24" alt="Whatsapp">
+                                </a>
+                            </li>
+                            <li class="icon-bar__item">
+                                <a class="icon-bar__link" href="#">
+                                    <img data-graphics="inline" src="img/instagram.svg" width="24" height="24" alt="Instagram">
+                                </a>
+                            </li>
+                            <li class="icon-bar__item">
+                                <a class="icon-bar__link" href="#">
+                                    <img data-graphics="inline" src="img/facebook.svg" width="24" height="24" alt="Facebook">
+                                </a>
+                            </li>
+                            <li class="icon-bar__item">
+                                <a class="icon-bar__link" href="#">
+                                    <img data-graphics="inline" src="img/linkedin.svg" width="24" height="24" alt="Linkedin">
+                                </a>
+                            </li>
+                            <li class="icon-bar__item">
+                                <a class="icon-bar__link" href="#">
+                                    <img data-graphics="inline" src="img/youtube.svg" width="24" height="24" alt="Youtube">
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </header> 
+        <article class="slideshow">
+            <h2 class="slideshow__heading">
+                Apresentação
+            </h2>
+            <ul class="slideshow__list">
+                <li class="slideshow__item">
+                    <article class="slide">
+                        <div class="slide__wrapper">
+                            <h3 class="slide__text">
+                                Muitas histórias <br> e emoções <br> <span class="slide__stress">esperam <br> por você</span>
+                            </h3>
+                            <a class="slide__link" href="#">
+                                Mais exposições <img class="slide__icon" data-graphics="inline" src="img/chevron-small-right.svg" width="24" height="24" alt="" role="presentation">
+                            </a>
+                        </div>
+                        <img class="slide__image" src="img/museum.webp" width="684" height="456" alt="Adipisicing esse ipsum mollit laboris enim ullamco culpa cupidatat duis proident ex proident.">
+                    </article>
+                </li>
+                <li class="slideshow__item">
+                    <article class="slide">
+                        <div class="slide__wrapper">
+                            <h3 class="slide__text">
+                                Consectetur qui <br> excepteur <br> <span class="slide__stress">amet eu <br> eiusmod</span>
+                            </h3>
+                            <a class="slide__link" href="#">
+                                Mais exposições <img class="slide__icon" data-graphics="inline" src="img/chevron-small-right.svg" width="24" height="24" alt="" role="presentation">
+                            </a>
+                        </div>
+                        <img class="slide__image" src="img/room-1.webp" width="684" height="456" alt="Ipsum exercitation reprehenderit dolore reprehenderit consequat do et eiusmod nostrud incididunt enim cillum.">
+                    </article>
+                </li>
+                <li class="slideshow__item">
+                    <article class="slide">
+                        <div class="slide__wrapper">
+                            <h3 class="slide__text">
+                                Incididunt anim <br> commodo irure <br> <span class="slide__stress">laborum <br> deserunt duis</span>
+                            </h3>
+                            <a class="slide__link" href="#">
+                                Mais exposições <img class="slide__icon" data-graphics="inline" src="img/chevron-small-right.svg" width="24" height="24" alt="" role="presentation">
+                            </a>
+                        </div>
+                        <img class="slide__image" src="img/room-2.webp" width="684" height="456" alt="Proident qui aliquip in nostrud sint exercitation sint laborum consequat.">
+                    </article>
+                </li>
+            </ul>
+            <ol class="slideshow-bullets">
+                <li class="slideshow-bullets__item">
+                    <button class="slideshow-bullets__button">Slide 1</button>
+                </li>
+                <li class="slideshow-bullets__item">
+                    <button class="slideshow-bullets__button">Slide 2</button>
+                </li>
+                <li class="slideshow-bullets__item">
+                    <button class="slideshow-bullets__button">Slide 3</button>
+                </li>
+            </ol>
+            <a class="slideshow-chevron" href="#">
+                <img data-graphics="inline" src="img/chevron-small-down.svg" width="24" height="24" alt="Role para baixo">
+            </a>
+        </article>
+        <article class="featured">
+            <div class="featured__wrapper">
+                <h2 class="featured__heading">
+                    Exposições em Cartaz
+                </h2>
+                <div class="featured__view">
+                    <ul class="featured__list">
+                        <li class="featured__item">
+                            <article class="poster">
+                                <header class="poster-text">
+                                    <h3 class="poster-text__heading">
+                                        Mollit do lorem et dolore
+                                    </h3>
+                                    <p class="poster-text__category">
+                                        Exposições
+                                    </p>
+                                    <p class="poster-text__paragraph">
+                                        <time datetime="2022-03-26">26/03</time> até <time datetime="2022-03-26">26/06</time> no Museu do Imigrante
+                                    </p>
+                                </header>
+                                <a class="poster__link" href="#">
+                                    <img class="poster__icon" data-graphics="inline" src="img/chevron-small-right.svg" width="24" height="24" alt="Clique para ver mais sobre essa exposição.">
+                                </a>
+                                <img class="poster__image" src="img/room-1.webp" width="684" height="456" alt="Ipsum exercitation reprehenderit dolore reprehenderit consequat do et eiusmod nostrud incididunt enim cillum.">
+                            </article>
+                        </li>
+                        <li class="featured__item">
+                            <article class="poster">
+                                <header class="poster-text">
+                                    <h3 class="poster-text__heading">
+                                        Nisi culpa mollit deserunt
+                                    </h3>
+                                    <p class="poster-text__category">
+                                        Exposições
+                                    </p>
+                                    <p class="poster-text__paragraph">
+                                        <time datetime="2022-03-26">26/03</time> até <time datetime="2022-03-26">26/06</time> no Museu do Imigrante
+                                    </p>
+                                </header>
+                                <a class="poster__link" href="#">
+                                    <img class="poster__icon" data-graphics="inline" src="img/chevron-small-right.svg" width="24" height="24" alt="Clique para ver mais sobre essa exposição.">
+                                </a>
+                                <img class="poster__image" src="img/room-2.webp" width="684" height="456" alt="Tempor voluptate reprehenderit exercitation nulla ad ipsum esse enim nostrud qui.">
+                            </article>
+                        </li>
+                        <li class="featured__item">
+                            <article class="poster">
+                                <header class="poster-text">
+                                    <h3 class="poster-text__heading">
+                                        Anim Lorem consectetur culpa id labore ea non
+                                    </h3>
+                                    <p class="poster-text__category">
+                                        Exposições
+                                    </p>
+                                    <p class="poster-text__paragraph">
+                                        <time datetime="2022-03-26">26/03</time> até <time datetime="2022-03-26">26/06</time> no Museu do Imigrante
+                                    </p>
+                                </header>
+                                <a class="poster__link" href="#">
+                                    <img class="poster__icon" data-graphics="inline" src="img/chevron-small-right.svg" width="24" height="24" alt="Clique para ver mais sobre essa exposição.">
+                                </a>
+                                <img class="poster__image" src="img/room-3.webp" width="684" height="456" alt="Amet officia cillum minim veniam ea duis consectetur adipisicing nulla nulla ullamco.">
+                            </article>
+                        </li>
+                        <li class="featured__item">
+                            <article class="poster">
+                                <header class="poster-text">
+                                    <h3 class="poster-text__heading">
+                                        Occaecat aute nulla adipisicing anim
+                                    </h3>
+                                    <p class="poster-text__category">
+                                        Exposições
+                                    </p>
+                                    <p class="poster-text__paragraph">
+                                        <time datetime="2022-03-26">26/03</time> até <time datetime="2022-03-26">26/06</time> no Museu do Imigrante
+                                    </p>
+                                </header>
+                                <a class="poster__link" href="#">
+                                    <img class="poster__icon" data-graphics="inline" src="img/chevron-small-right.svg" width="24" height="24" alt="Clique para ver mais sobre essa exposição.">
+                                </a>
+                                <img class="poster__image" src="img/room-4.webp" width="684" height="456" alt="Deserunt adipisicing esse ipsum amet nulla fugiat ad cupidatat magna non eiusmod nulla magna.">
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+                <div class="control">
+                    <button class="control__button control__button--back">
+                        <img data-graphics="inline" src="img/chevron-small-left.svg" width="24" height="24" alt="Voltar">
+                    </button>
+                    <button class="control__button control__button--next">
+                        <img data-graphics="inline" src="img/chevron-small-right.svg" width="24" height="24" alt="Próximo">
+                    </button>
+                    <ol class="control-bullets">
+                        <li class="control-bullets__item">
+                            <button class="control-bullets__button">Slide 1</button>
+                        </li>
+                        <li class="control-bullets__item">
+                            <button class="control-bullets__button">Slide 2</button>
+                        </li>
+                        <li class="control-bullets__item">
+                            <button class="control-bullets__button">Slide 3</button>
+                        </li>
+                        <li class="control-bullets__item">
+                            <button class="control-bullets__button">Slide 4</button>
+                        </li>
+                    </ol>
+                </div>
+                <div class="featured__button">
+                    <a class="button button--featured" href="#">
+                        Mais Exposições <img class="button__icon" data-graphics="inline" src="img/chevron-small-right.svg" width="24" height="24" alt="" role="presentation">
+                    </a>
+                </div>
+            </div>
+        </article>
+        <article class="intro">
+            <div class="intro__wrapper">
+                <h2 class="intro__heading">
+                    Museu do <br> Imigrante
+                </h2>
+                <p class="intro__paragraph">
+                    Um museu é voz, a voz que conta as histórias e mantém viva as memórias que jamais poderão ser apagadas e que para sempre precisam ser lembradas. A voz que fala e manifesta o coração de Bento Gonçalves.
+                </p>
+                <p class="intro__paragraph">
+                    Para viabilizar o conhecimento sobre essas histórias, nossas exposdições e ações educativas convidam a contribuir com a preservação do patrimônio cultural que compreende trajetória desse pedaço que compões da diversidade brasileira.
+                </p>
+                <a class="intro__button button" href="#">
+                    Conheça <img class="button__icon" data-graphics="inline" src="img/chevron-small-right.svg" width="24" height="24" alt="" role="presentation">
+                </a>
+            </div>
+        </article>
+        <div class="short-image" role="img" aria-label="Reprehenderit elit dolore labore nostrud est ipsum mollit sunt nulla pariatur amet."></div>
+        <article class="short">
+            <h2 class="short__heading">
+                Aqui a <br> história <br> tem <br> vários <br> <span class="short__stress">sotaques!</span>
+            </h2>
+            <p class="short__paragraph">
+                Sotaque daqui, sotaque de lá. Aqui a história tem vários sotaques que se unem em uma combinação encantadora de culturas que vieram dali, que vieram de lá, mas que aqui escolheram ficar.
+            </p>
+        </article> 
+        <div class="short-image" role="img" aria-label="Reprehenderit elit dolore labore nostrud est ipsum mollit sunt nulla pariatur amet."></div>
+        <article class="short short--local">
+            <header class="short__wrapper">
+                <h2 class="short__heading short__heading--local">
+                    <span class="short__stress">Amigos</span> do <br> Museu
+                </h2>
+                <p class="short__paragraph short__paragraph--local">
+                    Nós do Museu do Imigrante temos como parceria a Associação Amigos do Museu do Imigrante (<abbr title="Associação Amigos do Museu do Imigrante">AMI</abbr>), cujo objetivo é apoiar as ações da instituição sem fins econômicos.
+                </p>
+            </header>
+            <img class="short__image" src="img/ami.svg" width="143" height="240" alt="Associação Amigos do Museu do Imigrante">
+        </article>
+        <article class="tour">
+            <header class="tour__header">
+                <h2 class="tour__heading">
+                    Museu em 360°
+                </h2>
+                <p class="tour__pragraph">
+                    Viva essa experiência e conheça nosso <i lang="en">tour</i> 360°
+                </p>
+            </header>
+            <div class="tour__view">
+                <img class="tour__icon" data-graphics="inline" src="img/360.svg" width="24" height="24" alt="" role="presentation">
+                <img class="tour__image" src="img/room-4.webp" width="684" height="456" alt="Dolor reprehenderit deserunt minim consectetur ullamco eiusmod incididunt incididunt consequat ullamco.">
+            </div>
+            <a class="tour__button" href="#">
+                <span class="button">
+                    Museu 360° <img class="button__icon" data-graphics="inline" src="img/chevron-small-right.svg" width="24" height="24" alt="" role="presentation">
+                </span>
+            </a>
+        </article> 
+        <article class="social">
+            <div class="social__wrapper">
+                <h2>
+                    Conecte-se <br> com a gente!
+                </h2>
+                <ul class="social__icon-bar icon-bar">
+                    <li class="icon-bar__item">
+                        <a class="icon-bar__link icon-bar__link--social" href="#">
+                            <img data-graphics="inline" src="img/whatsapp.svg" width="24" height="24" alt="Whatsapp">
+                        </a>
+                    </li>
+                    <li class="icon-bar__item">
+                        <a class="icon-bar__link icon-bar__link--social" href="#">
+                            <img data-graphics="inline" src="img/instagram.svg" width="24" height="24" alt="Instagram">
+                        </a>
+                    </li>
+                    <li class="icon-bar__item">
+                        <a class="icon-bar__link icon-bar__link--social" href="#">
+                            <img data-graphics="inline" src="img/facebook.svg" width="24" height="24" alt="Facebook">
+                        </a>
+                    </li>
+                    <li class="icon-bar__item">
+                        <a class="icon-bar__link icon-bar__link--social" href="#">
+                            <img data-graphics="inline" src="img/linkedin.svg" width="24" height="24" alt="Linkedin">
+                        </a>
+                    </li>
+                    <li class="icon-bar__item">
+                        <a class="icon-bar__link icon-bar__link--social" href="#">
+                            <img data-graphics="inline" src="img/youtube.svg" width="24" height="24" alt="Youtube">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <section class="social-video">
+                <h2 class="social-video__heading">
+                    Assista ao video
+                </h2>
+                <iframe class="social-video__iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="800" height="456" type="text/html" src="https://www.youtube.com/embed/ZXsQAXx_ao0?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=1&start=0&end=0&vq=large"></iframe>
+            </section>
+        </article> 
+        <article class="newsletter">
+            <div class="newsletter__wrapper">
+                <h2 class="newsletter__heading">
+                    Assine nossa <br> Newsletter
+                </h2>
+                <form class="newsletter__form" action="#">
+                    <label class="newsletter__field text-field">
+                        <input class="text-field__input" name="name" type="text">
+                        <span class="text-field__label">Nome</span>
+                    </label>
+                    <label class="newsletter__field text-field">
+                        <input class="text-field__input" name="email" type="email">
+                        <span class="text-field__label">E-mail</span>
+                    </label>
+                    <button class="newsletter__button button">
+                        Enviar <img class="button__icon" data-graphics="inline" src="img/chevron-small-right.svg" width="24" height="24" alt="" role="presentation">
+                    </button>
+                </form>
+            </div>
+        </article> 
+        <footer class="footer">
+            <div class="footer__image" role="img" aria-label="Laboris cillum in ipsum amet reprehenderit qui ad eu commodo nostrud sint ullamco irure consequat."></div>
+            <h2 class="footer__logo logo">
+                <img class="logo__image" src="img/museum-logo.svg" width="132" height="120" alt="Museu do Imigrante">
+            </h2>
+            <div class="footer__wrapper">
+                <div class="footer__column">
+                    <section>
+                        <h3 class="footer__heading">
+                            Contato
+                        </h3>
+                        <address>
+                            <ul class="footer-address">
+                                <li class="footer-address__item">
+                                    <a class="footer-address__link" href="tel:05437714230">
+                                        <img class="footer-address__icon" data-graphics="inline" src="img/phone.svg" width="24" height="24" alt="Telefone"> | <img class="footer-address__icon" data-graphics="inline" src="img/whatsapp.svg" width="24" height="24" alt="Whatsapp"> (54) 3771-4230
+                                    </a>
+                                </li>
+                                <li class="footer-address__item">
+                                    <a class="footer-address__link" href="mailto:museudoimigrante@bentogonçalves.rs.gov.br">
+                                        <img class="footer-address__icon" data-graphics="inline" src="img/mail.svg" width="24" height="24" alt="E-mail"> museudoimigrante@bentogonçalves.rs.gov.br
+                                    </a>
+                                </li>
+                            </ul>
+                        </address>
+                    </section>
+                    <section>
+                        <h3 class="footer__heading">
+                            Endereço
+                        </h3>
+                        <address class="footer-address">
+                            <img class="footer-address__icon footer-address__icon--location" data-graphics="inline" src="img/location-pin.svg" width="24" height="24" alt="" role="presentation"> Rua Herny Hugo Dreher, 127 <br> Bairro Planalto <br> Bento Gonçalves - RS <br> CEP - 95700-000
+                        </address>
+                    </section>
+                </div>
+                <section class="footer__column">
+                    <h3 class="footer__heading">
+                        Menu
+                    </h3>
+                    <ul class="footer__list">
+                        <li class="footer__list">
+                            <a class="footer__link" href="#">Home</a>
+                        </li>
+                        <li class="footer__list">
+                            <a class="footer__link" href="#">História</a>
+                        </li>
+                        <li class="footer__list">
+                            <a class="footer__link" href="#">Visitas</a>
+                        </li>
+                        <li class="footer__list">
+                            <a class="footer__link" href="#">Acervo</a>
+                        </li>
+                        <li class="footer__list">
+                            <a class="footer__link" href="#">Exposições</a>
+                        </li>
+                        <li class="footer__list">
+                            <a class="footer__link" href="#">Ações Educativas</a>
+                        </li>
+                        <li class="footer__list">
+                            <a class="footer__link" href="#">Parceiros</a>
+                        </li>
+                        <li class="footer__list">
+                            <a class="footer__link" href="#">Loja</a>
+                        </li>
+                        <li class="footer__list">
+                            <a class="footer__link" href="#">Contato</a>
+                        </li>
+                    </ul>
+                </section>
+                <div class="footer__column">
+                    <section>
+                        <h3 class="footer__heading">
+                            Central de Relacionamento
+                        </h3>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Fale Conosco</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Política de Privacidade</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Imprensa</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Menu Virtual</a>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3 class="footer__heading">
+                            Horários
+                        </h3>
+                        <p class="footer__paragraph">
+                            Terça-feira à Sábados <br> <time datetime="08:00">8h</time> às <time datetime="11:45">11h45</time> / <time datetime="13:30">13h30</time> às <time datetime="17:45">17h45</time>
+                        </p>
+                    </section>
+                </div>
+            </div>
+            <aside class="finale">
+                <small class="finale__text">
+                    2022 - Todos os direitos reservados. CNPJ 12.345.678/9999-00. Todas as imagens são meramente ilustrativas.
+                </small>
+                <small class="finale__text finale__text--stress">
+                    <img class="finale__icon" data-graphics="inline" src="img/lock.svg" width="24" height="24" alt="" role="presentation"> Site Seguro
+                </small>
+                <a class="finale__tooltip tooltip" href="#">
+                    <img class="tooltip__logo" src="img/goon-logo.svg" alt="Goon, Design e Tecnologia" width="193" height="24">
+                    <p class="tooltip__paragraph">
+                        Feito com carinho por Goon Design e Tecnologia. Acesse e confira nossos projetos!
+                    </p>
+                </a>
+            </aside>
+        </footer> 
+    </body>
+</html>

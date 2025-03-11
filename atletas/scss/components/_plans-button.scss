@@ -1,0 +1,40 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.plans-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    &:focus-visible {
+        outline-color: currentColor;
+        outline-offset: rem(3px);
+        outline-style: dashed;
+        outline-width: rem(2px);
+    }
+    
+    &--back {
+        left: rhythm(-2.25);
+        
+        @media screen and (max-width: $wrapper - rhythm(1)) {
+            left: rhythm(-1);
+        }
+    }
+    
+    &--next {
+        right: rhythm(-2.25);
+        
+        @media screen and (max-width: $wrapper - rhythm(1)) {
+            right: rhythm(-1);
+        }
+    }
+    
+    &__icon {
+        height: rhythm(1.25);
+        width: auto;
+        
+        @media screen and (max-width: $wrapper - rhythm(1)) {
+            height: rhythm(0.875);
+        }
+    }
+}

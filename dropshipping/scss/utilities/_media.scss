@@ -1,0 +1,36 @@
+@use 'types' as *;
+@use 'sass:map';
+@use 'sass:list' as lst;
+@use 'sass:string' as str;
+
+@function map-media($args) {
+    $return: (type: screen);
+
+    @each $key, $value in $args {
+        @if type-of($value) == number {
+            $value: if(str.index($key, max), $value - 1px, $value + 0px);
+        }
+
+        @if is-media($key) {
+            $return: map.merge($return, (type: $key));
+        }
+        @else if is-orientation($key) {
+            $return: map.merge($return, (orientation: $key));
+        }
+        @else {
+            $return: map.merge($return, (#{$key}: $value));
+        }
+    }
+
+    @return $return;
+}
+
+@mixin media($args...) {
+    $result: '';
+    
+    @each $key, $value in map-media($args) {
+        $result: if($key == type, $value, "#{$result} and (#{$key}: #{$value})");
+    }
+
+    @media #{$result} { @content; }
+}

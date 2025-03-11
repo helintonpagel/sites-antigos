@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <title>
+            Uvibra Consevitis
+        </title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="css/style.css"/> 
+        <script src="js/index.js"></script>
+        <script src="https://www.youtube.com/iframe_api" async defer></script> 
+    </head>
+    <body>
+        <div class="top-bar">
+            <section class="top-bar__pillar pillar">
+                <h2 class="top-bar__heading">
+                    Listas com links diversos
+                </h2>
+                <ul class="top-bar__icons icon-bar">
+                    <li class="icon-bar__item">
+                        <a class="top-bar__icon-link icon-bar__link--whatsapp" href="https://web.whatsapp.com/" title="Whatsapp"></a>
+                    </li>
+                    <li class="icon-bar__item">
+                        <a class="top-bar__icon-link icon-bar__link--instagram" href="https://www.instagram.com/" title="Instagram"></a>
+                    </li>
+                    <li class="icon-bar__item">
+                        <a class="top-bar__icon-link icon-bar__link--facebook-solid" href="https://www.facebook.com/" title="Facebook"></a>
+                    </li>
+                </ul>
+                <ul class="top-bar__links link-bar">
+                    <li class="link-bar__item">
+                        <a class="link-bar__link" href="tel:5434511062">
+                            54 3451 1062
+                        </a>
+                    </li>
+                    <li class="link-bar__item">
+                        <a class="link-bar__link" href="mailto:contato@uvibraconsevits-rs.com.br">
+                            contato@uvibraconsevits-rs.com.br
+                        </a>
+                    </li>
+                    <li class="link-bar__item">
+                        <button class="link-bar__link">
+                            Alto contraste
+                        </button>
+                    </li>
+                    <li class="link-bar__item">
+                        <a class="link-bar__link" href="#">
+                            Acessibilidade
+                        </a>
+                    </li>
+                    <li class="link-bar__item">
+                        <a class="link-bar__link" href="#">
+                            Acesso restrito
+                        </a>
+                    </li>
+                </ul>
+                <ul class="top-bar__langs lang-bar">
+                    <li class="lang-bar__item">
+                        <a class="top-bar__lang-link lang-bar__link" href="#">
+                            <abbr title="English">EN</abbr>
+                        </a>
+                    </li>
+                    <li class="lang-bar__item">
+                        <a class="top-bar__lang-link lang-bar__link" href="#">
+                            <abbr title="Português">PT</abbr>
+                        </a>
+                    </li>
+                    <li class="lang-bar__item">
+                        <a class="top-bar__lang-link lang-bar__link" href="#">
+                            <abbr title="Español">ES</abbr>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <header class="header">
+                <div class="header__pillar pillar">
+                    <h1 class="header__logo">
+                        <a class="logo" href="home.php">
+                            <img class="logo__image" src="img/consevitis.svg" width="198" height="48" alt="Uvibra Consevitis - Rio Grande do Sul"/>
+                        </a>
+                    </h1>
+                    <nav class="header__menu menu">
+                        <ul>
+                            <li class="menu__item">
+                                <a class="menu__link" href="posts.php">Publicações</a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__link" href="notices.php">Imprensa</a>
+                            </li>
+                            <li class="menu__item">
+                                <button class="menu__link">O Consevitis-RS</button>
+                                <ul class="drop">
+                                    <li class="drop__item">
+                                        <a class="drop__link" href="about.php">
+                                            Quem somos
+                                        </a>
+                                    </li>
+                                    <li class="drop__item">
+                                        <a class="drop__link" href="actuation-area.php">
+                                            Área de atuação
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__link" href="contact.php">Contato</a>
+                            </li>
+                            <li class="menu__item">
+                                <form class="menu__search search" method="post" action="search.php">
+                                    <label class="search__field">
+                                        <input class="search__input" type="text" name="search"/>
+                                        <span class="search__label">
+                                            Faça sua pesquisa aqui
+                                        </span>
+                                    </label>
+                                    <button class="search__button" title="Enviar"></button>
+                                </form>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <button class="header__toggle toggle" title="Menu"></button>
+                <div class="header__mobile mobile">
+                    <section>
+                        <h2 class="mobile__heading">
+                            Menu
+                        </h2>
+                        <ul class="lang-bar">
+                            <li class="lang-bar__item">
+                                <a class="lang-bar__link" href="#">
+                                    <abbr title="English">EN</abbr>
+                                </a>
+                            </li>
+                            <li class="lang-bar__item">
+                                <a class="lang-bar__link" href="#">
+                                    <abbr title="Português">PT</abbr>
+                                </a>
+                            </li>
+                            <li class="lang-bar__item">
+                                <a class="lang-bar__link" href="#">
+                                    <abbr title="Español">ES</abbr>
+                                </a>
+                            </li>
+                        </ul>
+                        <nav class="menu">
+                            <ul>
+                                <li class="menu__item">
+                                    <a class="menu__link" href="posts.php">Publicações</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a class="menu__link" href="notices.php">Notícias</a>
+                                </li>
+                                <li class="menu__item">
+                                <button class="menu__link">O Consevitis-RS</button>
+                                    <ul class="drop">
+                                        <li class="drop__item">
+                                            <a class="drop__link" href="about.php">
+                                                Quem somos
+                                            </a>
+                                        </li>
+                                        <li class="drop__item">
+                                            <a class="drop__link" href="actuation-area.php">
+                                                Área de atuação
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu__item">
+                                    <a class="menu__link" href="contact.php">Contato</a>
+                                </li>
+                                <li class="menu__item">
+                                    <form class="mobile__search search">
+                                        <label class="search__field">
+                                            <input class="search__input" type="text" name="search"/>
+                                            <span class="search__label">
+                                                Faça sua pesquisa aqui
+                                            </span>
+                                        </label>
+                                        <button class="search__button" title="Enviar"></button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </nav>
+                    </section>
+                    <section>
+                        <h2 class="mobile__heading">
+                            Redes Sociais
+                        </h2>
+                        <ul class="mobile__icons icon-bar">
+                            <li class="icon-bar__item icon-bar__link--whatsapp">
+                                <a href="#" title="Whatsapp"></a>
+                            </li>
+                            <li class="icon-bar__item icon-bar__link--instagram">
+                                <a href="#" title="Instagram"></a>
+                            </li>
+                            <li class="icon-bar__item icon-bar__link--facebook-solid">
+                                <a href="#" title="Facebook"></a>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2 class="mobile__heading">
+                            Contato
+                        </h2>
+                        <address class="address">
+                            <ul>
+                                <li>
+                                    <a class="address__link" href="tel:5434511062">
+                                        <img class="address__icon" src="img/phone-white.svg" width="24" height="24" alt="" role="presentation"/>
+                                        (54) 3451 1062
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="address__link" href="mailto:uvibra@uvibra.com.br">
+                                        <img class="address__icon" src="img/email-white.svg" width="24" height="24" alt="" role="presentation"/>
+                                        uvibra@uvibra.com.br
+                                    </a>
+                                </li>
+                                <li>
+                                    <img class="address__icon" src="img/marker-white.svg" width="24" height="24" alt="" role="presentation"/>
+                                    Alameda Fenavinho, 481 <br/> Bento Gonçalves - RS <br/> CEP 95703 - 364
+                                </li>
+                            </ul>
+                        </address>
+                    </section>
+                    <ul class="mobile__links">
+                        <li>
+                            <button class="mobile__item">
+                                Alto contraste
+                            </button>
+                        </li>
+                        <li>
+                            <a class="mobile__item" href="#">
+                                Acessibilidade
+                            </a>
+                        </li>
+                        <li>
+                            <a class="mobile__item" href="#">
+                                Acesso restrito
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+        </div> 
+        <section class="slider">
+            <ul class="slider__list">
+                <li class="slider__item">
+                    <div class="slide">
+                        <div class="slide__card">
+                            <p class="slide__paragraph">
+                                Cras vitae rutrum mauris, quis lacinia purus
+                            </p>
+                            <a class="slide__button button" href="#">
+                                Saiba mais
+                            </a>
+                        </div>
+                        <picture>
+                            <source srcset="img/vineyard.webp" media="(max-width: 600px)"/>
+                            <img class="slide__image" src="img/banner-1.webp" width="684" height="456" alt="Colina com parreral de uva em um dia ensolado.">
+                        </picture>
+                    </div>
+                </li>
+                <li class="slider__item">
+                    <div class="slide">
+                        <div class="slide__card">
+                            <p class="slide__paragraph">
+                                Lorem ipsum sit amet dolor
+                            </p>
+                            <a class="slide__button button" href="#">
+                                Saiba mais
+                            </a>
+                        </div>
+                        <picture>
+                            <source srcset="img/vineyard.webp" media="(max-width: 600px)"/>
+                            <img class="slide__image" src="img/banner-2.webp" width="684" height="456" alt="Agricultores trabalhando em um parreral de uva visto de cima.">
+                        </picture>
+                    </div>
+                </li>
+            </ul>
+            <ul class="slider__control">
+                <li class="slider__prev">
+                    <button class="chevron chevron--prev" title="Anterior"></button>
+                </li>
+                <li class="slider__next">
+                    <button class="chevron chevron--next" title="Próximo"></button>
+                </li>
+            </ul>
+        </section>
+        <section class="foreword">
+            <div class="foreword__pillar pillar">
+                <header class="foreword__intro">
+                    <h2 class="heading">
+                        <span class="heading__text">Publicações Consevitis</span>
+                    </h2>
+                    <q class="foreword__paragraph">
+                        A Consevitis tem compromisso com seu público, e disponibiliza uma página de transparência e prestação de contas.
+                        <br/>
+                        Acesse e confira.
+                    </q>
+                    <a class="button" href="#">
+                        Ver todas
+                    </a>
+                </header>
+                <div class="foreword__posts">
+                    <section class="posts">
+                        <h3 class="heading">
+                            <span class="heading__text">Publicações recentes</span>
+                        </h3>
+                        <ul class="posts__list">
+                            <li class="posts__item">
+                                <a class="posts__link" href="#">
+                                    <time datetime="2021-05-10">
+                                        10/05/2021
+                                    </time>
+                                    Maecenas sit amet lorem et risus pharetra consectetur
+                                </a>
+                            </li>
+                            <li class="posts__item">
+                                <a class="posts__link" href="#">
+                                    <time datetime="2021-04-05">
+                                        05/04/2021
+                                    </time>
+                                    Aliquam commodo, est quis commodo fermentum, nisl nulla mattis sem, cursus mattis leo augue non nisl
+                                </a>
+                            </li>
+                            <li class="posts__item">
+                                <a class="posts__link" href="#">
+                                    <time datetime="2021-03-25">
+                                        25/03/2021
+                                    </time>
+                                    Mauris enim dolor, pretium sed erat eu, pulvinar facilisis mi
+                                </a>
+                            </li>
+                            <li class="posts__item">
+                                <a class="posts__link" href="#">
+                                    <time datetime="2021-02-15">
+                                        15/02/2021
+                                    </time>
+                                    Phasellus lacus velit, semper vel nisl vitae, eleifend cursus ligula
+                                </a>
+                            </li>
+                            <li class="posts__item">
+                                <a class="posts__link" href="#">
+                                    <time datetime="2021-01-02">
+                                        02/01/2021
+                                    </time>
+                                    Curabitur elementum dapibus tortor, vitae vestibulum tellus sollicitudin eget
+                                </a>
+                            </li>
+                            <li class="posts__item">
+                                <a class="posts__link" href="#">
+                                    <time datetime="2020-12-12">
+                                        12/12/2020
+                                    </time>
+                                    Cras at mattis dolor, lobortis rutrum lacus
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </section>
+        <article class="posts-widget">
+            <h2 class="heading">
+                <span class="heading__text">Acompanhe nossas notícias</span>
+            </h2>
+            <div class="posts-widget__control pillar">
+                <div class="posts-widget__pillar pillar">
+                    <ul class="posts-widget__list">
+                        <li class="posts-widget__item">
+                            <div class="card">
+                                <a class="card__link" href="#">
+                                    <div class="card__pillar">
+                                        <time class="card__time" datetime="2021-05-10">
+                                            10 de maio, 2021
+                                        </time>
+                                        <h2 class="card__heading">
+                                            Lorem Ipsum Dolor
+                                        </h2>
+                                    </div>
+                                    <span class="card__button" href="#">
+                                        Ver mais
+                                    </span>
+                                </a>
+                                <img class="card__image" src="img/banner-1.webp" width="684" height="456" alt="Colina com parreral de uva em um dia ensolado.">
+                            </div>
+                        </li>
+                        <li class="posts-widget__item">
+                            <div class="card">
+                                <a class="card__link" href="#">
+                                    <div class="card__pillar">
+                                        <time class="card__time" datetime="2021-04-17">
+                                            17 de abril, 2021
+                                        </time>
+                                        <h2 class="card__heading">
+                                            Phasellus lacus velit
+                                        </h2>
+                                    </div>
+                                    <span class="card__button" href="#">
+                                        Ver mais
+                                    </span>
+                                </a>
+                                <img class="card__image" src="img/banner-2.webp" width="684" height="456" alt="Agricultores trabalhando em um parreral de uva visto de cima.">
+                            </div>
+                        </li>
+                        <li class="posts-widget__item">
+                            <div class="card">
+                                <a class="card__link" href="#">
+                                    <div class="card__pillar">
+                                        <time class="card__time" datetime="2021-04-01">
+                                            1 de abril, 2021
+                                        </time>
+                                        <h2 class="card__heading">
+                                            Nullam auctor tristique nunc eget viverra
+                                        </h2>
+                                    </div>
+                                    <span class="card__button" href="#">
+                                        Ver mais
+                                    </span>
+                                </a>
+                                <img class="card__image" src="img/banner-3.webp" width="684" height="456" alt="Entrada para uma casa rústica com um jardim com flores e mata no fundo.">
+                            </div>
+                        </li>
+                        <li class="posts-widget__item">
+                            <div class="card">
+                                <a class="card__link" href="#">
+                                    <div class="card__pillar">
+                                        <time class="card__time" datetime="2021-03-26">
+                                            26 de março, 2021
+                                        </time>
+                                        <h2 class="card__heading">
+                                            Donec blandit metus dolor
+                                        </h2>
+                                    </div>
+                                    <span class="card__button" href="#">
+                                        Ver mais
+                                    </span>
+                                </a>
+                                <img class="card__image" src="img/banner-4.webp" width="684" height="456" alt="Cacho de uva maduro na videira.">
+                            </div>
+                        </li>
+                        <li class="posts-widget__item">
+                            <div class="card">
+                                <a class="card__link" href="#">
+                                    <div class="card__pillar">
+                                        <time class="card__time" datetime="2021-05-10">
+                                            10 de maio, 2021
+                                        </time>
+                                        <h2 class="card__heading">
+                                            Lorem Ipsum Dolor
+                                        </h2>
+                                    </div>
+                                    <span class="card__button" href="#">
+                                        Ver mais
+                                    </span>
+                                </a>
+                                <img class="card__image" src="img/banner-1.webp" width="684" height="456" alt="Colina com parreral de uva em um dia ensolado.">
+                            </div>
+                        </li>
+                        <li class="posts-widget__item">
+                            <div class="card">
+                                <a class="card__link" href="#">
+                                    <div class="card__pillar">
+                                        <time class="card__time" datetime="2021-04-17">
+                                            17 de abril, 2021
+                                        </time>
+                                        <h2 class="card__heading">
+                                            Phasellus lacus velit
+                                        </h2>
+                                    </div>
+                                    <span class="card__button" href="#">
+                                        Ver mais
+                                    </span>
+                                </a>
+                                <img class="card__image" src="img/banner-2.webp" width="684" height="456" alt="Agricultores trabalhando em um parreral de uva visto de cima.">
+                            </div>
+                        </li>
+                        <li class="posts-widget__item">
+                            <div class="card">
+                                <a class="card__link" href="#">
+                                    <div class="card__pillar">
+                                        <time class="card__time" datetime="2021-04-01">
+                                            1 de abril, 2021
+                                        </time>
+                                        <h2 class="card__heading">
+                                            Nullam auctor tristique nunc eget viverra
+                                        </h2>
+                                    </div>
+                                    <span class="card__button" href="#">
+                                        Ver mais
+                                    </span>
+                                </a>
+                                <img class="card__image" src="img/banner-3.webp" width="684" height="456" alt="Entrada para uma casa rústica com um jardim com flores e mata no fundo.">
+                            </div>
+                        </li>
+                        <li class="posts-widget__item">
+                            <div class="card">
+                                <a class="card__link" href="#">
+                                    <div class="card__pillar">
+                                        <time class="card__time" datetime="2021-03-26">
+                                            26 de março, 2021
+                                        </time>
+                                        <h2 class="card__heading">
+                                            Donec blandit metus dolor
+                                        </h2>
+                                    </div>
+                                    <span class="card__button" href="#">
+                                        Ver mais
+                                    </span>
+                                </a>
+                                <img class="card__image" src="img/banner-4.webp" width="684" height="456" alt="Cacho de uva maduro na videira.">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <ul>
+                    <li class="posts-widget__prev">
+                        <button class="chevron chevron--prev" title="Anterior"></button>
+                    </li>
+                    <li class="posts-widget__next">
+                        <button class="chevron chevron--next" title="Próximo"></button>
+                    </li>
+                </ul>
+            </div>
+            <a class="posts-widget__button button button--light" href="#">
+                Ver mais
+            </a>
+        </article>
+        <section class="about">
+            <div class="about__pillar pillar">
+                <div class="about__header">
+                    <h2 class="heading">
+                        <span class="heading__text">Somos a Consevitis</span>
+                    </h2>
+                    <p class="about__paragraph">
+                        Nullam ullamcorper, dolor nec cursus maximus, sem ligula consectetur nisi, in feugiat felis augue non justo
+                    </p>
+                </div>
+                <div class="about__button">
+                    <a class="button" href="#"> 
+                        Conheça
+                    </a>
+                </div>
+            </div>
+        </section>
+        <article class="newsletter">
+            <div class="newsletter__pillar pillar">
+                <header class="newsletter__header">
+                    <h2 class="heading">
+                        <span class="heading__text">Assine Nossa Página</span>
+                    </h2>
+                    <p class="newsletter__paragraph">
+                        Inscreva-se e acompanhe <br/> nossas novidades!
+                    </p>
+                </header>
+                <div class="newsletter__column">
+                    <form class="newsletter__form">
+                        <label class="newsletter__field field">
+                            <input class="field__input" type="text" name="name" inputmode="text"/>
+                            <span class="field__label">
+                                Nome
+                            </span>
+                        </label>
+                        <label class="newsletter__field field">
+                            <input class="field__input" type="email" name="email" inputmode="email"/>
+                            <span class="field__label">
+                                E-mail
+                            </span>
+                        </label>
+                        <button class="newsletter__button button" type="submit">
+                            Enviar
+                        </button>
+                        <p class="newsletter__response">
+                            Sua mensagem foi enviado com sucesso!
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </article> 
+        <footer class="footer">
+            <div class="footer__pillar pillar">
+                <h2 class="footer__logo logo">
+                    <img class="logo__image" src="img/consevitis-white.svg" width="198" height="48" alt="Uvibra Consevitis - Rio Grande do Sul"/>
+                </h2>
+                <div class="footer__column">
+                    <section>
+                        <h3 class="footer__heading">
+                            Contato
+                        </h3>
+                        <address>
+                            <ul>
+                                <li>
+                                    <a class="address__link" href="#">
+                                        <img class="address__icon" src="img/phone-white.svg" width="24" height="24" alt="" role="presentation"/>
+                                        (54) 3451 1062
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="address__link" href="#">
+                                        <img class="address__icon" src="img/email-white.svg" width="24" height="24" alt="" role="presentation"/>
+                                        uvibra@uvibra.com.br
+                                    </a>
+                                </li>
+                                <li>
+                                    <img class="address__icon" src="img/marker-white.svg" width="24" height="24" alt="" role="presentation"/>
+                                    Alameda Fenavinho, 481 <br/> Bento Gonçalves - RS <br/> CEP 95703 - 364
+                                </li>
+                            </ul>
+                        </address>
+                    </section>
+                    <section>
+                        <h3 class="footer__heading">
+                            Horários
+                        </h3>
+                        <p>
+                            Segunda a Sexta <br/>
+                            8:00 às 12:00 / 13:00 às 17:00
+                        </p>
+                    </section>
+                </div>
+                <section class="footer__column">
+                    <h3 class="footer__heading">
+                        Menu
+                    </h3>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Publicações
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Notícias
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Contato
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </section>
+                <section class="footer__column">
+                    <h3 class="footer__heading">
+                        Central de Relacionamento
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Fale conosco
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Política de privacidade
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Área restrita
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+                <div class="footer__column">
+                    <section>
+                        <h3 class="footer__heading">
+                            Redes Sociais
+                        </h3>
+                        <ul class="footer__icon-bar icon-bar">
+                            <li class="icon-bar__item">
+                                <a class="icon-bar__link icon-bar__link--whatsapp" href="#" title="Whatsapp"></a>
+                            </li>
+                            <li class="icon-bar__item">
+                                <a class="icon-bar__link icon-bar__link--instagram" href="#" title="Instagram"></a>
+                            </li>
+                            <li class="icon-bar__item">
+                                <a class="icon-bar__link icon-bar__link--facebook" href="#" title="Facebook"></a>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3 class="footer__heading">
+                            Idiomas
+                        </h3>
+                        <ul class="lang-bar">
+                            <li class="lang-bar__item">
+                                <a class="lang-bar__link" href="#">
+                                    <abbr title="English">EN</abbr>
+                                </a>
+                            </li>
+                            <li class="lang-bar__item">
+                                <a class="lang-bar__link" href="#">
+                                    <abbr title="Português">PT</abbr>
+                                </a>
+                            </li>
+                            <li class="lang-bar__item">
+                                <a class="lang-bar__link" href="#">
+                                    <abbr title="Español">ES</abbr>
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </footer>
+        <aside class="bottom">
+            <em class="bottom__padlock padlock">Site seguro</em>
+            <p class="bottom__paragraph">
+                2021 - Todos os direitos reservados. CNPJ 12.345.678/9999-00. Todas as imagens são meramente ilustrativas.
+            </p>
+            <section class="bottom__tooltip tooltip">
+                <h3 class="tooltip__trigger">
+                    <a class="logo" href="#">
+                        <img class="logo__image" src="img/goon-logo.svg" width="193" height="24" alt="Goon Design e Tecnologia"/>
+                    </a>
+                </h3>
+                <p class="tooltip__baloon">
+                    Goon Desing e Tecnologia, parceiro da sua empresa na web. Acesse e confira nossos projetos!
+                </p>
+            </section>
+        </aside> 
+    </body>
+</html>

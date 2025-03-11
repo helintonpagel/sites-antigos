@@ -1,0 +1,33 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.button {
+    @include font-rhythm(ratio(1));
+    @include padding(rhythm(0.1875) 2.25em rhythm(0.3125));
+    
+    background-color: $theme-color-1;
+    border-radius: rhythm(0.75);
+    box-shadow: em(0) em(0) em(12px) em(1px) $button-shadow;
+    color: $body-back;
+    display: inline-block;
+    font-weight: 400;
+    transition-duration: 250ms;
+    transition-property: box-shadow, transform;
+    
+    
+    @media screen and (max-width: 899px) {
+        @include font-rhythm(ratio(0));
+    }
+    
+    &:hover, &:focus {
+        box-shadow: em(0) em(0) em(24px) em(1px) $button-shadow;
+        transform: scale(1.05);
+    }
+    
+    &:focus-visible {
+        outline-color: $theme-color-1;
+        outline-offset: rem(5px);
+        outline-style: dashed;
+        outline-width: rem(2px);
+    }
+}

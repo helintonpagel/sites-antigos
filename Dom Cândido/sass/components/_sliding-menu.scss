@@ -1,0 +1,37 @@
+@use '../abstracts/all' as *;
+
+.sliding-menu {
+    @include padding($header-height, top);
+    
+    background-color: $brand-color;
+    color: white;
+    min-height: 100vh;
+    position: fixed;
+    right: 0;
+    width: 100% * (2 - $phi);
+    
+    &__link {
+        @include font(Bell);
+        @include font-rhythm(2);
+        @include padding(null $trunk-space + 1);
+        @include transition(0.25s);
+        
+        display: block;
+        text-decoration: none;
+        text-transform: uppercase;
+        
+        &:hover {
+            background: white;
+            color: $brand-color;
+        }
+    }
+    
+    &__icon-bar {
+        @include margin(1, top);
+        @include padding(null $trunk-space + 1);
+    }
+    
+    &__contact-list {
+        @include margin(1, top);
+    }
+}

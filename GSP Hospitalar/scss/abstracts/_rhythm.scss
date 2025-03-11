@@ -1,0 +1,59 @@
+@use 'math' as *;
+@use 'config' as *;
+
+@function rhythm($number, $offset: 0) {
+    $rhythm: $font-size * $line-height;
+
+    @return rem(
+        $number * $rhythm - $offset
+    );
+}
+
+@function scale-by($power, $value: $font-size, $ratio: $font-size-scale) {
+    @return rem(
+        $value * pow($ratio, $power)
+    );
+}
+
+@function lines-for($font-size) {
+    @if unit($font-size) != rem {
+        $font-size: rem($font-size);
+    }
+
+    @return $line-height * round($font-size) / $font-size;
+}
+
+@mixin leader($lines) {
+    margin-top: rhythm($lines);
+}
+
+@mixin debug-lines($alpha: 1) {
+    background: {
+        image: linear-gradient(to top, hsla(0, 0%, 0%, 0.85) 5%, transparent 5%);
+        position: left top;
+        size: auto rhythm(1);
+    }
+
+    @if $alpha != 1 {
+        > * {
+            opacity: $alpha;
+        }
+    }
+}
+
+@mixin type-rhythm($power, $lines: auto) {
+    $font-size: scale-by($power);
+
+    @if $lines == auto {
+        $lines: lines-for($font-size)
+    }
+
+    font-size: $font-size;
+    line-height: $lines;
+}
+
+
+// alias
+@mixin font-rhythm($power, $lines: auto) {
+    @include type-rhythm($power, $lines);
+}

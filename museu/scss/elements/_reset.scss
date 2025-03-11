@@ -1,0 +1,128 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+* {
+    border: 0;
+    color: inherit;
+    font: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: top;
+}
+
+article, aside, figcaption, figure, footer, header, nav, section {
+    display: block;
+}
+
+html {
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    scroll-behavior: smooth;
+    -webkit-text-align-adjust: 100%;
+}
+
+body {
+    @include font($default);
+
+    background-color: $body-background-color;
+    color: $body-color;
+}
+
+h2 {
+    @include font($default, 500);
+    @include font-rhythm(ratio(4.5));
+    
+    @include media(max-width 900) {
+        @include font-rhythm(ratio(3));
+    }
+}
+
+h3 {
+    @include font($default, 500);
+}
+
+p {
+    @include font-rhythm(ratio(1.875), 0.5);
+    
+    @include media (max-width 1200) {
+        @include font-rhythm(ratio(0));
+    }
+}
+
+ol, ul {
+    list-style-type: none;
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+abbr {
+    border-bottom: none;
+    text-decoration: underline dotted;
+}
+
+i, em {
+    font-style: italic;
+}
+
+b, strong {
+    font-weight: bolder;
+}
+
+img {
+    border-style: none;
+    
+    &[data-graphics="inline"] {
+        visibility: hidden;
+    }
+}
+
+svg {
+    fill: currentColor;
+    height: 100%;
+    width: auto;
+}
+
+button {
+    background: transparent;
+    cursor: pointer;
+    text-transform: inherit;
+}
+
+button, select {
+    background: transparent;
+    cursor: pointer;
+    text-transform: inherit;
+}
+
+button {
+    overflow: visible;
+    -webkit-appearance: button;
+}
+
+input, textarea {
+    background: transparent;
+    height: rhythm(1);
+    width: 100%;
+}
+
+input {
+    overflow: visible;
+}
+
+textarea {
+    overflow: auto;
+}
+
+[hidden] {
+    display: none;
+}

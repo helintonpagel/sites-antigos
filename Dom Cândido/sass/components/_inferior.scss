@@ -1,0 +1,28 @@
+@use '../abstracts/all' as *;
+
+.inferior {
+    @include margin(0 - $scrawl-height - 5, bottom);
+    @include padding($inferior-padding-height, bottom);
+    
+    background: {
+        image: url(../img/vineyard.jpg);
+        position: bottom;
+        repeat: no-repeat;
+        size: 100% auto;
+    }
+    position: relative;
+    text-align: center;
+    
+    &__content {
+        @include padding(5, top);
+        @include trunk;
+    }
+    
+    &__paragraph {
+        @include margin(1, top);
+    }
+    
+    &__icon-bar {
+        @include margin(1, top);
+    }
+}

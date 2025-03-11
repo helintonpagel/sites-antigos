@@ -1,0 +1,63 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.form {
+    @include wrapper($form-width);
+    @include padding(rhythm(1) null);
+    
+    text-align: center;
+    
+    &__heading {
+        @include font-rhythm(ratio(5.5625));
+        color: $theme-color-1;
+        
+        @media screen and (max-width: 900px) {
+            @include font-rhythm(ratio(3));
+        }
+    }
+    
+    &__paragraph {
+        display: inline-block;
+        margin-top: rhythm(0.5);
+        max-width: rem(550px);
+    }
+
+    &__plan {
+        @include font-rhythm(ratio(-1), 0.5);
+        text-align: left;
+    }
+
+    &__plan-code {
+        color: $theme-color-1;
+    }
+    
+    &__fields {
+        margin-top: rhythm(2);
+    }
+    
+    &__listbox {
+        margin-top: rhythm(1);
+        text-align: left;
+    }
+    
+    &__message {
+        margin-top: rhythm(1);
+    }
+    
+    &__button {
+        float: right;
+        width: $form-button;
+        
+        @media screen and (max-width: 899px) {
+            float: none;
+        }
+    }
+    
+    &__response {
+        text-align: right;
+        
+        @media screen and (max-width: 899px) {
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+@use '../abstracts/all' as *;
+
+.icon-bar {
+    font-size: 0;
+    
+    &__item {
+        @include margin(null 0.375);
+        display: inline-block;
+        
+        &:first-of-type {
+            @include margin(0, left);
+        }
+        
+        &:last-of-type {
+            @include margin(0, right);
+        }
+    }
+    
+    &__icon, &__icon--large {
+        @include transition(0.25s);
+        
+        display: inline-block;
+        font-size: 0;
+        display: block;
+        text-decoration: none;
+        
+        &:hover {
+            transform: scale(1.2);
+        }
+        
+        &:before {
+            @include font-rhythm(0);
+        }
+        
+        @each $name in (linkedin facebook pinterest instagram behance youtube whatsapp) {
+            &.#{$name}-icon {
+                @include icon($name);
+            }
+        }
+    }
+
+    &__icon--large {
+        &:before {
+            @include font-rhythm(1);
+        }
+    }
+}

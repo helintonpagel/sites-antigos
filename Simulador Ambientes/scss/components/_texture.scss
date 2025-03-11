@@ -1,0 +1,43 @@
+@use '../abstracts/all' as *;
+
+
+.texture {
+    margin: {
+        top: rhythm(0.5);
+        left: rhythm(0.25);
+        right: rhythm(0.25);
+    }
+    
+    @at-root &__button {
+        height: rhythm(2);
+        position: relative;
+        overflow: hidden;
+        transition-duration: 0.5s;
+        width: rhythm(4);
+    }
+    
+    @at-root &__label {
+        background: rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        display: block;
+        font-weight: 300;
+        line-height: rhythm(2);
+        position: absolute;
+        text-align: center;
+        text-transform: uppercase;
+        top: 0;
+        transform: translateY(-100%);
+        transition-duration: 0.5s;
+        width: 100%;
+        z-index: 1;
+    }
+    
+    &:hover &__label {
+        transform: translateX(0%);
+    }
+    
+    @at-root &__image {
+        height: 100%;
+        width: 100%;
+    }
+}

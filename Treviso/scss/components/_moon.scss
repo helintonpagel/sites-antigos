@@ -1,0 +1,92 @@
+
+
+.moon {
+    background: {
+        image: url('../img/circle.svg');
+        position: center right;
+        repeat: no-repeat;
+        size: 12rem 12rem;
+    }
+    padding: {
+        bottom: 4.5rem;
+        right: 5rem;
+        top: 4.5rem;
+    }
+    
+    @at-root &__text {
+        background-color: #424242;
+        color: white;
+        font: {
+            size: 2.0625rem;
+            weight: 200;
+        }
+        line-height: 1;
+        padding: {
+            bottom: 0.375rem;
+            top: 0.375rem;
+        }
+        text-align: right;
+        text-transform: uppercase;
+    }
+}
+
+.moon--left {
+    @extend .moon;
+    background-position: center left;
+    padding: {
+        left: 5rem;
+        right: 0;
+    }
+    
+    .moon__text {
+        text-align: left;
+    }
+}
+
+@media (max-width: 899px) {
+    .moon {
+        background: {
+            image: url('../img/black-circle.svg');
+            position: center right;
+            repeat: no-repeat;
+            size: 12rem 12rem;
+        }
+        margin-right: calc(50% - 100px);
+        
+        @at-root &__text {
+            background-color: white;
+            color: black;
+            font: {
+                size: 2.0625rem;
+                weight: 200;
+            }
+            line-height: 1;
+            padding: {
+                bottom: 0.375rem;
+                top: 0.375rem;
+            }
+            text-align: right;
+            text-transform: uppercase;
+        }
+    }
+    
+    .moon--left {
+        margin-left: calc(50% - 160px);
+        margin-right: 0%;
+        background-position: center left;
+        padding: {
+            left: 5rem;
+            right: 0;
+        }
+        
+        background: {
+            image: url('../img/circle.svg');
+        }
+
+        .moon__text {
+            color: white;
+            text-align: left;
+            background: #424242;
+        }
+    }
+}

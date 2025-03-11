@@ -1,0 +1,8 @@
+@use '../abstracts/all' as *;
+
+@each $icon-name in (tripadvisor, facebook, instagram, email, phone, whatsapp, linkedin, twitter) {
+    .#{$icon-name}-icon, .a2a_s_#{$icon-name} {
+        @include icon($icon-name);
+    }
+}
+

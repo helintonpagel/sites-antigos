@@ -1,0 +1,172 @@
+@use '../abstracts/all' as *;
+
+.page {
+    @at-root &__header {
+        @include trunk;
+    }
+    
+    @at-root &__title {
+        margin-top: rhythm(3);
+        text-align: center;
+        text-transform: uppercase;
+    }
+    
+    @at-root &__subtitle {
+        @include font(sans-serif, 500);
+        @include font-rhythm(1);
+        
+        letter-spacing: rem(1px);
+        margin-top: rhythm(3);
+        text-align: center;
+        text-transform: uppercase;
+    }
+    
+    @at-root &__paragraph {
+        @include font(sans-serif, 400);
+        @include font-rhythm(1);
+        @include trunk;
+        
+        letter-spacing: rem(1px);
+        margin-top: rhythm(1);
+        text-align: center;
+    }
+    
+    @at-root &__square {
+        @include font(sans-serif, 400);
+        @include font-rhythm(1);
+        
+        border: {
+            left: color(copper) 1px solid;
+            right: color(copper) 1px solid;
+        }
+        margin: {
+            top: rhythm(5);
+            left: auto;
+            right: auto;
+        }
+        padding: {
+            top: rhythm(1.5);
+            bottom: rhythm(1.5);
+        }
+        max-width: rhythm(42);
+        position: relative;
+        letter-spacing: rem(1px);
+        text-align: center;
+        
+        &:before, &:after {
+            content: ' ';
+            display: block;
+            width: 35%;
+            height: 1px;
+            background: color(copper);
+        }
+        
+        &:before {
+            position: absolute;
+            top: 0;
+        }
+        
+        &:after {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+}
+
+.inline {
+    text-align: center;
+    margin-top: rhythm(3);
+    margin-bottom: rhythm(5);
+    text-align: center;
+    
+    @at-root &__column {
+        display: inline-block;
+        max-width: rhythm(12);
+        margin: {
+            left: rhythm(1);
+            right: rhythm(1);
+        }
+    
+        &:before {
+            @include font-rhythm(7);
+            color: color(copper);
+        }
+        
+        @at-root &--people {
+            max-width: rhythm(21);
+        }
+
+    }
+    
+    @at-root &__title {
+        @include font(sans-serif, 600);
+        text-transform: uppercase;
+    }
+    
+    @at-root &__paragraph {
+        @include font(sans-serif, 400);
+        @include font-rhythm(1);
+        
+        letter-spacing: rem(1px);
+        margin-top: rhythm(0.5);
+    }
+    
+    @at-root &__photo {
+        border-radius: 10px;
+        width: rhythm(12);
+        margin-bottom: rhythm(1);
+    }
+}
+
+
+@each $name in (compass spyglass medal) {
+    .#{$name}-icon {
+        @include icon($name);
+    }
+}
+
+.boschi-media {
+    @include font-rhythm(1);
+    
+    background: color(shark);
+    color: color(vista-white);
+    letter-spacing: rem(1px);
+    margin-top: rhythm(9);
+    padding: {
+        left: rhythm(3);
+/*         top: rhythm(4);
+        bottom: rhythm(4); */
+    }
+    text-align: justify;
+    
+    &:after {
+        display: inline-block;
+        content: ' ';
+        width: 100%;
+    }
+    
+    @at-root &__text {
+        display: inline-block;
+        width: 50%;
+        vertical-align: middle;
+        text-align: left;
+    }
+    
+    @at-root &__image, &__square {
+        display: inline-block;
+        background: {
+            image: url('../img/two-bottles.png');
+            size: cover;
+            position: center;
+        }
+        height: rhythm(10);
+        width: 45%;
+        height: 43vw;
+        margin: {
+            top: rhythm(-3);
+            bottom: rhythm(-3);
+        }
+        vertical-align: middle;
+    }
+}

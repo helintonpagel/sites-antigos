@@ -1,0 +1,39 @@
+@use '../config' as *;
+@use '../utilities/all' as *;
+
+.contact {
+    @include wrapper($form-width);
+    @include padding(rhythm(3) null rhythm(1));
+    
+    text-align: center;
+    
+    @include media(max-width 1200) {
+        padding-top: rhythm(2);
+    }
+    
+    @include media(max-width 600) {
+        padding-top: rhythm(1.5);
+    }
+    
+    &__heading {
+        @include font-rhythm(ratio(5.75));
+        
+        @include media(max-width 900) {
+            @include font-rhythm(ratio(4));
+        }
+    }
+    
+    &__paragraph {
+        display: inline-block;
+        margin-top: rhythm(0.5);
+        max-width: rem(550px);
+    }
+    
+    &__form {   
+        margin-top: rhythm(2);
+        
+        @include media(max-width 900) {
+            margin-top: rhythm(1);
+        }
+    }
+}
